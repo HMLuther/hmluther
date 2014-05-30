@@ -1,0 +1,21 @@
+<%# navigation styled for Bootstrap 3.0 %>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to root_path, class: 'navbar-brand' do %>
+        <%= image_tag 'hm-luther-logo-x2.png', class: 'logo', alt: 'HM Luther' %>
+      <% end %>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-right">
+        <%= render 'layouts/navigation_right' %>
+      </ul>
+    </div>
+  </div>
+</nav>

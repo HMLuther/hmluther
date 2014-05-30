@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+  def is_active?(link_path)
+    if current_page?(link_path)
+      "active"
+    else
+      ""
+    end
+  end
+
   def display_base_errors resource
     return '' if (resource.errors.empty?) or (resource.errors[:base].empty?)
     messages = resource.errors[:base].map { |msg| content_tag(:p, msg) }.join
