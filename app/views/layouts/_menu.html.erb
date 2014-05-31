@@ -10,30 +10,54 @@
             <h4>Seating</h4>
             <ul>
               <li><a href="mirrors.html">All</a></li>
-              <li><a href="mirrors-h.html">Chairs</a></li>
-              <li><a href="mirrors-r.html">Sofas, Beds, Daybeds</a></li>
-              <li><a href="mirrors-mix.html">Stools, Benches</a></li>
+              <li>
+                <%= link_to "Chairs", subcategory_path('chairs') %>
+              </li>
+              <li>
+                <%= link_to "Sofas, Beds, Daybeds", subcategory_path('sofas-beds-daybeds') %>
+              </li>
+              <li>
+                <%= link_to "Stools, Benches", subcategory_path('stools-benches') %>
+              </li>
             </ul>
           </div>
           <div>
             <h4>Cabinetry</h4>
             <ul>
               <li><a href="category.html">All</a></li>
-              <li><a href="mirrors-h2.html">Bookcase, Vitrines</a></li>
-              <li><a href="#">Cabinets</a></li>
-              <li><a href="#">Commodes, Chests of Drawers</a></li>
+              <li>
+                <%= link_to "Bookcases, Vitrines", subcategory_path('bookcases-vitrines') %>
+              </li>
+              <li>
+                <%= link_to "Cabinets", subcategory_path('cabinets') %>
+              </li>
+              <li>
+                <%= link_to "Commodes, Chests of Drawers", subcategory_path('commodes-chests-of-drawers') %>
+              </li>
             </ul>
           </div>
           <div>
             <h4>Tables</h4>
             <ul>
               <li><a href="category.html">All</a></li>
-              <li><a href="#">Coffee, Cocktails Tables</a></li>
-              <li><a href="#">Console Tables</a></li>
-              <li><a href="#">Desks, Secretaries</a></li>
-              <li><a href="#">Etageres, Shelves</a></li>
-              <li><a href="#">Table Tops</a></li>
-              <li><a href="#">Tables</a></li>
+              <li>
+                <%= link_to "Coffee, Cocktails Tables", subcategory_path('coffee-cocktail-tables') %>
+              </li>
+              <li>
+                <%= link_to "Console Tables", subcategory_path('console-tables') %>
+              </li>
+              <li>
+                <%= link_to "Desks, Secretaries", subcategory_path('desks-secretaries') %>
+              </li>
+              <li>
+                <%= link_to "Etageres, Shelves", subcategory_path('etegeres-shelves') %>
+              </li>
+              <li>
+                <%= link_to "Table Tops", subcategory_path('table-tops') %>
+              </li>
+              <li>
+                <%= link_to "Tables", subcategory_path('tables') %>
+              </li>
             </ul>
           </div>
         </div><!-- /cbp-hrsub-inner -->
@@ -49,21 +73,31 @@
             <h4></h4>
             <ul>
               <li><a href="#">All</a></li>
-              <li><a href="#">Candelabras, Candlesticks</a></li>
+              <li>
+                <%= link_to "Candelabras, Candlesticks", subcategory_path('candelabras-candlesticks') %>
+              </li>
             </ul>
           </div>
           <div>
             <h4></h4>
             <ul>
-              <li><a href="#">Chandeliers, Lanterns</a></li>
-              <li><a href="#">Lamps</a></li>
+              <li>
+                <%= link_to "Chandeliers, Lanterns", subcategory_path('chandeliers-lanterns') %>
+              </li>
+              <li>
+                <%= link_to "Lamps", subcategory_path('lamps') %>
+              </li>
             </ul>
           </div>
           <div>
             <h4></h4>
             <ul>
-              <li><a href="#">Sconces, Wall Lights</a></li>
-              <li><a href="#">Lanterns</a></li>
+              <li>
+                <%= link_to "Sconces, Wall Lights", subcategory_path('sconces-wall-lights') %>
+              </li>
+              <li>
+                <%= link_to "Lanterns", subcategory_path('lanterns') %>
+              </li>
             </ul>
           </div>
         </div><!-- /cbp-hrsub-inner -->
@@ -84,24 +118,40 @@
             <h4></h4>
             <ul>
               <li><a href="#">All</a></li>
-              <li><a href="#">Boxes</a></li>
-              <li><a href="#">Clocks</a></li>
+              <li>
+                <%= link_to "Boxes", subcategory_path('boxes') %>
+              </li>
+              <li>
+                <%= link_to "Clocks", subcategory_path('clocks') %>
+              </li>
             </ul>
           </div>
           <div>
             <h4></h4>
             <ul>
-              <li><a href="#">Jardinieres</a></li>
-              <li><a href="#">Objects</a></li>
-              <li><a href="#">Pedestals</a></li>
+              <li>
+                <%= link_to "Jardinieres", subcategory_path('jardinieres') %>
+              </li>
+              <li>
+                <%= link_to "Objects", subcategory_path('objects') %>
+              </li>
+              <li>
+                <%= link_to "Pedestals", subcategory_path('pedestals') %>
+              </li>
             </ul>
           </div>
           <div>
             <h4></h4>
             <ul>
-              <li><a href="#">Screens</a></li>
-              <li><a href="#">Trays</a></li>
-              <li><a href="#">Vases, Bowls</a></li>
+              <li>
+                <%= link_to "Screens", subcategory_path('screens') %>
+              </li>
+              <li>
+                <%= link_to "Trays", subcategory_path('trays') %>
+              </li>
+              <li>
+                <%= link_to "Vases, Bowls", subcategory_path('vases-bowls') %>
+              </li>
             </ul>
           </div>
         </div><!-- /cbp-hrsub-inner -->
@@ -114,8 +164,12 @@
           <div>
             <h4></h4>
             <ul>
-              <li><a href="#">Pictures</a></li>
-              <li><a href="#">Sculptures</a></li>
+              <li>
+                <%= link_to "Pictures", subcategory_path('pictures') %>
+              </li>
+              <li>
+                <%= link_to "Sculptures", subcategory_path('sculptures') %>
+              </li>
             </ul>
           </div>
         </div><!-- /cbp-hrsub-inner -->

@@ -11,7 +11,7 @@ $(document).on "page:change", ->
 
 	items.on "click", (event) ->
 	  event.stopPropagation()
-	  event.preventDefault()
+	  # event.preventDefault()
 
 	menuItems.on "click", ( event ) ->
 	  itemsAll.eq( current ).removeClass "cbp-hropen" if current != -1
@@ -24,9 +24,9 @@ $(document).on "page:change", ->
 	  else
 	  	item.addClass( 'cbp-hropen' )
 	  	current = idx
-	  	body.on 'click', ( event ) ->
-	  	  items.eq( current ).removeClass( 'cbp-hropen' )
-	  	  current = -1
+	  body.on 'click', ( event ) ->
+	  	items.eq( current ).removeClass( 'cbp-hropen' )
+	  	current = -1
 
 
 
