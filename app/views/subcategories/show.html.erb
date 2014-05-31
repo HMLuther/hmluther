@@ -2,7 +2,7 @@
 
 <% @subcategory.items.each do |item| %>
 	<%= link_to item do %>
-	  <%= image_tag item.default_image.first.url %>
+	  <%= image_tag item.default_image_url %>
 	  <hr>
 	<% end %>
 <% end %>
