@@ -1,10 +1,10 @@
 <%= render 'subnav' %>
 
 <div class="sc-items-container">
-	<ul id="sc-items" class="sc-items" data-container-size="<%= @subcategory.container_size %>">
+	<ul id="sc-items" class="sc-items" data-container-size="<%= @subcategory.container_size %>" data-sort="">
 
 		<% @subcategory.items.each do |item| %>
-			<li>
+			<li data-size="<%= item.height %>">
 			<%= link_to item do %>
 			  <%= image_tag item.default_image_url %>
 			<% end %>
@@ -20,4 +20,4 @@
 <hr>
 <%= link_to 'Edit', edit_subcategory_path(@subcategory), class: 'btn btn-default' %>
 <%= link_to 'Back', subcategories_path, class: 'btn btn-default' %>
-  style="width: <%= @subcategory.container_size %>px;"
+<h4>style="width: <%= @subcategory.container_size %>px;"</h4>
