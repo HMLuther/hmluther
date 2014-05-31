@@ -5,5 +5,4 @@
 $(document).on "page:change", ->
 
 	containerSize = $('.sc-items').data('container-size') + 'px'
-	$('.sc-items').delay(5000).css('width', containerSize)
-	# alert containerSize
+	$('.sc-items').delay(1000).css('width', containerSize)

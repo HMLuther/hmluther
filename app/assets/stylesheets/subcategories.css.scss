@@ -7,6 +7,74 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// SUBNAV
+.sc-subnav {
+	// background-color: red;
+	margin: 5px 0 5px 0;
+	div {
+		border-right: 1px solid #FFFFFF;
+		margin: 0;
+		padding: 0;
+	}
+	div:first-child{
+		background-color: #e5e5e5;
+		color: #999999;
+		font-size: 0.8em;
+		padding: 10px 15px;
+		text-transform: uppercase;
+	}
+	button {
+		background-color: #e5e5e5;
+		border: none;
+		color: #999999;
+		font-size: 0.8em;
+		padding: 10px 15px;
+		text-align: left;
+		width: 100%;
+	}
+}
+
+.nav-util {
+	margin: 5px 0 5px 0;
+	position: relative;
+}
+.nav-util>li {
+	border-radius: 0;
+	float: left;
+	margin-right: -2px;
+	width: 33%;
+}
+
+.nav-util>li:last-child {
+  /* width: 33%; */
+}
+
+.nav-util>li.active {
+	background-color: red;
+}
+
+.nav-util-item>li {
+	border-radius: 0;
+	float: left;
+	margin-right: -2px;
+	width: 25%;
+}
+
+.nav-util>li>a, .nav-util-item>li>a {
+	background-color: #e5e5e5;
+	border-radius: 0;
+	border-right: 1px solid #ffffff;
+	color: #999;
+	font-size: 0.8em;
+}
+
+.nav-util>li:last-child>a {
+	border: none;
+}
+
+
+
 // WEBKIT SCROLLBAR
 .sc-items-container::-webkit-scrollbar {
     width: 10px;
@@ -39,7 +107,7 @@
 // SC-ITEMS-CONTAINER
 .sc-items-container {
 	padding: 0;
-	/*margin: 0 15px 0 15px;*/
+	margin: 0 -8px 0 0;
 	position: relative;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
@@ -49,11 +117,11 @@
 // SC-ITEMS
 .sc-items {
 	list-style-type: none;
-	margin-top: 10px;
+	margin: 10px 0 0 0;
 	position: relative; /** Needed to ensure items are laid out relative to this container **/
 	// width: 22910px;
-	width: 17700px;
-	// width: 100%;
+	// width: 17700px;
+	width: 100000px;
 	padding: 0;
 }
 
