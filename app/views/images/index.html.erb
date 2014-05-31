@@ -1,0 +1,39 @@
+<h1>Listing images</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Active</th>
+      <th>Primary</th>
+      <th>Banner</th>
+      <th>Thumb</th>
+      <th>Webcomp</th>
+      <th>Position</th>
+      <th>Image type</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @images.each do |image| %>
+      <tr>
+        <td><%= image.active %></td>
+        <td><%= image.primary %></td>
+        <td><%= image.banner %></td>
+        <td><%= image.thumb %></td>
+        <td><%= image.webcomp %></td>
+        <td><%= image.position %></td>
+        <td><%= image.image_type %></td>
+        <td><%= image.url %></td>
+        <td><%= link_to 'Show', image %></td>
+        <td><%= link_to 'Edit', edit_image_path(image) %></td>
+        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Image', new_image_path, class: 'btn btn-primary' %>

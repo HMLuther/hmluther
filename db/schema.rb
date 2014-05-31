@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531013059) do
+ActiveRecord::Schema.define(version: 20140531043420) do
 
   create_table "categories", force: true do |t|
     t.boolean  "active",     default: true
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(version: 20140531013059) do
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", using: :btree
+
+  create_table "images", force: true do |t|
+    t.integer  "item_id"
+    t.boolean  "active",     default: true
+    t.boolean  "banner",     default: false
+    t.string   "image_type"
+    t.integer  "position"
+    t.boolean  "primary",    default: false
+    t.boolean  "thumb",      default: false
+    t.string   "url"
+    t.boolean  "webcomp",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["item_id"], name: "index_images_on_item_id", using: :btree
 
   create_table "items", force: true do |t|
     t.integer  "subcategory_id"

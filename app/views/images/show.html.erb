@@ -1,0 +1,34 @@
+<h1><%= link_to "Item", @image.item %></h1>
+
+<p>
+  <strong>Active:</strong>
+  <%= @image.active %>
+</p>
+
+<p>
+  <strong>Banner:</strong>
+  <%= @image.banner %>
+</p>
+
+<p>
+  <strong>Webcomp:</strong>
+  <%= @image.webcomp %>
+</p>
+
+<p>
+  <strong>Thumb:</strong>
+  <%= @image.thumb %>
+</p>
+
+<p>
+  <strong>Image type:</strong>
+  <%= @image.image_type %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @image.url %>
+</p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

@@ -53,5 +53,10 @@
   <%= @item.diameter %>
 </p>
 
+<h3>Images</h3>
+<% @item.images.each do |image| %>
+  <%= image_tag image.url %>
+<% end %>
+
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
