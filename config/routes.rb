@@ -1,4 +1,6 @@
 Hmluther::Application.routes.draw do
+  resources :items
+
   resources :subcategories
 
   resources :categories

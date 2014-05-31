@@ -1,0 +1,57 @@
+<p>
+  <strong>Subcategory:</strong>
+  <%= link_to @item.subcategory.name, @item.subcategory %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @item.active %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Description short:</strong>
+  <%= @item.description_short %>
+</p>
+
+<p>
+  <strong>Sold:</strong>
+  <%= @item.sold %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @item.location %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @item.reference %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @item.height %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @item.width %>
+</p>
+
+<p>
+  <strong>Depth:</strong>
+  <%= @item.depth %>
+</p>
+
+<p>
+  <strong>Diameter:</strong>
+  <%= @item.diameter %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

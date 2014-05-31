@@ -64,11 +64,11 @@ class SubcategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subcategory
-      @subcategory = Subcategory.find(params[:id])
+      @subcategory = Subcategory.find_by_slug!(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subcategory_params
-      params.require(:subcategory).permit(:name, :position, :active)
+      params.require(:subcategory).permit(:name, :position, :active, :category_id)
     end
 end

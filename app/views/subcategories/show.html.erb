@@ -1,19 +1,13 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @subcategory.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @subcategory.name %>
-</p>
+<% @subcategory.items.each do |item| %>
+	<%= link_to item do %>
+	  <%= item.description_short %>
+	  <hr>
+	<% end %>
+<% end %>
 
-<p>
-  <strong>Position:</strong>
-  <%= @subcategory.position %>
-</p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @subcategory.active %>
-</p>
 
-<%= link_to 'Edit', edit_subcategory_path(@subcategory) %> |
-<%= link_to 'Back', subcategories_path %>
+<%= link_to 'Edit', edit_subcategory_path(@subcategory), class: 'btn btn-default' %>
+<%= link_to 'Back', subcategories_path, class: 'btn btn-default' %>

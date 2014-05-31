@@ -20,7 +20,7 @@ categories = Category.create([
 
 subcategories = Subcategory.create([
 	{ name: 'Chairs', position: '1', category_id: '1' },
-	{ name: 'Soafs, Beds, Daybeds', position: '2', category_id: '1' },
+	{ name: 'Sofas, Beds, Daybeds', position: '2', category_id: '1' },
 	{ name: 'Stools, Benches', position: '3', category_id: '1' },
 	{ name: 'Bookcases, Vitrines', position: '4', category_id: '1' },
 	{ name: 'Cabinets', position: '5', category_id: '1' },

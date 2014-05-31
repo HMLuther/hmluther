@@ -11,24 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530230130) do
+ActiveRecord::Schema.define(version: 20140531013059) do
 
   create_table "categories", force: true do |t|
+    t.boolean  "active",     default: true
     t.string   "name"
     t.integer  "position"
-    t.boolean  "active",     default: true
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "categories", ["slug"], name: "index_categories_on_slug", using: :btree
+
+  create_table "items", force: true do |t|
+    t.integer  "subcategory_id"
+    t.boolean  "active",            default: true
+    t.string   "circa"
+    t.string   "depth"
+    t.text     "description"
+    t.string   "description_short"
+    t.string   "diameter"
+    t.string   "filemaker_id"
+    t.string   "height"
+    t.string   "location"
+    t.text     "reference"
+    t.boolean  "sold",              default: false
+    t.string   "width"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["filemaker_id"], name: "index_items_on_filemaker_id", using: :btree
+
   create_table "subcategories", force: true do |t|
+    t.boolean  "active",      default: true
     t.integer  "category_id"
     t.string   "name"
     t.integer  "position"
-    t.boolean  "active",      default: true
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "subcategories", ["slug"], name: "index_subcategories_on_slug", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

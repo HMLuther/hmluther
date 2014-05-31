@@ -1,3 +1,16 @@
+.carousel-indicators {
+		top: 102%;
+}
+
+.carousel-indicators li{
+	background-color: #e5e5e5;
+	border: none;
+}
+
+.carousel-indicators .active{
+	background-color: #f47321;
+}	
+
 .container {
 	padding-left: 0;
 	padding-right: 0;

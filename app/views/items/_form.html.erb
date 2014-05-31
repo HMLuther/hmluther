@@ -1,0 +1,22 @@
+<%= simple_form_for(@item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :subcategory_id, collection: Subcategory.all %>
+    <%= f.input :circa %>
+    <%= f.input :description_short %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :reference %>
+    <%= f.input :height %>
+    <%= f.input :width %>
+    <%= f.input :depth %>
+    <%= f.input :diameter %>
+    <%= f.input :sold %>
+    <%= f.input :active %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
