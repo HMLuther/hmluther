@@ -17,4 +17,8 @@ class Subcategory < ActiveRecord::Base
 		slug
 	end
 
+	def container_size
+		self.items.count * 883
+	end
+
 end

@@ -1,13 +1,23 @@
-<h1><%= @subcategory.name %></h1>
+<!-- <h1><%= @subcategory.name %></h1> -->
 
-<% @subcategory.items.each do |item| %>
-	<%= link_to item do %>
-	  <%= image_tag item.default_image_url %>
-	  <hr>
-	<% end %>
-<% end %>
+<div class="sc-items-container">
+	<ul id="sc-items" class="sc-items" data-container-size="<%= @subcategory.container_size %>">
 
+		<% @subcategory.items.each do |item| %>
+			<li>
+			<%= link_to item do %>
+			  <%= image_tag item.default_image_url %>
+			<% end %>
+			<h4>Designer</h4>
+			<p><%= item.description_short %></p>
+			<p class="item-circa"><%= item.circa %></p>
+			</li>
+		<% end %>
 
+	</ul>
+</div>
 
+<hr>
 <%= link_to 'Edit', edit_subcategory_path(@subcategory), class: 'btn btn-default' %>
 <%= link_to 'Back', subcategories_path, class: 'btn btn-default' %>
+  style="width: <%= @subcategory.container_size %>px;"
