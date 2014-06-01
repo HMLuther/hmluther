@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531043420) do
+ActiveRecord::Schema.define(version: 20140601175854) do
 
   create_table "categories", force: true do |t|
     t.boolean  "active",     default: true
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140531043420) do
     t.string   "width"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "featured",          default: false
   end
 
   add_index "items", ["filemaker_id"], name: "index_items_on_filemaker_id", using: :btree

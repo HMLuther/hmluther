@@ -5,6 +5,8 @@ class Item < ActiveRecord::Base
 
 	validates_presence_of :description_short, :on => :create, :message => "can't be blank"
 
+	scope :featured, -> { where(featured: true) }
+
 def default_image_url
 	self.images.where(primary: true).first.url
 end

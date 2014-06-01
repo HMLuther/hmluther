@@ -1,4 +1,16 @@
 <div class="row">
+  <div class="col-md-12">
+    <h1>Featured Items</h1>
+
+    <% @featured.each do |item| %>
+      <p><%= image_tag item.default_image_url %></p>
+    <% end %>
+
+  </div>
+</div>
+
+<hr>
+<div class="row">
 
   <!-- MAIN CONTENT -->
   <div class="col-md-12">
