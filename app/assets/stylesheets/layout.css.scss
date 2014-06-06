@@ -1,3 +1,6 @@
+.about-copy {
+  padding-top: 10px;
+}
 
 /* Fade transition for carousel items */
 .carousel .item {
@@ -7,6 +10,11 @@
            -o-transition: opacity .4s;
               transition: opacity .4s;
 }
+
+.carousel .item img {
+  width: 100%;
+}
+
 .carousel-control {
     background-image: none !important; /* remove background gradients on controls */
 }
@@ -39,6 +47,16 @@
 .container {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+.contact-page {
+  margin-top: 20px;
+  address strong {
+    color: #f47321;
+    font-size: 2em;
+    font-weight: normal;
+    // line-height: 1.5em;
+  }
 }
 
 footer{

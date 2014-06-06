@@ -1,13 +1,13 @@
 $(document).on "page:change", ->
 	
+	console.log "page change"
+
+	# MAIN MENU
 	body = $( 'body' )
 	current = -1;
 	items = $( '#cbp-hrmenu > ul > li.drop' )
 	itemsAll = $( '#cbp-hrmenu > ul > li' )
 	menuItems = items.children( 'a' )
-	console.log "page change"
-	# console.log items
-
 
 	items.on "click", (event) ->
 	  event.stopPropagation()
@@ -27,6 +27,5 @@ $(document).on "page:change", ->
 	  body.on 'click', ( event ) ->
 	  	items.eq( current ).removeClass( 'cbp-hropen' )
 	  	current = -1
-
 
 

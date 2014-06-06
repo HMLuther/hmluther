@@ -1,74 +1,46 @@
-<div class="row">
-  <div class="col-md-12">
-    <h1>Featured Items</h1>
-
-    <% @featured.each do |item| %>
-      <p><%= image_tag item.default_image_url %></p>
+<!-- CAROUSEL -->
+<div id="carousel-home" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% @featured.each_with_index do |item, index| %>
+      <li data-target="#carousel-home" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>"></li>
     <% end %>
+  </ol>
 
-  </div>
-</div>
-
-<hr>
-<div class="row">
-
-  <!-- MAIN CONTENT -->
-  <div class="col-md-12">
-
-    <!-- CAROUSEL -->
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <a href="item.html"><img src="http://173.254.104.110/hml/back-office/items/details/100996.jpg" alt="..."></a>
-          <div class="carousel-caption">
-            <!-- slider #1 -->
-          </div>
-        </div>
-        <div class="item">
-          <a href="item-2.html"><img src="http://173.254.104.110/hml/back-office/items/details/98116.jpg" alt="..."></a>
-          <div class="carousel-caption">
-            <!-- slider #2 -->
-          </div>
-        </div>
-        <div class="item">
-          <a href="item.html"><img src="http://173.254.104.110/hml/back-office/items/details/99423.jpg" alt="..."></a>
-          <div class="carousel-caption">
-            <!-- slider #3 -->
-          </div>
-        </div>
-
-        <div class="item">
-          <a href="item.html"><img src="http://173.254.104.110/hml/back-office/items/details/100987.jpg" alt="..."></a>
-          <div class="carousel-caption">
-            <!-- slider #4 -->
-          </div>
-        </div>
-
-        <div class="item">
-          <a href="item.html"><img src="http://173.254.104.110/hml/back-office/items/details/101070.jpg" alt="..."></a>
-          <div class="carousel-caption">
-            <!-- slider #5 -->
-          </div>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% @featured.each_with_index do |item, index| %>
+      <div class="<%= index == 0 ? 'item active' : 'item' %>">
+        <%= link_to item do %>
+          <%= image_tag item.default_image_url %>
+        <% end %>
+        <div class="carousel-caption">
+          <!-- <h5><%= item.description_short %></h5> -->
         </div>
       </div>
+    <% end %>
+  </div>
 
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-        <!-- <span class="glyphicon glyphicon-chevron-left"></span> -->
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-        <!-- <span class="glyphicon glyphicon-chevron-right"></span> -->
-      </a>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-home" data-slide="prev">
+    <!-- <span class="glyphicon glyphicon-chevron-left"></span> -->
+  </a>
+  <a class="right carousel-control" href="#carousel-home" data-slide="next">
+    <!-- <span class="glyphicon glyphicon-chevron-right"></span> -->
+  </a>
+</div>
+
+<!-- <hr> -->
+
+
+<!-- <% @featured.each do |item| %>
+  <div class="item">
+    <%= link_to item do %>
+      <%= image_tag item.default_image_url %>
+    <% end %>
+    <div class="carousel-caption">
+      <%= item.description_short %>
     </div>
   </div>
-</div>
+<% end %> -->
+

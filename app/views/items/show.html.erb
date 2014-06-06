@@ -14,13 +14,18 @@
 </p>
 
 <p>
+  <strong>Description short:</strong>
+  <%= @item.description_short %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @item.description %>
 </p>
 
 <p>
-  <strong>Description short:</strong>
-  <%= @item.description_short %>
+  <strong>Circa:</strong>
+  <%= @item.circa %>
 </p>
 
 <p>
@@ -58,10 +63,17 @@
   <%= @item.diameter %>
 </p>
 
+<p>
+  <strong>FileMaker ID:</strong>
+  <%= @item.filemaker_id %>
+</p>
+
+<hr>
 <h3>Images</h3>
 <% @item.images.each do |image| %>
   <%= image_tag image.url %>
 <% end %>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<hr>
+<%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-default' %>
+<%= link_to 'Back', items_path, class: 'btn btn-default' %>
