@@ -1,44 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @designer.name %>
-</p>
+<h1><%= @designer.name %></h1>
+<hr>
 
 <p>
   <strong>Bio:</strong>
   <%= @designer.bio %>
 </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @designer.active %>
-</p>
+<% if @designer.production_date.present? %>
+  <p>
+    <strong>Production date:</strong>
+    <%= @designer.production_date %>
+  </p>
+<% end %>
 
-<p>
-  <strong>Include:</strong>
-  <%= @designer.include %>
-</p>
-
-<p>
-  <strong>Omit:</strong>
-  <%= @designer.omit %>
-</p>
-
-<p>
-  <strong>Production date:</strong>
-  <%= @designer.production_date %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @designer.website %>
-</p>
-
-<p>
-  <strong>Filemaker:</strong>
-  <%= @designer.filemaker_id %>
-</p>
+<% if @designer.website.present? %>
+  <p>
+    <strong>Website:</strong>
+    <%= @designer.website %>
+  </p>
+<% end %>
 
 <hr>
 <h3>Items:</h3>
@@ -46,5 +26,5 @@
   <p><%= link_to item.description_short, item %></p>
 <% end %>
 
-<%= link_to 'Edit', edit_designer_path(@designer) %> |
-<%= link_to 'Back', designers_path %>
+<%= link_to 'Edit', edit_designer_path(@designer), class: 'btn btn-default' %>
+<%= link_to 'Back', designers_path, class: 'btn btn-default' %>

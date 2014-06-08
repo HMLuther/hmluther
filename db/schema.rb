@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608194806) do
+ActiveRecord::Schema.define(version: 20140608230815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20140608194806) do
     t.string   "name"
     t.text     "bio"
     t.boolean  "active",          default: true
-    t.boolean  "include",         default: false
-    t.boolean  "omit",            default: false
+    t.boolean  "list_include",    default: false
+    t.boolean  "list_omit",       default: false
     t.string   "production_date"
     t.string   "website"
     t.integer  "filemaker_id"

@@ -4,13 +4,10 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Bio</th>
       <th>Active</th>
       <th>Include</th>
       <th>Omit</th>
-      <th>Production date</th>
-      <th>Website</th>
-      <th>Filemaker</th>
+      <th>Production Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,13 +16,10 @@
     <% @designers.each do |designer| %>
       <tr>
         <td><%= designer.name %></td>
-        <td><%= designer.bio %></td>
         <td><%= designer.active %></td>
-        <td><%= designer.include %></td>
-        <td><%= designer.omit %></td>
+        <td><%= designer.list_include %></td>
+        <td><%= designer.list_omit %></td>
         <td><%= designer.production_date %></td>
-        <td><%= designer.website %></td>
-        <td><%= designer.filemaker_id %></td>
         <td><%= link_to 'Show', designer %></td>
         <td><%= link_to 'Edit', edit_designer_path(designer) %></td>
         <td><%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -36,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Designer', new_designer_path %>
+<%= link_to 'New Designer', new_designer_path, class: 'btn btn-primary' %>
