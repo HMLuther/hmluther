@@ -1,4 +1,7 @@
 Hmluther::Application.routes.draw do
+
+  get 'category/:tag', to: 'items#tags', as: :tag
+
   resources :images
 
   resources :items

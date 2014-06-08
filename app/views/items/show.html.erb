@@ -1,6 +1,11 @@
 <p>
   <strong>Subcategory:</strong>
-  <%= link_to @item.subcategory.name, @item.subcategory %>
+  <%= link_to @item.subcategory.name, @item.subcategory if @item.subcategory %>
+</p>
+
+<p>
+  <strong>Tag List:</strong>
+  <%= raw @item.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 </p>
 
 <p>

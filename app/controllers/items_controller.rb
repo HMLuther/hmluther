@@ -4,7 +4,13 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+      @items = Item.all
+  end
+
+  #GET /tags/:tag
+  def tags
+    @items = Item.tagged_with(params[:tag])
+    @container_size = @items.count * 883
   end
 
   # GET /items/1
@@ -64,11 +70,11 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
-      @item = Item.find(params[:id])
+      @item = Item.find_by_slug!(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :location, :reference, :height, :width, :depth, :diameter, :subcategory_id)
+      params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :location, :reference, :height, :width, :depth, :diameter, :subcategory_id, :tag_list)
     end
 end

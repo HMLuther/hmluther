@@ -33,7 +33,7 @@ subcategories = Subcategory.create([
 	{ name: 'Tables', position: '12', category_id: '1' },
 
 	{ name: 'Candelabras, Candlesticks', position: '1', category_id: '2' },
-	{ name: 'Chandeliers, Lanterns', position: '2', category_id: '2' },
+	{ name: 'Chandeliers', position: '2', category_id: '2' },
 	{ name: 'Lamps', position: '3', category_id: '2' },
 	{ name: 'Sconces, Wall Lights', position: '4', category_id: '2' },
 	{ name: 'Lanterns', position: '5', category_id: '2' },
