@@ -15,7 +15,7 @@
 
   <tbody>
     <% @items.each do |item| %>
-      <tr>
+      <tr class="<%= 'bg-info' if item.active %>">
         <td><%= item.active %></td>
         <td><%= item.description_short %></td>
         <td><%= item.circa %></td>
