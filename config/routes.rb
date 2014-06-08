@@ -1,5 +1,7 @@
 Hmluther::Application.routes.draw do
 
+  resources :designers
+
   get 'category/:category', to: 'items#category', as: :category
   get 'maker/:maker', to: 'items#maker', as: :maker
 

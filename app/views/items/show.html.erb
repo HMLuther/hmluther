@@ -5,7 +5,7 @@
 
 <p>
   <strong>Maker List:</strong>
-  <%= raw @item.maker_list.map { |t| link_to t, maker_path(t) }.join(', ') %>
+  <%= raw @item.maker_list.map { |t| link_to t, designer_path(t) }.join(', ') %>
 </p>
 
 <p>

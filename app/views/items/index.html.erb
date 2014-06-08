@@ -8,7 +8,6 @@
       <th>Circa</th>
       <th>Sold</th>
       <th>Location</th>
-      <th>Reference</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,7 +20,6 @@
         <td><%= item.circa %></td>
         <td><%= item.sold %></td>
         <td><%= item.location %></td>
-        <td><%= item.reference %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

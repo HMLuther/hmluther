@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @designer.name %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @designer.bio %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @designer.active %>
+</p>
+
+<p>
+  <strong>Include:</strong>
+  <%= @designer.include %>
+</p>
+
+<p>
+  <strong>Omit:</strong>
+  <%= @designer.omit %>
+</p>
+
+<p>
+  <strong>Production date:</strong>
+  <%= @designer.production_date %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @designer.website %>
+</p>
+
+<p>
+  <strong>Filemaker:</strong>
+  <%= @designer.filemaker_id %>
+</p>
+
+<hr>
+<h3>Items:</h3>
+<% @items.each do |item| %>
+  <p><%= link_to item.description_short, item %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_designer_path(@designer) %> |
+<%= link_to 'Back', designers_path %>
