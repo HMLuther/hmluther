@@ -1,11 +1,11 @@
 <p>
-  <strong>Subcategory:</strong>
-  <%= link_to @item.subcategory.name, @item.subcategory if @item.subcategory %>
+  <strong>Category List:</strong>
+  <%= raw @item.category_list.map { |t| link_to t, category_path(t) }.join(', ') %>
 </p>
 
 <p>
-  <strong>Tag List:</strong>
-  <%= raw @item.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+  <strong>Maker List:</strong>
+  <%= raw @item.maker_list.map { |t| link_to t, maker_path(t) }.join(', ') %>
 </p>
 
 <p>

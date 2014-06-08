@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
 
-	acts_as_taggable_on :tags
+	acts_as_taggable_on :category, :maker
 
 	before_validation :generate_slug
 

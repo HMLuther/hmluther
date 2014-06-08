@@ -10,16 +10,16 @@
             <h4>Seating</h4>
             <ul>
               <li>
-                 <%= link_to "All", tag_path('furniture') %>
+                 <%= link_to "All", category_path('furniture') %>
               </li>
               <li>
-                <%= link_to "Chairs", tag_path('chairs') %>
+                <%= link_to "Chairs", category_path('chairs') %>
               </li>
               <li>
-                <%= link_to "Sofas, Beds, Daybeds", tag_path('sofas-beds-daybeds') %>
+                <%= link_to "Sofas, Beds, Daybeds", category_path('sofas-beds-daybeds') %>
               </li>
               <li>
-                <%= link_to "Stools, Benches", tag_path('stools-benches') %>
+                <%= link_to "Stools, Benches", category_path('stools-benches') %>
               </li>
             </ul>
           </div>
@@ -28,13 +28,13 @@
             <ul>
               <li><a href="category.html">All</a></li>
               <li>
-                <%= link_to "Bookcases, Vitrines", tag_path('bookcases-vitrines') %>
+                <%= link_to "Bookcases, Vitrines", category_path('bookcases-vitrines') %>
               </li>
               <li>
-                <%= link_to "Cabinets", tag_path('cabinets') %>
+                <%= link_to "Cabinets", category_path('cabinets') %>
               </li>
               <li>
-                <%= link_to "Commodes, Chests of Drawers", tag_path('commodes-chests-of-drawers') %>
+                <%= link_to "Commodes, Chests of Drawers", category_path('commodes-chests-of-drawers') %>
               </li>
             </ul>
           </div>
@@ -43,22 +43,22 @@
             <ul>
               <li><a href="category.html">All</a></li>
               <li>
-                <%= link_to "Coffee, Cocktails Tables", tag_path('coffee-cocktail-tables') %>
+                <%= link_to "Coffee, Cocktails Tables", category_path('coffee-cocktail-tables') %>
               </li>
               <li>
-                <%= link_to "Console Tables", tag_path('console-tables') %>
+                <%= link_to "Console Tables", category_path('console-tables') %>
               </li>
               <li>
-                <%= link_to "Desks, Secretaries", tag_path('desks-secretaries') %>
+                <%= link_to "Desks, Secretaries", category_path('desks-secretaries') %>
               </li>
               <li>
-                <%= link_to "Etageres, Shelves", tag_path('etegeres-shelves') %>
+                <%= link_to "Etageres, Shelves", category_path('etegeres-shelves') %>
               </li>
               <li>
-                <%= link_to "Table Tops", tag_path('table-tops') %>
+                <%= link_to "Table Tops", category_path('table-tops') %>
               </li>
               <li>
-                <%= link_to "Tables", tag_path('tables') %>
+                <%= link_to "Tables", category_path('tables') %>
               </li>
             </ul>
           </div>
@@ -75,21 +75,10 @@
             <h4></h4>
             <ul>
               <li>
-                <%= link_to "All", tag_path('lighting') %>
+                <%= link_to "All", category_path('lighting') %>
               </li>
               <li>
-                <%= link_to "Candelabras, Candlesticks", tag_path('candelabras-candlesticks') %>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4></h4>
-            <ul>
-              <li>
-                <%= link_to "Chandeliers", tag_path('chandeliers') %>
-              </li>
-              <li>
-                <%= link_to "Lamps", tag_path('lamps') %>
+                <%= link_to "Candelabras, Candlesticks", category_path('candelabras-candlesticks') %>
               </li>
             </ul>
           </div>
@@ -97,10 +86,21 @@
             <h4></h4>
             <ul>
               <li>
-                <%= link_to "Sconces, Wall Lights", tag_path('sconces-wall-lights') %>
+                <%= link_to "Chandeliers", category_path('chandeliers') %>
               </li>
               <li>
-                <%= link_to "Lanterns", tag_path('lanterns') %>
+                <%= link_to "Lamps", category_path('lamps') %>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4></h4>
+            <ul>
+              <li>
+                <%= link_to "Sconces, Wall Lights", category_path('sconces-wall-lights') %>
+              </li>
+              <li>
+                <%= link_to "Lanterns", category_path('lanterns') %>
               </li>
             </ul>
           </div>
@@ -110,7 +110,7 @@
 
     <!-- MIRRORS -->
     <li class="drop">
-      <%= link_to "Mirrors", tag_path('mirrors') %>
+      <%= link_to "Mirrors", category_path('mirrors') %>
     </li>
 
     <!-- OBJECTS -->
@@ -122,27 +122,13 @@
             <h4></h4>
             <ul>
               <li>
-                <%= link_to "All", tag_path('objects') %>
+                <%= link_to "All", category_path('objects') %>
               </li>
               <li>
-                <%= link_to "Boxes", tag_path('boxes') %>
+                <%= link_to "Boxes", category_path('boxes') %>
               </li>
               <li>
-                <%= link_to "Clocks", tag_path('clocks') %>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4></h4>
-            <ul>
-              <li>
-                <%= link_to "Jardinieres", tag_path('jardinieres') %>
-              </li>
-              <li>
-                <%= link_to "Objects", tag_path('objects') %>
-              </li>
-              <li>
-                <%= link_to "Pedestals", tag_path('pedestals') %>
+                <%= link_to "Clocks", category_path('clocks') %>
               </li>
             </ul>
           </div>
@@ -150,13 +136,27 @@
             <h4></h4>
             <ul>
               <li>
-                <%= link_to "Screens", tag_path('screens') %>
+                <%= link_to "Jardinieres", category_path('jardinieres') %>
               </li>
               <li>
-                <%= link_to "Trays", tag_path('trays') %>
+                <%= link_to "Objects", category_path('objects') %>
               </li>
               <li>
-                <%= link_to "Vases, Bowls", tag_path('vases-bowls') %>
+                <%= link_to "Pedestals", category_path('pedestals') %>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4></h4>
+            <ul>
+              <li>
+                <%= link_to "Screens", category_path('screens') %>
+              </li>
+              <li>
+                <%= link_to "Trays", category_path('trays') %>
+              </li>
+              <li>
+                <%= link_to "Vases, Bowls", category_path('vases-bowls') %>
               </li>
             </ul>
           </div>
@@ -173,13 +173,13 @@
             <h4></h4>
             <ul>
               <li>
-                <%= link_to "All", tag_path('art') %>
+                <%= link_to "All", category_path('art') %>
               </li>
               <li>
-                <%= link_to "Pictures", tag_path('pictures') %>
+                <%= link_to "Pictures", category_path('pictures') %>
               </li>
               <li>
-                <%= link_to "Sculptures", tag_path('sculptures') %>
+                <%= link_to "Sculptures", category_path('sculptures') %>
               </li>
             </ul>
           </div>

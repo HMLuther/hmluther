@@ -1,14 +1,15 @@
 Hmluther::Application.routes.draw do
 
-  get 'category/:tag', to: 'items#tags', as: :tag
+  get 'category/:category', to: 'items#category', as: :category
+  get 'maker/:maker', to: 'items#maker', as: :maker
 
   resources :images
 
   resources :items
 
-  resources :subcategories
+  # resources :subcategories
 
-  resources :categories
+  # resources :categories
 
   get 'contact', to: 'contact#index'
 

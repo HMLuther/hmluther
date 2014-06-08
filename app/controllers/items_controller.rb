@@ -7,11 +7,18 @@ class ItemsController < ApplicationController
       @items = Item.all
   end
 
-  #GET /tags/:tag
-  def tags
-    @items = Item.tagged_with(params[:tag])
+  #GET /category/:category
+  def category
+    @items = Item.tagged_with(params[:category])
     @container_size = @items.count * 883
   end
+
+  #GET /maker/:maker
+  def maker
+    @items = Item.tagged_with(params[:maker])
+    @container_size = @items.count * 883
+  end
+
 
   # GET /items/1
   # GET /items/1.json
@@ -75,6 +82,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :location, :reference, :height, :width, :depth, :diameter, :subcategory_id, :tag_list)
+      params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :location, :reference, :height, :width, :depth, :diameter, :subcategory_id, :category_list, :maker_list)
     end
 end
