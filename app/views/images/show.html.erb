@@ -1,8 +1,14 @@
-<h1><%= link_to "Item", @image.item %></h1>
+<h1><%= link_to @image.item.description_short, @image.item %></h1>
+<p><%= @image.item_id %></p>
 
 <p>
   <strong>Active:</strong>
   <%= @image.active %>
+</p>
+
+<p>
+  <strong>Filemaker ID:</strong>
+  <%= @image.filemaker_id %>
 </p>
 
 <p>
@@ -30,5 +36,7 @@
   <%= @image.url %>
 </p>
 
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<%= image_tag @image.url %>
+
+<%= link_to 'Edit', edit_image_path(@image), class: 'btn btn-default' %>
+<%= link_to 'Back', images_path, class: 'btn btn-default' %>

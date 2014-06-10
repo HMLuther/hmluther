@@ -1,5 +1,6 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_api_user, only: [:create, :edit, :update, :destroy], if: :json_request?
 
   # GET /images
   # GET /images.json
@@ -64,11 +65,11 @@ class ImagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_image
-      @image = Image.find(params[:id])
+      @image = Image.find_by_slug!(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:item_id, :active, :banner, :image_type, :position, :primary, :thumb, :webcomp, :url)
+      params.require(:image).permit(:item_id, :active, :banner, :filemaker_id, :image_type, :position, :primary, :thumb, :webcomp, :url)
     end
 end

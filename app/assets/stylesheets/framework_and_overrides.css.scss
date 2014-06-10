@@ -13,6 +13,10 @@ $background: #ffffff;
 @import "bootstrap";
 
 // make all images responsive by default
+a {
+  color: #f47321;
+}
+
 img {
   @extend .img-responsive;
   margin: 0 auto;

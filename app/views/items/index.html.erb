@@ -13,7 +13,7 @@
 
   <tbody>
     <% @items.each do |item| %>
-      <tr class="<%= 'bg-info' if item.active %>">
+      <tr class="<%= 'bg-warning' if item.sold %>">
         <td><%= item.description_short %></td>
         <td><%= item.circa %></td>
         <td><%= item.location %></td>

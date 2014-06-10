@@ -35,6 +35,7 @@
 	display: inline-block;
 	transition: background 300ms ease-in-out;
 	width: 100%;
+	cursor: pointer;
 }
 
 .cbp-hrmenu > ul > li > a:hover {

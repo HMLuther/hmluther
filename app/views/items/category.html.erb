@@ -1,8 +1,30 @@
-<h1><%= params[:category] %></h1>
+<!-- SUBNAV -->
+<%= render 'category_subnav' %>
 
+<!-- <h1><%= params[:category] %></h1>
 <p>All Category Items will be shown here.</p>
 <p>Item Count: <%= @items.count %></p>
-<p>Container Size: <%= @container_size %>px</p>
+<p>Container Size: <%= @container_size %>px</p> -->
+
+<div class="category-items-container">
+  <ul id="category-items" class="category-items" data-container-size="<%= @container_size %>" data-sort="">
+
+    <% @items.each do |item| %>
+      <li data-size="<%= item.height %>">
+      <%= link_to item do %>
+        <%= image_tag item.default_image_url, class: 'item-image' %>
+      <% end %>
+      <% if item.sold %>
+        <%= image_tag 'stamp_sold.png', class: 'category-stamp-sold pull-right' %>
+      <% end %>
+      <h4><%= raw item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
+      <p><%= item.description_short %></p>
+      <p class="item-circa"><%= item.circa %></p>
+      </li>
+    <% end %>
+
+  </ul>
+</div>
 
 <hr>
 

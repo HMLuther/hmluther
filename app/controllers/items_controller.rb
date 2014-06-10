@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @container_size = @item.images.active.count * 883
   end
 
   # GET /items/new

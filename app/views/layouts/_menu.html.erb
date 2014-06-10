@@ -3,7 +3,7 @@
 
     <!-- FURNITURE -->
     <li class="drop">
-      <a href="#">Furniture</a>
+      <a>Furniture</a>
       <div class="cbp-hrsub">
         <div class="cbp-hrsub-inner"> 
           <div>
@@ -68,7 +68,7 @@
 
     <!-- LIGHTING -->
     <li class="drop">
-      <a href="#">Lighting</a>
+      <a>Lighting</a>
       <div class="cbp-hrsub">
         <div class="cbp-hrsub-inner">
           <div>
@@ -115,7 +115,7 @@
 
     <!-- OBJECTS -->
     <li class="drop">
-      <a href="#">Objects</a>
+      <a>Objects</a>
       <div class="cbp-hrsub">
         <div class="cbp-hrsub-inner"> 
           <div>
@@ -166,7 +166,7 @@
 
     <!-- ART -->
     <li class="drop">
-      <a href="#">Art</a>
+      <a>Art</a>
       <div class="cbp-hrsub">
         <div class="cbp-hrsub-inner"> 
           <div>
@@ -175,9 +175,19 @@
               <li>
                 <%= link_to "All", category_path('art') %>
               </li>
+            </ul>
+          </div>
+          <div>
+            <h4></h4>
+            <ul>
               <li>
                 <%= link_to "Pictures", category_path('pictures') %>
               </li>
+            </ul>
+          </div>
+          <div>
+            <h4></h4>
+            <ul>
               <li>
                 <%= link_to "Sculptures", category_path('sculptures') %>
               </li>
@@ -190,7 +200,6 @@
     <!-- DESIGNERS -->
     <li class="drop">
       <%= link_to "Items", items_path %>
-      <!-- <a href="#">Designers</a> -->
     </li>
   </ul>
 </nav>

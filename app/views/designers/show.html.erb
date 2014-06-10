@@ -6,6 +6,18 @@
   <%= @designer.bio %>
 </p>
 
+
+<p>
+  <strong>Country of origin:</strong>
+  Somewhere, Somewhere Else
+</p>
+
+<p>
+  <strong>Affiliations:</strong>
+  Someone, Someone Else
+</p>
+
+
 <% if @designer.production_date.present? %>
   <p>
     <strong>Production date:</strong>
@@ -21,8 +33,8 @@
 <% end %>
 
 <hr>
-<h3>Items:</h3>
-<% @items.each do |item| %>
+<h3>Items: <%= @designer.item_count %></h3>
+<% @designer.items.each do |item| %>
   <p><%= link_to item.description_short, item %></p>
 <% end %>
 

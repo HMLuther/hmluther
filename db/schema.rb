@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608230815) do
+ActiveRecord::Schema.define(version: 20140609150849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,28 +35,32 @@ ActiveRecord::Schema.define(version: 20140608230815) do
     t.boolean  "list_omit",       default: false
     t.string   "production_date"
     t.string   "website"
-    t.integer  "filemaker_id"
+    t.string   "filemaker_id"
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "designers", ["filemaker_id"], name: "index_designers_on_filemaker_id", using: :btree
   add_index "designers", ["slug"], name: "index_designers_on_slug", using: :btree
 
   create_table "images", force: true do |t|
     t.integer  "item_id"
-    t.boolean  "active",     default: true
-    t.boolean  "banner",     default: false
+    t.boolean  "active",       default: true
+    t.boolean  "banner",       default: false
     t.string   "image_type"
     t.integer  "position"
-    t.boolean  "primary",    default: false
-    t.boolean  "thumb",      default: false
+    t.boolean  "primary",      default: false
+    t.boolean  "thumb",        default: false
     t.string   "url"
-    t.boolean  "webcomp",    default: false
+    t.boolean  "webcomp",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "filemaker_id"
+    t.string   "slug"
   end
 
+  add_index "images", ["filemaker_id"], name: "index_images_on_filemaker_id", using: :btree
   add_index "images", ["item_id"], name: "index_images_on_item_id", using: :btree
 
   create_table "items", force: true do |t|

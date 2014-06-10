@@ -5,11 +5,11 @@ class Item < ActiveRecord::Base
 	before_validation :generate_slug
 
 	belongs_to :subcategory
-	has_many :images
+	has_many :images, primary_key: "filemaker_id"
 
 	validates_presence_of :description_short, :on => :create, :message => "can't be blank"
-	validates :slug, uniqueness: true, presence: true,
-                 exclusion: {in: %w[signup login]}
+	validates_presence_of :filemaker_id, :on => :create, :message => "can't be blank"
+	validates :slug, uniqueness: true, presence: true
 
 	scope :featured, -> { where(featured: true) }
 

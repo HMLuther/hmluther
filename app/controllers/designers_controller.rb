@@ -11,7 +11,6 @@ class DesignersController < ApplicationController
   # GET /designers/1
   # GET /designers/1.json
   def show
-    @items = Item.tagged_with(@designer.slug)
   end
 
   # GET /designers/new

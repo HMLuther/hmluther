@@ -1,84 +1,55 @@
-<p>
-  <strong>Category List:</strong>
-  <%= raw @item.category_list.map { |t| link_to t, category_path(t) }.join(', ') %>
-</p>
+<!-- SUBNAV -->
+<%= render 'item_subnav' %>
 
-<p>
-  <strong>Maker List:</strong>
-  <%= raw @item.maker_list.map { |t| link_to t, designer_path(t) }.join(', ') %>
-</p>
+<!-- IMAGES -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="item-images-container">
+      <div id="item-images" class="item-images" data-container-size="<%= @container_size %>" data-sort="">
 
-<p>
-  <strong>Active:</strong>
-  <%= @item.active %>
-</p>
+        <% @item.images.show_list.each do |image| %>
+          <%= link_to image.url, :target => "_blank" do %>
+            <%= image_tag image.url %>
+          <% end %>
+        <% end %>
 
-<p>
-  <strong>Featured:</strong>
-  <%= @item.featured %>
-</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Description short:</strong>
-  <%= @item.description_short %>
-</p>
+<!-- DETAIL -->
+<div class="row">
+  <div class="col-md-12">
+    <!-- <hr/> -->
+  </div>
+  <div class="col-md-6 info-panel">
+    <h4>General Info</h4>
+    <p><%= raw @item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></p>
+    <p><%= @item.description_short %></p>
+    <p><%= @item.circa %></p>
+    <p>
+      Item: <%= @item.filemaker_id %><br/>
+      Location: <%= @item.location %></br/>
+      Height: <%= @item.height %> in.</br/>
+      Width: <%= @item.width %> in.</br/>
+      Depth: <%= @item.depth %> in.</br/>
+      Diameter: <%= @item.diameter %> in.
+    </p>
+  </div>
+  <div class="col-md-6 info-panel">
+    <h4>Detail</h4>
+    <p><%= @item.description %></p>
+    <p><%= @item.reference %></p>
+    <p>Category: <%= raw @item.category_list.map { |t| link_to t.titlecase, category_path(t) }.join(', ') %></p>
+    <% if @item.sold %>
+      <%= image_tag 'stamp_sold.png', class: 'item-stamp-sold' %>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<p>
-  <strong>Circa:</strong>
-  <%= @item.circa %>
-</p>
-
-<p>
-  <strong>Sold:</strong>
-  <%= @item.sold %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @item.location %>
-</p>
-
-<p>
-  <strong>Reference:</strong>
-  <%= @item.reference %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @item.height %>
-</p>
-
-<p>
-  <strong>Width:</strong>
-  <%= @item.width %>
-</p>
-
-<p>
-  <strong>Depth:</strong>
-  <%= @item.depth %>
-</p>
-
-<p>
-  <strong>Diameter:</strong>
-  <%= @item.diameter %>
-</p>
-
-<p>
-  <strong>FileMaker ID:</strong>
-  <%= @item.filemaker_id %>
-</p>
-
-<hr>
-<h3>Images</h3>
-<% @item.images.each do |image| %>
-  <%= image_tag image.url %>
-<% end %>
-
+<!--
 <hr>
 <%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-default' %>
 <%= link_to 'Back', items_path, class: 'btn btn-default' %>
+-->

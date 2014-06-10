@@ -8,7 +8,7 @@ class CreateDesigners < ActiveRecord::Migration
       t.boolean :omit, :default => false
       t.string  :production_date
       t.string  :website
-      t.integer :filemaker_id
+      t.string :filemaker_id
       t.string  :slug
 
       t.timestamps
