@@ -10,8 +10,8 @@ class ItemsController < ApplicationController
 
   #GET /category/:category
   def category
-    @items = Item.tagged_with(params[:category])
-    @container_size = @items.count * 883
+    @items = Item.category_list.tagged_with(params[:category])
+    @container_size = @items.count * 885
   end
 
   #GET /maker/:maker
@@ -85,6 +85,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :location, :reference, :height, :width, :depth, :diameter, :subcategory_id, :category_list, :maker_list)
+      params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :listed_category, :listed_designer, :location, :reference, :height, :width, :depth, :diameter, :subcategory_id, :category_list, :maker_list)
     end
 end

@@ -11,6 +11,8 @@ class Item < ActiveRecord::Base
 	validates_presence_of :filemaker_id, :on => :create, :message => "can't be blank"
 	validates :slug, uniqueness: true, presence: true
 
+	scope :category_list, -> { where(listed_category: true) }
+	scope :designer_list, -> { where(listed_designer: true) }
 	scope :featured, -> { where(featured: true) }
 
 	def generate_slug
@@ -22,8 +24,16 @@ class Item < ActiveRecord::Base
 	end
 
 	def default_image_url
-		if self.images.where(primary: true).first.present?
-			self.images.where(primary: true).first.url
+		if self.images.where(webcomp: true).first.present?
+			self.images.where(webcomp: true).first.url
+		else
+			"No Images"
+		end
+	end
+
+	def thumb_image_url
+		if self.images.where(thumb: true).first.present?
+			self.images.where(thumb: true).first.url
 		else
 			"No Images"
 		end

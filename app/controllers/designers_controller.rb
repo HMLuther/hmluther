@@ -5,7 +5,7 @@ class DesignersController < ApplicationController
   # GET /designers
   # GET /designers.json
   def index
-    @designers = Designer.all
+    @designers = Designer.listed
   end
 
   # GET /designers/1
@@ -70,6 +70,6 @@ class DesignersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def designer_params
-      params.require(:designer).permit(:name, :bio, :active, :list_include, :list_omit, :production_date, :website, :filemaker_id)
+      params.require(:designer).permit(:name, :bio, :active, :listed, :production_date, :website, :filemaker_id)
     end
 end

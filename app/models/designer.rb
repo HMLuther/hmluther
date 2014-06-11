@@ -6,7 +6,9 @@ class Designer < ActiveRecord::Base
 	validates_presence_of :name, :on => :create, :message => "can't be blank"
 	validates :slug, uniqueness: true, presence: true
 
-  scope :listed, -> { where('self.item_count: > 3') }
+	default_scope { order('name ASC') }
+
+  scope :listed, -> { where(listed: true) }
 
 	def generate_slug
 		self.slug ||= name.parameterize

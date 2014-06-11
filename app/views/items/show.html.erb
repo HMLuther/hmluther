@@ -7,7 +7,11 @@
     <div class="item-images-container">
       <div id="item-images" class="item-images" data-container-size="<%= @container_size %>" data-sort="">
 
-        <% @item.images.show_list.each do |image| %>
+        <%= link_to @item.default_image_url, :target => "_blank" do %>
+          <%= image_tag @item.default_image_url %>
+        <% end %>
+
+        <% @item.images.show_list.shuffle.each do |image| %>
           <%= link_to image.url, :target => "_blank" do %>
             <%= image_tag image.url %>
           <% end %>
@@ -47,6 +51,9 @@
     <% end %>
   </div>
 </div>
+
+<!-- SUBNAV -->
+<%= render 'layouts/recent_items' %>
 
 <!--
 <hr>

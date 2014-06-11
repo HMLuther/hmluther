@@ -1,11 +1,6 @@
 <!-- SUBNAV -->
 <%= render 'category_subnav' %>
 
-<!-- <h1><%= params[:category] %></h1>
-<p>All Category Items will be shown here.</p>
-<p>Item Count: <%= @items.count %></p>
-<p>Container Size: <%= @container_size %>px</p> -->
-
 <div class="category-items-container">
   <ul id="category-items" class="category-items" data-container-size="<%= @container_size %>" data-sort="">
 
@@ -27,6 +22,10 @@
 </div>
 
 <hr>
+
+<h1><%= params[:category] %></h1>
+<p>Item Count: <%= @items.count %></p>
+<p>Container Size: <%= @container_size %>px</p>
 
 <table class="table">
   <thead>

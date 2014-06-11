@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609150849) do
+ActiveRecord::Schema.define(version: 20140610221444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,7 @@ ActiveRecord::Schema.define(version: 20140609150849) do
     t.string   "name"
     t.text     "bio"
     t.boolean  "active",          default: true
-    t.boolean  "list_include",    default: false
-    t.boolean  "list_omit",       default: false
+    t.boolean  "listed",          default: false
     t.string   "production_date"
     t.string   "website"
     t.string   "filemaker_id"
@@ -81,6 +80,8 @@ ActiveRecord::Schema.define(version: 20140609150849) do
     t.datetime "updated_at"
     t.boolean  "featured",          default: false
     t.string   "slug"
+    t.boolean  "listed_category",   default: true
+    t.boolean  "listed_designer",   default: true
   end
 
   add_index "items", ["filemaker_id"], name: "index_items_on_filemaker_id", using: :btree

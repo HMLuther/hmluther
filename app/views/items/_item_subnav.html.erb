@@ -5,15 +5,23 @@
 	</div>
 
 	<div class="col-md-3">
+		<button class="tearsheet-button">DOWNLOAD TEARSHEET</button>
+	</div>
+
+	<div class="col-md-3">
 		<button class="request-info-button">REQUEST INFORMATION</button>
 	</div>
 
-	<div class="col-md-3">
-		<button class="tearsheet-button">TEARSHEET</button>
-	</div>
-
+	<% if user_signed_in? %>
 	<div class="col-md-3">
 		<button class="collection-add-button">ADD TO COLLECTION</button>
 	</div>
+	<% end %>
+
+	<% if !user_signed_in? %>
+	<div class="col-md-3">
+		<button class="collection-login-button">LOGIN TO ADD TO COLLECTION</button>
+	</div>
+	<% end %>
 
 </div>
