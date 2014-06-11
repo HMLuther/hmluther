@@ -2,23 +2,34 @@
 .item-subnav {
 	// background-color: red;
 	margin: 5px 0 5px 0;
+	font-size: 0.8em;
+	text-transform: uppercase;
 	div {
 		border-right: 1px solid #FFFFFF;
 		margin: 0;
 		padding: 0;
 	}
-	div.category-display{
+	div.display{
 		background-color: #e5e5e5;
 		color: #999999;
-		font-size: 0.8em;
 		padding: 10px 15px;
-		text-transform: uppercase;
+	}
+	a {
+		background-color: #e5e5e5;
+		color: #999999;
+		padding: 10px 15px;
+		width: 100%;
+		display: inline-block;
+	}
+	a:hover {
+		background-color: #f47321;
+		color: #ffffff;
+		text-decoration: none;
 	}
 	button {
 		background-color: #e5e5e5;
 		border: none;
 		color: #999999;
-		font-size: 0.8em;
 		padding: 10px 15px;
 		text-align: left;
 		text-transform: uppercase;
@@ -55,7 +66,7 @@
 // CATEGORY-ITEMS
 .category-items {
 	list-style-type: none;
-	margin: 10px 0 0 0;
+	margin: 5px 0 0 0;
 	position: relative; /** Needed to ensure items are laid out relative to this container **/
 	// width: 22910px;
 	// width: 17700px;
@@ -139,7 +150,7 @@
 /*ITEM IMAGES */
 
 .item-images-container {
-	margin-top: 10px;
+	margin-top: 5px;
 	position: relative;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;

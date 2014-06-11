@@ -1,27 +1,37 @@
 <div class="row item-subnav">
 
-	<div class="col-md-3">
-		<button class="share-button">SHARE</button>
+	<div class="col-md-2 display">
+		Item #<%= @item.filemaker_id %>
 	</div>
 
-	<div class="col-md-3">
-		<button class="tearsheet-button">DOWNLOAD TEARSHEET</button>
+	<div class="col-md-2">
+		<button class="share-button">Share</button>
 	</div>
 
-	<div class="col-md-3">
-		<button class="request-info-button">REQUEST INFORMATION</button>
+	<div class="col-md-2">
+		<button class="tearsheet-button">Download Tearsheet</button>
+	</div>
+
+	<div class="col-md-2">
+		<button class="request-info-button">Request Information</button>
 	</div>
 
 	<% if user_signed_in? %>
-	<div class="col-md-3">
-		<button class="collection-add-button">ADD TO COLLECTION</button>
+	<div class="col-md-2">
+		<button class="collection-add-button">Add to Collection</button>
 	</div>
 	<% end %>
 
 	<% if !user_signed_in? %>
-	<div class="col-md-3">
-		<button class="collection-login-button">LOGIN TO ADD TO COLLECTION</button>
+	<div class="col-md-2">
+		<button class="collection-login-button">Login to Add to Collection</button>
 	</div>
 	<% end %>
+
+	<div class="col-md-2">
+		<%= link_to 'Collections', features_path %>
+		<!-- <button class="collection-management-button">COLLECTIONS</button> -->
+	</div>
+
 
 </div>

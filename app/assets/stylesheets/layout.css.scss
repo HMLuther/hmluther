@@ -40,8 +40,8 @@
 }
 
 .container {
-  padding-left: 0;
-  padding-right: 0;
+  // padding-left: 0;
+  // padding-right: 0;
 }
 
 // CONTACT PAGE
@@ -55,6 +55,22 @@
     .about-copy {
       padding-top: 10px;
     }
+  }
+}
+
+// FEATURE PAGE
+.feature-page {
+  .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  h2 {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  p {
+    margin-bottom: 25px;
   }
 }
 
@@ -94,8 +110,10 @@ footer{
   }
 
   .container {
-    border-bottom: 1px solid #969696;
-    padding: 5px;
+    padding: 5px 15px;
+    hr {
+      margin: 5px 0 0 0;
+    }
   }
 
   .logo {
@@ -108,7 +126,7 @@ footer{
 
   .navbar-right {
     list-style-type: none;
-    margin: 0 -20px 0 0;
+    margin: 0 -15px 0 0;
   }  
 }
 
@@ -186,7 +204,7 @@ footer{
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     float: left;
-    height: 100px;
+    height: 75px;
     margin-right: 10px;
     padding: 2px;
   }
