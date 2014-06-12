@@ -2,6 +2,11 @@ $(document).on "page:change", ->
 	
 	console.log "page change"
 
+	# CAROUSEL
+	$('.carousel').carousel({
+	  interval: 2000
+	})
+
 	# MAIN MENU
 	body = $( 'body' )
 	current = -1;

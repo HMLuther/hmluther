@@ -39,4 +39,10 @@ class Item < ActiveRecord::Base
 		end
 	end
 
+	def tearsheet_url
+		if self.images.where("file_type = 'pdf'").first.present?
+			self.images.where("file_type = 'pdf'").first.url
+		end
+	end
+
 end

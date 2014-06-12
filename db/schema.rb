@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610221444) do
+ActiveRecord::Schema.define(version: 20140611211412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140610221444) do
     t.datetime "updated_at"
     t.string   "filemaker_id"
     t.string   "slug"
+    t.string   "file_type"
   end
 
   add_index "images", ["filemaker_id"], name: "index_images_on_filemaker_id", using: :btree
