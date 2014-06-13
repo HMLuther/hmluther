@@ -8,7 +8,7 @@ class Image < ActiveRecord::Base
 	validates :slug, uniqueness: true, presence: true
 
 	scope :active, -> { where(active: true) }
-	scope :show_list, -> { where(active: true).where(thumb: false).where(webcomp: false) }
+	scope :show_list, -> { where(active: true).where(thumb: false).where(webcomp: false).where("file_type != 'pdf'") }
 
 	def generate_slug
 		self.slug ||= filemaker_id.parameterize
