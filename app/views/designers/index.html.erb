@@ -1,38 +1,15 @@
 <h1>Designers</h1>
+<hr>
 
 
-<div class="col-md-12">
-  <h3>Brazil</h3>
-  <p>Some Guy</p>
-  <p>Some Guy</p>
-  <p>Some Guy</p>
-  <p>Some Guy</p>
-  <p>Some Guy</p>
-</div>
-
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Production Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @designers.each do |designer| %>
-      <tr>
-        <td><%= designer.name %></td>
-        <td><%= designer.production_date %></td>
-        <td><%= link_to 'Show', designer %></td>
-        <td><%= link_to 'Edit', edit_designer_path(designer) %></td>
-        <td><%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<% @designer_country.sort.each do |country, designer| %>
+  <h4><%= country %></h4>
+  <p>
+  <% for designer in designer %>
+    <%= link_to designer.name, designer_path(designer), class: 'designer-country-link' %>
+  <% end %>
+  </p>
+  <hr>
+<% end %>
 
 <!-- <%= link_to 'New Designer', new_designer_path, class: 'btn btn-primary' %> -->

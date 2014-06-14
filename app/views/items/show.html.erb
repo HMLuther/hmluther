@@ -38,7 +38,7 @@
     <!-- <hr/> -->
   </div>
   <div class="col-md-6 info-panel">
-    <h4>General Info</h4>
+    <h4>General Information</h4>
     <p><%= raw @item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></p>
     <p><%= @item.description_short %></p>
     <p><%= @item.circa %></p>
@@ -57,7 +57,7 @@
     <p><%= @item.reference %></p>
     <p>Category: <%= raw @item.category_list.map { |t| link_to t.titlecase, category_path(t) }.join(', ') %></p>
     <% if @item.sold %>
-      <%= image_tag 'stamp_sold.png', class: 'item-stamp-sold' %>
+      <%= image_tag 'hml_sold_icon.svg', class: 'item-stamp-sold' %>
     <% end %>
   </div>
 </div>

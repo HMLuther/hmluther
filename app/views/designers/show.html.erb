@@ -10,7 +10,7 @@
         <%= image_tag item.default_image_url, class: 'item-image' %>
       <% end %>
       <% if item.sold %>
-        <%= image_tag 'stamp_sold.png', class: 'category-stamp-sold pull-right' %>
+        <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold pull-right' %>
       <% end %>
       <h4><%= raw item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
       <p><%= item.description_short %></p>
@@ -32,9 +32,12 @@
   <% end %>
   <div class="col-md-6 info-panel">
     <h4>General Information</h4>
-      <p>Origin: <%= @designer.origin if present? %></p>
+    <% if @designer.origin %>
+      <p>Origin: <%= @designer.origin %></p>
+    <% end %>
+    <% if @designer.affiliate_list.present? %>
       <p>Affiliations: <%= raw @designer.affiliate_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></p>
-    </p>
+    <% end %>
 
   </div>
 </div>
