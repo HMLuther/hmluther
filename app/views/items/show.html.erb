@@ -9,21 +9,21 @@
 
         <% if user_signed_in? %>
           <%= link_to @item.default_image_url, :target => "_blank" do %>
-            <%= image_tag @item.default_image_url, title: 'Click for hi-res' %>
+            <%= image_tag @item.default_image_url, title: 'Click for high resolution image' %>
           <% end %>
         <% else %>
-          <%= image_tag @item.default_image_url %>
+          <%= image_tag @item.default_image_url, title: 'Login for high resolution image' %>
         <% end %>
 
         <% if user_signed_in? %>
           <% @item.images.show_list.shuffle.each do |image| %>
             <%= link_to image.url, :target => "_blank" do %>
-              <%= image_tag image.url, title: 'Click for hi-res' %>
+              <%= image_tag image.url, title: 'Click for high resolution image' %>
             <% end %>
           <% end %>
         <% else %>
           <% @item.images.show_list.shuffle.each do |image| %>
-            <%= image_tag image.url %>
+            <%= image_tag image.url, title: 'Login for high resolution image' %>
           <% end %>
         <% end %>
 

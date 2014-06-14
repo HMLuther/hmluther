@@ -70,6 +70,6 @@ class DesignersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def designer_params
-      params.require(:designer).permit(:name, :bio, :active, :listed, :production_date, :website, :filemaker_id)
+      params.require(:designer).permit(:active, :affiliate_list, :bio, :name, :listed, :origin, :production_date, :website, :filemaker_id)
     end
 end

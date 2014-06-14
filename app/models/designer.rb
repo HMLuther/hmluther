@@ -1,5 +1,7 @@
 class Designer < ActiveRecord::Base
 
+	acts_as_taggable_on :affiliate
+
 	before_validation :generate_slug
 
 	validates_presence_of :filemaker_id, :on => :create, :message => "can't be blank"
@@ -9,6 +11,14 @@ class Designer < ActiveRecord::Base
 	default_scope { order('name ASC') }
 
   scope :listed, -> { where(listed: true) }
+
+  def self.active?
+    where(active: true)
+  end
+
+  def container_size
+  	self.items.count * 883
+  end
 
 	def generate_slug
 		self.slug ||= name.parameterize

@@ -1,42 +1,45 @@
-<h1><%= @designer.name %></h1>
-<hr>
+<h1><%= @designer.name %>: <span class="text-muted"><%= @designer.item_count %></span></h1>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @designer.bio %>
-</p>
+<!-- IMAGES -->
+<div class="category-items-container">
+  <ul id="category-items" class="category-items" data-container-size="<%= @designer.container_size %>" data-sort="">
+
+    <% @designer.items.each do |item| %>
+      <li data-size="<%= item.height %>">
+      <%= link_to item do %>
+        <%= image_tag item.default_image_url, class: 'item-image' %>
+      <% end %>
+      <% if item.sold %>
+        <%= image_tag 'stamp_sold.png', class: 'category-stamp-sold pull-right' %>
+      <% end %>
+      <h4><%= raw item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
+      <p><%= item.description_short %></p>
+      <p class="item-circa"><%= item.circa %></p>
+      </li>
+    <% end %>
+
+  </ul>
+</div>
 
 
-<p>
-  <strong>Country of origin:</strong>
-  Somewhere, Somewhere Else
-</p>
+<!-- DETAIL -->
+<div class="row">
+  <% if @designer.bio.present? %>
+  <div class="col-md-6 info-panel">
+    <h4>Biography</h4>
+    <p><%= @designer.bio %></p>
+  </div>
+  <% end %>
+  <div class="col-md-6 info-panel">
+    <h4>General Information</h4>
+      <p>Origin: <%= @designer.origin if present? %></p>
+      <p>Affiliations: <%= raw @designer.affiliate_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></p>
+    </p>
 
-<p>
-  <strong>Affiliations:</strong>
-  Someone, Someone Else
-</p>
+  </div>
+</div>
 
-
-<% if @designer.production_date.present? %>
-  <p>
-    <strong>Production date:</strong>
-    <%= @designer.production_date %>
-  </p>
-<% end %>
-
-<% if @designer.website.present? %>
-  <p>
-    <strong>Website:</strong>
-    <%= @designer.website %>
-  </p>
-<% end %>
-
-<hr>
-<h3>Items: <%= @designer.item_count %></h3>
-<% @designer.items.each do |item| %>
-  <p><%= link_to item.description_short, item %></p>
-<% end %>
-
+<!--
 <%= link_to 'Edit', edit_designer_path(@designer), class: 'btn btn-default' %>
 <%= link_to 'Back', designers_path, class: 'btn btn-default' %>
+-->
