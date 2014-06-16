@@ -7,6 +7,8 @@ $yellow: #fffdd0;
 $whiteCosmic: #fff8e7;
 $whiteSmoke: #f5f5f5;
 $whiteIsabelline: #f4f0ec;
+$hmlOrange: #f47321;
+$hmlGray: #999999;
 
 $background: #ffffff;
 
@@ -30,6 +32,17 @@ hr {
 body {
   background-color: $background;
   font-family: 'Open Sans', 'sans-serif';
+}
+
+.btn-primary {
+  background-color: #FFFFFF;
+  border-color: rgb(204, 204, 204);
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background-color: $hmlOrange;
+  border-color: $hmlOrange;
 }
 
 .column {
@@ -93,4 +106,13 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-xs;
+}
+
+.table-hover {
+  cursor: pointer;
+}
+
+.table-hover td:first-child {
+  // background-color: red;
+  width: 20%;
 }

@@ -1,0 +1,15 @@
+<div class="col-md-12">
+  <%= simple_form_for @collection, :html => { :class => 'form form-horizontal' } do |f| %>
+
+    <%= f.input :name, :placeholder => 'Collection Name' %>
+    <%= f.input :description, :placeholder => 'Description' %>
+
+    <section>
+      <div class="col-md-10 col-md-offset-2">
+        <%= f.button :submit %>
+        <%= link_to 'Cancel', collections_path, class: "btn btn-default" %>
+      </div>
+    </section>
+
+  <% end %>
+</div>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @collection.active %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @collection.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @collection.description %>
+</p>
+
+<p>
+  <strong>Public:</strong>
+  <%= @collection.public %>
+</p>
+
+<hr>
+<%= link_to 'Edit', edit_collection_path(@collection), class: 'btn btn-primary' %>
+<%= link_to 'Back', collections_path, class: 'btn btn-default' %>
+<%= link_to 'Delete', collection_path(@collection), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' %>

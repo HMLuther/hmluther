@@ -2,6 +2,10 @@ $(document).on "page:change", ->
 	
 	console.log "page change"
 
+	# TABLE ROW LINKS
+	$("tr[data-link]").on "click", -> 
+		window.location = this.dataset.link
+
 	# CAROUSEL
 	$('.carousel').carousel({
 	  interval: 2000
