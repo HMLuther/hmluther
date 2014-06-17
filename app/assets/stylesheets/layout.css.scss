@@ -27,7 +27,7 @@
 }
 
 .carousel-indicators {
-    top: 103%;
+    top: 101%;
 }
 
 .carousel-indicators li{
@@ -74,7 +74,7 @@
   }
 }
 
-
+// FOOTER
 footer{
   color: #646464;
   font-size: 0.7em;
@@ -86,10 +86,10 @@ footer{
 }
 
 
-// NAVBAR
+// TOP NAVBAR
 .navbar {
   border: none;
-  padding: 5px 0;
+  padding: 0;
 
   .btn-default {
   	background-color: #e5e5e5;
@@ -112,12 +112,12 @@ footer{
   .container {
     padding: 5px 15px;
     hr {
-      margin: 5px 0 0 0;
+      margin: 0;
     }
   }
 
   .logo {
-    height: 50px;
+    height:60px;
   }
 
   .navbar-brand {
@@ -133,8 +133,6 @@ footer{
 .navbar-default {
   background-color: rgb(255, 255, 255);
 }
-
-
 
 
 // CATEGORY SCROLLBAR

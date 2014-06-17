@@ -3,10 +3,13 @@ $(document).on "page:change", ->
 	# CATEGORY
 	categoryContainerSize = $('.category-items').data('container-size') + 'px'
 	listSort = $('.category-items').data('sort')
-	sortButton = $('.item-subnav .sort-button')
+	sortButton = $('.category-subnav .sort-button')
 	displayButton = $('.item-subnav .display-button')
-	$('.category-items').delay(1000).css('width', categoryContainerSize)
-	$('.category-items > li').tsort('',{data:'size', order:'rand'})
+	categoryItems = $('.category-items')
+	categoryItemsLi = $('.category-items > li')
+	
+	categoryItemsLi.tsort('',{data:'size', order:'rand'})
+
 	listSort = 'rand'
 	sortButton.on "click", () ->
 		console.log listSort
@@ -14,17 +17,28 @@ $(document).on "page:change", ->
 			$('.category-items > li').tsort('',{data:'size', order:'asc'})
 			listSort = 'asc'
 			sortButton.removeClass('lg-sm-icon').addClass('sm-lg-icon')
-			sortButton.text('sort large to small')
+			sortButton.text('sort lg > sm')
 
 		else if listSort == 'asc' || 'rand'
 			$('.category-items > li').tsort('',{data:'size', order:'desc'})
 			listSort = 'desc'
 			sortButton.removeClass('sm-lg-icon').addClass('lg-sm-icon')
-			sortButton.text('sort small to large')
+			sortButton.text('sort sm > lg')
 		console.log listSort
 
 	displayButton.on "click", () ->
 		alert "Display Button"
+
+	setCategoryItemsWidth = () ->
+		if categoryItemsLi.css('margin-bottom') == '20px'
+			categoryItems.delay(1000).css('width', categoryContainerSize)
+
+	setCategoryItemsWidth()
+	$(window).resize () ->
+		if categoryItemsLi.css('margin-bottom') == '20px'
+			setCategoryItemsWidth()
+		else if categoryItemsLi.css('margin-bottom') == '10px'
+			categoryItems.css('width', '100%')
 
 	# ITEM
 	shareButton = $('.item-subnav .share-button')

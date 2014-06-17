@@ -1,37 +1,39 @@
 <div class="row item-subnav">
 
-	<div class="col-md-2 display">
+	<div class="col-md-2 col-sm-2 display">
 		Item #<%= @item.filemaker_id %>
 	</div>
 
-	<div class="col-md-2">
-		<button class="share-button">Share</button>
+	<div class="col-md-2 col-sm-2">
+		<button class="share-button" title="Share this item">Share</button>
 	</div>
 
-	<div class="col-md-2">
+	<div class="col-md-2 col-sm-2">
 		<% if @item.tearsheet_url %>
-			<%= link_to 'Download Tearsheet', @item.tearsheet_url, :target => "_blank" %>
+			<%= link_to 'Tearsheet', @item.tearsheet_url, class: 'tearsheet', :target => "_blank", title: 'Download Tearsheet' %>
 		<% else %>
 			<button class="line-through" title="Tearsheet unavailable"><%= "Tearsheet" %></button>
 		<% end %>
 	</div>
 
-	<div class="col-md-2">
-		<button class="request-info-button">Request Information</button>
+	<div class="col-md-2 col-sm-2">
+		<button class="request-info-button">Information</button>
 	</div>
 
+	<div class="col-md-2 col-sm-2">
 	<% if user_signed_in? %>
-		<div class="col-md-2">
-			<button class="collection-add-button">Add to Collection</button>
-		</div>
+		<button class="collection-add-button" title="Add to collection">Add</button>
 	<% else %>
-		<div class="col-md-2">
-			<button class="collection-login-button line-through" title="Login required for collections">Add to Collection</button>
-		</div>
+		<button class="collection-login-button line-through" title="Login required for collections">Add</button>
 	<% end %>
+	</div>
 
-	<div class="col-md-2">
-		<%= link_to 'Collections', features_path %>
+	<div class="col-md-2 col-sm-2">
+	<% if user_signed_in? %>
+		<%= link_to 'Collections', features_path, title: 'Manage my collections' %>
+	<% else %>
+		<%= link_to 'Collections', features_path, title: 'Login required for collections' %>
+	<% end %>
 	</div>
 
 
