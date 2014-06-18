@@ -1,16 +1,18 @@
 $(document).on "page:change", ->
 
 	# CATEGORY
-	categoryContainerSize = $('.category-items').data('container-size') + 'px'
+	categoryContainerSize_1 = $('.category-items').data('container-size-1') + 'px'
+	categoryContainerSize_2 = $('.category-items').data('container-size-2') + 'px'
 	listSort = $('.category-items').data('sort')
 	sortButton = $('.category-subnav .sort-button')
-	displayButton = $('.item-subnav .display-button')
+	displayButton = $('.category-subnav .display-button')
 	categoryItems = $('.category-items')
 	categoryItemsLi = $('.category-items > li')
+	listSort = 'rand'
+	rowCount = 1
 	
 	categoryItemsLi.tsort('',{data:'size', order:'rand'})
 
-	listSort = 'rand'
 	sortButton.on "click", () ->
 		console.log listSort
 		if listSort == 'desc'
@@ -27,16 +29,30 @@ $(document).on "page:change", ->
 		console.log listSort
 
 	displayButton.on "click", () ->
-		alert "Display Button"
+		if categoryItems.hasClass('two-rows')
+			rowCount = 1
+			setCategoryItemsWidth(rowCount)
+			categoryItems.removeClass('two-rows')
+			displayButton.text('Display : 2 rows')
+			console.log 'Display Button: 2-rows'
+		else
+			categoryItems.addClass('two-rows')
+			rowCount = 2
+			setCategoryItemsWidth(rowCount)
+			displayButton.text('Display : 1 row')
+			console.log 'Display Button: 1-row'
 
-	setCategoryItemsWidth = () ->
-		if categoryItemsLi.css('margin-bottom') == '20px'
-			categoryItems.delay(1000).css('width', categoryContainerSize)
+	setCategoryItemsWidth = (count) ->
+		if categoryItemsLi.css('margin-bottom') == '20px' && count == 1
+			categoryItems.delay(1000).css('width', categoryContainerSize_1)
 
-	setCategoryItemsWidth()
+		else if categoryItemsLi.css('margin-bottom') == '20px' && count == 2
+			categoryItems.delay(1000).css('width', categoryContainerSize_2)
+
+	setCategoryItemsWidth(rowCount)
 	$(window).resize () ->
 		if categoryItemsLi.css('margin-bottom') == '20px'
-			setCategoryItemsWidth()
+			setCategoryItemsWidth(rowCount)
 		else if categoryItemsLi.css('margin-bottom') == '10px'
 			categoryItems.css('width', '100%')
 

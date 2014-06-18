@@ -32,7 +32,7 @@
 	}
 
 	// CATEGORY-ITEMS LI
-	.category-items li {
+	.category-items li, .category-items.two-rows li  {
 		border-radius: 2px;
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
@@ -43,7 +43,7 @@
 	}
 
 	// CATEGORY-ITEMS IMAGES
-	.category-items li .item-image {
+	.category-items li .item-image, .category-items.two-rows li .item-image {
 		height: auto;
 		width: 100%;
 	}

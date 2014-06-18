@@ -1,4 +1,4 @@
-// ITEM SUBNAV
+// CATEGORY SUBNAV, ITEM SUBNAV
 .category-subnav, .item-subnav {
 	// background-color: red;
 	margin: 5px 0 5px 0;
@@ -67,7 +67,7 @@
 	list-style-type: none;
 	margin: 5px 0 0 0;
 	position: relative; /** Needed to ensure items are laid out relative to this container **/
-	width: 100000px;
+	// width: 100000px;
 	padding: 0;
 }
 
@@ -93,6 +93,15 @@
 	transition: all 400ms ease-in-out;
 }
 
+.category-items.two-rows li {
+	height: 350px;
+	width: 344px;
+}
+
+.category-items.two-rows li .item-image {
+	height: 200px;
+}
+
 .category-items li:hover {
 	background-color: #e5e5e5;
   color: #333;
@@ -107,7 +116,6 @@
 .category-items li:last-child {
 	margin-right: 0;
 }
-
 
 // CATEGORY-ITEM TEXT
 .category-items li h4 {
@@ -128,7 +136,6 @@
 }
 
 // CATEGORY-ITEMS IMAGES
-
 .category-items li .item-image {
 	height: 500px;
 }

@@ -4,7 +4,6 @@ class Item < ActiveRecord::Base
 
 	before_validation :generate_slug
 
-	belongs_to :subcategory
 	has_many :images, primary_key: "filemaker_id"
 
 	validates_presence_of :description_short, :on => :create, :message => "can't be blank"

@@ -2,7 +2,7 @@
 <%= render 'category_subnav' %>
 
 <div class="category-items-container">
-  <ul id="category-items" class="category-items" data-container-size="<%= @container_size %>" data-sort="">
+  <ul id="category-items" class="category-items" data-container-size-1="<%= @container_size_1 %>" data-container-size-2="<%= @container_size_2 %>" data-sort="">
 
     <% @items.each do |item| %>
       <li data-size="<%= item.height %>">
