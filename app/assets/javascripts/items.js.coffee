@@ -31,23 +31,27 @@ $(document).on "page:change", ->
 	displayButton.on "click", () ->
 		if categoryItems.hasClass('two-rows')
 			rowCount = 1
+			categoryItems.hide()
 			setCategoryItemsWidth(rowCount)
 			categoryItems.removeClass('two-rows')
+			categoryItems.fadeIn(500)
 			displayButton.text('Display : 2 rows')
 			console.log 'Display Button: 2-rows'
 		else
 			categoryItems.addClass('two-rows')
 			rowCount = 2
+			categoryItems.hide()
 			setCategoryItemsWidth(rowCount)
+			categoryItems.fadeIn(500)
 			displayButton.text('Display : 1 row')
 			console.log 'Display Button: 1-row'
 
 	setCategoryItemsWidth = (count) ->
 		if categoryItemsLi.css('margin-bottom') == '20px' && count == 1
-			categoryItems.delay(1000).css('width', categoryContainerSize_1)
+			categoryItems.css('width', categoryContainerSize_1)
 
 		else if categoryItemsLi.css('margin-bottom') == '20px' && count == 2
-			categoryItems.delay(1000).css('width', categoryContainerSize_2)
+			categoryItems.css('width', categoryContainerSize_2)
 
 	setCategoryItemsWidth(rowCount)
 	$(window).resize () ->

@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
+
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_api_user, only: [:create, :edit, :update, :destroy], if: :json_request?
+  before_action :find_history, only: [:category, :show]
+  after_action :store_history, only: [:show]
 
   # GET /items
   # GET /items.json
@@ -78,7 +81,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
@@ -89,4 +91,16 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :listed_category, :listed_designer, :location, :reference, :height, :width, :depth, :diameter, :subcategory_id, :category_list, :maker_list)
     end
+
+    def store_history
+      @recent_item = @item.filemaker_id
+      session[:history] ||= []
+      session[:history].delete_at(0) if session[:history].size >= 6
+      session[:history] << @recent_item unless session[:history].include?(@recent_item)
+    end
+
+    def find_history
+      @history_items = Item.where(slug: session[:history])
+    end
+
 end

@@ -1,14 +1,19 @@
-<div class="row">
+<div class="row recent-items">
 	<div class="col-md-12">
-		<div class="recent-items">
-			<h4>Recently viewed items</h4>
-			<!-- EXAMPLE ITEMS -->
-			<%= image_tag 'example-thumb.jpg' %>
-			<%= image_tag 'example-thumb.jpg' %>
-			<%= image_tag 'example-thumb.jpg' %>
-			<%= image_tag 'example-thumb.jpg' %>
-			<%= image_tag 'example-thumb.jpg' %>
-			<%= image_tag 'example-thumb.jpg' %>
+		<h4>Recently viewed items</h4>
+		<hr>
+		
+		<div class="item-thumbs">
+
+			<!-- RECENT ITEM THUMBS -->
+			<% @history_items.sort.each do |item| %>
+				<div class="col-md-2 col-sm-2 col-xs-4">
+					<%= link_to item do %>
+						<%= image_tag item.thumb_image_url %>
+					<% end %>
+				</div>
+			<% end %>
+
 		</div>
 	</div>
 </div>

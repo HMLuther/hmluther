@@ -194,19 +194,29 @@ footer{
 
 .recent-items {
   // background-color: rgba(229,229,229,0.5);
-  border-top: 1px solid #969696;
-  margin-top: 50px;
+  // margin-top: 10px;
+  padding-top: 10px;
+  .item-thumbs {
+    // border-top: 1px solid #969696;
+    // padding-top: 10px;
+  }
+  div {
+    // background-color: gray;
+  }
+  a {
+    border: none;
+  }
   img {
     border: 1px solid #c8c8c8;
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     float: left;
-    height: 75px;
-    margin-right: 10px;
     padding: 2px;
+    margin-bottom: 10px;
   }
   img:hover {
+    border: 1px solid #f47321;
     opacity: 0.7;
     -moz-transition: all 400ms ease-in-out;
     -ms-transition: all 400ms ease-in-out;
