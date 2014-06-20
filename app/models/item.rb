@@ -5,6 +5,8 @@ class Item < ActiveRecord::Base
 	before_validation :generate_slug
 
 	has_many :images, primary_key: "filemaker_id"
+	has_many :collection_items
+	has_many :collections, :through => :collection_items
 
 	validates_presence_of :description_short, :on => :create, :message => "can't be blank"
 	validates_presence_of :filemaker_id, :on => :create, :message => "can't be blank"

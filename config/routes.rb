@@ -9,10 +9,6 @@ Hmluther::Application.routes.draw do
 
   resources :items
 
-  # resources :subcategories
-
-  # resources :categories
-
   get 'contact', to: 'contact#index'
   get 'features', to: 'features#index'
 
@@ -21,6 +17,10 @@ Hmluther::Application.routes.draw do
 
   resources :users
   
-  resources :collections
+  resources :collections do
+    get 'carousel', on: :member
+    get 'slideshow', on: :member
+    resources :collection_items
+  end
 
 end

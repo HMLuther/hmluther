@@ -1,0 +1,23 @@
+<h1>Listing collection_items</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @collection_items.each do |collection_item| %>
+      <tr>
+        <td><%= collection_item.item_id %></td>
+        <td><%= collection_item.position %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Collection item', new_collection_collection_item_path, class: 'btn btn-default' %>

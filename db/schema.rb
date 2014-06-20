@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614212940) do
+ActiveRecord::Schema.define(version: 20140619221033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: true do |t|
-    t.boolean  "active",     default: true
-    t.string   "name"
+  create_table "collection_items", force: true do |t|
+    t.integer  "collection_id"
+    t.integer  "item_id"
     t.integer  "position"
-    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "categories", ["slug"], name: "index_categories_on_slug", using: :btree
+  add_index "collection_items", ["collection_id"], name: "index_collection_items_on_collection_id", using: :btree
+  add_index "collection_items", ["item_id"], name: "index_collection_items_on_item_id", using: :btree
 
   create_table "collections", force: true do |t|
     t.integer  "user_id"
@@ -99,18 +99,6 @@ ActiveRecord::Schema.define(version: 20140614212940) do
   end
 
   add_index "items", ["filemaker_id"], name: "index_items_on_filemaker_id", using: :btree
-
-  create_table "subcategories", force: true do |t|
-    t.boolean  "active",      default: true
-    t.integer  "category_id"
-    t.string   "name"
-    t.integer  "position"
-    t.string   "slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "subcategories", ["slug"], name: "index_subcategories_on_slug", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

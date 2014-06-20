@@ -1,5 +1,5 @@
 class CollectionsController < ApplicationController
-  before_action :set_collection, only: [:show, :edit, :update, :destroy]
+  before_action :set_collection, only: [:carousel, :slideshow, :show, :edit, :update, :destroy]
 
   # GET /collections
   # GET /collections.json
@@ -10,6 +10,12 @@ class CollectionsController < ApplicationController
   # GET /collections/1
   # GET /collections/1.json
   def show
+  end
+
+  def carousel
+  end
+
+  def slideshow
   end
 
   # GET /collections/new
