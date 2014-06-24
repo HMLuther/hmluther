@@ -15,7 +15,7 @@ gem 'figaro', :github=>"laserlemon/figaro"
 gem 'pg'
 gem 'puma'
 gem 'pundit'
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 gem 'acts-as-taggable-on'
 gem 'rails_12factor', group: :production
 group :development do

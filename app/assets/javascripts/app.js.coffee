@@ -37,4 +37,3 @@ $(document).on "page:change", ->
 	  	items.eq( current ).removeClass( 'cbp-hropen' )
 	  	current = -1
 
-

@@ -9,7 +9,7 @@
 
 
 <p><%= @collection.description %></p>
-<p>Date created</p>
+<small><%= @collection.created_at.strftime("Created: %B %d, %Y") %></small>
 
 
 <!-- 

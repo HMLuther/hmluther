@@ -1,12 +1,19 @@
 <div class="col-md-12">
-  <%= simple_form_for @collection, :html => { :class => 'form form-horizontal' } do |f| %>
+  <%= simple_form_for @collection, :html => { :class => 'form-horizontal' },
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  } do |f| %>
 
     <%= f.input :name, :placeholder => 'Collection Name' %>
     <%= f.input :description, :placeholder => 'Description' %>
 
     <section>
-      <div class="col-md-10 col-md-offset-2">
-        <%= f.button :submit %>
+      <div class="col-md-10 col-md-offset-2 no-padding-left">
+        <%= f.button :submit, class: 'btn btn-primary' %>
         <%= link_to 'Cancel', collection_path(@collection), class: "btn btn-default" %>
       </div>
     </section>

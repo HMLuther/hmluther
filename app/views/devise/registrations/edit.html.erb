@@ -1,14 +1,35 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
+<hr>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), 
+	:html => { :method => :put, :class => 'form-horizontal' },
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
-  <%= f.input :name, :autofocus => true %>
+  <%= f.input :name, :required => true, :autofocus => true %>
   <%= f.input :email, :required => true %>
   <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
   <%= f.input :password_confirmation, :required => false %>
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
-  <%= f.button :submit, 'Update', :class => 'btn-primary' %>
+
+	<section>
+		<div class="col-md-10 col-md-offset-2 no-padding-left">
+		  <%= f.button :submit, 'Update', :class => 'btn-primary' %>
+		</div>
+	</section>
 <% end %>
-<h3>Cancel my account</h3>
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
-<%= link_to "Back", :back, class: 'btn btn-default' %>
+
+
+	<section>
+		<div class="col-md-10 col-md-offset-2 no-padding-left">
+			<h4>Cancel my account</h4>
+			<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+			<%= link_to "Back", :back, class: 'btn btn-default' %>
+		</div>
+	</section>

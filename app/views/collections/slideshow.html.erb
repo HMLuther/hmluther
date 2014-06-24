@@ -1,2 +1,24 @@
-<h1>Slideshow: <%= @collection.name %> </h1>
-<p>collection content goes here</p>
+<h1><%= link_to @collection.name, @collection %> </h1>
+<p><%= @collection.description %></p>
+<hr>
+<!-- <p>collection content goes here</p> -->
+
+<div class="category-items-container">
+  <ul id="category-items" class="category-items" data-container-size-1="<%= @container_size_1 %>" data-container-size-2="<%= @container_size_2 %>" data-sort="">
+
+    <% @collection.collection_items.each do |ci| %>
+      <li data-size="<%= ci.item.height %>">
+      <%= link_to ci.item do %>
+        <%= image_tag ci.item.default_image_url, class: 'item-image' %>
+      <% end %>
+      <% if ci.item.sold %>
+        <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
+      <% end %>
+      <h4><%= raw ci.item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
+      <p><%= ci.item.description_short %></p>
+      <p class="item-circa"><%= ci.item.circa %></p>
+      </li>
+    <% end %>
+
+  </ul>
+</div>

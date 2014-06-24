@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   has_many :collections
 
+  validates_presence_of :name, :on => :create, :message => "can't be blank"
+
   def set_default_role
     self.role ||= :user
   end

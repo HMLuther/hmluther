@@ -8,25 +8,29 @@
 		<button class="share-button" title="Share this item">Share</button>
 	</div>
 
+	<% if @item.tearsheet_url %>
 	<div class="col-md-2 col-sm-2">
-		<% if @item.tearsheet_url %>
 			<%= link_to 'Tearsheet', @item.tearsheet_url, class: 'tearsheet', :target => "_blank", title: 'Download Tearsheet' %>
-		<% else %>
-			<button class="line-through" title="Tearsheet unavailable"><%= "Tearsheet" %></button>
-		<% end %>
-	</div>
-
-	<div class="col-md-2 col-sm-2">
-		<button class="request-info-button">Information</button>
-	</div>
-
-	<div class="col-md-2 col-sm-2">
-	<% if user_signed_in? %>
-		<button class="collection-add-button" title="Add to collection">Add</button>
+	</div>	
 	<% else %>
-		<button class="collection-login-button line-through" title="Login required for collections">Add</button>
-	<% end %>
+	<div class="col-md-2 col-sm-2 display">
+		<span class="line-through" title="Tearsheet unavailable">Tearsheet</span>
 	</div>
+	<% end %>
+
+	<div class="col-md-2 col-sm-2">
+		<button class="request-info-button" title="Requestion additional information for this item">Information</button>
+	</div>
+
+	<% if user_signed_in? %>
+	<div class="col-md-2 col-sm-2">
+		<button class="collection-add-button" title="Add to collection">Add</button>
+	</div>
+	<% else %>
+	<div class="col-md-2 col-sm-2 display">
+		<span class="line-through" title="Add to collection (Login required)">Add</span>
+	</div>
+	<% end %>
 
 	<% if user_signed_in? %>
 	<div class="col-md-2 col-sm-2">
@@ -34,7 +38,7 @@
 	</div>
 	<% else %>
 	<div class="col-md-2 col-sm-2 display">
-		<span class="line-through" title="Login required for collections">Collections</span>
+		<span class="line-through" title="Manage my collections (Login required)">Collections</span>
 	</div>
 	<% end %>
 
