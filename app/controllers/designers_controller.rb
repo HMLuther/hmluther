@@ -11,6 +11,9 @@ class DesignersController < ApplicationController
   # GET /designers/1
   # GET /designers/1.json
   def show
+    @container_size_1 = @designer.items.count * 885 - 10
+    @precision_count = @designer.items.count / 2.to_f
+    @container_size_2 = @precision_count.round * 354
   end
 
   # GET /designers/new

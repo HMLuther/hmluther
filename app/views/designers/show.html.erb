@@ -2,7 +2,7 @@
 
 <!-- IMAGES -->
 <div class="category-items-container">
-  <ul id="category-items" class="category-items" data-container-size="<%= @designer.container_size %>" data-sort="">
+  <ul id="category-items" class="category-items" data-container-size-1="<%= @container_size_1 %>" data-container-size-2="<%= @container_size_2 %>" data-sort="">
 
     <% @designer.items.each do |item| %>
       <li data-size="<%= item.height %>">
@@ -10,7 +10,7 @@
         <%= image_tag item.default_image_url, class: 'item-image' %>
       <% end %>
       <% if item.sold %>
-        <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold pull-right' %>
+        <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
       <% end %>
       <h4><%= raw item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
       <p><%= item.description_short %></p>
