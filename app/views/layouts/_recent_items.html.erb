@@ -1,9 +1,11 @@
 <div class="row recent-items">
 	<div class="col-md-12">
-		<h4>Recently viewed items</h4>
-		<hr>
+		<div class="rc-title">
+			Recently viewed items
+		</div>
+		<!-- <hr> -->
 		
-		<div class="item-thumbs">
+		<div class="row item-thumbs">
 
 			<!-- RECENT ITEM THUMBS -->
 			<% @history_items.sort.each do |item| %>

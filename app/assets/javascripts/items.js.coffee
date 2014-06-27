@@ -11,7 +11,7 @@ $(document).on "page:change", ->
 	listSort = 'rand'
 	rowCount = 1
 	
-	categoryItemsLi.tsort('',{data:'size', order:'rand'})
+	# categoryItemsLi.tsort('',{data:'size', order:'rand'})
 
 	sortButton.on "click", () ->
 		console.log listSort

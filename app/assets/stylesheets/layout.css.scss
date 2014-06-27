@@ -224,4 +224,12 @@ footer{
     -o-transition: all 400ms ease-in-out;
     transition: all 400ms ease-in-out;
   }
+  .rc-title {
+    margin: 5px 0 10px 0;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    background-color: #e5e5e5;
+    color: #666666;
+    padding: 10px 15px;
+  }
 }

@@ -6,15 +6,6 @@
   <div class="col-md-12">
     <div class="item-images-container">
       <div id="item-images" class="item-images" data-container-size="<%= @container_size %>" data-sort="">
-
-        <% if user_signed_in? %>
-          <%= link_to @item.default_image_url, :target => "_blank" do %>
-            <%= image_tag @item.default_image_url, title: 'Click for high resolution image' %>
-          <% end %>
-        <% else %>
-          <%= image_tag @item.default_image_url, title: 'Login for high resolution image' %>
-        <% end %>
-
         <% if user_signed_in? %>
           <% @item.images.show_list.shuffle.each do |image| %>
             <%= link_to image.url, :target => "_blank" do %>
@@ -35,16 +26,15 @@
 <!-- DETAIL -->
 <div class="row">
   <div class="col-md-12">
-    <!-- <hr/> -->
+    <h3><%= raw @item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h3>
+    <hr/>
   </div>
   <div class="col-md-6 info-panel">
-    <h4>General Information</h4>
-    <p><%= raw @item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></p>
     <p><%= @item.description_short %></p>
     <p><%= @item.circa %></p>
     <p>
       Item: <%= @item.filemaker_id %><br/>
-      Location: <%= @item.location %></br/>
+      Location: <%= @item.location_calc %></br/>
       Height: <%= @item.height %> in.</br/>
       Width: <%= @item.width %> in.</br/>
       Depth: <%= @item.depth %> in.</br/>
@@ -52,7 +42,6 @@
     </p>
   </div>
   <div class="col-md-6 info-panel">
-    <h4>Detail</h4>
     <p><%= @item.description %></p>
     <p><%= @item.reference %></p>
     <p>Category: <%= raw @item.category_list.map { |t| link_to t.titlecase, category_path(t) }.join(', ') %></p>
