@@ -32,18 +32,82 @@
   <div class="col-md-6 info-panel">
     <p><%= @item.description_short %></p>
     <p><%= @item.circa %></p>
-    <p>
-      Item: <%= @item.filemaker_id %><br/>
-      Location: <%= @item.location_calc %></br/>
-      Height: <%= @item.height %> in.</br/>
-      Width: <%= @item.width %> in.</br/>
-      Depth: <%= @item.depth %> in.</br/>
-      Diameter: <%= @item.diameter %> in.
-    </p>
+    <p>Item: <%= @item.filemaker_id %></p>
+    <p>Location: <%= @item.location_calc %></p>
+    <hr>
+    <h5>Dimensions</h5>
+
+    <!-- DIMENSIONS INCHES -->
+    <div class="row">
+
+    <% if @item.height.present? %>
+      <div class="col-md-3">
+        <p>Height: <%= @item.height %> in.</p>
+      </div>
+    <% end %>
+
+    <% if @item.width.present? %>
+      <div class="col-md-3">
+        <p>Width: <%= @item.width %> in.</p>
+      </div>
+    <% end %>
+
+    <% if @item.depth.present? %>
+      <div class="col-md-3">
+        <p>Depth: <%= @item.depth %> in.</p>
+      </div>
+    <% end %>
+
+    <% if @item.diameter.present? %>
+      <div class="col-md-3">
+        <p>Diameter: <%= @item.diameter %> in.</p>
+      </div>
+    <% end %>
+
+    </div>
+
+    <!-- DIMENSIONS CENTIMETERS -->
+    <div class="row">
+
+    <% if @item.height.present? %>
+      <div class="col-md-3">
+        <p>Height: <%= @item.height %> cm.</p>
+      </div>
+    <% end %>
+
+    <% if @item.width.present? %>
+      <div class="col-md-3">
+        <p>Width: <%= @item.width %> cm.</p>
+      </div>
+    <% end %>
+
+    <% if @item.depth.present? %>
+      <div class="col-md-3">
+        <p>Depth: <%= @item.depth %> cm.</p>
+      </div>
+    <% end %>
+
+    <% if @item.diameter.present? %>
+      <div class="col-md-3">
+        <p>Diameter: <%= @item.diameter %> cm.</p>
+      </div>
+    <% end %>
+    
+    </div>
+
   </div>
+
+  <!-- DESCRIPTION -->
   <div class="col-md-6 info-panel">
-    <p><%= @item.description %></p>
-    <p><%= @item.reference %></p>
+
+    <% if @item.description.present? %>
+      <p><%= @item.description %></p>
+    <% end %>
+
+    <% if @item.reference.present? %>
+      <p><%= @item.reference %></p>
+    <% end %>
+
     <p>Category: <%= raw @item.category_list.map { |t| link_to t.titlecase, category_path(t) }.join(', ') %></p>
     <% if @item.sold %>
       <%= image_tag 'hml_sold_icon.svg', class: 'item-stamp-sold' %>
@@ -53,9 +117,3 @@
 
 <!-- RECENTLY VIEWED ITEMS -->
 <%= render 'layouts/recent_items' %>
-
-<!--
-<hr>
-<%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-default' %>
-<%= link_to 'Back', items_path, class: 'btn btn-default' %>
--->

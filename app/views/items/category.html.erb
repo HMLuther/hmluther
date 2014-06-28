@@ -6,7 +6,7 @@
 
     <% @items.each do |item| %>
       <li data-size="<%= item.height %>">
-      <%= link_to item do %>
+      <%= link_to item, class: 'item-link' do %>
         <%= image_tag item.default_image_url, class: 'item-image' %>
       <% end %>
       <% if item.sold %>
@@ -23,3 +23,5 @@
 
 <!-- RECENTLY VIEWED ITEMS -->
 <%= render 'layouts/recent_items' %>
+
+<input id="position" type="input" value="">

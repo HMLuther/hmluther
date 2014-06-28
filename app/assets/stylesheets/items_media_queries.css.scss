@@ -1,5 +1,19 @@
 @media screen and (max-width: 991px){
 
+	// CATEGORY SUBNAV
+	.category-subnav {
+		div {
+			border-right: 3px solid #FFFFFF;
+			margin: 0 0 3px 0;
+		}
+		div:last-child {
+			// border: none;
+		}
+		div.display {
+			// border: none;
+		}
+	}
+
 	.item-subnav {
 		.sm-lg-icon {
 			background-size:6% 6px;
@@ -11,7 +25,7 @@
 
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 768px){
 
 	.category-items-container::-webkit-scrollbar-track:horizontal {
 		display: none;
@@ -74,19 +88,7 @@
 
 
 
-	// CATEGORY SUBNAV
-	.category-subnav {
-		div {
-			border-right: 3px solid #FFFFFF;
-			margin: 0 0 3px 0;
-		}
-		div:last-child {
-			border: none;
-		}
-		div.display {
-			border: none;
-		}
-	}
+
 
 	// ITEM SUBNAV
 	.item-subnav {
