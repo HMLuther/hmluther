@@ -1,0 +1,33 @@
+<div id="login_modal" class="login_modal modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- HEADER -->
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<%= image_tag 'hml_icon.svg', class: 'logo-icon', alt: 'HM Luther' %>
+				<h4 class="modal-title">Login</h4>
+			</div>
+
+			<!-- BODY -->
+			<div class="modal-body">
+			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :remote => true, :format => :js, :html => {:class => "form-horizontal"}) do |f| %>
+
+				<%= f.input :email, :required => true, :placeholder => 'EMAIL', :label => false %>
+				<%= f.input :password, :required => true, :placeholder => 'PASSWORD', :label => false %>
+				<div class="form-group">
+					<%= f.button :submit, "Login", :class => "btn btn-primary" %>
+				</div>
+
+			</div>
+
+			<!-- FOOTER -->
+			<div class="modal-footer">
+				<p>Already have an account? <%= link_to "Log in", new_user_session_path %> | 
+				Forgot your password? <%= link_to "Reset", new_user_password_path %></p>
+			<% end %>
+			</div>
+
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

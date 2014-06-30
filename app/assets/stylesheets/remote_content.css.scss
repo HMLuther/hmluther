@@ -1,0 +1,81 @@
+// Place all the styles related to the remote_content controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.login_modal, .sign_up_modal {
+	color: #666666;
+	.right-column {
+		.form-group {
+			padding-left: 0;
+		}
+	}
+	.btn-primary {
+		background-color: #c8c8c8;
+	}
+	.btn-primary:hover {
+		background-color: #f47321;
+	}
+	.form-group {
+		margin-bottom: 3px;
+		padding: 0 10px;
+	}
+	.logo-icon {
+		display: inline-block;
+		height: 50px;
+		text-align: left;
+		vertical-align: bottom;
+	}
+	.modal-body {
+		padding: 25px;
+	}
+	.modal-content {
+		background-color: #e6e6e6;
+	}
+	.modal-dialog {
+		// width: 700px;
+	}
+	.modal-footer {
+		font-size: 0.8em;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.modal-header {
+		background-color: #ffffff;
+	}
+	.modal-title {
+		float: right;
+		margin-top: 30px;
+	}
+	input {
+		border-radius: 0;
+		width: 100%;
+	}
+	textarea {
+		height: 107px;
+		border-radius: 0;
+	}
+}
+
+@media screen and (max-width: 991px){
+	.sign_up_modal {
+		color: #666666;
+		.right-column {
+			.form-group {
+				padding-left: 10px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px){
+	.sign_up_modal {
+		.logo-icon {
+			height: auto;
+			width: 50%;
+		}
+		.modal-title {
+			float: none;
+		}
+	}
+}

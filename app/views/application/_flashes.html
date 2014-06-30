@@ -1,0 +1,8 @@
+<div id="flash">
+	<% flash.each do |type, message| %>
+		<div class="alert alert-dismissable { :class => twitterized_type(type) }">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<%= content_tag :div, message %>
+		</div>
+	<% end %>
+</div>

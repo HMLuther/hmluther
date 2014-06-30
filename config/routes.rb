@@ -2,6 +2,8 @@ Hmluther::Application.routes.draw do
 
   resources :designers
 
+  match 'remote_sign_up', to: 'remote_content#remote_sign_up', via: [:get]
+  match 'remote_login', to: 'remote_content#remote_login', via: [:get]
   get 'category/:category', to: 'items#category', as: :category
   get 'maker/:maker', to: 'items#maker', as: :maker
 
@@ -13,7 +15,7 @@ Hmluther::Application.routes.draw do
   get 'features', to: 'features#index'
 
   root :to => "home#index"
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}
 
   resources :users
   

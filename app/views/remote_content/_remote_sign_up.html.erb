@@ -1,0 +1,65 @@
+<div id="sign_up_modal" class="sign_up_modal modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- HEADER -->
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<%= image_tag 'hml_icon.svg', class: 'logo-icon', alt: 'HM Luther' %>
+				<h4 class="modal-title">Create Account</h4>
+			</div>
+
+			<!-- BODY -->
+			<div class="modal-body">
+			<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :remote => true, :format => :js, :html => {:class => "form-horizontal"}) do |f| %>
+
+					<div class="row">
+
+						<!-- LEFT COLUMN -->
+					  <div class="col-md-8">
+							<%= f.input :name, :required => true, :autofocus => true, :placeholder => 'NAME', :label => false %>
+							<%= f.input :email, :required => true, :placeholder => 'EMAIL', :label => false %>
+							<%= f.input :address, :required => false, :placeholder => 'ADDRESS', :label => false %>
+
+							<div class="row">
+								<div class="col-md-8">
+									<%= f.input :city, :required => false, :placeholder => 'CITY', :label => false %>
+								</div>
+								<div class="col-md-4">
+									<%= f.input :state, :required => false, :placeholder => 'STATE', :label => false %>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-6">
+									<%= f.input :zip, :required => false, :placeholder => 'ZIP', :label => false %>
+								</div>
+								<div class="col-md-6">
+									<%= f.input :country, :required => false, :placeholder => 'COUNTRY', :label => false, :as => :string %>
+								</div>
+							</div>
+							<%= f.input :phone, :required => false, :placeholder => 'PHONE', :label => false %>
+						</div>
+
+						<!-- RIGHT COLUMN -->
+						<div class="col-md-4 right-column">
+							<%= f.input :password, :required => true, :placeholder => 'PASSWORD', :label => false %>
+							<%= f.input :password_confirmation, :required => true, :placeholder => 'CONFIRM PASSWORD', :label => false %>
+							<%= f.input :reference, :required => false, :placeholder => 'How did you hear about us?', :label => false %>
+							<div class="form-group">
+								<%= f.button :submit, "Create account", :class => "btn btn-primary" %>
+							</div>
+						</div>
+					</div>
+			</div>
+
+			<!-- FOOTER -->
+			<div class="modal-footer">
+				<p>Already have an account? <%= link_to "Log in", new_user_session_path %> | 
+				Forgot your password? <%= link_to "Reset", new_user_password_path %></p>
+			<% end %>
+			</div>
+
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
