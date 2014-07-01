@@ -57,6 +57,10 @@ $(document).on "page:change", ->
 		else if categoryItemsLi.css('margin-bottom') == '20px' && display2Button.hasClass('active')
 			categoryItems.css('width', categoryContainerSize_2)
 
+		else if categoryItemsLi.css('margin-bottom') == '20px' && !display1Button.hasClass('active')
+			categoryItems.css('width', categoryContainerSize_1)
+			console.log 'setCategoryItemsWidth set to 1'
+
 	setCategoryItemsContainerPosition = () ->
 		if inputPosition.val() > 0
 			categoryItemsContainer.scrollLeft(inputPosition.val())
@@ -102,12 +106,20 @@ $(document).on "page:change", ->
 		else if categoryItemsLi.css('margin-bottom') is '10px'
 			categoryItems.css('width', '100%')
 
+	# FLASH
+	flashDisplay = (msg) ->
+		$('.flash-ajax').text(msg)
+		# $('.navbar').prepend("<div class='flash-ajax'>" + msg + "</div>")
+		$('.flash-ajax').fadeIn(1000).delay(3000).fadeOut(1000)
+
 	# ITEM
 	shareButton = $('.item-subnav .share-button')
 	reqInfoButton = $('.item-subnav .request-info-button')
 	tearsheetButton = $('.item-subnav .tearsheet-button')
 	collectionAddButton = $('.item-subnav .collection-add-button')
 	collectionLoginButton = $('.item-subnav .collection-login-button')
+	collectionMenu = $('.collections-menu')
+	addLoginButton = $('.add-login-button')
 
 	itemLinks.on "click", () ->
 		left_position = $('.category-items-container').scrollLeft()
@@ -122,8 +134,31 @@ $(document).on "page:change", ->
 	tearsheetButton.on "click", () ->
 		alert "Tearsheet Button"
 
-	collectionAddButton.on "click", () ->
-		alert "Collection Add Button"
+	collectionAddButton.on "click", (event) ->
+		event.stopPropagation()
+		event.preventDefault()
+		if collectionAddButton.hasClass('active')
+			collectionMenu.slideUp(200)
+			collectionAddButton.removeClass('active')
+			console.log 'close add button'
+		else
+			collectionAddButton.addClass('active')
+			collectionMenu.slideDown(200)
+			console.log 'open add button'
+
+	collectionMenu.on "click", (event) ->
+		event.stopPropagation()
+		collectionMenu.hide()
+		collectionAddButton.removeClass('active')
+		console.log 'collectionMenu click'
 
 	collectionLoginButton.on "click", () ->
-		alert "You must login to add items to collections"
+		# alert "You must login to manage collections"
+		flashDisplay('You must login to manage collections')
+
+	addLoginButton.on "click", () ->
+		# alert "You must login to add items to collections"
+		flashDisplay('You must login to add items to collections')
+
+
+

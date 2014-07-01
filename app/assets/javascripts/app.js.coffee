@@ -1,6 +1,22 @@
+# $(document).on 'page:fetch', ->
+#   $('body').fadeOut 'slow'
+#   $('.collections-menu').hide()
+
+# $(document).on 'page:restore', ->
+#   $('body').fadeIn 'slow'
+
 $(document).on "page:change", ->
 	
 	console.log "page change"
+
+	$("form#sign_in_user").bind "ajax:success", (e, data, status, xhr) ->
+		console.log 'js after login'
+		if data.success
+			$('#login_modal').modal('hide')
+			# $('#sign_in_button').hide()
+			# $('#submit_comment').slideToggle(1000, "easeOutBack" )
+		else
+			alert('failure!')
 
 	# TABLE ROW LINKS
 	$("tr[data-link]").on "click", -> 

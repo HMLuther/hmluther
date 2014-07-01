@@ -202,6 +202,23 @@ footer{
   background: rgba(255,0,0,0.2);
 }
 
+
+// FLASH AJAX
+.flash-ajax {
+  background-color: #333;
+  border-radius: 5px;
+  color: #ffffff;
+  display: none;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+  max-width: 200px;
+  opacity: 0.7;
+  padding: 1.2em;
+  z-index: 50;
+}
+
+// RECENT ITEMS
 .recent-items {
   padding-top: 10px;
   a {

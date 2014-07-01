@@ -46,13 +46,13 @@ class Item < ActiveRecord::Base
 		end
 	end
 
-def location_calc
-	if self.location == "Uptown"
-		"The Carlyle"
-	elsif self.location == "Downtown"
-		"Greenwich Village"
+	def location_calc
+		if self.location == "Uptown"
+			"The Carlyle"
+		elsif self.location == "Downtown"
+			"Greenwich Village"
+		end
+			
 	end
-		
-end
 
 end

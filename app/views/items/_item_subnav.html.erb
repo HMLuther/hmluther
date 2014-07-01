@@ -24,11 +24,24 @@
 
 	<% if user_signed_in? %>
 	<div class="col-md-2 col-sm-2">
-		<button class="collection-add-button" title="Add to collection">Add</button>
+		<% if current_user.collections.count > 0 %>
+			<button class="collection-add-button" title="Add to collection">Add</button>
+		<% else %>
+			<%= link_to 'Create Collection', new_collection_path %>
+		<% end %>
+		<div class="collections-menu">
+			<ul>
+			<% current_user.collections.each do |c| %>
+				<li>
+					<%= button_to c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => @item.filemaker_id }), :remote => true %>
+				</li>
+			<% end %>
+			</ul>
+		</div>
 	</div>
 	<% else %>
-	<div class="col-md-2 col-sm-2 display">
-		<span class="line-through" title="Add to collection (Login required)">Add</span>
+	<div class="col-md-2 col-sm-2">
+		<button class="add-login-button" title="Add to collection (Login required)">Add</button>
 	</div>
 	<% end %>
 
@@ -37,8 +50,8 @@
 		<%= link_to 'Collections', collections_path, title: 'Manage my collections' %>
 	</div>
 	<% else %>
-	<div class="col-md-2 col-sm-2 display">
-		<span class="line-through" title="Manage my collections (Login required)">Collections</span>
+	<div class="col-md-2 col-sm-2">
+		<button class="collection-login-button" title="Manage my collections (Login required)">Collections</button>
 	</div>
 	<% end %>
 

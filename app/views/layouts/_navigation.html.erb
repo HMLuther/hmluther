@@ -1,5 +1,6 @@
 <%# navigation styled for Bootstrap 3.0 %>
 <nav class="navbar navbar-default" role="navigation">
+  <div class="flash-ajax"></div>
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -13,7 +14,7 @@
         <%= image_tag 'hml.png', class: 'logo visible-xs', alt: 'HM Luther' %>
       <% end %>
       <% if user_signed_in? %>
-        <p>Logged in: <%= current_user.name %></p>
+        <p class="text-muted">Logged in: <%= current_user.name %></p>
       <% end %>
     </div>
     <div class="collapse navbar-collapse">

@@ -1,10 +1,11 @@
 class CollectionsController < ApplicationController
+  before_action :authenticate_user!, :except => [:carousel, :slideshow]
   before_action :set_collection, only: [:carousel, :slideshow, :show, :edit, :update, :destroy]
 
   # GET /collections
   # GET /collections.json
   def index
-    @collections = Collection.all
+    @collections = current_user.collections
   end
 
   # GET /collections/1
@@ -16,7 +17,7 @@ class CollectionsController < ApplicationController
   end
 
   def slideshow
-    @container_size_1 = @collection.collection_items.count * 885 - 10
+    @container_size_1 = @collection.collection_items.count * 890 - 10
     @precision_count = @collection.collection_items.count / 2.to_f
     @container_size_2 = @precision_count.round * 354
   end
