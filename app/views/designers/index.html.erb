@@ -1,15 +1,31 @@
+<!-- SUBNAV -->
+<%= render 'designer_subnav' %>
+
 <h1>Designers</h1>
 <hr>
 
+<!-- ALPHABETICAL GROUP -->
+<div class="alpha-content">
+	<% @designer_alpha.sort.each do |aplha, designer| %>
+	  <h4><%= aplha %></h4>
+	  <p>
+	  <% for designer in designer %>
+	    <%= link_to designer.name, designer_path(designer), class: 'designer-country-link' %>
+	  <% end %>
+	  </p>
+	  <hr>
+	<% end %>
+</div>
 
-<% @designer_country.sort.each do |country, designer| %>
-  <h4><%= country %></h4>
-  <p>
-  <% for designer in designer %>
-    <%= link_to designer.name, designer_path(designer), class: 'designer-country-link' %>
-  <% end %>
-  </p>
-  <hr>
-<% end %>
-
-<!-- <%= link_to 'New Designer', new_designer_path, class: 'btn btn-primary' %> -->
+<!-- COUNTRY GROUP -->
+<div class="country-content">
+	<% @designer_country.sort.each do |country, designer| %>
+	  <h4><%= country %></h4>
+	  <p>
+	  <% for designer in designer %>
+	    <%= link_to designer.name, designer_path(designer), class: 'designer-country-link' %>
+	  <% end %>
+	  </p>
+	  <hr>
+	<% end %>
+</div>

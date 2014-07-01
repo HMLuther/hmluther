@@ -1,3 +1,19 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on "page:change", ->
+
+	groupAlpha = $('.group-alpha')
+	groupCountry = $('.group-country')
+
+	$('.country-content').hide()
+	groupAlpha.addClass('active')
+
+	groupAlpha.on "click", () ->
+		groupAlpha.addClass('active')
+		groupCountry.removeClass('active')
+		$('.country-content').fadeOut()
+		$('.alpha-content').fadeIn()
+
+	groupCountry.on "click", () ->
+		groupCountry.addClass('active')
+		groupAlpha.removeClass('active')
+		$('.alpha-content').fadeOut()
+		$('.country-content').fadeIn()

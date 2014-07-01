@@ -5,6 +5,7 @@ class DesignersController < ApplicationController
   # GET /designers
   # GET /designers.json
   def index
+    @designer_alpha = Designer.listed.group_by { |c| c.name[0] }
     @designer_country = Designer.listed.group_by { |c| c.origin }
   end
 
