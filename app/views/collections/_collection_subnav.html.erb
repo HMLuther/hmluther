@@ -1,6 +1,10 @@
 <div class="row item-subnav">
 
 	<div class="col-md-2 col-sm-2">
+		<%= link_to 'Collections', collections_path, title: 'My collections' %>
+	</div>
+
+	<div class="col-md-2 col-sm-2">
 		<button class="share-button" title="Share this collection">Share</button>
 	</div>
 
@@ -16,9 +20,9 @@
 		<%= link_to 'Slideshow', slideshow_collection_path(@collection), title: 'View as slideshow' %>
 	</div>
 
-	<div class="col-md-2 col-sm-2">
+<!-- 	<div class="col-md-2 col-sm-2">
 		<button class="share-button" title="Deactive this collection">Active</button>
-	</div>
+	</div> -->
 
 	<div class="col-md-2 col-sm-2">
 		<%= link_to 'Delete', collection_path(@collection), method: :delete, title: 'Delete this collection', data: { confirm: 'Are you sure?' }%>

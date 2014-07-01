@@ -31,7 +31,7 @@
 		<% end %>
 		<div class="collections-menu">
 			<ul>
-			<% current_user.collections.each do |c| %>
+			<% current_user.collections.active.each do |c| %>
 				<li>
 					<%= button_to c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => @item.filemaker_id }), :remote => true %>
 				</li>

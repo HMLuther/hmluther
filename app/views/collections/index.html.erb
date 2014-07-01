@@ -1,13 +1,6 @@
-<h1>Collections</h1>
+<h2>My Collections</h2>
 
 <table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @collections.each do |collection| %>
       <tr data-link="<%= collection_path(collection) %>">
