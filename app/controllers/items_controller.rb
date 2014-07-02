@@ -14,9 +14,9 @@ class ItemsController < ApplicationController
   #GET /category/:category
   def category
     @items = Item.category_list.tagged_with(params[:category])
-    @container_size_1 = @items.count * 890 - 10
+    @container_size_1 = @items.count * 915 - 10
     @precision_count = @items.count / 2.to_f
-    @container_size_2 = @precision_count.round * 359
+    @container_size_2 = @precision_count.round * 384
   end
 
   #GET /maker/:maker

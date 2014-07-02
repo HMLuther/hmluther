@@ -124,6 +124,7 @@ footer{
     padding: 5px 15px;
     hr {
       margin: 0;
+      border: 1px solid #e5e5e5;
     }
   }
 
@@ -137,16 +138,17 @@ footer{
   }
 
   .logo {
-    height:60px;
+    height:70px;
   }
 
   .navbar-brand {
     height: auto;
+    padding-bottom: 5px;
   }
 
   .navbar-right {
     list-style-type: none;
-    margin: 0 -15px 0 0;
+    margin: 10px -15px 0 0;
   }  
 }
 
