@@ -5,7 +5,7 @@ class DesignersController < ApplicationController
   # GET /designers
   # GET /designers.json
   def index
-    @designer_alpha = Designer.listed.group_by { |c| c.name[0] }
+    @designer_alpha = Designer.listed.group_by { |c| c.name_initial }
     @designer_country = Designer.listed.group_by { |c| c.origin }
   end
 
@@ -74,6 +74,6 @@ class DesignersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def designer_params
-      params.require(:designer).permit(:active, :affiliate_list, :bio, :name, :listed, :origin, :production_date, :website, :filemaker_id)
+      params.require(:designer).permit(:active, :affiliate_list, :bio, :name_first, :name_last, :listed, :origin, :production_date, :website, :filemaker_id)
     end
 end

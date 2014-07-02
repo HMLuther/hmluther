@@ -5,10 +5,10 @@ class Designer < ActiveRecord::Base
 	before_validation :generate_slug
 
 	validates_presence_of :filemaker_id, :on => :create, :message => "can't be blank"
-	validates_presence_of :name, :on => :create, :message => "can't be blank"
+	validates_presence_of :name_first, :on => :create, :message => "can't be blank"
 	validates :slug, uniqueness: true, presence: true
 
-	default_scope { order('name ASC') }
+	default_scope { order('name_last ASC') }
 
   scope :listed, -> { where(listed: true) }
 
@@ -34,6 +34,26 @@ class Designer < ActiveRecord::Base
 
 	def item_count
 		self.items.count
+	end
+
+	def name_full
+		"#{name_first} #{name_last}"
+	end
+
+	def name_lf
+		if self.name_last.present?
+			"#{name_last}, #{name_first}"
+		else
+			"#{name_first}"
+		end
+	end
+
+	def name_initial
+		if self.name_last.present?
+			self.name_last[0]
+		else
+			self.name_first[0]
+		end
 	end
 
 end

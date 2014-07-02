@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629184108) do
+ActiveRecord::Schema.define(version: 20140702165122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140629184108) do
   add_index "collections", ["user_id"], name: "index_collections_on_user_id", using: :btree
 
   create_table "designers", force: true do |t|
-    t.string   "name"
+    t.string   "name_first"
     t.text     "bio"
     t.boolean  "active",          default: true
     t.boolean  "listed",          default: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140629184108) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "origin"
+    t.string   "name_last"
   end
 
   add_index "designers", ["filemaker_id"], name: "index_designers_on_filemaker_id", using: :btree
