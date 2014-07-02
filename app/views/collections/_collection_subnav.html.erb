@@ -1,7 +1,7 @@
 <div class="row item-subnav">
 
 	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Collections', collections_path, title: 'My collections' %>
+		<%= link_to 'Create Tearsheet', collections_path, title: 'Create Tearsheet' %>
 	</div>
 
 	<div class="col-md-2 col-sm-2">
@@ -9,15 +9,11 @@
 	</div>
 
 	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Edit', edit_collection_path(@collection), title: 'Edit this collection' %>
+		<%= link_to 'Preview: Carousel', carousel_collection_path(@collection), title: 'View as carousel' %>
 	</div>
 
 	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Carousel', carousel_collection_path(@collection), title: 'View as carousel' %>
-	</div>
-
-	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Slideshow', slideshow_collection_path(@collection), title: 'View as slideshow' %>
+		<%= link_to 'Preview: Slideshow', slideshow_collection_path(@collection), title: 'View as slideshow' %>
 	</div>
 
 <!-- 	<div class="col-md-2 col-sm-2">
@@ -25,7 +21,11 @@
 	</div> -->
 
 	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Delete', collection_path(@collection), method: :delete, title: 'Delete this collection', data: { confirm: 'Are you sure?' }%>
+		<%= link_to 'Edit Collection', edit_collection_path(@collection), title: 'Edit this collection' %>
+	</div>
+
+	<div class="col-md-2 col-sm-2">
+		<%= link_to 'Delete Collection', collection_path(@collection), method: :delete, title: 'Delete this collection', data: { confirm: 'Are you sure?' }%>
 	</div>
 
 </div>

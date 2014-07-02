@@ -1,7 +1,29 @@
 .collection-detail {
-	// color: orange;
+	color: #666;
 	.item-panel {
-		height: 320px;
+		.caption {
+			margin-top: -5px;
+			padding: 10px 15px 0 15px;
+			.btn {
+				background-color: #e5e5e5;
+				border: none;
+				border-right: 1px solid #fff;
+				border-radius: 0;
+				color: #666;
+				font-size: 0.9em;
+			}
+			.btn-primary:hover {
+				background-color: #f47321;
+				color: #fff;
+			}
+			.btn-danger:hover {
+				background-color: #d9534f;
+				color: #fff;
+			}
+		}
+	}
+	.thumbnail {
+		// height: 350px;
 	}
 	.thumbnail img {
 		width: 100%;

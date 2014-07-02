@@ -6,20 +6,21 @@
 <h1><%= @collection.name %></h1>
 
 <p><%= @collection.description %></p>
-<small><%= @collection.created_at.strftime("Created: %B %d, %Y") %></small>
+<p><small><%= @collection.created_at.strftime("Created: %B %d, %Y") %></small></p>
 
 
-<!-- 
-<p>
+
+<!-- <p>
   <strong>Active:</strong>
   <%= @collection.active %>
 </p>
-
-<p>
+ -->
+<!-- <p>
   <strong>Public:</strong>
   <%= @collection.public %>
-</p>
- -->
+</p> -->
+ 
+<h3>Items</h3>
 <hr>
 
 <div class="row">
@@ -27,10 +28,11 @@
 	<div class="col-sm-3 col-md-3 col-xs-12 item-panel">
 		<div class="thumbnail">
 			<%= image_tag c.item.thumb_image_url %>
-<!-- 			<div class="caption">
-				<h4><%= raw c.item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
-				<p><%= c.item.description_short %></p>
-			</div> -->
+			<div class="row caption">
+				<%= link_to 'Position', '#', class: 'col-md-4 position-button btn btn-primary' %>
+				<%= link_to 'Active', '#', class: 'col-md-4 active-button btn btn-primary' %>
+				<%= link_to 'Delete', '#', class: 'col-md-4 delete-button btn btn-danger' %>
+			</div>
 		</div>
 	</div>
 <% end %>
