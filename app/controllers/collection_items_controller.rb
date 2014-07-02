@@ -60,6 +60,7 @@ class CollectionItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to collection_items_url, notice: 'Collection item was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 

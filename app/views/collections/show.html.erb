@@ -23,15 +23,15 @@
 <h3>Items</h3>
 <hr>
 
-<div class="row">
+<div id="collection-items-section" class="row">
 <% @collection.collection_items.each do |c| %>
-	<div class="col-sm-3 col-md-3 col-xs-12 item-panel">
+	<div class="col-sm-3 col-md-3 col-xs-12 item-panel" id="<%= c.id %>">
 		<div class="thumbnail">
 			<%= image_tag c.item.thumb_image_url %>
 			<div class="row caption">
 				<%= link_to 'Position', '#', class: 'col-md-4 position-button btn btn-primary' %>
-				<%= link_to 'Active', '#', class: 'col-md-4 active-button btn btn-primary' %>
-				<%= link_to 'Delete', '#', class: 'col-md-4 delete-button btn btn-danger' %>
+				<%= link_to 'Active', '#', :remote => true, class: 'col-md-4 active-button btn btn-primary' %>
+				<%= link_to 'Delete', collection_collection_item_path(@collection, c), :remote => true, method: :delete, data: { confirm: 'Are you sure?' }, class: 'col-md-4 delete-button btn btn-danger' %>
 			</div>
 		</div>
 	</div>
