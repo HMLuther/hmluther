@@ -6,4 +6,6 @@ class CollectionItem < ActiveRecord::Base
 	validates_presence_of :collection_id
 	validates_presence_of :item_id
 
+	scope :active, -> { where(active: true) }
+
 end

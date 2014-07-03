@@ -46,9 +46,11 @@ class CollectionItemsController < ApplicationController
       if @collection_item.update(collection_item_params)
         format.html { redirect_to @collection_item, notice: 'Collection item was successfully updated.' }
         format.json { render :show, status: :ok, location: @collection_item }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @collection_item.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -72,6 +74,6 @@ class CollectionItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def collection_item_params
-      params.require(:collection_item).permit(:collection_id, :item_id, :position)
+      params.require(:collection_item).permit(:active, :collection_id, :item_id, :position)
     end
 end

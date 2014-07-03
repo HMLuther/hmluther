@@ -25,6 +25,11 @@
 	.thumbnail {
 		// height: 350px;
 	}
+	.thumbnail.inactive {
+		background-color: #999;
+		border-color: #666;
+		opacity: 0.4;
+	}
 	.thumbnail img {
 		width: 100%;
 	}

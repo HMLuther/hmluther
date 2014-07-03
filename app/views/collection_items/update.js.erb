@@ -1,0 +1,20 @@
+var active = <%= @collection_item.active %>;
+var id = <%= @collection_item.id %>;
+var selector = '#' + id + ' .thumbnail';
+console.log('update: ' + id + ' | active: ' + active);
+
+if(active){
+	$(selector).removeClass('inactive');
+	$(selector).addClass('active');
+	console.log('active');
+} else {
+	$(selector).removeClass('active');
+	$(selector).addClass('inactive');
+	console.log('inactive');
+}
+
+$('#collection-items-section .inactive .inactive-button').hide()
+$('#collection-items-section .inactive .active-button').show()
+
+$('#collection-items-section .active .active-button').hide()
+$('#collection-items-section .active .inactive-button').show()

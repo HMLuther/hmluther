@@ -10,6 +10,9 @@ $(document).on "page:change", ->
 	
 	console.log "app.coffee - page change"
 
+	$('#collection-items-section .inactive .inactive-button').hide()
+	$('#collection-items-section .active .active-button').hide()
+
 	# TABLE ROW LINKS
 	$("tr[data-link]").on "click", -> 
 		window.location = this.dataset.link
