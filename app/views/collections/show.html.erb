@@ -8,8 +8,6 @@
 <p><%= @collection.description %></p>
 <p><small><%= @collection.created_at.strftime("Created: %B %d, %Y") %></small></p>
 
-
-
 <!-- <p>
   <strong>Active:</strong>
   <%= @collection.active %>
@@ -27,10 +25,11 @@
 <% @collection.collection_items.each do |c| %>
 	<div class="col-sm-3 col-md-3 col-xs-12 item-panel" id="<%= c.id %>">
 		<div class="thumbnail <%= c.active ? 'active' : 'inactive' %>">
-			<%= image_tag c.item.thumb_image_url %>
+			<%= link_to c.item do %>
+				<%= image_tag c.item.thumb_image_url %>
+			<% end %>
 			<div class="row caption">
 				<%= link_to 'Position', '#', class: 'col-md-4 position-button btn btn-primary' %>
-				
 
 				<%=link_to "Deactivate", collection_collection_item_path(@collection, c), data: { params: { collection_item: { active: false} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-4 inactive-button btn btn-primary' %>
 

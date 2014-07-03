@@ -1,24 +1,25 @@
 <div class="row item-subnav">
 
 	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Create Tearsheet', collections_path, title: 'Create Tearsheet' %>
+		<%= link_to 'Create Tearsheet', collections_path, title: 'Create Tearsheet (PDF)' %>
 	</div>
 
 	<div class="col-md-2 col-sm-2">
 		<button class="share-button" title="Share this collection">Share</button>
 	</div>
 
-	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Preview: Carousel', carousel_collection_path(@collection), title: 'View as carousel' %>
+	<div class="dropdown col-md-2 col-sm-2">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Preview <span class="caret"></span></a>
+		<ul class="dropdown-menu" role="menu">
+			<li><%= link_to 'Carousel', carousel_collection_path(@collection), title: 'View as carousel' %></li>
+			<li class="divider"></li>
+			<li><%= link_to 'Slideshow', slideshow_collection_path(@collection), title: 'View as slideshow' %></li>
+		</ul>
 	</div>
 
 	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Preview: Slideshow', slideshow_collection_path(@collection), title: 'View as slideshow' %>
+		<button class="share-button" title="Deactive this collection">Active Toggle</button>
 	</div>
-
-<!-- 	<div class="col-md-2 col-sm-2">
-		<button class="share-button" title="Deactive this collection">Active</button>
-	</div> -->
 
 	<div class="col-md-2 col-sm-2">
 		<%= link_to 'Edit Collection', edit_collection_path(@collection), title: 'Edit this collection' %>
