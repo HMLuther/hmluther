@@ -7,5 +7,6 @@ class CollectionItem < ActiveRecord::Base
 	validates_presence_of :item_id
 
 	scope :active, -> { where(active: true) }
+	scope :inactive, -> { where(active: false) }
 
 end

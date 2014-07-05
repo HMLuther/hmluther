@@ -1,6 +1,6 @@
 var active = <%= @collection_item.active %>;
 var id = <%= @collection_item.id %>;
-var selector = '#' + id + ' .thumbnail';
+var selector = '#collection_item_' + id + ' .thumbnail';
 console.log('update: ' + id + ' | active: ' + active);
 
 if(active){

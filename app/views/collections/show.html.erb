@@ -3,44 +3,32 @@
 
 <div class="collection-detail">
 
-<h1><%= @collection.name %></h1>
+	<h1><%= @collection.name %></h1>
 
-<p><%= @collection.description %></p>
-<p><small><%= @collection.created_at.strftime("Created: %B %d, %Y") %></small></p>
+	<p><%= @collection.description %></p>
+	<p><small><%= @collection.created_at.strftime("Created: %B %d, %Y") %></small></p>
 
-<!-- <p>
-  <strong>Active:</strong>
-  <%= @collection.active %>
-</p>
- -->
-<!-- <p>
-  <strong>Public:</strong>
-  <%= @collection.public %>
-</p> -->
+	<p>
+	  <strong>Public:</strong>
+	  <%= @collection.public %>
+	</p>
 
-<h3><%= @collection.collection_items.count %> Items</h3>
-<hr>
-
-<div id="collection-items-section" class="row">
-<% @collection.collection_items.each do |c| %>
-	<div class="col-sm-3 col-md-3 col-xs-12 item-panel" id="<%= c.id %>">
-		<div class="thumbnail <%= c.active ? 'active' : 'inactive' %>">
-			<%= link_to c.item do %>
-				<%= image_tag c.item.thumb_image_url %>
+	<h3><%= @collection.collection_items.count %> Items</h3>
+	<hr>
+	<div id="collection-items-section" class="row">
+		<%= div_for(@collection.collection_items.order("active DESC"), class: "col-sm-3 col-md-3 col-xs-12 item-panel") do |ci| %>
+			<%= div_for(ci.item, class: "thumbnail #{ci.active ? 'active' : 'inactive'}") do %>
+				<%= link_to ci.item do %>
+					<%= image_tag ci.item.thumb_image_url %>
+				<% end %>
+				<div class="row caption">
+					<%= link_to 'Position', '#', class: 'col-md-4 position-button btn btn-primary' %>
+					<%= link_to "Deactivate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: false} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-4 inactive-button btn btn-primary' %>
+					<%= link_to "Activate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: true} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-4 active-button btn btn-primary' %>
+					<%= link_to 'Delete', collection_collection_item_path(@collection, ci), :remote => true, method: :delete, data: { confirm: 'Are you sure?' }, class: 'col-md-4 delete-button btn btn-danger' %>
+				</div>
 			<% end %>
-			<div class="row caption">
-				<%= link_to 'Position', '#', class: 'col-md-4 position-button btn btn-primary' %>
-
-				<%=link_to "Deactivate", collection_collection_item_path(@collection, c), data: { params: { collection_item: { active: false} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-4 inactive-button btn btn-primary' %>
-
-				<%=link_to "Activate", collection_collection_item_path(@collection, c), data: { params: { collection_item: { active: true} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-4 active-button btn btn-primary' %>
-
-
-				<%= link_to 'Delete', collection_collection_item_path(@collection, c), :remote => true, method: :delete, data: { confirm: 'Are you sure?' }, class: 'col-md-4 delete-button btn btn-danger' %>
-			</div>
-		</div>
+		<% end %>
 	</div>
-<% end %>
-</div>
 
 </div>
