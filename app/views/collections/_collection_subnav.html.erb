@@ -1,7 +1,7 @@
-<div class="row item-subnav">
+<div class="row collection-subnav">
 
 	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Create Tearsheet', collections_path, title: 'Create Tearsheet (PDF)' %>
+		<%= link_to 'Create Tearsheet', collection_path(@collection, format: "pdf"), title: 'Create Tearsheet (PDF)' %>
 	</div>
 
 	<div class="col-md-2 col-sm-2">
@@ -17,8 +17,9 @@
 		</ul>
 	</div>
 
-	<div class="col-md-2 col-sm-2">
-		<button class="share-button" title="Deactive this collection">Active Toggle</button>
+	<div id="active-toggle" class="col-md-2 col-sm-2 <%= @collection.active ? 'active' : 'inactive' %>">
+		<%=link_to "Active", collection_path(@collection), title: "Make inactive", data: { params: { collection: { active: false} }.to_param }, :method => 'PATCH', remote: true, class: "active-button active" %>
+		<%=link_to "Inactive", collection_path(@collection), title: "Make active", data: { params: { collection: { active: true} }.to_param }, :method => 'PATCH', remote: true, class: "inactive-button" %>
 	</div>
 
 	<div class="col-md-2 col-sm-2">

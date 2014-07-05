@@ -137,8 +137,14 @@ GEM
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
+    pdf-core (0.2.5)
     pg (0.17.1)
     polyglot (0.3.4)
+    prawn (1.1.0)
+      pdf-core (~> 0.2.5)
+      ttfunk (~> 1.2.0)
+    prawn-svg (0.15.0.0)
+      prawn (>= 0.8.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -242,6 +248,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    ttfunk (1.2.0)
     turbolinks (2.2.2)
       coffee-rails
     tzinfo (1.1.0)
@@ -278,6 +285,8 @@ DEPENDENCIES
   jquery-rails
   launchy
   pg
+  prawn
+  prawn-svg
   puma
   pundit
   quiet_assets

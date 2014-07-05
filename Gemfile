@@ -18,7 +18,9 @@ gem 'pundit'
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 gem 'acts-as-taggable-on'
 gem 'rails_12factor', group: :production
-gem "therubyracer"
+gem 'therubyracer'
+gem 'prawn'
+gem 'prawn-svg'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

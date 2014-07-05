@@ -1,0 +1,18 @@
+var active = <%= @collection.active %>;
+var selector = '.collection-subnav #active-toggle';
+
+if(active){
+  $(selector).removeClass('inactive');
+  $(selector).addClass('active');
+  console.log('collection active');
+} else {
+  $(selector).removeClass('active');
+  $(selector).addClass('inactive');
+  console.log('collection inactive');
+}
+
+$('.collection-subnav #active-toggle.active .inactive-button').hide()
+$('.collection-subnav #active-toggle.active .active-button').show()
+
+$('.collection-subnav #active-toggle.inactive .active-button').hide()
+$('.collection-subnav #active-toggle.inactive .inactive-button').show()

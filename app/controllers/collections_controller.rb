@@ -11,11 +11,22 @@ class CollectionsController < ApplicationController
   # GET /collections/1
   # GET /collections/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = CollectionPdf.new(@collection, view_context)
+        send_data pdf.render, filename: "#{@collection.name}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
   end
 
+  # GET /collections/1/carousel
   def carousel
   end
 
+  # GET /collections/1/slideshow
   def slideshow
     @container_size_1 = @collection.collection_items.active.count * 915 - 10
     @precision_count = @collection.collection_items.active.count / 2.to_f
@@ -54,9 +65,11 @@ class CollectionsController < ApplicationController
       if @collection.update(collection_params)
         format.html { redirect_to @collection, notice: 'Collection was successfully updated.' }
         format.json { render :show, status: :ok, location: @collection }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @collection.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

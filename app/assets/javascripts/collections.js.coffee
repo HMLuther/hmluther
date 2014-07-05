@@ -1,3 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on "page:change", ->
+
+  $('.collection-subnav #active-toggle.active .inactive-button').hide()
+  $('.collection-subnav #active-toggle.active .active-button').show()
+
+  $('.collection-subnav #active-toggle.inactive .active-button').hide()
+  $('.collection-subnav #active-toggle.inactive .inactive-button').show()
