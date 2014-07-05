@@ -7,13 +7,13 @@
     <div class="item-images-container">
       <div id="item-images" class="item-images" data-container-size="<%= @container_size %>" data-sort="">
         <% if user_signed_in? %>
-          <% @item.images.show_list.shuffle.each do |image| %>
+          <% @item_images.each do |image| %>
             <%= link_to image.url, :target => "_blank" do %>
               <%= image_tag image.url, title: 'Click for high resolution image' %>
             <% end %>
           <% end %>
         <% else %>
-          <% @item.images.show_list.shuffle.each do |image| %>
+          <% @item_images.each do |image| %>
             <%= image_tag image.url, title: 'Login for high resolution image' %>
           <% end %>
         <% end %>
@@ -92,7 +92,7 @@
         <p>Diameter: <%= @item.diameter %> cm.</p>
       </div>
     <% end %>
-    
+
     </div>
 
   </div>

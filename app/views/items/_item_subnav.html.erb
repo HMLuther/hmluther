@@ -11,7 +11,7 @@
 	<% if @item.tearsheet_url %>
 	<div class="col-md-2 col-sm-2">
 			<%= link_to 'Tearsheet', @item.tearsheet_url, class: 'tearsheet', :target => "_blank", title: 'Download Tearsheet' %>
-	</div>	
+	</div>
 	<% else %>
 	<div class="col-md-2 col-sm-2 display">
 		<span class="line-through" title="Tearsheet unavailable">Tearsheet</span>
@@ -44,17 +44,5 @@
 		<button class="add-login-button" title="Add to collection (Login required)">Add</button>
 	</div>
 	<% end %>
-
-<!--
-	<% if user_signed_in? %>
-	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Collections', collections_path, title: 'Manage my collections' %>
-	</div>
-	<% else %>
-	<div class="col-md-2 col-sm-2">
-		<button class="collection-login-button" title="Manage my collections (Login required)">Collections</button>
-	</div>
-	<% end %>
--->
 
 </div>

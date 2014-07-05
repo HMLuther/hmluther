@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @container_size = @item.images.active.count * 888
+    @item_images = @item.images.show_list.shuffle
   end
 
   # GET /items/new
