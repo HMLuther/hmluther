@@ -33,7 +33,7 @@ class Designer < ActiveRecord::Base
 	end
 
 	def item_count
-		self.items.count
+		self.items.designer_list.count
 	end
 
 	def name_full
