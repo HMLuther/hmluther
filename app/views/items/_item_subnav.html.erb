@@ -1,13 +1,16 @@
 <div class="row item-subnav">
 
+	<!-- ITEM NUMBER -->
 	<div class="col-md-4 col-sm-4 display">
 		Item #<%= @item.filemaker_id %>
 	</div>
 
+	<!-- SHARE -->
 	<div class="col-md-2 col-sm-2">
 		<button class="share-button" title="Share this item">Share</button>
 	</div>
 
+	<!-- TEARSHEET -->
 	<% if @item.tearsheet_url %>
 	<div class="col-md-2 col-sm-2">
 			<%= link_to 'Tearsheet', @item.tearsheet_url, class: 'tearsheet', :target => "_blank", title: 'Download Tearsheet' %>
@@ -18,31 +21,32 @@
 	</div>
 	<% end %>
 
+	<!-- REQUEST INFORMATION -->
 	<div class="col-md-2 col-sm-2">
 		<button class="request-info-button" title="Requestion additional information for this item">Information</button>
 	</div>
 
-	<% if user_signed_in? %>
-	<div class="col-md-2 col-sm-2">
-		<% if current_user.collections.count > 0 %>
-			<button class="collection-add-button" title="Add to collection">Add</button>
-		<% else %>
-			<%= link_to 'Create Collection', new_collection_path %>
-		<% end %>
-		<div class="collections-menu">
-			<ul>
-			<% current_user.collections.active.each do |c| %>
-				<li>
-					<%= button_to c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => @item.filemaker_id }), :remote => true %>
-				</li>
+	<!-- ADD TO COLLECTION -->
+	<div class="col-md-2 col-sm-2 collection-list">
+		<% if user_signed_in? %>
+			<% unless current_user.collections.count > 0 %>
+				<%= link_to 'Create Collection', new_collection_path %>
+			<% else %>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Add to Collection <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<% current_user.collections.active.each_with_index do |c, index| %>
+						<li>
+							<%= button_to c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => @item.filemaker_id }), :remote => true %>
+						</li>
+						<% if (current_user.collections.active.count - 1) > index %>
+							<li class="divider"></li>
+						<% end %>
+					<% end %>
+				</ul>
 			<% end %>
-			</ul>
-		</div>
+		<% else %>
+			<button class="add-login-button" title="Add to collection (Login required)">Add</button>
+		<% end %>
 	</div>
-	<% else %>
-	<div class="col-md-2 col-sm-2">
-		<button class="add-login-button" title="Add to collection (Login required)">Add</button>
-	</div>
-	<% end %>
 
 </div>

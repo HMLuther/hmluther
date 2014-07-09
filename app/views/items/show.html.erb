@@ -40,27 +40,27 @@
     <!-- DIMENSIONS INCHES -->
     <div class="row">
 
-    <% if @item.height.present? %>
+    <% if @item.height_in.present? %>
       <div class="col-md-3">
-        <p>Height: <%= @item.height %> in.</p>
+        <p>Height: <%= @item.height_in %> in.</p>
       </div>
     <% end %>
 
-    <% if @item.width.present? %>
+    <% if @item.width_in.present? %>
       <div class="col-md-3">
-        <p>Width: <%= @item.width %> in.</p>
+        <p>Width: <%= @item.width_in %> in.</p>
       </div>
     <% end %>
 
-    <% if @item.depth.present? %>
+    <% if @item.depth_in.present? %>
       <div class="col-md-3">
-        <p>Depth: <%= @item.depth %> in.</p>
+        <p>Depth: <%= @item.depth_in %> in.</p>
       </div>
     <% end %>
 
-    <% if @item.diameter.present? %>
+    <% if @item.diameter_in.present? %>
       <div class="col-md-3">
-        <p>Diameter: <%= @item.diameter %> in.</p>
+        <p>Diameter: <%= @item.diameter_in %> in.</p>
       </div>
     <% end %>
 
@@ -69,27 +69,27 @@
     <!-- DIMENSIONS CENTIMETERS -->
     <div class="row">
 
-    <% if @item.height.present? %>
+    <% if @item.height_cm.present? %>
       <div class="col-md-3">
-        <p>Height: <%= @item.height %> cm.</p>
+        <p>Height: <%= @item.height_cm %> cm.</p>
       </div>
     <% end %>
 
-    <% if @item.width.present? %>
+    <% if @item.width_cm.present? %>
       <div class="col-md-3">
-        <p>Width: <%= @item.width %> cm.</p>
+        <p>Width: <%= @item.width_cm %> cm.</p>
       </div>
     <% end %>
 
-    <% if @item.depth.present? %>
+    <% if @item.depth_cm.present? %>
       <div class="col-md-3">
-        <p>Depth: <%= @item.depth %> cm.</p>
+        <p>Depth: <%= @item.depth_cm %> cm.</p>
       </div>
     <% end %>
 
-    <% if @item.diameter.present? %>
+    <% if @item.diameter_cm.present? %>
       <div class="col-md-3">
-        <p>Diameter: <%= @item.diameter %> cm.</p>
+        <p>Diameter: <%= @item.diameter_cm %> cm.</p>
       </div>
     <% end %>
 

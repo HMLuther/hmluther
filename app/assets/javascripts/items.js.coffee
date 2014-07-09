@@ -4,19 +4,21 @@ $(document).on "page:change", ->
 	categoryContainerSize_1 = $('.category-items').data('container-size-1') + 'px'
 	categoryContainerSize_2 = $('.category-items').data('container-size-2') + 'px'
 	listSort = $('.category-items').data('sort')
-	# sortButton = $('.category-subnav .sort-button')
 	sortButtonSL = $('.category-subnav .sort-button-sl')
 	sortButtonLS = $('.category-subnav .sort-button-ls')
 	display1Button = $('.category-subnav .display-1-button')
 	display2Button = $('.category-subnav .display-2-button')
 	categoryItems = $('.category-items')
 	categoryItemsLi = $('.category-items > li')
-	listSort = 'rand'
+	designerLinks = $('.category-items-container a')
 	itemLinks = $('.item-link')
+	listSort = 'rand'
 	inputPosition = $('input#position')
 	categoryItemsContainer = $('.category-items-container')
+	rowCount = ""
 
 	# categoryItemsLi.tsort('',{data:'size', order:'rand'})
+	
 
 	sortButtonSL.on "click", () ->
 		sortButtonSL.addClass('active')
@@ -27,22 +29,6 @@ $(document).on "page:change", ->
 		sortButtonLS.addClass('active')
 		sortButtonSL.removeClass('active')
 		categoryItemsLi.tsort('',{data:'size', order:'desc'})
-
-
-	# sortButton.on "click", () ->
-	# 	console.log listSort
-	# 	if listSort == 'desc'
-	# 		$('.category-items > li').tsort('',{data:'size', order:'asc'})
-	# 		listSort = 'asc'
-	# 		sortButton.removeClass('lg-sm-icon').addClass('sm-lg-icon')
-	# 		sortButton.text('Small to Large')
-
-	# 	else if listSort == 'asc' || 'rand'
-	# 		$('.category-items > li').tsort('',{data:'size', order:'desc'})
-	# 		listSort = 'desc'
-	# 		sortButton.removeClass('sm-lg-icon').addClass('lg-sm-icon')
-	# 		sortButton.text('Large to Small')
-	# 	console.log listSort
 
 	display1Button.on "click", () ->
 		setCategory1Row()
@@ -70,8 +56,8 @@ $(document).on "page:change", ->
 		categoryItems.hide()
 		display1Button.addClass('active')
 		display2Button.removeClass('active')
-		categoryItems.removeClass('two-rows')
-		setCategoryItemsWidth()
+		categoryItems.removeClass('two-rows').addClass('one-row')
+		# setCategoryItemsWidth()
 		categoryItems.fadeIn(400)
 		console.log 'display as 1-row'
 		console.log 'rowCount: ' + rowCount
@@ -80,8 +66,8 @@ $(document).on "page:change", ->
 		categoryItems.hide()
 		display2Button.addClass('active')
 		display1Button.removeClass('active')
-		categoryItems.addClass('two-rows')
-		setCategoryItemsWidth()
+		categoryItems.removeClass('one-row').addClass('two-rows')
+		# setCategoryItemsWidth()
 		categoryItems.fadeIn(400)
 		console.log 'display as 2-row'
 		console.log 'rowCount: ' + rowCount
@@ -97,7 +83,7 @@ $(document).on "page:change", ->
 		console.log 'setRowDisplay: rowCount' + rowCount
 
 	setRowDisplay()
-	setCategoryItemsWidth()
+	# setCategoryItemsWidth()
 	setCategoryItemsContainerPosition()
 
 	$(window).resize () ->
@@ -122,6 +108,10 @@ $(document).on "page:change", ->
 	addLoginButton = $('.add-login-button')
 
 	itemLinks.on "click", () ->
+		left_position = $('.category-items-container').scrollLeft()
+		$('input#position').val(left_position)
+
+	designerLinks.on "click", () ->
 		left_position = $('.category-items-container').scrollLeft()
 		$('input#position').val(left_position)
 

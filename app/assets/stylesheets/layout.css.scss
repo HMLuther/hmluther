@@ -211,6 +211,10 @@ footer{
   border-radius: 2px;
 }
 
+.item-images-container::-webkit-scrollbar-track:vertical {
+  background: transparent;
+}
+
 /* Handle */
 .item-images-container::-webkit-scrollbar-thumb {
   -webkit-border-radius: 2px;
@@ -224,6 +228,39 @@ footer{
 }
 
 .item-images-container::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255,0,0,0.2);
+}
+
+
+// RECENT ITEMS SCROLLBAR
+.item-thumb-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.item-thumb-container::-webkit-scrollbar-track:horizontal {
+  background: rgba(229,229,229,0.5);
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.item-thumb-container::-webkit-scrollbar-track:vertical {
+  background: transparent;
+}
+
+/* Handle */
+.item-thumb-container::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: rgba(244,115,33,1);
+  -webkit-transition: all 300ms ease-in-out;
+}
+
+.item-thumb-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(244,115,33,1);
+}
+
+.item-thumb-container::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(255,0,0,0.2);
 }
 
@@ -249,22 +286,50 @@ footer{
   a {
     border: none;
   }
-  img {
-    border: 1px solid #c8c8c8;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    float: left;
-    padding: 2px;
-    margin-bottom: 10px;
-  }
-  img:hover {
-    border: 1px solid #f47321;
-    opacity: 0.7;
-    -moz-transition: all 400ms ease-in-out;
-    -ms-transition: all 400ms ease-in-out;
-    -o-transition: all 400ms ease-in-out;
-    transition: all 400ms ease-in-out;
+  .item-thumb-container {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling: touch;
+    .item-thumbs {
+      margin: 0;
+      padding: 10px 0;
+      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      display: -webkit-flex;     /* NEW - Chrome */
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+      height: 200px;
+      img {
+        border: 1px solid #c8c8c8;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        float: left;
+        padding: 2px;
+        height: 170px;
+      }
+      img:hover {
+        border: 1px solid #f47321;
+        opacity: 0.7;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
+      }
+      div { 
+        margin-right: 20px;
+      }
+      div:last-of-type {
+        margin-right: 0;
+      }
+    }
   }
   .rc-title {
     margin: 5px 0 10px 0;

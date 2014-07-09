@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702235817) do
+ActiveRecord::Schema.define(version: 20140707173024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,22 +82,27 @@ ActiveRecord::Schema.define(version: 20140702235817) do
     t.integer  "subcategory_id"
     t.boolean  "active",            default: true
     t.string   "circa"
-    t.string   "depth"
+    t.string   "depth_in"
     t.text     "description"
     t.string   "description_short"
-    t.string   "diameter"
+    t.string   "diameter_in"
     t.string   "filemaker_id"
-    t.string   "height"
+    t.string   "height_in"
     t.string   "location"
     t.text     "reference"
     t.boolean  "sold",              default: false
-    t.string   "width"
+    t.string   "width_in"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "featured",          default: false
     t.string   "slug"
     t.boolean  "listed_category",   default: true
     t.boolean  "listed_designer",   default: true
+    t.string   "depth_cm"
+    t.string   "diameter_cm"
+    t.string   "height_cm"
+    t.string   "width_cm"
+    t.integer  "size"
   end
 
   add_index "items", ["filemaker_id"], name: "index_items_on_filemaker_id", using: :btree

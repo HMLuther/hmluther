@@ -18,8 +18,18 @@
 	</div>
 
 	<div id="active-toggle" class="col-md-2 col-sm-2 <%= @collection.active ? 'active' : 'inactive' %>">
-		<%=link_to "Active", collection_path(@collection), title: "Make inactive", data: { params: { collection: { active: false} }.to_param }, :method => 'PATCH', remote: true, class: "active-button active" %>
-		<%=link_to "Inactive", collection_path(@collection), title: "Make active", data: { params: { collection: { active: true} }.to_param }, :method => 'PATCH', remote: true, class: "inactive-button" %>
+		<%=link_to "Active", collection_path(@collection), 
+													title: "Make inactive", 
+													data: { params: { collection: { active: false} }.to_param }, 
+													:method => 'PATCH', 
+													remote: true, 
+													class: "active-button active" %>
+		<%=link_to "Inactive", collection_path(@collection), 
+													title: "Make active", 
+													data: { params: { collection: { active: true} }.to_param }, 
+													:method => 'PATCH', 
+													remote: true, 
+													class: "inactive-button" %>
 	</div>
 
 	<div class="col-md-2 col-sm-2">
@@ -27,7 +37,10 @@
 	</div>
 
 	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Delete Collection', collection_path(@collection), method: :delete, title: 'Delete this collection', data: { confirm: 'Are you sure?' }%>
+		<%= link_to 'Delete Collection', collection_path(@collection), 
+																			method: :delete, 
+																			title: 'Delete this collection', 
+																			data: { confirm: 'Are you sure?' }%>
 	</div>
 
 </div>

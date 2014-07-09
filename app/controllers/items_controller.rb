@@ -14,9 +14,9 @@ class ItemsController < ApplicationController
   #GET /category/:category
   def category
     @items = Item.category_list.tagged_with(params[:category])
-    @container_size_1 = @items.count * 915 - 10
+    @container_size_1 = ( @items.count * 915 ) - 40
     @precision_count = @items.count / 2.to_f
-    @container_size_2 = @precision_count.round * 384
+    @container_size_2 = ( @precision_count.round * 393 )
   end
 
   #GET /maker/:maker
@@ -31,6 +31,8 @@ class ItemsController < ApplicationController
   def show
     @container_size = @item.images.active.count * 888
     @item_images = @item.images.show_list.shuffle
+    @receipient = "tsteinhilber@gmail.com"
+    # UserMailer.share_item(User.last, @item, @receipient).deliver
   end
 
   # GET /items/new
@@ -90,13 +92,13 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :listed_category, :listed_designer, :location, :reference, :height, :width, :depth, :diameter, :subcategory_id, :category_list, :maker_list)
+      params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :listed_category, :listed_designer, :location, :reference, :height_cm, :width_cm, :depth_cm, :diameter_cm, :height_in, :width_in, :depth_in, :diameter_in, :size, :subcategory_id, :category_list, :maker_list)
     end
 
     def store_history
       @recent_item = @item.filemaker_id
       session[:history] ||= []
-      session[:history].delete_at(0) if session[:history].size >= 6
+      session[:history].delete_at(0) if session[:history].size >= 50
       session[:history] << @recent_item unless session[:history].include?(@recent_item)
     end
 

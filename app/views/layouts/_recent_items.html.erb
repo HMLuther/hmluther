@@ -7,17 +7,21 @@
 		<% end %>
 		<!-- <hr> -->
 		
-		<div class="row item-thumbs">
+		<div class="item-thumb-container">
+			<div class="item-thumbs">
 
 			<!-- RECENT ITEM THUMBS -->
 			<% @history_items.sort.each do |item| %>
-				<div class="col-md-2 col-sm-2 col-xs-4">
+				<!-- <div class="col-md-2 col-sm-2 col-xs-4"> -->
+				<div>
 					<%= link_to item do %>
 						<%= image_tag item.thumb_image_url %>
 					<% end %>
 				</div>
 			<% end %>
 
+			</div>
 		</div>
+		
 	</div>
 </div>

@@ -2,10 +2,10 @@
 
 <!-- IMAGES -->
 <div class="category-items-container">
-  <ul id="category-items" class="category-items" data-container-size-1="<%= @container_size_1 %>" data-container-size-2="<%= @container_size_2 %>">
+  <ul id="category-items" class="category-items one-row" data-container-size-1="<%= @container_size_1 %>" data-container-size-2="<%= @container_size_2 %>">
 
     <% @designer.items.each do |item| %>
-      <li data-size="<%= item.height %>">
+      <li data-size="<%= item.size %>">
       <%= link_to item, class: 'item-link' do %>
         <%= image_tag item.default_image_url, class: 'item-image' %>
       <% end %>

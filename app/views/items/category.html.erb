@@ -2,10 +2,9 @@
 <%= render 'category_subnav' %>
 
 <div class="category-items-container">
-  <ul id="category-items" class="category-items" data-container-size-1="<%= @container_size_1 %>" data-container-size-2="<%= @container_size_2 %>" data-sort="">
-
-    <% @items.each do |item| %>
-      <li data-size="<%= item.height %>">
+  <ul class="category-items one-row">
+  <% @items.each_with_index do |item, index| %>
+    <li data-size="<%= item.size %>">
       <%= link_to item, class: 'item-link' do %>
         <%= image_tag item.default_image_url, class: 'item-image' %>
       <% end %>
@@ -15,9 +14,9 @@
       <h4><%= raw item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
       <p><%= item.description_short %></p>
       <p class="item-circa"><%= item.circa %></p>
-      </li>
-    <% end %>
-
+      <p class="item-circa">Size: <%= item.size %></p>
+    </li>
+  <% end %>
   </ul>
 </div>
 
