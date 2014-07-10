@@ -13,7 +13,7 @@ ul.category-items.one-row {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   height: 620px;
-	li {
+	li.item {
 	  width: 800px;
 	  height: 620px;
 	  color: #666;
@@ -36,7 +36,7 @@ ul.category-items.two-rows {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   height: 720px;
-	li {
+	li.item {
 	  width: 350px;
 	  height: 326px;
 	  line-height: 100px;
@@ -207,7 +207,7 @@ ul.category-items.two-rows {
 	-o-transition: all 400ms ease-in-out;
 }
 .category-items li:hover {
-	background-color: #e5e5e5;
+	background-color: #f5f5f5;
   color: #333;
 }
 .category-items li.inactive {
@@ -248,7 +248,9 @@ ul.category-items.two-rows {
 }
 
 
-// ITEM SUBNAV
+// CATEGORY COLLECTION LIST ITEMS
+// ITEM SUBNAV COLLECTION LIST ITEMS
+.category-items .dropdown-menu input[type=submit],
 .item-subnav .collection-list .dropdown-menu input[type=submit] {
 	border: none;
 	background-color: transparent;
@@ -256,11 +258,38 @@ ul.category-items.two-rows {
 	padding: 3px 20px;
 	text-transform: uppercase;
 }
+.category-items .dropdown-menu .assigned,
 .item-subnav .collection-list .dropdown-menu .assigned {
 	color: #666;
-	padding: 3px 20px;
+	padding: 3px 0 3px 20px;
 	font-size: 0.8em;
 	text-decoration: line-through;
+	text-transform: uppercase;
+	text-wrap:none;
+}
+
+.category-items .btn-default {
+	background-color: #e5e5e5;
+	border:none;
+	border-radius: 0;
+	color: #777777;
+	display: block;
+	font-size: 0.7em;
+	margin-bottom: 2px;
+	text-align: left;
+	text-transform: uppercase;
+	width: 135px;
+}
+
+.category-items .btn-default:hover{
+	background-color: #f47321;
+	color: #ffffff;
+  }
+
+.category-items .dropdown,
+.category-items a {
+	float: right;
+	margin: 5px;
 }
 
 
@@ -322,9 +351,9 @@ ul.category-items.two-rows {
 
 // SOLD
 .category-stamp-sold {
-	float: right;
 	height: 50px;
 	margin: 25px 25px;
+	position: absolute;
 }
 
 .item-stamp-sold {

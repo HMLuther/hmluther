@@ -1,16 +1,16 @@
 <h1><%= @designer.name_full %> <small class="text-muted"><%= @designer.item_count %> items</small></h1>
 
-<!-- IMAGES -->
+<!-- ITEMS -->
 <div class="category-items-container">
-  <ul id="category-items" class="category-items one-row" data-container-size-1="<%= @container_size_1 %>" data-container-size-2="<%= @container_size_2 %>">
+  <ul class="category-items one-row">
 
     <% @designer.items.designer_list.each do |item| %>
-      <li data-size="<%= item.size %>">
+      <li class="item" data-size="<%= item.size %>">
       <%= link_to item, class: 'item-link' do %>
+        <% if item.sold %>
+          <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
+        <% end %>
         <%= image_tag item.default_image_url, class: 'item-image' %>
-      <% end %>
-      <% if item.sold %>
-        <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
       <% end %>
       <h4><%= raw item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
       <p><%= item.description_short %></p>

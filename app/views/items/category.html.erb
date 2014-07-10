@@ -4,13 +4,44 @@
 <div class="category-items-container">
   <ul class="category-items one-row">
   <% @items.each_with_index do |item, index| %>
-    <li data-size="<%= item.size %>">
+    <li class="item" data-size="<%= item.size %>">
       <%= link_to item, class: 'item-link' do %>
-        <%= image_tag item.default_image_url, class: 'item-image' %>
-      <% end %>
       <% if item.sold %>
         <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
       <% end %>
+        <%= image_tag item.default_image_url, class: 'item-image' %>
+      <% end %>
+
+      <!-- ADD TO COLLECTION -->
+      <% if user_signed_in? %>
+        <% unless current_user.collections.count > 0 %>
+          <%= link_to 'Create Collection', new_collection_path %>
+        <% else %>
+          <div class="dropdown">
+            <a data-toggle="dropdown" href="#" class="btn btn-default">Add to Collection <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+
+            <% current_user.collections.active.each_with_index do |c, index| %>
+              <li>
+              <% if (c.item_ids & Array(item.filemaker_id)).present? %>
+                <span class="assigned" title="Item already assigned to this collection"><%= c.name %></span>
+              <% else %>
+                <%= button_to c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => item.filemaker_id }), :remote => true %>
+              <% end %>
+              </li>
+              <% if (current_user.collections.active.count - 1) > index %>
+                <li class="divider"></li>
+              <% end %>
+            <% end %>
+
+            </ul>
+          </div>
+        <% end %>
+        <% else %>
+          <a class="add-login-button btn btn-default" title="Add to collection (Login required)">Add to Collection</a>
+      <% end %>
+
+
       <h4><%= raw item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
       <p><%= item.description_short %></p>
       <p class="item-circa"><%= item.circa %></p>
