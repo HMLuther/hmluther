@@ -95,8 +95,7 @@ $(document).on "page:change", ->
 	# FLASH
 	flashDisplay = (msg) ->
 		$('.flash-ajax').text(msg)
-		# $('.navbar').prepend("<div class='flash-ajax'>" + msg + "</div>")
-		$('.flash-ajax').fadeIn(1000).delay(3000).fadeOut(1000)
+		$('.flash-ajax').fadeIn(500).delay(2000).fadeOut(500)
 
 	# ITEM
 	shareButton = $('.item-subnav .share-button')
