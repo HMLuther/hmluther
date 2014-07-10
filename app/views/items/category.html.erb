@@ -18,7 +18,7 @@
           <%= link_to 'Create Collection', new_collection_path %>
         <% else %>
           <div class="dropdown">
-            <a data-toggle="dropdown" href="#" class="btn btn-default">Add to Collection <span class="caret"></span></a>
+            <a data-toggle="dropdown" href="#" class="btn btn-default" title="Add to Collection"></span></a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 
             <% current_user.collections.active.each_with_index do |c, index| %>
