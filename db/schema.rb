@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707173024) do
+ActiveRecord::Schema.define(version: 20140710140237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "collection_items", force: true do |t|
     t.integer  "collection_id"
-    t.integer  "item_id"
+    t.string   "item_id"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"

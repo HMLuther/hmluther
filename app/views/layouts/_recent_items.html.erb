@@ -1,10 +1,10 @@
 <div class="row recent-items">
+	<% if @history_items.present? %>
 	<div class="col-md-12">
-		<% if @history_items.present? %>
-			<div class="rc-title">
-				Recently viewed items
-			</div>
-		<% end %>
+		<div class="rc-title">
+			Recently viewed items
+		</div>
+		
 		<!-- <hr> -->
 		
 		<div class="item-thumb-container">
@@ -24,4 +24,5 @@
 		</div>
 		
 	</div>
+	<% end %>
 </div>
