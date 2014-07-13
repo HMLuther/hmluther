@@ -1,9 +1,10 @@
 <div class="row category-subnav">
-	<div class="col-md-4 col-sm-4 col-xs-12 display">
+	<div class="col-md-4 col-sm-6 col-xs-12 display">
 		<%= params[:category] %>: <%= @items.count %> items
 	</div>
 
-	<div class="dropdown col-md-4 col-sm-4">
+	<!-- SORT OPTIONS -->
+	<div class="dropdown col-md-4 col-sm-6">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort Options <span class="caret"></span></a>
 		<ul class="dropdown-menu" role="menu">
 			<li><button class="sort-button-sl">Smallest to Largest</button></li>
@@ -12,15 +13,8 @@
 		</ul>
 	</div>
 
-	<!-- <div class="col-md-2 col-sm-4 col-xs-6">
-		<button class="sort-button-sl sm-lg-icon">Small to Large</button>
-	</div>
-
-	<div class="col-md-2 col-sm-4 col-xs-6">
-		<button class="sort-button-ls lg-sm-icon">Large to Small</button>
-	</div> -->
-
-	<div class="dropdown col-md-4 col-sm-4">
+	<!-- DISPLAY OPTIONS -->
+	<div class="dropdown col-md-4 hidden-sm hidden-xs">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Display Options <span class="caret"></span></a>
 		<ul class="dropdown-menu" role="menu">
 			<li><button class="display-1-button">Display as 1 Row</button></li>
@@ -28,17 +22,5 @@
 			<li><button class="display-2-button">Display as 2 Rows</button></li>
 		</ul>
 	</div>
-
-	<!-- <div class="col-md-2 hidden-sm hidden-xs">
-		<button class="display-1-button">Display as 1 Row</button>
-	</div>
-
-	<div class="col-md-2 hidden-sm hidden-xs">
-		<button class="display-2-button">Display as 2 Rows</button>
-	</div> -->
-
-<!-- 	<div class="col-md-2 col-sm-12 col-xs-12">
-		<%= link_to 'Collections', collections_path %>
-	</div> -->
 
 </div>

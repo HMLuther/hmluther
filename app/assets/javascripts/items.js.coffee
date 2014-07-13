@@ -36,16 +36,16 @@ $(document).on "page:change", ->
 	display2Button.on "click", () ->
 		setCategory2Row()
 
-	setCategoryItemsWidth = () ->
-		if categoryItemsLi.css('margin-bottom') == '20px' && display1Button.hasClass('active')
-			categoryItems.css('width', categoryContainerSize_1)
+	# setCategoryItemsWidth = () ->
+	# 	if categoryItemsLi.css('margin-bottom') == '20px' && display1Button.hasClass('active')
+	# 		categoryItems.css('width', categoryContainerSize_1)
 
-		else if categoryItemsLi.css('margin-bottom') == '20px' && display2Button.hasClass('active')
-			categoryItems.css('width', categoryContainerSize_2)
+	# 	else if categoryItemsLi.css('margin-bottom') == '20px' && display2Button.hasClass('active')
+	# 		categoryItems.css('width', categoryContainerSize_2)
 
-		else if categoryItemsLi.css('margin-bottom') == '20px' && !display1Button.hasClass('active')
-			categoryItems.css('width', categoryContainerSize_1)
-			console.log 'setCategoryItemsWidth set to 1'
+	# 	else if categoryItemsLi.css('margin-bottom') == '20px' && !display1Button.hasClass('active')
+	# 		categoryItems.css('width', categoryContainerSize_1)
+	# 		console.log 'setCategoryItemsWidth set to 1'
 
 	setCategoryItemsContainerPosition = () ->
 		if inputPosition.val() > 0
@@ -86,16 +86,15 @@ $(document).on "page:change", ->
 	# setCategoryItemsWidth()
 	setCategoryItemsContainerPosition()
 
-	$(window).resize () ->
-		if categoryItemsLi.css('margin-bottom') is '20px'
-			setCategoryItemsWidth()
-		else if categoryItemsLi.css('margin-bottom') is '10px'
-			categoryItems.css('width', '100%')
-
 	# FLASH
 	flashDisplay = (msg) ->
+		topPos = Math.max($(window).height() / 2 - $('.flash-ajax')[0].offsetHeight / 2, 0)
+		leftPos = Math.max($(window).width() / 2 - $('.flash-ajax')[0].offsetWidth / 2, 0)
+		$('.flash-ajax').css('top', topPos + "px")
+		$('.flash-ajax').css('left', leftPos + "px")
+		$('.flash-ajax').css('position', 'fixed')
 		$('.flash-ajax').text(msg)
-		$('.flash-ajax').fadeIn(500).delay(2000).fadeOut(500)
+		$('.flash-ajax').fadeIn(250).delay(1500).fadeOut(250)
 
 	# ITEM
 	shareButton = $('.item-subnav .share-button')

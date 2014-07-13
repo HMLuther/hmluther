@@ -9,6 +9,7 @@ $whiteSmoke: #f5f5f5;
 $whiteIsabelline: #f4f0ec;
 $hmlOrange: #f47321;
 $hmlGray: #999999;
+$textColor: #333333;
 
 $background: #ffffff;
 
@@ -32,6 +33,11 @@ hr {
 body {
   background-color: $background;
   font-family: 'Open Sans', 'sans-serif';
+  color: $textColor;
+}
+
+.btn-default {
+  color: $textColor;
 }
 
 .btn-primary {

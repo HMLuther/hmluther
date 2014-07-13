@@ -1,4 +1,5 @@
-// alert('Added to collection')
-$('.flash-ajax').html('Item added to collection.')
-// $('.navbar').prepend("<div class='flash-ajax'>Item added to collection</div>")
-$('.flash-ajax').fadeIn(1000).delay(3000).fadeOut(1000)
+console.log('Added to collection')
+
+$('.flash-ajax').html('Item #<%= @collection_item.item.filemaker_id %> added to <%= @collection_item.collection.name %>.')
+$('.flash-ajax').fadeIn(500).delay(1000).fadeOut(500)
+

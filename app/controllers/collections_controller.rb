@@ -28,9 +28,6 @@ class CollectionsController < ApplicationController
 
   # GET /collections/1/slideshow
   def slideshow
-    @container_size_1 = @collection.collection_items.active.count * 915 - 10
-    @precision_count = @collection.collection_items.active.count / 2.to_f
-    @container_size_2 = @precision_count.round * 384
   end
 
   # GET /collections/new

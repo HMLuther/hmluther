@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_api_user, only: [:create, :edit, :update, :destroy], if: :json_request?
   before_action :find_history, only: [:category, :show]
-  after_action :store_history, only: [:show]
+  # before_action :store_history, only: [:show]
 
   # GET /items
   # GET /items.json
@@ -88,6 +88,7 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find_by_slug!(params[:id])
+      store_history
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

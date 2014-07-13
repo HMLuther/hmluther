@@ -1,10 +1,10 @@
 // CAROUSEL
 .carousel .item {
-    left: 0 !important;
-      -webkit-transition: opacity .4s; /*adjust timing here */
-         -moz-transition: opacity .4s;
-           -o-transition: opacity .4s;
-              transition: opacity .4s;
+  left: 0 !important;
+    -webkit-transition: opacity .4s; /*adjust timing here */
+       -moz-transition: opacity .4s;
+         -o-transition: opacity .4s;
+            transition: opacity .4s;
 }
 
 .carousel .item img {
@@ -39,10 +39,6 @@
   background-color: #f47321;
 }
 
-.container {
-  // padding-left: 0;
-  // padding-right: 0;
-}
 
 // CONTACT PAGE
 .contact-page {
@@ -56,16 +52,75 @@
   .about-copy {
     padding-top: 10px;
     font-size: 1.2em;
-    color: #666; 
+    // color: #666;
   }
   .address {
-    color: #666;
+    // color: #666;
     height: 200px;
   }
   .map-canvas {
-    background-color: lightgray;
+    background-color: #e5e5e5;
     height: 300px;
     width: 100%;
+  }
+}
+
+// DROPDOWNS
+.dropdown {
+  a.btn-default {
+    background-color: #e5e5e5;
+    border: none;
+    border-radius: 0;
+    font-size: 0.7em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  a.btn-default:hover {
+    background-color: #f47321;
+    color: #ffffff;
+  }
+}
+.dropdown-menu {
+  .divider {
+    // margin-bottom: 0;
+  }
+  li {
+    // background-color: green;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    a, button, .btn-default {
+      background-color: transparent;
+      padding: 5px 5px 5px 20px;
+      // margin: -5px 0 -5px 0;
+    }
+    a:hover, button:hover, .btn-default:hover {
+      background-color: #f47321;
+      color: #ffffff;
+    }
+    button.active {
+      background-color: #e5e5e5;
+      color: #666666;
+    }
+    form div {
+      // text-align: center;
+    }
+    input[type=submit] {
+      border: none;
+      background-color: transparent;
+      text-transform: uppercase;
+      width: 100%;
+    }
+    input[type=submit]:hover {
+      background-color: #f47321;
+      color: #ffffff;
+    }
+    span.assigned {
+      display: block;
+      padding: 5px 5px 5px 22px;
+      text-decoration: line-through;
+      text-transform: uppercase;
+      text-wrap:none;
+    }
   }
 }
 
@@ -87,7 +142,7 @@
 
 // FOOTER
 footer{
-  color: #646464;
+  // color: #646464;
   font-size: 0.7em;
   margin-top: 10px;
   .container {
@@ -106,25 +161,21 @@ footer{
   	background-color: #e5e5e5;
   	border:none;
   	border-radius: 0;
-  	color: #777777;
   	display: block;
   	font-size: 0.7em;
   	margin-bottom: 2px;
   	text-align: left;
   	text-transform: uppercase;
-  	width: 125px;
+  	width: 100%;
   }
-
   .btn-default:hover{
   	background-color: #f47321;
   	color: #ffffff;
   }
-
   .caret {
     margin-left: 10px;
     margin-top: -3px;
   }
-
   .container {
     padding: 5px 15px;
     hr {
@@ -132,36 +183,22 @@ footer{
       border: 1px solid #e5e5e5;
     }
   }
-
   .dropdown-toggle {
-    color: #666;
     text-decoration: none;
   }
-
   .dropdown-toggle:hover {
     color: #fff;
   }
-
   .logo {
     height:70px;
   }
-
   .navbar-brand {
     height: auto;
     padding-bottom: 5px;
   }
-
   .navbar-right {
     list-style-type: none;
     margin: 10px -15px 0 0;
-  }
-  .dropdown-menu li a {
-    background-color: transparent;
-    font-size: 0.8em;
-    text-transform: uppercase;
-  }
-  .dropdown-menu li:hover {
-    background-color: #f5f5f5;
   }
 }
 
@@ -172,7 +209,7 @@ footer{
 
 // CATEGORY SCROLLBAR
 .category-items-container::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 /* Track */
@@ -201,7 +238,7 @@ footer{
 
 // ITEM SCROLLBAR
 .item-images-container::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 /* Track */
@@ -274,10 +311,7 @@ footer{
   -webkit-transform: translate(-50%, -50%);
   text-align: center;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  width: 30%;
-  height: 30%;
   font-size: 1.6em;
-
   background-color: #f47321;
   border-radius: 5px;
   color: #ffffff;
@@ -337,13 +371,15 @@ footer{
         margin-right: 0;
       }
     }
+    .item-thumbs {
+    }
   }
   .rc-title {
     margin: 5px 0 10px 0;
     font-size: 0.8em;
     text-transform: uppercase;
     background-color: #e5e5e5;
-    color: #666666;
+    // color: #666666;
     padding: 10px 15px;
   }
 }

@@ -3,9 +3,10 @@
 
 <!-- IMAGES -->
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12 all-images">
     <div class="item-images-container">
       <div id="item-images" class="item-images" data-container-size="<%= @container_size %>" data-sort="">
+      
         <% if user_signed_in? %>
           <% @item_images.each do |image| %>
             <%= link_to image.url, :target => "_blank" do %>
@@ -117,3 +118,4 @@
 
 <!-- RECENTLY VIEWED ITEMS -->
 <%= render 'layouts/recent_items' %>
+

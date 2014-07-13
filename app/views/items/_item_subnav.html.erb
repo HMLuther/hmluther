@@ -1,33 +1,33 @@
 <div class="row item-subnav">
 
 	<!-- ITEM NUMBER -->
-	<div class="col-md-4 col-sm-4 display">
+	<div class="col-md-2 col-sm-2 col-xs-6 display">
 		Item #<%= @item.filemaker_id %>
 	</div>
 
 	<!-- SHARE -->
-	<div class="col-md-2 col-sm-2">
+	<div class="col-md-2 col-sm-2 col-xs-6">
 		<button class="share-button" title="Share this item">Share</button>
 	</div>
 
 	<!-- TEARSHEET -->
 	<% if @item.tearsheet_url %>
-	<div class="col-md-2 col-sm-2">
+	<div class="col-md-2 col-sm-2 col-xs-6">
 			<%= link_to 'Tearsheet', @item.tearsheet_url, class: 'tearsheet', :target => "_blank", title: 'Download Tearsheet' %>
 	</div>
 	<% else %>
-	<div class="col-md-2 col-sm-2 display">
+	<div class="col-md-2 col-sm-2 col-xs-6 display">
 		<span class="line-through" title="Tearsheet unavailable">Tearsheet</span>
 	</div>
 	<% end %>
 
 	<!-- REQUEST INFORMATION -->
-	<div class="col-md-2 col-sm-2">
+	<div class="col-md-2 col-sm-2 col-xs-6">
 		<button class="request-info-button" title="Requestion additional information for this item">Information</button>
 	</div>
 
 	<!-- ADD TO COLLECTION -->
-	<div class="col-md-2 col-sm-2 collection-list">
+	<div class="col-md-4 col-sm-4 col-xs-12 collection-list">
 		<% if user_signed_in? %>
 			<% unless current_user.collections.count > 0 %>
 				<%= link_to 'Create Collection', new_collection_path %>

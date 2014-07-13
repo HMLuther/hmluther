@@ -1,4 +1,4 @@
-// TEST
+// CATEGORY ITEMS
 ul.category-items.one-row {
 	list-style-type: none;
 	margin: 0;
@@ -15,35 +15,20 @@ ul.category-items.one-row {
   height: 620px;
 	a.btn {
 		float: right;
-		margin-top: 10px;
+		margin-top: 88px;
 	}
 	a.btn:before {
 		content: "Add to Collection"
 	}
 	.btn-default {
-		background-color: #e5e5e5;
-		border:none;
-		border-radius: 0;
-		color: #777777;
-		display: block;
-		font-size: 0.7em;
-		margin-bottom: 2px;
-		text-align: left;
-		text-transform: uppercase;
 		width: 135px;
 	}
-	.dropdown {
-		float: right;
-		// margin-top: 0px;
-	}	
 	li.item {
 	  width: 800px;
 	  height: 620px;
-	  color: #666;
 	  border: 1px solid #c8c8c8;
 	  margin: 0 40px 20px 0;
 	  padding: 5px;
-	  // position: relative;
 	}
 }
 ul.category-items.two-rows {
@@ -60,41 +45,25 @@ ul.category-items.two-rows {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   height: 720px;
-  // position: relative;
 	a.btn {
 		float: right;
-		margin-top: 97px;
+		margin-top: 96px;
 	}
 	a.btn:before {
 		content: "+"
 	}
 	.btn-default {
-		background-color: #e5e5e5;
-		border:none;
-		border-radius: 0;
-		color: #777777;
-		display: block;
-		font-size: 0.7em;
-		margin-bottom: 2px;
-		text-align: left;
-		text-transform: uppercase;
 		width: 30px;
 	}
-	.dropdown {
-		float: right;
-		// margin-top: 10px;
-	}	
 	li.item {
 	  width: 350px;
 	  height: 326px;
 	  border: 1px solid #c8c8c8;
 	  margin: 0 40px 20px 0;
 	  padding: 2px;
-	  color: #666;
 		cursor: pointer;
 	}
 }
-
 
 
 // CATEGORY SUBNAV, ITEM SUBNAV
@@ -112,7 +81,7 @@ ul.category-items.two-rows {
 	}
 	div.display{
 		background-color: #e5e5e5;
-		color: #666666;
+		// color: #666666;
 		padding: 10px 15px;
 	}
 	a {
@@ -130,7 +99,6 @@ ul.category-items.two-rows {
 	button {
 		background-color: #e5e5e5;
 		border: none;
-		color: #666666;
 		padding: 10px 15px;
 		text-align: left;
 		text-transform: uppercase;
@@ -144,37 +112,18 @@ ul.category-items.two-rows {
 		background-color: #f47321;
 		color: #FFFFFF;
 	}
-	.dropdown-menu li a {
-		background-color: transparent;
-		font-size: 0.8em;
-		// text-transform: lowercase;
-	}
-	.dropdown-menu li button {
-		background-color: transparent;
-		font-size: 0.8em;
-		padding: 3px 20px;
-	}
-	.dropdown-menu li button:hover {
-		color: #666;
-	}
-	.dropdown-menu li button.active {
-		background-color: #f47321;
-	}
-	.dropdown-menu li:hover {
-		background-color: #f5f5f5;
-	}
-	.sm-lg-icon {
-		background-image: url(<%= asset_path 'small_to_large_icon.png' %>);
-		background-position: 85% center;
-		background-repeat:no-repeat;
-		background-size:10% 10px;
-	}
-	.lg-sm-icon {
-		background-image: url(<%= asset_path 'large_to_small_icon.png' %>);
-		background-position: 85% center;
-		background-repeat:no-repeat;
-		background-size:10% 10px;
-	}
+	// .sm-lg-icon {
+	// 	background-image: url(<%= asset_path 'small_to_large_icon.png' %>);
+	// 	background-position: 85% center;
+	// 	background-repeat:no-repeat;
+	// 	background-size:10% 10px;
+	// }
+	// .lg-sm-icon {
+	// 	background-image: url(<%= asset_path 'large_to_small_icon.png' %>);
+	// 	background-position: 85% center;
+	// 	background-repeat:no-repeat;
+	// 	background-size:10% 10px;
+	// }
 }
 
 
@@ -186,59 +135,6 @@ ul.category-items.two-rows {
 	overflow-x: scroll;
 	overflow-y:hidden;
 	-webkit-overflow-scrolling: touch;
-}
-
-
-// CATEGORY-ITEMS 1-ROW
-.Xcategory-items.one-row {
-	list-style-type: none;
-	margin: 5px 0 0 0;
-	padding: 0;
-	position: relative;
-	li {
-		// background-color: yellow;
-		border: 1px solid #c8c8c8;
-	  color: #666;
-		cursor: pointer;
-		float: left;
-		height: 600px;
-		margin-right: 40px;
-		margin-bottom: 20px;
-		padding: 2px;
-		width: 873px;
-	}
-}
-
-
-// CATEGORY ITEMS 2-ROWS
-.Xcategory-items.two-rows {
-  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;      /* TWEENER - IE 10 */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-
-	list-style-type: none;
-	margin: 5px 0 0 0;
-	padding: 0;
-	// position: relative;
-	height: 700px;
-	// background-color: orange;
-	li {
-		border: 1px solid #c8c8c8;
-	  color: #666;
-		cursor: pointer;
-		// float: left;
-		height: 325px;
-		margin-right: 43px;
-		margin-bottom: 20px;
-		padding: 2px;
-		width: 350px;
-	}
 }
 
 
@@ -254,22 +150,17 @@ ul.category-items.two-rows {
 	-o-transition: all 400ms ease-in-out;
 }
 .category-items li:hover {
-	background-color: #f5f5f5;
+	background-color: #f9f9f9;
   color: #333;
 }
 .category-items li.inactive {
 	visibility: hidden;
 	opacity: 0;
 }
-.category-items li:last-of-type {
-	// background-color: orange;
-	// margin-right: 0;
-}
 
 
 // CATEGORY-ITEM TEXT
 .category-items li h4 {
-  color: #333;
 	margin: 7px 0 1px 7px;
 }
 .category-items li p {
@@ -277,7 +168,6 @@ ul.category-items.two-rows {
 	line-height: 20px;
 	font-weight: 200;
 	margin: 7px 0 5px 7px;
-  /* width: 90%; */
 }
 .category-items li .item-circa {
 	font-size: 0.8em;
@@ -286,51 +176,19 @@ ul.category-items.two-rows {
 
 // INFO PANEL
 .info-panel {
-	// background-color: #e5e5e5;
 	p {
-		color: #666;
 		font-size: 0.9em;
 		line-height: auto;
 	}
 }
 
-
-// CATEGORY COLLECTION LIST ITEMS
-// ITEM SUBNAV COLLECTION LIST ITEMS
-.category-items .dropdown-menu input[type=submit],
-.item-subnav .collection-list .dropdown-menu input[type=submit] {
-	border: none;
-	background-color: transparent;
-	font-size: 0.8em;
-	padding: 3px 20px;
-	text-transform: uppercase;
-}
-.category-items .dropdown-menu .assigned,
-.item-subnav .collection-list .dropdown-menu .assigned {
-	color: #666;
-	padding: 3px 0 3px 20px;
-	font-size: 0.8em;
-	text-decoration: line-through;
-	text-transform: uppercase;
-	text-wrap:none;
-}
-.category-items .btn-default:hover {
-	background-color: #f47321;
-	color: #ffffff;
- }
-
-
-
-
 // ITEM IMAGES
-
 .item-images-container {
 	margin-right: -8px;
 	margin-top: 5px;
 	position: relative;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
-	// background-color: lightgray;
 	.item-images {
 		width: 50000px;
 	}
@@ -346,6 +204,7 @@ ul.category-items.two-rows {
 		height: 500px;
 	}
 }
+
 
 // COLLECTIONS MENU
 .item-subnav .collections-menu {

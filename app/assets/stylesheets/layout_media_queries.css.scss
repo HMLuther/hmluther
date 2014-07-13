@@ -1,32 +1,32 @@
+@media screen and (min-width: 1201px){
+	.container {
+		// background-color: green;
+		// width: 90%;
+	}
+}
+
 @media screen and (max-width: 991px){
 
+	.flash-ajax {
+	  font-size: 1.4em;
+	  padding: 1em;
+	}
+
 	.navbar {
-		.btn-default {
-			// margin-bottom: 2px;
-			// margin-top: 2px;
-			// padding: 1.3em;
-			// width: 99%;
-		}
-		.container {
-			// padding: 0 15px;
-		}
 		.logo {
 			height: 55px;
 			margin-top: 15px;
-		}
-		.navbar-right  {
-			// margin: 0;
-			// padding: 0;
-			li {
-				// float: left;
-				// width: 33.33%;
-			}
 		}
 	}
 
 }
 
 @media screen and (max-width: 767px){
+
+	.flash-ajax {
+	  font-size: 1.4em;
+	  padding: 2em 1.5em;
+	}
 
 	.contact-page{
 		.address {
@@ -47,7 +47,8 @@
 			padding: 0 15px;
 		}
 		.logo {
-			height: 25px;
+			height: 35px;
+			margin-top: -5px;
 		}
 		.navbar-right  {
 			margin: 0;
