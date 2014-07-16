@@ -199,6 +199,9 @@ footer{
   .navbar-right {
     list-style-type: none;
     margin: 10px -15px 0 0;
+    li {
+      min-width: 100px;
+    }
   }
 }
 
