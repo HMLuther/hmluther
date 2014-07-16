@@ -65,20 +65,23 @@
   }
 }
 
+// BUTTON DEFAULT
+a.btn-default {
+  background-color: #e5e5e5;
+  border: none;
+  border-radius: 0;
+  font-size: 0.7em;
+  text-align: left;
+  text-transform: uppercase;
+}
+a.btn-default:hover {
+  background-color: #f47321;
+  color: #ffffff;
+}
+
+
 // DROPDOWNS
 .dropdown {
-  a.btn-default {
-    background-color: #e5e5e5;
-    border: none;
-    border-radius: 0;
-    font-size: 0.7em;
-    text-align: left;
-    text-transform: uppercase;
-  }
-  a.btn-default:hover {
-    background-color: #f47321;
-    color: #ffffff;
-  }
 }
 .dropdown-menu {
   .divider {
