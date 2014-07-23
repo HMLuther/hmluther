@@ -1,0 +1,42 @@
+@media screen and (max-width: 991px){
+	.sign_up_modal {
+		color: #666666;
+		.right-column {
+			.form-group {
+				padding-left: 10px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px){
+	.sign_up_modal {
+		.logo-icon {
+			height: auto;
+			width: 50%;
+		}
+		.modal-title {
+			float: none;
+		}
+	}
+}
+
+@media screen and (max-width: 479px){
+	.sign_up_modal {
+		.logo-icon {
+			// height: auto;
+			width: 80%;
+		}
+		.modal-body {
+			p {
+				margin: 0;
+			}
+			select {
+				margin: 10px 0;
+			}
+		}
+		.modal-title {
+			// float: none;
+		}
+	}
+}

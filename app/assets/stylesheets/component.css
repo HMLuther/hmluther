@@ -163,3 +163,9 @@
 		padding: 0 2em;
 	}
 }
+
+@media screen and (max-width: 479px){
+	.cbp-hropen .cbp-hrsub {
+		padding-top: 0.5em;
+	}
+}

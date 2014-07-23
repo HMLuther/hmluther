@@ -11,6 +11,14 @@
   width: 100%;
 }
 
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 10px 0;
+}
+
 .carousel-control {
     background-image: none !important; /* remove background gradients on controls */
 }

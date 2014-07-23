@@ -36,12 +36,18 @@ body {
   color: $textColor;
 }
 
+.btn {
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
 .btn-default {
   color: $textColor;
 }
 
 .btn-primary {
-  background-color: #FFFFFF;
+  background-color: #e5e5e5;
   border-color: rgb(204, 204, 204);
   color: #000000;
 }

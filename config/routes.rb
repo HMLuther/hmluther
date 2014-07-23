@@ -13,6 +13,7 @@ Hmluther::Application.routes.draw do
 
   get 'contact', to: 'contact#index'
   get 'features', to: 'features#index'
+  get 'terms-of-service', to: 'terms_of_service#index'
 
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}

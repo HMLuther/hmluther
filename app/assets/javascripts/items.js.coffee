@@ -97,8 +97,8 @@ $(document).on "page:change", ->
 		$('.flash-ajax').fadeIn(250).delay(1500).fadeOut(250)
 
 	# ITEM
-	shareButton = $('.item-subnav .share-button')
-	reqInfoButton = $('.item-subnav .request-info-button')
+	shareButton = $('.share-button')
+	reqInfoButton = $('.request-info-button')
 	tearsheetButton = $('.item-subnav .tearsheet-button')
 	collectionAddButton = $('.item-subnav .collection-add-button')
 	collectionLoginButton = $('.item-subnav .collection-login-button')

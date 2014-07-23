@@ -3,16 +3,6 @@
 		<%= params[:category] %>: <%= @items.count %> items
 	</div>
 
-	<!-- SORT OPTIONS -->
-	<div class="dropdown col-md-4 col-sm-6">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort Options <span class="caret"></span></a>
-		<ul class="dropdown-menu" role="menu">
-			<li><button class="sort-button-sl">Smallest to Largest</button></li>
-			<li class="divider"></li>
-			<li><button class="sort-button-ls">Largest to Smallest</button></li>
-		</ul>
-	</div>
-
 	<!-- DISPLAY OPTIONS -->
 	<div class="dropdown col-md-4 hidden-sm hidden-xs">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Display Options <span class="caret"></span></a>
@@ -20,6 +10,16 @@
 			<li><button class="display-1-button">Display as 1 Row</button></li>
 			<li class="divider"></li>
 			<li><button class="display-2-button">Display as 2 Rows</button></li>
+		</ul>
+	</div>
+
+	<!-- SORT OPTIONS -->
+	<div class="dropdown col-md-4 col-sm-6">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort Options <span class="caret"></span></a>
+		<ul class="dropdown-menu" role="menu">
+			<li><button class="sort-button-sl">Smallest to Largest</button></li>
+			<li class="divider"></li>
+			<li><button class="sort-button-ls">Largest to Smallest</button></li>
 		</ul>
 	</div>
 

@@ -7,11 +7,7 @@
 
 	<p><%= @collection.description %></p>
 	<p><small><%= @collection.created_at.strftime("Created: %B %d, %Y") %></small></p>
-
-	<p>
-	  <strong>Public:</strong>
-	  <%= @collection.public %>
-	</p>
+	<p><small><%= @collection.updated_at.strftime("Updated: %B %d, %Y") %></small></p>
 
 	<h3><%= @collection.collection_items.count %> Items</h3>
 	<hr>

@@ -51,6 +51,8 @@ class Item < ActiveRecord::Base
 			"The Carlyle"
 		elsif self.location == "Downtown"
 			"Greenwich Village"
+		else
+			"<a href='/contact'>Contact us for more information</a>"
 		end
 			
 	end

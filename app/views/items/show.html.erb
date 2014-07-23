@@ -34,7 +34,7 @@
     <p><%= @item.description_short %></p>
     <p><%= @item.circa %></p>
     <p>Item: <%= @item.filemaker_id %></p>
-    <p>Location: <%= @item.location_calc %></p>
+    <p>Location: <%= raw(@item.location_calc) %></p>
     <hr>
     <h5>Dimensions</h5>
 

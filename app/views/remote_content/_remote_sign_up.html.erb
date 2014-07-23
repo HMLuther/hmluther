@@ -17,8 +17,8 @@
 
 						<!-- LEFT COLUMN -->
 					  <div class="col-md-8">
-							<%= f.input :name, :required => true, :autofocus => true, :placeholder => 'NAME', :label => false %>
-							<%= f.input :email, :required => true, :placeholder => 'EMAIL', :label => false %>
+							<%= f.input :name, :required => true, :autofocus => true, :placeholder => 'NAME*', :label => false %>
+							<%= f.input :email, :required => true, :placeholder => 'EMAIL*', :label => false %>
 							<%= f.input :address, :required => false, :placeholder => 'ADDRESS', :label => false %>
 
 							<div class="row">
@@ -43,9 +43,11 @@
 
 						<!-- RIGHT COLUMN -->
 						<div class="col-md-4 right-column">
-							<%= f.input :password, :required => true, :placeholder => 'PASSWORD', :label => false %>
-							<%= f.input :password_confirmation, :required => true, :placeholder => 'CONFIRM PASSWORD', :label => false %>
-							<%= f.input :reference, :required => false, :placeholder => 'How did you hear about us?', :label => false %>
+							<%= f.input :password, :required => true, :placeholder => 'PASSWORD*', :label => false %>
+							<%= f.input :password_confirmation, :required => true, :placeholder => 'CONFIRM PASSWORD*', :label => false %>
+							<p>How did you hear about us?</p>
+							<%= f.input :reference, :required => false, :placeholder => 'How did you hear about us?', :label => false, 
+													:collection => ["Magazine", "Website"] %>
 							<div class="form-group">
 								<%= f.button :submit, "Create account", :class => "btn btn-primary" %>
 							</div>
@@ -57,6 +59,7 @@
 			<div class="modal-footer">
 				<p>Already have an account? <%= link_to "Log in", new_user_session_path %> | 
 				Forgot your password? <%= link_to "Reset", new_user_password_path %></p>
+				<%= link_to "Terms of Service / Consent / Email Usage", terms_of_service_path %>
 			<% end %>
 			</div>
 

@@ -28,6 +28,11 @@
 	}
 	.modal-body {
 		padding: 25px;
+		p {
+			font-size: 0.9em;
+			margin: 0 0 0 -12px;
+			padding: 10px 0 5px 0;
+		}
 	}
 	.modal-content {
 		background-color: #e6e6e6;
@@ -51,31 +56,15 @@
 		border-radius: 0;
 		width: 100%;
 	}
+	input[type=checkbox] {
+		margin: 10px 0;
+		width: auto;
+	}
+	label {
+		font-weight: normal;
+	}
 	textarea {
 		height: 107px;
 		border-radius: 0;
-	}
-}
-
-@media screen and (max-width: 991px){
-	.sign_up_modal {
-		color: #666666;
-		.right-column {
-			.form-group {
-				padding-left: 10px;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 767px){
-	.sign_up_modal {
-		.logo-icon {
-			height: auto;
-			width: 50%;
-		}
-		.modal-title {
-			float: none;
-		}
 	}
 }
