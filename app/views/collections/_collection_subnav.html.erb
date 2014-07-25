@@ -1,46 +1,19 @@
 <div class="row collection-subnav">
 
-	<div class="col-md-2 col-sm-2">
+	<div class="col-md-3 col-sm-3">
+		<%= link_to 'Present Collection', slideshow_collection_path(@collection), title: 'Present Collection' %>
+	</div>
+
+	<div class="col-md-3 col-sm-3">
+		<button class="share-button" title="Share this collection">Share</button>
+	</div>
+	
+	<div class="col-md-3 col-sm-3">
 		<%= link_to 'Print Tearsheets', collection_path(@collection, format: "pdf"), title: 'Print Tearsheets (PDF)', target: "_blank" %>
 	</div>
 
-	<div class="col-md-2 col-sm-2">
-		<button class="share-button" title="Share this collection">Share</button>
-	</div>
-
-	<div class="dropdown col-md-2 col-sm-2">
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Preview <span class="caret"></span></a>
-		<ul class="dropdown-menu" role="menu">
-			<li><%= link_to 'Carousel', carousel_collection_path(@collection), title: 'View as carousel' %></li>
-			<li class="divider"></li>
-			<li><%= link_to 'Slideshow', slideshow_collection_path(@collection), title: 'View as slideshow' %></li>
-		</ul>
-	</div>
-
-	<div id="active-toggle" class="col-md-2 col-sm-2 <%= @collection.active ? 'active' : 'inactive' %>">
-		<%=link_to "Active", collection_path(@collection), 
-													title: "Make inactive", 
-													data: { params: { collection: { active: false} }.to_param }, 
-													:method => 'PATCH', 
-													remote: true, 
-													class: "active-button active" %>
-		<%=link_to "Inactive", collection_path(@collection), 
-													title: "Make active", 
-													data: { params: { collection: { active: true} }.to_param }, 
-													:method => 'PATCH', 
-													remote: true, 
-													class: "inactive-button" %>
-	</div>
-
-	<div class="col-md-2 col-sm-2">
+	<div class="col-md-3 col-sm-3">
 		<%= link_to 'Edit Collection', edit_collection_path(@collection), title: 'Edit this collection' %>
-	</div>
-
-	<div class="col-md-2 col-sm-2">
-		<%= link_to 'Delete Collection', collection_path(@collection), 
-																			method: :delete, 
-																			title: 'Delete this collection', 
-																			data: { confirm: 'Are you sure?' }%>
 	</div>
 
 </div>

@@ -59,8 +59,9 @@
   }
   .about-copy {
     padding-top: 10px;
+    font-align: justify;
     font-size: 1.2em;
-    // color: #666;
+    color: #666;
   }
   .address {
     // color: #666;
@@ -72,6 +73,7 @@
     width: 100%;
   }
 }
+
 
 // BUTTON DEFAULT
 a.btn-default {
@@ -393,7 +395,6 @@ footer{
     font-size: 0.8em;
     text-transform: uppercase;
     background-color: #e5e5e5;
-    // color: #666666;
     padding: 10px 15px;
   }
 }

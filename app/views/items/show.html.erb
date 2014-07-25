@@ -1,5 +1,9 @@
 <!-- SUBNAV -->
-<%= render 'item_subnav' %>
+<% if @item.sold %>
+  <%= render 'item_subnav_sold' %>
+<% else %>
+  <%= render 'item_subnav' %>
+<% end %>
 
 <!-- IMAGES -->
 <div class="row">
@@ -101,13 +105,11 @@
   <!-- DESCRIPTION -->
   <div class="col-md-6 info-panel">
 
-    <% if @item.description.present? %>
-      <p><%= @item.description %></p>
-    <% end %>
+    <p><%= @item.description rescue "" %></p>
 
-    <% if @item.reference.present? %>
-      <p><%= @item.reference %></p>
-    <% end %>
+    <p><%= @item.reference rescue "" %></p>
+
+    <p><%= Designer.find_by_slug(@item.maker_list.first).bio rescue "" %></p>
 
     <p>Category: <%= raw @item.category_list.map { |t| link_to t.titlecase, category_path(t) }.join(', ') %></p>
     <% if @item.sold %>

@@ -2,29 +2,33 @@
 <%= render 'designer_subnav' %>
 
 <h1>Designers</h1>
+<hr>
 
 <!-- ALPHABETICAL GROUP -->
 <div class="alpha-content">
 	<% @designer_alpha.sort.each do |alpha, designer| %>
-	  <hr>
 	  <h4><%= alpha %></h4>
 	  <% for designer in designer %>
 	  <p>
 	    <%= link_to designer.name_lf, designer_path(designer), class: 'designer-country-link' %>
 	  </p>
 	  <% end %>
+	  <hr>
 	<% end %>
 </div>
 
 <!-- COUNTRY GROUP -->
 <div class="country-content">
 	<% @designer_country.sort.each do |country, designer| %>
-	  <hr>
 	  <h4><%= country %></h4>
 	  <% for designer in designer %>
 	  <p>
 	    <%= link_to designer.name_lf, designer_path(designer), class: 'designer-country-link' %>
 	  </p>
 	  <% end %>
+	  <hr>
 	<% end %>
 </div>
+
+<div class="col-md-6 content-column"></div>
+<div class="col-md-6 content-column"></div>

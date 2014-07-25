@@ -2,6 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.alpha-content, .country-content {
+	-webkit-flow-into: myNamedFlow;
+	h4 {
+		-webkit-region-break-inside: avoid;
+		// border-top: 1px solid #e5e5e5;
+		// padding: 1.0em;
+		// background-color: yellow;
+
+	}
+}
+
+.content-column {
+	-webkit-flow-from: myNamedFlow;
+	// background-color: green;
+	min-height: 200px;
+	max-height: 1050px;
+}
 
 .designer-country-link:after {
 	content: ", ";

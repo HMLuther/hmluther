@@ -1,13 +1,13 @@
 <!-- SUBNAV -->
-<%= render 'collection_subnav' %>
 
 <div class="collection-detail">
-
 	<h1><%= @collection.name %></h1>
+	<hr>
+<%= render 'collection_subnav' %>
 
+	<hr>
 	<p><%= @collection.description %></p>
-	<p><small><%= @collection.created_at.strftime("Created: %B %d, %Y") %></small></p>
-	<p><small><%= @collection.updated_at.strftime("Updated: %B %d, %Y") %></small></p>
+	<p><small><%= @collection.created_at.strftime("Created: %B %d, %Y") %></small> | <small><%= @collection.updated_at.strftime("Updated: %B %d, %Y") %></small></p>
 
 	<h3><%= @collection.collection_items.count %> Items</h3>
 	<hr>
@@ -18,10 +18,9 @@
 					<%= image_tag ci.item.thumb_image_url %>
 				<% end %>
 				<div class="row caption">
-					<%= link_to 'Position', '#', class: 'col-md-4 position-button btn btn-primary' %>
-					<%= link_to "Deactivate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: false} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-4 inactive-button btn btn-primary' %>
-					<%= link_to "Activate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: true} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-4 active-button btn btn-primary' %>
-					<%= link_to 'Delete', collection_collection_item_path(@collection, ci), :remote => true, method: :delete, data: { confirm: 'Are you sure?' }, class: 'col-md-4 delete-button btn btn-danger' %>
+					<%= link_to "Deactivate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: false} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-6 inactive-button btn btn-primary' %>
+					<%= link_to "Activate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: true} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-6 active-button btn btn-primary' %>
+					<%= link_to 'Delete', collection_collection_item_path(@collection, ci), :remote => true, method: :delete, data: { confirm: 'Are you sure?' }, class: 'col-md-6 delete-button btn btn-danger' %>
 				</div>
 			<% end %>
 		<% end %>

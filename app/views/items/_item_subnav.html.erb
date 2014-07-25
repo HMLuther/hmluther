@@ -11,14 +11,21 @@
 	</div>
 
 	<!-- TEARSHEET -->
-	<% if @item.tearsheet_url %>
-	<div class="col-md-2 col-sm-2 col-xs-6">
-			<%= link_to 'Tearsheet', @item.tearsheet_url, class: 'tearsheet', :target => "_blank", title: 'Download Tearsheet' %>
-	</div>
+	<% if user_signed_in? %>
+		<% if @item.tearsheet_url %>
+			<div class="col-md-2 col-sm-2 col-xs-6">
+					<%= link_to 'Tearsheet', @item.tearsheet_url, class: 'tearsheet', :target => "_blank", title: 'Download Tearsheet' %>
+			</div>
+		<% else %>
+			<div class="col-md-2 col-sm-2 col-xs-6 display">
+				<span class="line-through" title="Tearsheet unavailable">Tearsheet</span>
+			</div>
+		<% end %>
 	<% else %>
-	<div class="col-md-2 col-sm-2 col-xs-6 display">
-		<span class="line-through" title="Tearsheet unavailable">Tearsheet</span>
-	</div>
+		<div class="col-md-2 col-sm-2 col-xs-6">
+			<%= link_to "Download Tearsheet", remote_login_path, 
+																				:remote => true, class: 'add-login-button', title: "Download Tearsheet (Login required)" %>
+		</div>
 	<% end %>
 
 	<!-- REQUEST INFORMATION -->
@@ -49,7 +56,8 @@
 				</ul>
 			<% end %>
 		<% else %>
-			<button class="add-login-button" title="Add to collection (Login required)">Add to Collection</button>
+			<%= link_to "Add to Collection", remote_login_path, 
+																			 :remote => true, class: 'add-login-button', title: "Add to collection (Login required)" %>
 		<% end %>
 	</div>
 

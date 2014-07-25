@@ -146,7 +146,7 @@ $(document).on "page:change", ->
 
 	addLoginButton.on "click", () ->
 		# alert "You must login to add items to collections"
-		flashDisplay('You must login to add items to collections')
+		# flashDisplay('You must login to add items to collections')
 
 
 

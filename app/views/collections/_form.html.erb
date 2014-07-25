@@ -9,14 +9,23 @@
   } do |f| %>
 
     <%= f.input :name, :placeholder => 'Collection Name' %>
-    <%= f.input :description, :placeholder => 'Description' %>
+    <%= f.input :description, :placeholder => 'Description', :input_html => { :rows => 6 } %>
     <%= f.input :active %>
     <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
 
     <section>
       <div class="col-md-10 col-md-offset-2 no-padding-left">
         <%= f.button :submit, class: 'btn btn-primary' %>
-        <%= link_to "Cancel", collection_path(@collection), class: 'btn btn-default' %>
+        <% if action_name == 'edit' %>
+          <%= link_to "Cancel", collection_path(@collection), class: 'btn btn-primary' %>
+          <%= link_to 'Delete Collection', collection_path(@collection), 
+                                        class: 'btn btn-danger',
+                                        method: :delete, 
+                                        title: 'Delete this collection', 
+                                        data: { confirm: 'Are you sure?' }%>
+        <% else %>
+          <%= link_to "Cancel", collections_path, class: 'btn btn-primary' %>
+        <% end %>
       </div>
     </section>
 

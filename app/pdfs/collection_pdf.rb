@@ -10,8 +10,9 @@ class CollectionPdf < Prawn::Document
     default_leading 5
     stroke_color "e5e5e5"
     collection_info
-    collection_items
-    footer
+    # collection_items
+    tearsheet_images
+    # footer
   end
 
   def collection_info
@@ -75,6 +76,16 @@ class CollectionPdf < Prawn::Document
 	  		end
 	  	end
   	end
+  end
+
+  def tearsheet_images
+    @count = ( @collection.collection_items.active.count - 1 )
+    @collection.collection_items.active.each_with_index do |c, index|
+      image open(c.item.default_image_url), :width => 612, :position => :center
+      if index < @count
+        start_new_page
+      end
+    end
   end
 
 end

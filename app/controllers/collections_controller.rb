@@ -11,6 +11,7 @@ class CollectionsController < ApplicationController
   # GET /collections/1
   # GET /collections/1.json
   def show
+    authorize @collection
     respond_to do |format|
       format.html
       format.pdf do
@@ -37,6 +38,7 @@ class CollectionsController < ApplicationController
 
   # GET /collections/1/edit
   def edit
+    authorize @collection
   end
 
   # POST /collections
@@ -58,6 +60,7 @@ class CollectionsController < ApplicationController
   # PATCH/PUT /collections/1
   # PATCH/PUT /collections/1.json
   def update
+    authorize @collection
     respond_to do |format|
       if @collection.update(collection_params)
         format.html { redirect_to @collection, notice: 'Collection was successfully updated.' }
@@ -74,6 +77,7 @@ class CollectionsController < ApplicationController
   # DELETE /collections/1
   # DELETE /collections/1.json
   def destroy
+    authorize @collection
     @collection.destroy
     respond_to do |format|
       format.html { redirect_to collections_url, notice: 'Collection was successfully destroyed.' }
