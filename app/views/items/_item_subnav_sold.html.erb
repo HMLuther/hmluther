@@ -1,29 +1,13 @@
 <div class="row item-subnav">
 
 	<!-- ITEM NUMBER -->
-	<div class="col-md-3 col-sm-3 col-xs-6 display">
+	<div class="col-md-6 col-sm-6 col-xs-6 display">
 		Item #<%= @item.filemaker_id %>
 	</div>
 
 	<!-- SHARE -->
-	<div class="col-md-3 col-sm-3 col-xs-6">
+	<div class="col-md-6 col-sm-6 col-xs-6">
 		<button class="share-button" title="Share this item">Share</button>
-	</div>
-
-	<!-- TEARSHEET -->
-	<% if @item.tearsheet_url %>
-		<div class="col-md-3 col-sm-3 col-xs-6">
-			<%= link_to 'Tearsheet', @item.tearsheet_url, class: 'tearsheet', :target => "_blank", title: 'Download Tearsheet' %>
-		</div>
-	<% else %>
-		<div class="col-md-3 col-sm-3 col-xs-6 display">
-			<span class="line-through" title="Tearsheet unavailable">Tearsheet</span>
-		</div>
-	<% end %>
-
-	<!-- REQUEST INFORMATION -->
-	<div class="col-md-3 col-sm-3 col-xs-6">
-		<button class="request-info-button" title="Requestion additional information for this item">Request Info</button>
 	</div>
 
 </div>

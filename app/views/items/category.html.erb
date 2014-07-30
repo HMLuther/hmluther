@@ -15,11 +15,11 @@
       <!-- ADD TO COLLECTION -->
       <% if user_signed_in? %>
         <% unless current_user.collections.count > 0 %>
-          <%= link_to 'Create Collection', new_collection_path %>
+          <%= link_to 'Create Collection', new_collection_path, class: 'btn btn-default' %>
         <% else %>
           <% unless item.sold %>
             <div id="<%= item.filemaker_id %>" class="dropdown">
-              <a data-toggle="dropdown" href="#" class="btn btn-default" title="Add to Collection"></span></a>
+              <a data-toggle="dropdown" href="#" class="btn btn-default add-copy" title="Add to Collection"></span></a>
               <%= render partial:'dropdown_menu', locals: {item: item} %>
             </div>
           <% end %>
@@ -34,7 +34,7 @@
       <h4><%= raw item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
       <p><%= item.description_short %></p>
       <p class="item-circa"><%= item.circa %></p>
-      <p class="item-circa">Size: <%= item.size %></p>
+      <!-- <p class="item-circa">Size: <%= item.size %></p> -->
     </li>
   <% end %>
   </ul>
