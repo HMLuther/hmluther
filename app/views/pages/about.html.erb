@@ -1,14 +1,15 @@
 <div class="contact-page">
-
-	<!-- ABOUT COPY -->
-	<div class="col-md-4">
-		<p class="about-copy">Founded in London in 1947, H.M. Luther has long been a favorite of knowledgeable interior designers and discerning clients. We search the world for a diverse selection of fine furniture and decorative items. Expert dealers who prefer a wide range of periods and cultures, H.M. Luther’s strengths are European and Asian furniture, mirrors, chandeliers and decorative objects from the seventeenth through the twentieth century. The selection of Northern European furniture and Japanese bronze vessels is especially strong and ranks among the best anywhere. Our taste favors the atypical and particular. For us, the most exciting objects need not be the most important but rather inspire a sense of wonder. We like clients with imagination as well as aspirations.</p>
-		<p class="about-copy">H.M. Luther has two locations, one in Greenwich Village, 61 East 11th Street, and the other at The Carlyle, 35 East 76th Street. The two locations inform the uptown / downtown sensibility of H.M. Luther by mixing different periods and styles.</p>
-		<div class="hidden-xs hidden-md hidden-lg">
-				<hr>
-			</div>
+	<div class="col-md-12">
+		<h1><%= @page.name %></h1>
 	</div>
 
+	<!-- ABOUT COPY -->
+	<div class="col-md-4 description-copy">
+		<%= raw @page.content %>
+		<div class="hidden-xs hidden-md hidden-lg">
+			<hr>
+		</div>
+	</div>
 
 	<!-- LOCATION #1 -->
 	<div class="col-md-4">
@@ -26,7 +27,7 @@
 				</address>
 				<p>Monday-Friday 10-5<br>
 				Saturday 11-4<br>
-				and by appointment<br>
+				and by appointment</p>
 			</div>
 			<div class="col-md-12 col-sm-6">
 				<div class="hidden-sm hidden-xs">
@@ -71,10 +72,37 @@
 		</div>
 	</div>
 
-
 	<!-- CONTACT FORM -->
 	<div class="col-md-12">
-	<hr>
-		<h3>Contact Form</h3>
-		<p>Please use this form to...</p>
+		<br>
+		<hr>
+		<h1>Contact Us</h1>
 	</div>
+
+	<div class="col-md-3">
+		<p>Please use this form to contact us.</p>
+		<p>Alternatively email us directly at <%= image_tag 'email.png', class: 'img-inline' %>.</p>	
+	</div>
+
+	<div class="col-md-6">
+	  <%= simple_form_for @contact, :html => { :class => 'form-horizontal' },
+	  wrapper: :horizontal_form,
+	  wrapper_mappings: {
+	    check_boxes: :horizontal_radio_and_checkboxes,
+	    radio_buttons: :horizontal_radio_and_checkboxes,
+	    file: :horizontal_file_input,
+	    boolean: :horizontal_boolean
+	  } do |f| %>
+	    <%= f.input :name, :required => true %>
+	    <%= f.input :email, :required => true %>
+	    <%= f.input :message, :as => :text, :required => true, :input_html => { :rows => 4 } %>
+	    <div class= "hidden">
+	      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+	    </div>
+	    <div class="col-md-offset-2">
+	      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+	    </div>
+		<% end %>
+	</div>
+
+</div>

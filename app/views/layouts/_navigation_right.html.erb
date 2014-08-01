@@ -7,6 +7,7 @@
 			<li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
 			<% if user_signed_in? && current_user.admin? %>
 				<li class="divider"></li>
+			  <li class="<%= is_active?(pages_path) %>"><%= link_to 'Pages', pages_path %></li>
 			  <li class="<%= is_active?(users_path) %>"><%= link_to 'Users', users_path %></li>
 			<% end %>
 		</ul>
@@ -16,7 +17,7 @@
   <li><%= link_to "Sign up", remote_sign_up_path, :remote => true, class: 'btn btn-default' %></li>
 <% end %>
 
-<li><%= link_to "Contact", contact_path, class: 'btn btn-default' %></li>
+<li><%= link_to "Contact", page_path('about-us'), class: 'btn btn-default' %></li>
 
 <% if user_signed_in? %>
 	<li><%= link_to 'Collections', collections_path, class: 'btn btn-default', title: 'Manage my collections' %></li>

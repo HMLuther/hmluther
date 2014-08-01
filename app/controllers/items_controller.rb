@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_api_user, only: [:create, :edit, :update, :destroy], if: :json_request?
   before_action :find_history, only: [:category, :show]
-  # before_action :store_history, only: [:show]
 
   # GET /items
   # GET /items.json

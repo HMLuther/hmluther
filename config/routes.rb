@@ -1,29 +1,28 @@
 Hmluther::Application.routes.draw do
 
-  resources :designers
-
   match 'remote_sign_up', to: 'remote_content#remote_sign_up', via: [:get]
   match 'remote_login', to: 'remote_content#remote_login', via: [:get]
   get 'category/:category', to: 'items#category', as: :category
-  get 'maker/:maker', to: 'items#maker', as: :maker
 
-  resources :images
+  # get 'contact', to: 'contact#index'
+  # get 'maker/:maker', to: 'items#maker', as: :maker
+  # get 'features', to: 'features#index'
+  # get 'terms-of-service', to: 'terms_of_service#index'
 
-  resources :items
-
-  get 'contact', to: 'contact#index'
-  get 'features', to: 'features#index'
-  get 'terms-of-service', to: 'terms_of_service#index'
-
-  root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}
 
+  resources "contacts", only: [:new, :create]
+  resources :designers
+  resources :images
+  resources :items
+  resources :pages
   resources :users
   
   resources :collections do
-    get 'carousel', on: :member
     get 'slideshow', on: :member
     resources :collection_items
   end
+
+  root :to => "home#index"
 
 end

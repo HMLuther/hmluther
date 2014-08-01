@@ -1,6 +1,6 @@
 class CollectionsController < ApplicationController
   before_action :authenticate_user!, :except => [:carousel, :slideshow]
-  before_action :set_collection, only: [:carousel, :slideshow, :show, :edit, :update, :destroy]
+  before_action :set_collection, only: [:slideshow, :show, :edit, :update, :destroy]
 
   # GET /collections
   # GET /collections.json
@@ -21,10 +21,6 @@ class CollectionsController < ApplicationController
                               disposition: "inline"
       end
     end
-  end
-
-  # GET /collections/1/carousel
-  def carousel
   end
 
   # GET /collections/1/slideshow

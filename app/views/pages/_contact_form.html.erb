@@ -1,0 +1,26 @@
+<div class="col-md-12">
+  <h3>Contact Us</h3>
+	<hr>
+</div>
+
+<div class="col-md-6 col-md-offset-3">
+  <%= simple_form_for @contact_form, :html => { :class => 'form-horizontal' },
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  } do |f| %>
+    <%= f.input :name, :required => true %>
+    <%= f.input :email, :required => true %>
+    <%= f.input :message, :as => :text, :required => true, :input_html => { :rows => 4 } %>
+    <div class= "hidden">
+      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+    </div>
+    <div class="col-md-offset-2">
+      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+    </div>
+  <% end %>
+
+</div>

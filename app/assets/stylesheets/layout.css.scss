@@ -1,3 +1,15 @@
+.description-copy p {
+  padding-top: 10px;
+  font-align: justify;
+  font-size: 1.2em;
+  color: #666;
+}
+
+.img-inline {
+  margin: -5px 2px 0 0;
+  display: inline;
+}
+
 // CAROUSEL
 .carousel .item {
   left: 0 !important;
@@ -46,34 +58,6 @@
 .carousel-indicators .active{
   background-color: #f47321;
 }
-
-
-// CONTACT PAGE
-.contact-page {
-  margin-top: 30px;
-  address strong {
-    color: #f47321;
-    font-size: 2em;
-    font-weight: normal;
-    // line-height: 1.5em;
-  }
-  .about-copy {
-    padding-top: 10px;
-    font-align: justify;
-    font-size: 1.2em;
-    color: #666;
-  }
-  .address {
-    // color: #666;
-    height: 200px;
-  }
-  .map-canvas {
-    background-color: #e5e5e5;
-    height: 300px;
-    width: 100%;
-  }
-}
-
 
 // BUTTON DEFAULT
 a.btn-default {
