@@ -4,12 +4,10 @@
 <div class="category-items-container">
   <ul class="category-items one-row">
 
-    <% @designer.items.designer_list.each do |item| %>
+    <% @designer.listed_items.each do |item| %>
       <li class="item" data-size="<%= item.size %>">
       <%= link_to item, class: 'item-link' do %>
-        <% if item.sold %>
-          <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
-        <% end %>
+        <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' if item.sold %>
         <%= image_tag item.default_image_url, class: 'item-image' %>
       <% end %>
 
@@ -31,7 +29,7 @@
         <% end %>
       <% end %>
 
-      <h4><%= raw item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
+      <h4><%= item.maker_display %></h4>
       <p><%= item.description_short %></p>
       <p class="item-circa"><%= item.circa %></p>
       </li>

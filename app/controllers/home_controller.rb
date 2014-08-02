@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @featured = Item.featured.shuffle
+    @featured = ItemDecorator.decorate_collection(Item.featured).shuffle
   end
 
 end

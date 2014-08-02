@@ -22,6 +22,7 @@ gem 'rails_12factor', group: :production
 gem 'therubyracer'
 gem 'prawn'
 gem 'prawn-svg'
+gem 'draper'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

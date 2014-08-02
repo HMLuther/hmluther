@@ -1,24 +1,14 @@
 <!-- SUBNAV -->
-<% if @item.sold %>
-  <%= render 'item_subnav_sold' %>
-<% else %>
-  <%= render 'item_subnav' %>
-<% end %>
+<%= @item.subnav %>
 
 <!-- IMAGES -->
 <div class="row">
   <div class="col-md-12 all-images">
     <div class="item-images-container">
-      <div id="item-images" class="item-images" data-container-size="<%= @container_size %>" data-sort="">
+      <div id="item-images" class="item-images" data-sort="">
       
         <% @item_images.each do |image| %>
-          <% if user_signed_in? %>
-            <%= link_to image.url, :target => "_blank" do %>
-              <%= image_tag image.url, title: 'Click for high resolution image' %>
-            <% end %>
-          <% else %>
-            <%= image_tag image.url, title: 'Login for high resolution image' %>
-          <% end %>
+          <%= @item.image(image) %>
         <% end %>
 
       </div>
@@ -29,14 +19,14 @@
 <!-- DETAIL -->
 <div class="row">
   <div class="col-md-12">
-    <h3><%= raw @item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h3>
+    <h3><%= @item.maker_display %></h3>
     <hr/>
   </div>
   <div class="col-md-6 info-panel">
     <p><%= @item.description_short %></p>
     <p><%= @item.circa %></p>
     <p>Item: <%= @item.filemaker_id %></p>
-    <p>Location: <%= raw(@item.location_calc) %></p>
+    <p>Location: <%= @item.location_calc %></p>
     <hr>
     <h5>Dimensions</h5>
 
@@ -102,17 +92,11 @@
 
   <!-- DESCRIPTION -->
   <div class="col-md-6 info-panel">
-
     <p><%= @item.description rescue "" %></p>
-
     <p><%= @item.reference rescue "" %></p>
-
     <p><%= Designer.find_by_slug(@item.maker_list.first).bio rescue "" %></p>
-
     <p>Category: <%= raw @item.category_list.map { |t| link_to t.titlecase, category_path(t) }.join(', ') %></p>
-    <% if @item.sold %>
-      <%= image_tag 'hml_sold_icon.svg', class: 'item-stamp-sold' %>
-    <% end %>
+    <%= image_tag 'hml_sold_icon.svg', class: 'item-stamp-sold' if @item.sold %>
   </div>
 </div>
 

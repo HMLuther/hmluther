@@ -36,6 +36,10 @@ class Designer < ActiveRecord::Base
 		self.items.designer_list.count
 	end
 
+	def listed_items
+		ItemDecorator.decorate_collection(Item.tagged_with(self.slug).designer_list)
+	end
+
 	def name_full
 		"#{name_first} #{name_last}"
 	end
