@@ -21,7 +21,7 @@ class Designer < ActiveRecord::Base
   end
 
 	def generate_slug
-		self.slug ||= name.parameterize
+		self.slug ||= name_full.parameterize
 	end
 
 	def to_param
