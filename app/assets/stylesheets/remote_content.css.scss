@@ -3,8 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.login_modal, .sign_up_modal {
+.info_modal, .login_modal, .sign_up_modal {
 	color: #666666;
+	.row.form-content {
+		// background-color: red;
+		// border-top: 1px solid green;
+		// margin-top: 10px;
+		// padding-top: 5px;
+		hr {
+			// border-color: #fff;
+			margin: -10px 0 10px 0;
+		}
+	}
 	.right-column {
 		.form-group {
 			padding-left: 0;
@@ -30,8 +40,10 @@
 		padding: 25px;
 		p {
 			font-size: 0.9em;
-			margin: 0 0 0 -12px;
 			padding: 5px 0 15px 0;
+		}
+		p.right {
+			margin: 0 0 0 -12px;
 		}
 	}
 	.modal-content {
@@ -47,6 +59,9 @@
 	}
 	.modal-header {
 		background-color: #ffffff;
+	}
+	.modal-thumb {
+		width: 100px;
 	}
 	.modal-title {
 		float: right;

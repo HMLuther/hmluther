@@ -11,7 +11,7 @@
 
 			<!-- BODY -->
 			<div class="modal-body">
-			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :remote => true, :format => :js, :html => {:class => "form-horizontal", :id => "sign_in_user"}) do |f| %>
+			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :remote => false, :format => :js, :html => {:class => "form-horizontal", :id => "sign_in_user"}) do |f| %>
 
 				<%= f.input :email, :required => true, :placeholder => 'EMAIL', :label => false, :autofocus => true %>
 				<%= f.input :password, :required => true, :placeholder => 'PASSWORD', :label => false %>

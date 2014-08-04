@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 
+  before_action :authenticate_admin, :except => [:category, :show], unless: :json_request?
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_api_user, only: [:create, :edit, :update, :destroy], if: :json_request?
   before_action :find_history, only: [:category, :show]
@@ -13,9 +14,9 @@ class ItemsController < ApplicationController
   #GET /category/:category
   def category
     @items = Item.category_list.tagged_with(params[:category]).decorate
-    @container_size_1 = ( @items.count * 915 ) - 40
-    @precision_count = @items.count / 2.to_f
-    @container_size_2 = ( @precision_count.round * 393 )
+    # @container_size_1 = ( @items.count * 915 ) - 40
+    # @precision_count = @items.count / 2.to_f
+    # @container_size_2 = ( @precision_count.round * 393 )
   end
 
   #GET /maker/:maker

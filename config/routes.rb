@@ -1,17 +1,14 @@
 Hmluther::Application.routes.draw do
 
-  match 'remote_sign_up', to: 'remote_content#remote_sign_up', via: [:get]
-  match 'remote_login', to: 'remote_content#remote_login', via: [:get]
+  get 'remote_info_request', to: 'remote_content#remote_info_request'
+  get 'remote_login', to: 'remote_content#remote_login'
+  get 'remote_sign_up', to: 'remote_content#remote_sign_up'
   get 'category/:category', to: 'items#category', as: :category
-
-  # get 'contact', to: 'contact#index'
-  # get 'maker/:maker', to: 'items#maker', as: :maker
-  # get 'features', to: 'features#index'
-  # get 'terms-of-service', to: 'terms_of_service#index'
 
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}
 
   resources "contacts", only: [:new, :create]
+  resources "info_requests", only: [:new, :create]
   resources :designers
   resources :images
   resources :items

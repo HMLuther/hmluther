@@ -25,7 +25,7 @@
         <% end %>
       <% else %>
         <% unless item.sold %>
-          <%= link_to "", remote_login_path, :remote => true, class: 'btn btn-default', title: "Add to collection (Login required)" %>
+          <%= link_to "Add to Collection", remote_login_path, :remote => true, class: 'btn btn-default', title: "Add to collection (Login required)" %>
         <% end %>
       <% end %>
 

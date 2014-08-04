@@ -17,14 +17,14 @@
         <% else %>
           <% unless item.sold %>
             <div id="<%= item.filemaker_id %>" class="dropdown">
-              <a data-toggle="dropdown" href="#" class="btn btn-default add-copy" title="Add to Collection"></span></a>
+              <a data-toggle="dropdown" href="#" class="btn btn-default add-copy" title="Add to Collection"></a>
               <%= render partial:'dropdown_menu', locals: {item: item} %>
             </div>
           <% end %>
         <% end %>
       <% else %>
         <% unless item.sold %>
-          <%= link_to "", remote_login_path, :remote => true, class: 'btn btn-default', title: "Add to collection (Login required)" %>
+          <%= link_to "Add to Collection", remote_login_path, :remote => true, class: 'btn btn-default', title: "Add to collection (Login required)" %>
         <% end %>
       <% end %>
 

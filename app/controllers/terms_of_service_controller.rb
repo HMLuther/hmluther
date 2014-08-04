@@ -1,2 +1,0 @@
-class TermsOfServiceController < ApplicationController
-end

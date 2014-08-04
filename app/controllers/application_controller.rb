@@ -44,4 +44,10 @@ class ApplicationController < ActionController::Base
     redirect_to (request.referrer || root_path)
   end
 
+  def authenticate_admin
+    unless current_user.try(:admin?)
+      user_not_authorized
+    end
+  end
+
 end

@@ -43,7 +43,7 @@
 
 						<!-- RIGHT COLUMN -->
 						<div class="col-md-4 right-column">
-							<p>How did you hear about us?</p>
+							<p class="right">How did you hear about us?</p>
 							<%= f.input :reference, :required => false, :placeholder => 'How did you hear about us?', :label => false, 
 													:collection => ["I am a returning client", "I visited the gallery", "Search Engine", "1st Dibs", "Magazine", "Antique Fair", "Word of Mouth", "Other"] %>
 							<%= f.input :password, :required => true, :placeholder => 'PASSWORD*', :label => false %>
@@ -59,7 +59,7 @@
 			<div class="modal-footer">
 				<p>Already have an account? <%= link_to "Log in", new_user_session_path %> | 
 				Forgot your password? <%= link_to "Reset", new_user_password_path %></p>
-				<%= link_to "Terms of Service / Consent / Email Usage", terms_of_service_path %>
+				<%= link_to "Terms of Service / Consent / Email Usage", page_path('terms-of-service') %>
 			<% end %>
 			</div>
 

@@ -1,0 +1,52 @@
+<div id="info_modal" class="info_modal modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- HEADER -->
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<%= image_tag 'hml_icon.svg', class: 'logo-icon', alt: 'HM Luther' %>
+				<h4 class="modal-title">Request Information</h4>
+			</div>
+
+			<!-- BODY -->
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<%= image_tag @item.thumb_image_url, class: 'modal-thumb1' %>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<h4>Request information about item #<%= @item.filemaker_id %></h4>
+						<p><%= @item.description_short %><br/>
+						Circa: <%= @item.circa %></p>
+					</div>
+				</div>
+
+				<div class="row form-content">
+					<div class="col-md-12">
+						<hr>
+					  <%= simple_form_for @info_request, :remote => true, :format => :js, :html => { :class => 'form-horizontal', :id => "info_request_form" } do |f| %>
+					    <%= f.input :name, :required => true, :placeholder => 'NAME*', :label => false, :autofocus => true %>
+					    <%= f.input :email, :required => true, :placeholder => 'EMAIL*', :label => false %>
+					    <%= f.input :message, :as => :text, :required => true, :input_html => { :rows => 4 }, :placeholder => 'MESSAGE', :label => false %>
+					    <div class= "hidden">
+					      <%= f.input :item, :input_html => { :value => @item.filemaker_id } %>
+					      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+					    </div>
+					      <%= f.button :submit, 'Send message', :class=> "btn btn-primary", data: { disable_with: "Please wait..." } %>
+					  <% end %>
+					</div>
+			  </div>
+
+			</div>
+
+			<!-- FOOTER -->
+			<div class="modal-footer">
+				<!-- <p>Not registered yet? <%= link_to "Sign up", new_user_registration_path, :class => 'close-login' %></p> -->
+			</div>
+
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

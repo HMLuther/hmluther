@@ -1,4 +1,6 @@
 class DesignersController < ApplicationController
+
+  before_action :authenticate_admin, :except => [:index, :show], unless: :json_request?
   before_action :set_designer, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_api_user, only: [:create, :edit, :update, :destroy], if: :json_request?
 
@@ -12,9 +14,6 @@ class DesignersController < ApplicationController
   # GET /designers/1
   # GET /designers/1.json
   def show
-    @container_size_1 = @designer.items.count * 915 - 40
-    @precision_count = @designer.items.count / 2.to_f
-    @container_size_2 = @precision_count.round * 384
   end
 
   # GET /designers/new
