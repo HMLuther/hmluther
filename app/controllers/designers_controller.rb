@@ -1,8 +1,8 @@
 class DesignersController < ApplicationController
 
-  before_action :authenticate_admin, :except => [:index, :show], unless: :json_request?
-  before_action :set_designer, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_admin, :except => [:index, :show], unless: :json_request?
   before_action :authenticate_api_user, only: [:create, :edit, :update, :destroy], if: :json_request?
+  before_action :set_designer, only: [:show, :edit, :update, :destroy]
 
   # GET /designers
   # GET /designers.json

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
-  after_action :verify_authorized, except: [:show]
+  
+  before_action :authenticate_user!, unless: :json_request?
+  before_action :authenticate_api_user, only: [:create, :edit, :update, :destroy], if: :json_request?
+  after_action :verify_authorized, except: [:show], unless: :json_request?
 
   def index
     @users = User.all
