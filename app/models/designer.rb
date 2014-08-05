@@ -16,10 +16,6 @@ class Designer < ActiveRecord::Base
     where(active: true)
   end
 
-  def container_size
-  	self.items.count * 883
-  end
-
 	def generate_slug
 		self.slug ||= name_full.parameterize
 	end

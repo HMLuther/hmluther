@@ -1,40 +1,50 @@
 <h1><%= link_to @image.item.description_short, @image.item %></h1>
-<p><%= @image.item_id %></p>
+<p>
+  <strong>Active:</strong> 
+  <%= @image.item_id %>
+</p>
 
 <p>
-  <strong>Active:</strong>
+  <strong>Active:</strong> 
   <%= @image.active %>
 </p>
 
 <p>
-  <strong>Filemaker ID:</strong>
+  <strong>Filemaker ID:</strong> 
   <%= @image.filemaker_id %>
 </p>
 
 <p>
-  <strong>Banner:</strong>
+  <strong>Banner:</strong> 
   <%= @image.banner %>
 </p>
 
 <p>
-  <strong>Webcomp:</strong>
+  <strong>Webcomp:</strong> 
   <%= @image.webcomp %>
 </p>
 
 <p>
-  <strong>Thumb:</strong>
+  <strong>Thumb:</strong> 
   <%= @image.thumb %>
 </p>
 
 <p>
-  <strong>Image type:</strong>
+  <strong>Image type:</strong> 
   <%= @image.image_type %>
 </p>
 
 <p>
-  <strong>Url:</strong>
+  <strong>Url:</strong> 
   <%= @image.url %>
 </p>
+
+<p>
+  <strong>Preview Url:</strong> 
+  <%= @image.preview_url %>
+</p>
+
+<hr>
 
 <%= image_tag @image.url %>
 
