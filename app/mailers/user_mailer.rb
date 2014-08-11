@@ -1,5 +1,6 @@
 class UserMailer < ActionMailer::Base
-  default from: "sales@hmluther.com"
+  include Rails.application.routes.url_helpers
+  default from: "info@hmluther.com"
 
   def new_user(user)
     @user = user
@@ -10,6 +11,11 @@ class UserMailer < ActionMailer::Base
   def share_item(user, item, receipient)
   	@item = item
   	@user = user
-  	mail to: receipient, subject: "Someone has shared this item with you"
+  	mail to: receipient, subject: "#{@user.name} has shared an item with you"
   end
+
+  def welcome(user, item, receipient)
+
+  end
+
 end

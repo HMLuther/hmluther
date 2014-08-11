@@ -73,7 +73,7 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
+    address: "smtp.mandrillapp.com",
     port: 587,
     domain: Rails.application.secrets.domain_name,
     authentication: "plain",
@@ -96,4 +96,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  Rails.application.routes.default_url_options[:host] = 'hml-dev.herokuapp.com'
+
 end

@@ -22,10 +22,10 @@ class ItemDecorator < Draper::Decorator
 	def image(image)
 		if user_signed_in?
 			link_to image.url, :target => "_blank" do
-				image_tag image.url, title: 'Click for high resolution image'
+				image_tag image.preview_url, title: 'Click for high resolution image'
 			end
 		else
-			image_tag image.url, title: 'Login for high resolution image'
+			image_tag image.preview_url, title: 'Login for high resolution image'
 		end
 	end
 
@@ -79,8 +79,8 @@ class ItemDecorator < Draper::Decorator
 	end
 
 	def tearsheet_url
-		if model.images.where("file_type = 'pdf'").first.present?
-			model.images.where("file_type = 'pdf'").first.url
+		if model.images.where("image_type = 'TS'").first.present?
+			model.images.where("image_type = 'TS'").first.url
 		end
 	end
 

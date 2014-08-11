@@ -11,7 +11,7 @@ class InfoRequestsController < ApplicationController
       # flash.now[:error] = nil
       flash.now[:notice] = 'Thank you for your message!'
     else
-      flash.now[:error] = 'Cannot send message.'
+      flash.now[:error] = @info_request.errors.full_messages.to_sentence
       # render :new
       render :template => "remote_content/devise_errors.js.erb"
     end

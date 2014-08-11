@@ -14,9 +14,6 @@ class ItemsController < ApplicationController
   #GET /category/:category
   def category
     @items = Item.category_list.tagged_with(params[:category]).decorate
-    # @container_size_1 = ( @items.count * 915 ) - 40
-    # @precision_count = @items.count / 2.to_f
-    # @container_size_2 = ( @precision_count.round * 393 )
   end
 
   #GET /maker/:maker
@@ -32,6 +29,7 @@ class ItemsController < ApplicationController
     @item_images = @item.images.show_list.order('image_type')
     @receipient = "tsteinhilber@gmail.com"
     # UserMailer.share_item(User.last, @item, @receipient).deliver
+    # UserMailer.welcome(current_user, @item, @receipient)
   end
 
   # GET /items/new
@@ -92,7 +90,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :listed_category, :listed_designer, :location, :reference, :height_cm, :width_cm, :depth_cm, :diameter_cm, :height_in, :width_in, :depth_in, :diameter_in, :size, :subcategory_id, :category_list, :maker_list, :designer_connector_1, :designer_connector_2)
+      params.require(:item).permit(:active, :circa, :description, :description_short, :featured, :filemaker_id, :sold, :listed_category, :listed_designer, :location, :reference, :height_cm, :width_cm, :depth_cm, :diameter_cm, :height_in, :width_in, :depth_in, :diameter_in, :size, :category_list, :maker_list, :designer_connector_1, :designer_connector_2)
     end
 
     def store_history
