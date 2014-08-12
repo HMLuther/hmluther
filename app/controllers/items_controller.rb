@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
   def show
     @item_images = @item.images.show_list.order('image_type')
     @receipient = "tsteinhilber@gmail.com"
-    UserMailer.share_item(User.last, @item, @receipient).deliver
+    # UserMailer.share_item(User.last, @item, @receipient).deliver
     # UserMailer.welcome(current_user, @item, @receipient)
   end
 
