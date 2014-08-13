@@ -30,7 +30,6 @@
 
 	<!-- REQUEST INFORMATION -->
 	<div class="col-md-2 col-sm-2 col-xs-6">
-		<!-- <button class="request-info-button" title="Requestion additional information for this item">Request Info</button> -->
 		<%= link_to "Request Info", remote_info_request_path(:item => @item.filemaker_id), :remote => true, title: 'Requestion additional information for this item' %>
 	</div>
 

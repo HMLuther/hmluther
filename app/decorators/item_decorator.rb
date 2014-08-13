@@ -66,7 +66,7 @@ class ItemDecorator < Draper::Decorator
 			end + 
 			link_to(model.maker_list.third.titlecase, designer_path(model.maker_list.third))
 		else
-		  "Unknown"
+		  ""
 		end
 	end
 

@@ -1,4 +1,10 @@
 // CATEGORY ITEMS
+.category-items {
+	h4 {
+		color: #f47321;
+	}
+}
+
 ul.category-items.one-row {
 	list-style-type: none;
 	margin: 0;
@@ -17,8 +23,11 @@ ul.category-items.one-row {
 		float: right;
 		margin-top: 88px;
 	}
-	a.btn-default.add-copy:before {
+	a.btn-default.collection-add-copy:before {
 		content: "Add to Collection"
+	}
+	a.btn-default.collection-create-copy:before {
+		content: "Create Collection"
 	}
 	.btn-default {
 		width: 135px;
@@ -49,7 +58,8 @@ ul.category-items.two-rows {
 		float: right;
 		margin-top: 96px;
 	}
-	a.btn:before {
+	a.btn.collection-add-copy:before,
+	a.btn.collection-create-copy:before {
 		content: "+"
 	}
 	.btn-default {
