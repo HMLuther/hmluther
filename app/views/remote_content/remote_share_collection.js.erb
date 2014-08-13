@@ -1,0 +1,7 @@
+if($('#share_collection_modal').length > 0) {
+ $("#share_collection_modal").modal();
+}
+else {
+ $("body").prepend("<%= escape_javascript(render "remote_share_collection", :formats => [:html]) %>");
+ $("#share_collection_modal").modal();
+}

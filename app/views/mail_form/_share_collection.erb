@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <%= link_to 'http://hmluther.com' do %>
+      <%= image_tag 'http://173.254.104.110/hml/web_ui/hml.png' %>
+    <% end %>
+
+    <h1><%= message.subject %></h1>
+
+		<h2><%= @resource.mail_form_attributes["collection_name"] %></h2>
+		<p><%= @resource.mail_form_attributes["description"] %></p>
+		<p><strong>View Collection: </strong><%= @resource.mail_form_attributes["path"] %></p>
+
+		<p><strong>Message: </strong><br/>
+		<%= @resource.mail_form_attributes["message"] %></p>
+
+  </body>
+</html>

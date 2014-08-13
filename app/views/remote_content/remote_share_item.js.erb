@@ -1,0 +1,7 @@
+if($('#share_item_modal').length > 0) {
+ $("#share_item_modal").modal();
+}
+else {
+ $("body").prepend("<%= escape_javascript(render "remote_share_item", :formats => [:html]) %>");
+ $("#share_item_modal").modal();
+}

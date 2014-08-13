@@ -11,7 +11,7 @@
         <% if ci.item.sold %>
           <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
         <% end %>
-        <%= image_tag ci.item.default_image_url, class: 'item-image' %>
+        <%= image_tag ci.item.decorate.default_image_url, class: 'item-image' %>
       <% end %>
       <h4><%= raw ci.item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
       <p><%= ci.item.description_short %></p>

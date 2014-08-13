@@ -27,9 +27,6 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item_images = @item.images.show_list.order('image_type')
-    @receipient = "tsteinhilber@gmail.com"
-    # UserMailer.share_item(User.last, @item, @receipient).deliver
-    # UserMailer.welcome(current_user, @item, @receipient)
   end
 
   # GET /items/new

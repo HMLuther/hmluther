@@ -16,7 +16,7 @@
     <% @collection.collection_items.active.each_with_index do |ci, index| %>
       <div class="<%= index == 0 ? 'item active' : 'item' %>">
         <%= link_to ci.item do %>
-          <%= image_tag ci.item.default_image_url %>
+          <%= image_tag ci.item.decorate.default_image_url %>
         <% end %>
         <div class="carousel-caption">
           <h5><%= ci.item.description_short %></h5>
