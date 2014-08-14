@@ -21,8 +21,8 @@
           <%= link_to 'Delete Collection', collection_path(@collection), 
                                         class: 'btn btn-danger',
                                         method: :delete, 
-                                        title: 'Delete this collection', 
-                                        data: { confirm: 'Are you sure?' }%>
+                                        title: 'Delete: ' + @collection.name, 
+                                        data: { confirm: 'Are you sure? This action is permanent.' }%>
         <% else %>
           <%= link_to "Cancel", collections_path, class: 'btn btn-primary' %>
         <% end %>

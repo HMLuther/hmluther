@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/ifad/data-confirm-modal.git
+  revision: 81d140fe51e70771821ae0434a32dacf69ca5292
+  specs:
+    data-confirm-modal (1.0.1)
+      railties (>= 3.0)
+
+GIT
   remote: git://github.com/laserlemon/figaro.git
   revision: da0cf2dbe2f78970d5856810e1afd6322dd15437
   specs:
@@ -281,6 +288,7 @@ DEPENDENCIES
   bootstrap-sass
   capybara
   coffee-rails (~> 4.0.0)
+  data-confirm-modal!
   database_cleaner
   devise
   draper

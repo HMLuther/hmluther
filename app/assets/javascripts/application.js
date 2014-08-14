@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.tinysort.min
+//= require data-confirm-modal
 //= require turbolinks
 //= require bootstrap
 //= require_tree .

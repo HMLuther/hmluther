@@ -5,9 +5,8 @@
 # $(document).on 'page:restore', ->
 #   $('body').fadeIn 'slow'
 
-
 $(document).on "page:change", ->
-	
+
 	console.log "app.coffee - page change"
 
 	$('#collection-items-section .inactive .inactive-button').hide()
