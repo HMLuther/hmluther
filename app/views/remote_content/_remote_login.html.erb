@@ -25,7 +25,7 @@
 			<!-- FOOTER -->
 			<div class="modal-footer">
 				<p>Forgot your password? <%= link_to "Reset", new_user_password_path %></p>
-				<p>Not registered yet? <%= link_to "Sign up", new_user_registration_path, :class => 'close-login' %></p>
+				<p>Not registered yet? <%= link_to "Sign up", remote_sign_up_path, :remote => true, :class => 'close-login', :data => {dismiss: "modal"} %></p>
 			<% end %>
 			</div>
 

@@ -57,7 +57,7 @@
 
 			<!-- FOOTER -->
 			<div class="modal-footer">
-				<p>Already have an account? <%= link_to "Log in", new_user_session_path %> | 
+				<p>Already have an account? <%= link_to "Log in", remote_sign_up_path, :remote => true, :class => 'close-login', :data => {dismiss: "modal"} %> | 
 				Forgot your password? <%= link_to "Reset", new_user_password_path %></p>
 				<%= link_to "Terms of Service / Consent / Email Usage", page_path('terms-of-service') %>
 			<% end %>

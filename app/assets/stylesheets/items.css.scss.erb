@@ -1,5 +1,12 @@
+	h3 {
+		color: #f47321;
+	}
+
 // CATEGORY ITEMS
 .category-items {
+	.btn-default {
+		width: 100%;
+	}
 	h4 {
 		color: #f47321;
 	}
@@ -19,25 +26,18 @@ ul.category-items.one-row {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   height: 620px;
-	a.btn {
-		float: right;
-		margin-top: 88px;
-	}
-	a.btn-default.collection-add-copy:before {
-		content: "Add to Collection"
-	}
-	a.btn-default.collection-create-copy:before {
-		content: "Create Collection"
-	}
-	.btn-default {
-		width: 135px;
-	}
 	li.item {
 	  width: 800px;
 	  height: 620px;
 	  border: 1px solid #c8c8c8;
 	  margin: 0 40px 20px 0;
 	  padding: 5px;
+		.item-info {
+			min-height: 89px;
+		}
+		.item-image, .item-info, .item-link {
+			padding: 0;
+		}
 	}
 }
 ul.category-items.two-rows {
@@ -54,17 +54,6 @@ ul.category-items.two-rows {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   height: 720px;
-	a.btn {
-		float: right;
-		margin-top: 96px;
-	}
-	a.btn.collection-add-copy:before,
-	a.btn.collection-create-copy:before {
-		content: "+"
-	}
-	.btn-default {
-		width: 30px;
-	}
 	li.item {
 	  width: 350px;
 	  height: 326px;
@@ -72,13 +61,21 @@ ul.category-items.two-rows {
 	  margin: 0 40px 20px 0;
 	  padding: 2px;
 		cursor: pointer;
+		.item-circa {
+			display: none;
+		}
+		.item-info {
+			min-height: 97px;
+		}
+		.item-image, .item-info, .item-link {
+			padding: 0;
+		}
 	}
 }
 
 
 // CATEGORY SUBNAV, ITEM SUBNAV
-.category-subnav, .collection-subnav, .item-subnav {
-	// background-color: red;
+.category-subnav, .collection-subnav, .item-subnav {;
 	color: #f47321;
 	margin: 5px 0 5px 0;
 	font-size: 0.8em;
@@ -92,12 +89,10 @@ ul.category-items.two-rows {
 	}
 	div.display{
 		background-color: #e5e5e5;
-		// color: #666666;
 		padding: 10px 15px;
 	}
 	a {
 		background-color: #e5e5e5;
-		// color: #333333;
 		padding: 10px 15px;
 		width: 100%;
 		display: inline-block;
@@ -123,18 +118,6 @@ ul.category-items.two-rows {
 		background-color: #f47321;
 		color: #FFFFFF;
 	}
-	// .sm-lg-icon {
-	// 	background-image: url(<%= asset_path 'small_to_large_icon.png' %>);
-	// 	background-position: 85% center;
-	// 	background-repeat:no-repeat;
-	// 	background-size:10% 10px;
-	// }
-	// .lg-sm-icon {
-	// 	background-image: url(<%= asset_path 'large_to_small_icon.png' %>);
-	// 	background-position: 85% center;
-	// 	background-repeat:no-repeat;
-	// 	background-size:10% 10px;
-	// }
 }
 
 
@@ -143,8 +126,7 @@ ul.category-items.two-rows {
 	padding: 0;
 	margin: 0;
 	position: relative;
-	overflow-x: scroll;
-	overflow-y:hidden;
+	overflow-y: hidden;
 	-webkit-overflow-scrolling: touch;
 }
 
