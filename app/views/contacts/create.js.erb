@@ -1,0 +1,6 @@
+console.log('Contact email sent!');
+// $('.cbp-hrmenu').prepend("<%= escape_javascript raw(flash_normal) %>").show();
+$('.form-horizontal').prepend("<%= escape_javascript raw(flash_normal) %>").show();
+$('.form-horizontal input').val('');
+$('.form-horizontal textarea').val('');
+$('#flash').delay(2500).fadeOut();

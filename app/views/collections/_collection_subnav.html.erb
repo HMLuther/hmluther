@@ -1,5 +1,6 @@
 <div class="row collection-subnav">
 
+	<!-- SHARE -->
 	<div class="col-md-4 col-sm-4">
 		<div class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Share <span class="caret"></span></a>
@@ -11,10 +12,12 @@
 		</div>
 	</div>
 	
+	<!-- TEARSHEETS -->
 	<div class="col-md-4 col-sm-4">
 		<%= link_to 'Print Tearsheets', collection_path(@collection, format: "pdf"), title: 'Print Tearsheets (PDF)', target: "_blank" %>
 	</div>
 
+	<!-- EDIT COLLECTION -->
 	<div class="col-md-4 col-sm-4">
 		<%= link_to 'Edit Collection', edit_collection_path(@collection), title: 'Edit this collection' %>
 	</div>

@@ -10,8 +10,8 @@ class CollectionPdf < Prawn::Document
     default_leading 5
     stroke_color "e5e5e5"
     collection_info
-    # collection_items
-    tearsheet_images
+    collection_items
+    # tearsheet_images
     # footer
   end
 
@@ -59,7 +59,7 @@ class CollectionPdf < Prawn::Document
   	@count = ( @collection.collection_items.active.count - 1 )
   	@collection.collection_items.active.each_with_index do |c, index|
  	    self.header
-  		image open(c.item.default_image_url), :width => 540, :position => :center
+  		image open(c.item.images.where(webcomp: true).first.url), :width => 540, :position => :center
   		y_position = cursor - 15
   		bounding_box([0, y_position], :width => 540) do
 	  		text text c.item.maker_list.map { |t| t.titlecase }.join(', '), :color => "f47321", :size => 16
@@ -81,7 +81,7 @@ class CollectionPdf < Prawn::Document
   def tearsheet_images
     @count = ( @collection.collection_items.active.count - 1 )
     @collection.collection_items.active.each_with_index do |c, index|
-      image open(c.item.default_image_url), :width => 612, :position => :center
+      image open(c.item.images.where(webcomp: true).first.url), :width => 612, :position => :center
       if index < @count
         start_new_page
       end
