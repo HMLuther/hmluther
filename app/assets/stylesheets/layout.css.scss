@@ -78,17 +78,17 @@ a.btn-default:hover {
 .dropdown {
 }
 .dropdown-menu {
+  padding: 0;
   .divider {
-    // margin-bottom: 0;
+    margin: 2px 0;
   }
   li {
     // background-color: green;
-    font-size: 0.7em;
+    font-size: 0.8em;
     text-transform: uppercase;
     a, button, .btn-default {
       background-color: transparent;
-      padding: 5px 5px 5px 20px;
-      // margin: -5px 0 -5px 0;
+      padding: 8px 25px 8px 25px;
     }
     a:hover, button:hover, .btn-default:hover {
       background-color: #f47321;
@@ -96,6 +96,10 @@ a.btn-default:hover {
     }
     button.active {
       background-color: #666666;
+      background-image: url(image-path('tick-small-white.png'));
+      background-repeat: no-repeat;
+      background-position: 4px 6px;
+      background-size: 20px 20px;
       color: #FFFFFF;
     }
     form div {

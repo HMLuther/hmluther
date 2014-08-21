@@ -1,8 +1,8 @@
 <div class="row item-subnav">
 
 	<!-- ITEM NUMBER -->
-	<div class="col-md-2 col-sm-2 col-xs-6 display">
-		Item #<%= @item.filemaker_id %>
+	<div class="col-md-3 col-sm-3 col-xs-6">
+		<%= link_to "<< " + @item.category_list.first.titlecase, category_path(@item.category_list.first) %>
 	</div>
 
 	<!-- SHARE -->
@@ -30,11 +30,17 @@
 
 	<!-- REQUEST INFORMATION -->
 	<div class="col-md-2 col-sm-2 col-xs-6">
-		<%= link_to "Request Info", remote_info_request_path(:item => @item.filemaker_id), :remote => true, title: 'Requestion additional information for this item' %>
+	<% if user_signed_in? %>
+		<%= link_to "Request Info", remote_info_request_path(:item => @item.filemaker_id), 
+																:remote => true, title: 'Requestion additional information for this item' %>
+	<% else %>
+		<%= link_to "Request Info", remote_login_path, 
+																:remote => true, class: 'add-login-button', title: "Requestion additional information for this item (Login required)" %>
+	<% end %>
 	</div>
 
 	<!-- ADD TO COLLECTION -->
-	<div class="col-md-4 col-sm-4 col-xs-12 collection-list">
+	<div class="col-md-3 col-sm-3 col-xs-12 collection-list">
 		<% if user_signed_in? %>
 			<% unless current_user.collections.count > 0 %>
 				<%= link_to 'Create Collection', new_collection_path %>

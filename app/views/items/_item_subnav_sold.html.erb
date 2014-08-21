@@ -1,8 +1,8 @@
 <div class="row item-subnav">
 
 	<!-- ITEM NUMBER -->
-	<div class="col-md-6 col-sm-6 col-xs-6 display">
-		Item #<%= @item.filemaker_id %>
+	<div class="col-md-6 col-sm-6 col-xs-6">
+		<%= link_to "<< Back to " + @item.category_list.first, category_path(@item.category_list.first) %>
 	</div>
 
 	<!-- SHARE -->

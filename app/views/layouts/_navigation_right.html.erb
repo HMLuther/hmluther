@@ -10,6 +10,7 @@
 			<% if user_signed_in? && current_user.admin? %>
 				<li class="divider"></li>
 			  <li class="<%= is_active?(pages_path) %>"><%= link_to 'Pages', pages_path %></li>
+			  <li class="divider"></li>
 			  <li class="<%= is_active?(users_path) %>"><%= link_to 'Users', users_path %></li>
 			<% end %>
 		</ul>

@@ -25,7 +25,7 @@
   <div class="col-md-6 info-panel">
     <p><%= @item.description_short %></p>
     <p><%= @item.circa %></p>
-    <p>Item: <%= @item.filemaker_id %></p>
+    <p>Item Number: <%= @item.filemaker_id %></p>
     <p>Location: <%= @item.location_calc %></p>
     <hr>
     <h5>Dimensions</h5>
@@ -35,25 +35,25 @@
 
     <% if @item.height_in.present? %>
       <div class="col-md-3">
-        <p>Height: <%= @item.height_in %> in.</p>
+        <p>Height: <%= number_with_precision(@item.height_in, precision: 2, strip_insignificant_zeros: true) %> in.</p>
       </div>
     <% end %>
 
     <% if @item.width_in.present? %>
       <div class="col-md-3">
-        <p>Width: <%= @item.width_in %> in.</p>
+        <p>Width: <%= number_with_precision(@item.width_in, precision: 2, strip_insignificant_zeros: true) %> in.</p>
       </div>
     <% end %>
 
     <% if @item.depth_in.present? %>
       <div class="col-md-3">
-        <p>Depth: <%= @item.depth_in %> in.</p>
+        <p>Depth: <%= number_with_precision(@item.depth_in, precision: 2, strip_insignificant_zeros: true) %> in.</p>
       </div>
     <% end %>
 
     <% if @item.diameter_in.present? %>
       <div class="col-md-3">
-        <p>Diameter: <%= @item.diameter_in %> in.</p>
+        <p>Diameter: <%= number_with_precision(@item.diameter_in, precision: 2, strip_insignificant_zeros: true) %> in.</p>
       </div>
     <% end %>
 
@@ -64,25 +64,25 @@
 
     <% if @item.height_cm.present? %>
       <div class="col-md-3">
-        <p>Height: <%= @item.height_cm %> cm.</p>
+        <p>Height: <%= number_with_precision(@item.height_cm, precision: 1, strip_insignificant_zeros: true) %> cm.</p>
       </div>
     <% end %>
 
     <% if @item.width_cm.present? %>
       <div class="col-md-3">
-        <p>Width: <%= @item.width_cm %> cm.</p>
+        <p>Width: <%= number_with_precision(@item.width_cm, precision: 1, strip_insignificant_zeros: true) %> cm.</p>
       </div>
     <% end %>
 
     <% if @item.depth_cm.present? %>
       <div class="col-md-3">
-        <p>Depth: <%= @item.depth_cm %> cm.</p>
+        <p>Depth: <%= number_with_precision(@item.depth_cm, precision: 1, strip_insignificant_zeros: true) %> cm.</p>
       </div>
     <% end %>
 
     <% if @item.diameter_cm.present? %>
       <div class="col-md-3">
-        <p>Diameter: <%= @item.diameter_cm %> cm.</p>
+        <p>Diameter: <%= number_with_precision(@item.diameter_cm, precision: 1, strip_insignificant_zeros: true) %> cm.</p>
       </div>
     <% end %>
 
