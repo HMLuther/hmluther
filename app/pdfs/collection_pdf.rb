@@ -10,7 +10,8 @@ class CollectionPdf < Prawn::Document
     default_leading 5
     stroke_color "e5e5e5"
     collection_info
-    collection_items
+    # collection_items
+    pdf_merge
     # tearsheet_images
     # footer
   end
@@ -22,7 +23,7 @@ class CollectionPdf < Prawn::Document
     move_down 10
     text @collection.description, :color => "666666"
     # self.footer
-    start_new_page
+    # start_new_page
   end
 
   def footer
@@ -53,6 +54,13 @@ class CollectionPdf < Prawn::Document
 		stroke_color "e5e5e5"
     stroke_horizontal_rule
     move_cursor_to 600
+  end
+
+  def pdf_merge
+    pdf_file_paths = @collection.collection_items.active.map { |ci| ci.item.images.where(:image_type => 'TS').first.url }
+    pdf_file_paths.each do |pdf_file|
+      start_new_page(:template => open(pdf_file))
+    end
   end
 
   def collection_items

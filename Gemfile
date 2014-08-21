@@ -22,6 +22,7 @@ gem 'rails_12factor', group: :production
 gem 'therubyracer'
 gem 'prawn'
 gem 'prawn-svg'
+gem 'prawn-templates'
 gem 'draper'
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 group :development do
