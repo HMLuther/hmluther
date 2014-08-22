@@ -17,8 +17,10 @@ $(document).on "page:change", ->
 	categoryItemsContainer = $('.category-items-container')
 	rowCount = ""
 
-	# categoryItemsLi.tsort('',{data:'size', order:'rand'})
-	
+	if $('input#position').val() == ""
+		sortButtonLS.addClass('active')
+		sortButtonSL.removeClass('active')
+		categoryItemsLi.tsort('',{data:'size', order:'desc'})
 
 	sortButtonSL.on "click", () ->
 		sortButtonSL.addClass('active')
@@ -35,17 +37,6 @@ $(document).on "page:change", ->
 
 	display2Button.on "click", () ->
 		setCategory2Row()
-
-	# setCategoryItemsWidth = () ->
-	# 	if categoryItemsLi.css('margin-bottom') == '20px' && display1Button.hasClass('active')
-	# 		categoryItems.css('width', categoryContainerSize_1)
-
-	# 	else if categoryItemsLi.css('margin-bottom') == '20px' && display2Button.hasClass('active')
-	# 		categoryItems.css('width', categoryContainerSize_2)
-
-	# 	else if categoryItemsLi.css('margin-bottom') == '20px' && !display1Button.hasClass('active')
-	# 		categoryItems.css('width', categoryContainerSize_1)
-	# 		console.log 'setCategoryItemsWidth set to 1'
 
 	setCategoryItemsContainerPosition = () ->
 		if inputPosition.val() > 0
@@ -97,13 +88,11 @@ $(document).on "page:change", ->
 		$('.flash-ajax').fadeIn(250).delay(1500).fadeOut(250)
 
 	# ITEM
-	shareButton = $('.share-button')
-	reqInfoButton = $('.request-info-button')
-	tearsheetButton = $('.item-subnav .tearsheet-button')
-	collectionAddButton = $('.item-subnav .collection-add-button')
-	collectionLoginButton = $('.item-subnav .collection-login-button')
-	collectionMenu = $('.collections-menu')
-	addLoginButton = $('.add-login-button')
+
+	# collectionAddButton = $('.item-subnav .collection-add-button')
+	# collectionLoginButton = $('.item-subnav .collection-login-button')
+	# collectionMenu = $('.collections-menu')
+	# addLoginButton = $('.add-login-button')
 
 	itemLinks.on "click", () ->
 		left_position = $('.category-items-container').scrollLeft()
@@ -113,38 +102,29 @@ $(document).on "page:change", ->
 		left_position = $('.category-items-container').scrollLeft()
 		$('input#position').val(left_position)
 
-	shareButton.on "click", () ->
-		alert "Share Button"
+	# collectionAddButton.on "click", (event) ->
+	# 	event.stopPropagation()
+	# 	event.preventDefault()
+	# 	if collectionAddButton.hasClass('active')
+	# 		collectionMenu.slideUp(200)
+	# 		collectionAddButton.removeClass('active')
+	# 		console.log 'close add button'
+	# 	else
+	# 		collectionAddButton.addClass('active')
+	# 		collectionMenu.slideDown(200)
+	# 		console.log 'open add button'
 
-	reqInfoButton.on "click", () ->
-		alert "Request Info Button"
+	# collectionMenu.on "click", (event) ->
+	# 	event.stopPropagation()
+	# 	collectionMenu.hide()
+	# 	collectionAddButton.removeClass('active')
+	# 	console.log 'collectionMenu click'
 
-	tearsheetButton.on "click", () ->
-		alert "Tearsheet Button"
-
-	collectionAddButton.on "click", (event) ->
-		event.stopPropagation()
-		event.preventDefault()
-		if collectionAddButton.hasClass('active')
-			collectionMenu.slideUp(200)
-			collectionAddButton.removeClass('active')
-			console.log 'close add button'
-		else
-			collectionAddButton.addClass('active')
-			collectionMenu.slideDown(200)
-			console.log 'open add button'
-
-	collectionMenu.on "click", (event) ->
-		event.stopPropagation()
-		collectionMenu.hide()
-		collectionAddButton.removeClass('active')
-		console.log 'collectionMenu click'
-
-	collectionLoginButton.on "click", () ->
+	# collectionLoginButton.on "click", () ->
 		# alert "You must login to manage collections"
-		flashDisplay('You must login to manage collections')
+		# flashDisplay('You must login to manage collections')
 
-	addLoginButton.on "click", () ->
+	# addLoginButton.on "click", () ->
 		# alert "You must login to add items to collections"
 		# flashDisplay('You must login to add items to collections')
 
