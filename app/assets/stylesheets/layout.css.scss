@@ -328,7 +328,8 @@ footer{
 
 // RECENT ITEMS
 .recent-items {
-  padding-top: 10px;
+  margin-bottom: 5px;
+  padding-top: 5px;
   a {
     border: none;
   }
@@ -351,7 +352,7 @@ footer{
       flex-direction: column;
       flex-wrap: wrap;
       -webkit-flex-wrap: wrap;
-      height: 200px;
+      height: 185px;
       img {
         border: 1px solid #c8c8c8;
         border-radius: 2px;
@@ -380,10 +381,10 @@ footer{
     }
   }
   .rc-title {
-    margin: 5px 0 10px 0;
+    margin: 5px 0 0px 0;
     font-size: 0.8em;
     text-transform: uppercase;
     background-color: #e5e5e5;
-    padding: 10px 15px;
+    padding: 8px 10px;
   }
 }

@@ -27,9 +27,16 @@ class CollectionsController < ApplicationController
   def slideshow
   end
 
+  # GET /collections/1/set_new_item
+  def set_new_item
+    session[:item_id] = params[:item_id]
+    redirect_to :action => 'new'
+  end
+
   # GET /collections/new
   def new
-    @collection = Collection.new
+    session[:name] = 'Quatro Quatro'
+    @collection = current_user.collections.new
   end
 
   # GET /collections/1/edit
@@ -40,7 +47,7 @@ class CollectionsController < ApplicationController
   # POST /collections
   # POST /collections.json
   def create
-    @collection = Collection.new(collection_params)
+    @collection = current_user.collections.new(collection_params)
 
     respond_to do |format|
       if @collection.save
