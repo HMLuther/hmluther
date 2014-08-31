@@ -1,5 +1,10 @@
 <div class="container">
 	<hr>
-  <p>All content © HM Luther <%= Date.today.year %>. All rights reserved.</p>
+	<div class="col-md-8">
+	  <p>All content © HM Luther <%= Date.today.year %>. All rights reserved.</p>
+	</div>
+	<div class="col-md-4">
+	  <p class="pull-right"><%= link_to "Terms of Service", page_path('terms-of-service') %></p>
+	</div>
 </div>
 

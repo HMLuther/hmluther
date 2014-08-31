@@ -35,7 +35,6 @@ class CollectionsController < ApplicationController
 
   # GET /collections/new
   def new
-    session[:name] = 'Quatro Quatro'
     @collection = current_user.collections.new
   end
 
@@ -51,6 +50,11 @@ class CollectionsController < ApplicationController
 
     respond_to do |format|
       if @collection.save
+        # add session item to collection
+        if session[:item_id] != nil
+          @collection.collection_items.create(:collection_id => @collection.id, :item_id => session[:item_id])
+          session[:item_id] = nil
+        end
         format.html { redirect_to @collection, notice: 'Collection was successfully created.' }
         format.json { render :show, status: :created, location: @collection }
       else

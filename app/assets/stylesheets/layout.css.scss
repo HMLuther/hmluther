@@ -212,6 +212,13 @@ footer{
 }
 
 
+// SCROLLBAR BUTTONS
+.category-items-container::-webkit-scrollbar-button:horizontal {
+  background-color: red;
+  height: 25px;
+  width: 25px;
+}
+
 // CATEGORY SCROLLBAR
 .category-items-container::-webkit-scrollbar {
   width: 10px;
@@ -222,6 +229,7 @@ footer{
   background: rgba(229,229,229,0.5);
   -webkit-border-radius: 2px;
   border-radius: 2px;
+  margin: 0 50px;
 }
 
 /* Handle */

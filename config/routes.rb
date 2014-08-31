@@ -6,7 +6,7 @@ Hmluther::Application.routes.draw do
   get 'remote_login', to: 'remote_content#remote_login'
   get 'remote_sign_up', to: 'remote_content#remote_sign_up'
   get 'category/:category', to: 'items#category', as: :category
-  get 'set_new_item', to: "collections#set_new_item"
+  post 'set_new_item', to: "collections#set_new_item"
 
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}
 

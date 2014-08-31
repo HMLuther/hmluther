@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
   #GET /category/:category
   def category
     @items = Item.category_list.tagged_with(params[:category]).decorate
+    session[:item_id] = nil
   end
 
   #GET /maker/:maker

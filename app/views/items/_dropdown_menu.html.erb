@@ -1,6 +1,6 @@
 <ul class="dropdown-menu bottom-up" role="menu" aria-labelledby="dLabel">
 
-  <%= button_to 'Create Collection', set_new_item_path(:item_id => item.filemaker_id), :remote => true %>
+  <li><%= button_to 'Create Collection', set_new_item_path(:item_id => item.filemaker_id), :remote => false %></li>
   <li class="divider"></li>
 
 <% current_user.collections.active.each_with_index do |c, index| %>
