@@ -9,6 +9,7 @@ class DesignersController < ApplicationController
   def index
     @designer_alpha = Designer.listed.group_by { |c| c.name_initial }
     @designer_country = Designer.listed.group_by { |c| c.origin }
+    session[:item_id] = nil
   end
 
   # GET /designers/1

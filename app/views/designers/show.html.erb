@@ -5,34 +5,44 @@
   <ul class="category-items one-row">
 
     <% @designer.listed_items.each do |item| %>
-      <li class="item" data-size="<%= item.size %>">
+    <li class="item" data-size="<%= item.size %>">
+      <div class="col-md-12 item-image">
       <%= link_to item, class: 'item-link' do %>
         <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' if item.sold %>
-        <%= image_tag item.default_image_url, class: 'item-image' %>
+        <%= image_tag item.default_image_url %>
       <% end %>
+      </div>
+
+      <div class="col-md-12 item-info">
+        <h4><%= item.maker_display %></h4>
+        <p class="item-description"><%= item.description_short %></p>
+        <p class="item-circa"><%= item.circa %></p>
+      </div>
 
       <!-- ADD TO COLLECTION -->
       <% if user_signed_in? %>
+      <div class="col-md-12 item-link">
         <% unless current_user.collections.count > 0 %>
           <%= link_to 'Create Collection', new_collection_path, class: 'btn btn-default' %>
         <% else %>
           <% unless item.sold %>
             <div id="<%= item.filemaker_id %>" class="dropdown">
-              <a data-toggle="dropdown" href="#" class="btn btn-default add-copy" title="Add to Collection"></span></a>
+              <a data-toggle="dropdown" href="#" class="btn btn-default" title="Add to Collection">Add to Collection</a>
               <%= render partial:'items/dropdown_menu', locals: {item: item} %>
             </div>
           <% end %>
         <% end %>
+      </div>
+
       <% else %>
+      <div class="col-md-12 item-link">
         <% unless item.sold %>
-          <%= link_to "Add to Collection", remote_login_path, :remote => true, class: 'btn btn-default', title: "Add to collection (Login required)" %>
+          <%= link_to 'Create Collection', remote_login_path, :remote => true, class: 'btn btn-default', title: "Add to collection (Login required)" %>
         <% end %>
+      </div>
       <% end %>
 
-      <h4><%= item.maker_display %></h4>
-      <p><%= item.description_short %></p>
-      <p class="item-circa"><%= item.circa %></p>
-      </li>
+    </li>
     <% end %>
 
   </ul>
