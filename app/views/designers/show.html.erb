@@ -28,7 +28,7 @@
           <% unless item.sold %>
             <div id="<%= item.filemaker_id %>" class="dropdown">
               <a data-toggle="dropdown" href="#" class="btn btn-default" title="Add to Collection">Add to Collection</a>
-              <%= render partial:'items/dropdown_menu', locals: {item: item} %>
+              <%= render partial:'items/dropdown_menu', locals: {item: item, menu: "bottom-up"} %>
             </div>
           <% end %>
         <% end %>
