@@ -30,7 +30,11 @@ class CollectionItemsController < ApplicationController
       if @collection_item.save
         format.html { redirect_to @collection_item, notice: 'Collection item was successfully created.' }
         format.json { render :show, status: :created, location: @collection_item }
-        format.js
+        format.js {
+          flash[:notice] = "Added to Collection"
+          render :template => "collection_items/create.js.erb"
+          flash.discard
+        }
       else
         format.html { render :new }
         format.json { render json: @collection_item.errors, status: :unprocessable_entity }

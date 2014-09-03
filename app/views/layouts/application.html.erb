@@ -10,13 +10,13 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <!-- <div class="flash-ajax"></div> -->
     <header>
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main" class="container" id="main">
        <%= render 'layouts/menu' %>
        <%= render 'layouts/messages' %>
+       <div class="flash-ajax"></div>
        <%= yield %>
     </main>
     <footer>

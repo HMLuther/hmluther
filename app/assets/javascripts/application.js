@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require jquery.tinysort.min
 //= require data-confirm-modal
+//= require jquery.mousewheel
+//= require jquery.jscrollpane
 //= require turbolinks
 //= require bootstrap
 //= require_tree .

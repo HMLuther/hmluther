@@ -1,6 +1,6 @@
 <ul class="dropdown-menu <%= menu %>" role="menu" aria-labelledby="dLabel">
 
-  <li><%= button_to 'Create Collection', set_new_item_path(:item_id => item.filemaker_id), :remote => false %></li>
+  <li><%= link_to 'Create Collection', set_new_item_path(:item_id => item.filemaker_id), method: :post, remote: false %></li>
   <li class="divider"></li>
 
 <% current_user.collections.active.each_with_index do |c, index| %>
@@ -8,7 +8,7 @@
   <% if (c.item_ids & Array(item.filemaker_id)).present? %>
     <span class="assigned" title="Item already assigned to this collection"><%= c.name %></span>
   <% else %>
-    <%= button_to c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => item.filemaker_id }), :remote => true %>
+    <%= button_to c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => item.filemaker_id }), remote: true %>
   <% end %>
   </li>
   <% if (current_user.collections.active.count - 1) > index %>

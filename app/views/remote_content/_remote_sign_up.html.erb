@@ -15,45 +15,35 @@
 
 					<div class="row">
 
-						<!-- LEFT COLUMN -->
-					  <div class="col-md-8">
+						<!-- SIGN UP FORM FIELDS -->
+						<div class="col-md-6">
 							<%= f.input :name, :required => true, :autofocus => true, :placeholder => 'NAME*', :label => false %>
 							<%= f.input :email, :required => true, :placeholder => 'EMAIL*', :label => false %>
-							<%= f.input :address, :required => false, :placeholder => 'ADDRESS', :label => false %>
-
-							<div class="row">
-								<div class="col-md-8">
-									<%= f.input :city, :required => false, :placeholder => 'CITY', :label => false %>
-								</div>
-								<div class="col-md-4">
-									<%= f.input :state, :required => false, :placeholder => 'STATE', :label => false %>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-6">
-									<%= f.input :zip, :required => true, :placeholder => 'ZIP*', :label => false %>
-								</div>
-								<div class="col-md-6">
-									<%= f.input :country, :required => true, :placeholder => 'COUNTRY*', :label => false, :as => :string %>
-								</div>
-							</div>
 							<%= f.input :phone, :required => false, :placeholder => 'PHONE', :label => false %>
-						</div>
-
-						<!-- RIGHT COLUMN -->
-						<div class="col-md-4 right-column">
-							<p class="right">How did you hear about us?</p>
-							<%= f.input :reference, :required => false, :placeholder => 'How did you hear about us?', :label => false, 
-													:collection => ["I am a returning client", "I visited the gallery", "Search Engine", "1st Dibs", "Magazine", "Antique Fair", "Word of Mouth", "Other"] %>
 							<%= f.input :password, :required => true, :placeholder => 'PASSWORD*', :label => false %>
 							<%= f.input :password_confirmation, :required => true, :placeholder => 'CONFIRM PASSWORD*', :label => false %>
+						</div>
+
+						<div class="col-md-6">
+							<%= f.input :address, :required => false, :placeholder => 'ADDRESS', :label => false %>
+							<%= f.input :city, :required => false, :placeholder => 'CITY', :label => false %>
+							<%= f.input :state, :required => false, :placeholder => 'STATE', :label => false %>
+							<%= f.input :zip, :required => true, :placeholder => 'ZIP*', :label => false %>
+							<%= f.input :country, :required => true, :placeholder => 'COUNTRY*', :label => false, :as => :string %>
+						</div>
+
+						<div class="col-md-12 reference">
+							<%= f.input :reference, collection: ["I am a returning client", "I visited the gallery", "Search Engine", "1st Dibs", "Magazine", "Antique Fair", "Word of Mouth", "Other"], :label => "How did you hear about us?", as: :check_boxes %>
+						</div>
+
+						<div class="col-md-12">
 							<div class="form-group">
 								<%= f.button :submit, "Create account", :class => "btn btn-primary" %>
 							</div>
 						</div>
+
 					</div>
-			</div>
+				</div>
 
 			<!-- FOOTER -->
 			<div class="modal-footer">

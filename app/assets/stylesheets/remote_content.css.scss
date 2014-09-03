@@ -6,12 +6,7 @@
 .info_modal, .login_modal, .share_item_modal, .share_collection_modal, .sign_up_modal {
 	color: #666666;
 	.row.form-content {
-		// background-color: red;
-		// border-top: 1px solid green;
-		// margin-top: 10px;
-		// padding-top: 5px;
 		hr {
-			// border-color: #fff;
 			margin: -10px 0 10px 0;
 		}
 	}
@@ -37,7 +32,7 @@
 		vertical-align: bottom;
 	}
 	.modal-body {
-		padding: 25px;
+		padding: 25px 25px 0 25px;
 		p {
 			font-size: 0.9em;
 			padding: 5px 0 15px 0;
@@ -72,8 +67,12 @@
 		width: 100%;
 	}
 	input[type=checkbox] {
-		margin: 10px 0;
+		height: auto;
+		// margin: 10px 0;
 		width: auto;
+	}
+	input[type=submit] {
+		margin-top: 10px;
 	}
 	label {
 		font-weight: normal;
@@ -82,4 +81,18 @@
 		height: 107px;
 		border-radius: 0;
 	}
+}
+
+.sign_up_modal .control-label {
+	margin-bottom: 0;
+	border-bottom: 1px solid #999;
+	// color: #999;
+	font-size: 18px;
+	padding-bottom: 10px;
+	text-align: left;
+	width: 100%;
+}
+
+.sign_up_modal .reference {
+	// height: 100px
 }

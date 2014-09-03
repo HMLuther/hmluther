@@ -11,6 +11,34 @@ class ItemDecorator < Draper::Decorator
   #     end
   #   end
 
+  def add_to_collection
+  	
+		# "Signed in. User has Collections. Item Available"
+  	if user_signed_in? && current_user.collections.count > 0 && !model.sold
+  		content_tag :div, id: model.filemaker_id, class: 'dropdown' do
+  			concat link_to 'Add to Collection', '#', :data => {:toggle => 'dropdown'}, class: 'btn btn-default', title: 'Add to collection'
+  			concat render partial:'items/dropdown_menu', locals: {item: model, menu: "bottom-up"}
+  		end
+  	
+		# "Signed in. No Collections. Item Available"
+  	elsif user_signed_in? && current_user.collections.count == 0 && !model.sold
+  		link_to 'Create Collection', set_new_item_path(:item_id => model.filemaker_id), class: 'btn btn-default', title: 'Add to collection', method: :post, remote: false
+  	
+		# "Signed in. User has Collections. Item Sold."
+  	elsif user_signed_in? && current_user.collections.count > 0 && model.sold
+		
+		# "Signed in. No Collections. Item Sold."
+  	elsif user_signed_in? && current_user.collections.count == 0 && model.sold
+
+		# "Not signed in. Item Available"
+  	elsif !current_user && !model.sold
+  		link_to 'Create Collection', remote_login_path, :remote => true, class: 'btn btn-default', title: "Add to collection (Login required)"
+		
+		# "Not signed in. Item Sold."
+  	elsif !current_user && model.sold
+  	end
+  end
+
 	def default_image_url
 		if model.images.where(webcomp: true).first.present?
 			model.images.where(webcomp: true).first.url

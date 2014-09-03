@@ -20,27 +20,9 @@
       </div>
 
       <!-- ADD TO COLLECTION -->
-      <% if user_signed_in? %>
-      <div class="col-md-12 item-link">
-        <% unless current_user.collections.count > 0 %>
-          <%= link_to 'Create Collection', new_collection_path, class: 'btn btn-default' %>
-        <% else %>
-          <% unless item.sold %>
-            <div id="<%= item.filemaker_id %>" class="dropdown">
-              <a data-toggle="dropdown" href="#" class="btn btn-default" title="Add to Collection">Add to Collection</a>
-              <%= render partial:'items/dropdown_menu', locals: {item: item, menu: "bottom-up"} %>
-            </div>
-          <% end %>
-        <% end %>
+      <div class="col-md-12 full-width">
+        <%= item.add_to_collection %>
       </div>
-
-      <% else %>
-      <div class="col-md-12 item-link">
-        <% unless item.sold %>
-          <%= link_to 'Create Collection', remote_login_path, :remote => true, class: 'btn btn-default', title: "Add to collection (Login required)" %>
-        <% end %>
-      </div>
-      <% end %>
 
     </li>
     <% end %>

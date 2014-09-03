@@ -1,8 +1,8 @@
 $(document).on "page:change", ->
 
 	# CATEGORY
-	categoryContainerSize_1 = $('.category-items').data('container-size-1') + 'px'
-	categoryContainerSize_2 = $('.category-items').data('container-size-2') + 'px'
+	# categoryContainerSize_1 = $('.category-items').data('container-size-1') + 'px'
+	# categoryContainerSize_2 = $('.category-items').data('container-size-2') + 'px'
 	listSort = $('.category-items').data('sort')
 	sortButtonSL = $('.category-subnav .sort-button-sl')
 	sortButtonLS = $('.category-subnav .sort-button-ls')
@@ -16,6 +16,7 @@ $(document).on "page:change", ->
 	inputPosition = $('input#position')
 	categoryItemsContainer = $('.category-items-container')
 	rowCount = ""
+	api = categoryItemsContainer.data('jsp');
 
 	if $('input#position').val() == ""
 		sortButtonLS.addClass('active')
@@ -48,8 +49,8 @@ $(document).on "page:change", ->
 		display1Button.addClass('active')
 		display2Button.removeClass('active')
 		categoryItems.removeClass('two-rows').addClass('one-row')
-		# setCategoryItemsWidth()
-		categoryItems.fadeIn(400)
+		categoryItems.fadeIn(500)
+		# api.reinitialise()
 		console.log 'display as 1-row'
 		console.log 'rowCount: ' + rowCount
 
@@ -58,8 +59,8 @@ $(document).on "page:change", ->
 		display2Button.addClass('active')
 		display1Button.removeClass('active')
 		categoryItems.removeClass('one-row').addClass('two-rows')
-		# setCategoryItemsWidth()
-		categoryItems.fadeIn(400)
+		categoryItems.fadeIn(500)
+		# api.reinitialise()
 		console.log 'display as 2-row'
 		console.log 'rowCount: ' + rowCount
 
@@ -74,18 +75,23 @@ $(document).on "page:change", ->
 		console.log 'setRowDisplay: rowCount' + rowCount
 
 	setRowDisplay()
-	# setCategoryItemsWidth()
 	setCategoryItemsContainerPosition()
+	categoryItemsContainer.jScrollPane({
+		showArrows: true,
+		arrowScrollOnHover: true,
+		autoReinitialise: true,
+		hideFocus: true
+	})
 
 	# FLASH
 	flashDisplay = (msg) ->
-		topPos = Math.max($(window).height() / 2 - $('.flash-ajax')[0].offsetHeight / 2, 0)
-		leftPos = Math.max($(window).width() / 2 - $('.flash-ajax')[0].offsetWidth / 2, 0)
-		$('.flash-ajax').css('top', topPos + "px")
-		$('.flash-ajax').css('left', leftPos + "px")
-		$('.flash-ajax').css('position', 'fixed')
-		$('.flash-ajax').text(msg)
-		$('.flash-ajax').fadeIn(250).delay(1500).fadeOut(250)
+		# topPos = Math.max($(window).height() / 2 - $('.flash-ajax')[0].offsetHeight / 2, 0)
+		# leftPos = Math.max($(window).width() / 2 - $('.flash-ajax')[0].offsetWidth / 2, 0)
+		# $('.flash-ajax').css('top', topPos + "px")
+		# $('.flash-ajax').css('left', leftPos + "px")
+		# $('.flash-ajax').css('position', 'fixed')
+		# $('.flash-ajax').text(msg)
+		# $('.flash-ajax').fadeIn(250).delay(1500).fadeOut(250)
 
 	# ITEM
 
@@ -127,6 +133,7 @@ $(document).on "page:change", ->
 	# addLoginButton.on "click", () ->
 		# alert "You must login to add items to collections"
 		# flashDisplay('You must login to add items to collections')
+
 
 
 

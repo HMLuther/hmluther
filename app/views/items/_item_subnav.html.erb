@@ -43,7 +43,8 @@
 	<div class="col-md-3 col-sm-3 col-xs-12 collection-list">
 		<% if user_signed_in? %>
 			<% unless current_user.collections.count > 0 %>
-				<%= link_to 'Create Collection', new_collection_path %>
+				<!-- <%= link_to 'Create Collection', new_collection_path %> -->
+				<%= button_to 'Create Collection', set_new_item_path(:item_id => item.filemaker_id), :remote => false %>
 			<% else %>
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Add to Collection <span class="caret"></span></a>
 				<%= render partial:'dropdown_menu', locals: {item: @item, menu: "top-down"} %>

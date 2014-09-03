@@ -1,5 +1,15 @@
 console.log('Added to collection')
 
-$('.flash-ajax').html('Item #<%= @collection_item.item.filemaker_id %> added to <%= @collection_item.collection.name %>.')
-$('.flash-ajax').fadeIn(500).delay(1000).fadeOut(500)
+if($('#flash').length > 0) {
+ $('#flash').remove();
+ $('.flash-ajax').prepend("<%= escape_javascript raw(flash_normal) %>");
+}
+else {
+ $('.flash-ajax').prepend("<%= escape_javascript raw(flash_normal) %>");
+}
+
+$('#flash').hide().fadeIn(1000).delay(2000).fadeOut(1000)
+
+// $('.flash-ajax').html('Item #<%= @collection_item.item.filemaker_id %> added to <%= @collection_item.collection.name %>.')
+// $('.flash-ajax').fadeIn(500).delay(3000).fadeOut(500)
 

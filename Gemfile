@@ -25,6 +25,8 @@ gem 'prawn-svg'
 gem 'prawn-templates'
 gem 'draper'
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+gem 'jscrollpane-rails'
+gem "jquery-mousewheel-rails"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
