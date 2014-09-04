@@ -16,7 +16,6 @@ $(document).on "page:change", ->
 	inputPosition = $('input#position')
 	categoryItemsContainer = $('.category-items-container')
 	rowCount = ""
-	api = categoryItemsContainer.data('jsp');
 
 	if $('input#position').val() == ""
 		sortButtonLS.addClass('active')
@@ -50,7 +49,6 @@ $(document).on "page:change", ->
 		display2Button.removeClass('active')
 		categoryItems.removeClass('two-rows').addClass('one-row')
 		categoryItems.fadeIn(500)
-		# api.reinitialise()
 		console.log 'display as 1-row'
 		console.log 'rowCount: ' + rowCount
 
@@ -60,7 +58,6 @@ $(document).on "page:change", ->
 		display1Button.removeClass('active')
 		categoryItems.removeClass('one-row').addClass('two-rows')
 		categoryItems.fadeIn(500)
-		# api.reinitialise()
 		console.log 'display as 2-row'
 		console.log 'rowCount: ' + rowCount
 
@@ -76,12 +73,6 @@ $(document).on "page:change", ->
 
 	setRowDisplay()
 	setCategoryItemsContainerPosition()
-	categoryItemsContainer.jScrollPane({
-		showArrows: true,
-		arrowScrollOnHover: true,
-		autoReinitialise: true,
-		hideFocus: true
-	})
 
 	# FLASH
 	flashDisplay = (msg) ->
