@@ -15,9 +15,11 @@ class ItemDecorator < Draper::Decorator
   	
 		# "Signed in. User has Collections. Item Available"
   	if user_signed_in? && current_user.collections.count > 0 && !model.sold
+  		css_class = 'btn btn-default' if action_name == 'category'
+  		menu_drop = 'bottom-up' if action_name == 'category'
   		content_tag :div, id: model.filemaker_id, class: 'dropdown' do
-  			concat link_to 'Add to Collection', '#', :data => {:toggle => 'dropdown'}, class: 'btn btn-default', title: 'Add to collection'
-  			concat render partial:'items/dropdown_menu', locals: {item: model, menu: "bottom-up"}
+  			concat link_to 'Add to Collection', '#', :data => {:toggle => 'dropdown'}, class: css_class, title: 'Add to collection'
+  			concat render partial:'items/dropdown_menu', locals: {item: model, menu: menu_drop}
   		end
   	
 		# "Signed in. No Collections. Item Available"
