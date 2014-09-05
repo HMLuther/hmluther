@@ -28,7 +28,7 @@ class CollectionItemsController < ApplicationController
 
     respond_to do |format|
       if @collection_item.save
-        format.html { redirect_to @collection_item, notice: 'Collection item was successfully created.' }
+        format.html { redirect_to :back, notice: 'Collection item was successfully created.' }
         format.json { render :show, status: :created, location: @collection_item }
         format.js {
           flash[:notice] = "Added to Collection"

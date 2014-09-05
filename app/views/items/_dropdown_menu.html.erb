@@ -8,7 +8,8 @@
   <% if (c.item_ids & Array(item.filemaker_id)).present? %>
     <span class="assigned" title="Item already assigned to this collection"><%= c.name %></span>
   <% else %>
-    <%= button_to c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => item.filemaker_id }), remote: true %>
+    <%= link_to c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => item.filemaker_id }), 
+      method: :post, remote: true %>
   <% end %>
   </li>
   <% if (current_user.collections.active.count - 1) > index %>

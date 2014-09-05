@@ -7,7 +7,7 @@
 
 	<!-- SHARE -->
 	<div class="col-md-6 col-sm-6 col-xs-6">
-		<button class="share-button" title="Share this item">Share</button>
+		<%= link_to "Share", remote_share_item_path(:item => @item.filemaker_id), :remote => true, title: 'Share this item' %>
 	</div>
 
 </div>

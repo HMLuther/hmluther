@@ -1,8 +1,6 @@
 $(document).on "page:change", ->
 
 	# CATEGORY
-	# categoryContainerSize_1 = $('.category-items').data('container-size-1') + 'px'
-	# categoryContainerSize_2 = $('.category-items').data('container-size-2') + 'px'
 	listSort = $('.category-items').data('sort')
 	sortButtonSL = $('.category-subnav .sort-button-sl')
 	sortButtonLS = $('.category-subnav .sort-button-ls')
@@ -74,23 +72,8 @@ $(document).on "page:change", ->
 	setRowDisplay()
 	setCategoryItemsContainerPosition()
 
-	# FLASH
-	flashDisplay = (msg) ->
-		# topPos = Math.max($(window).height() / 2 - $('.flash-ajax')[0].offsetHeight / 2, 0)
-		# leftPos = Math.max($(window).width() / 2 - $('.flash-ajax')[0].offsetWidth / 2, 0)
-		# $('.flash-ajax').css('top', topPos + "px")
-		# $('.flash-ajax').css('left', leftPos + "px")
-		# $('.flash-ajax').css('position', 'fixed')
-		# $('.flash-ajax').text(msg)
-		# $('.flash-ajax').fadeIn(250).delay(1500).fadeOut(250)
 
 	# ITEM
-
-	# collectionAddButton = $('.item-subnav .collection-add-button')
-	# collectionLoginButton = $('.item-subnav .collection-login-button')
-	# collectionMenu = $('.collections-menu')
-	# addLoginButton = $('.add-login-button')
-
 	itemLinks.on "click", () ->
 		left_position = $('.category-items-container').scrollLeft()
 		$('input#position').val(left_position)
@@ -99,31 +82,6 @@ $(document).on "page:change", ->
 		left_position = $('.category-items-container').scrollLeft()
 		$('input#position').val(left_position)
 
-	# collectionAddButton.on "click", (event) ->
-	# 	event.stopPropagation()
-	# 	event.preventDefault()
-	# 	if collectionAddButton.hasClass('active')
-	# 		collectionMenu.slideUp(200)
-	# 		collectionAddButton.removeClass('active')
-	# 		console.log 'close add button'
-	# 	else
-	# 		collectionAddButton.addClass('active')
-	# 		collectionMenu.slideDown(200)
-	# 		console.log 'open add button'
-
-	# collectionMenu.on "click", (event) ->
-	# 	event.stopPropagation()
-	# 	collectionMenu.hide()
-	# 	collectionAddButton.removeClass('active')
-	# 	console.log 'collectionMenu click'
-
-	# collectionLoginButton.on "click", () ->
-		# alert "You must login to manage collections"
-		# flashDisplay('You must login to manage collections')
-
-	# addLoginButton.on "click", () ->
-		# alert "You must login to add items to collections"
-		# flashDisplay('You must login to add items to collections')
 
 
 
