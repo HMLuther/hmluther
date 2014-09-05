@@ -47,7 +47,7 @@ class ItemDecorator < Draper::Decorator
 		end
 	end
 
-	def image(image)
+	def image_display(image)
 		if user_signed_in?
 			link_to image.url, :target => "_blank" do
 				image_tag image.preview_url, title: 'Click for high resolution image'
