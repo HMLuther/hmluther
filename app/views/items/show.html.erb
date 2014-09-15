@@ -23,7 +23,7 @@
     <hr/>
   </div>
   <div class="col-md-6 info-panel">
-    <p><%= @item.description_short %></p>
+    <p><%= raw @item.description_short %></p>
     <p><%= @item.circa %></p>
     <p>Item Number: <%= @item.filemaker_id %></p>
     <p>Location: <%= @item.location_calc %></p>
@@ -92,8 +92,8 @@
 
   <!-- DESCRIPTION -->
   <div class="col-md-6 info-panel">
-    <p><%= @item.description rescue "" %></p>
-    <p><%= @item.reference rescue "" %></p>
+    <p><%= raw @item.description rescue "" %></p>
+    <p><%= raw @item.reference rescue "" %></p>
     <p><%= Designer.find_by_slug(@item.maker_list.first).bio rescue "" %></p>
     <p>Category: <%= raw @item.category_list.map { |t| link_to t.titlecase, category_path(t) }.join(', ') %></p>
     <%= image_tag 'hml_sold_icon.svg', class: 'item-stamp-sold' if @item.sold %>

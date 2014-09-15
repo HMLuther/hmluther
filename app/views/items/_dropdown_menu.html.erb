@@ -9,7 +9,7 @@
     <span class="assigned" title="Item already assigned to this collection"><%= c.name %></span>
   <% else %>
     <%= link_to c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => item.filemaker_id }), 
-      method: :post, remote: true %>
+      method: :post, remote: false %>
   <% end %>
   </li>
   <% if (current_user.collections.active.count - 1) > index %>

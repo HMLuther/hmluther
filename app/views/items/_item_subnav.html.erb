@@ -1,35 +1,30 @@
 <div class="row item-subnav">
 
-	<!-- ITEM NUMBER -->
-	<div class="col-md-3 col-sm-3 col-xs-6">
-		<%= link_to "<< Back", :back %>
-	</div>
-
 	<!-- SHARE -->
-	<div class="col-md-2 col-sm-2 col-xs-6">
+	<div class="col-md-3 col-sm-3 col-xs-6">
 		<%= link_to "Share", remote_share_item_path(:item => @item.filemaker_id), :remote => true, title: 'Share this item' %>
 	</div>
 
 	<!-- TEARSHEET -->
 	<% if user_signed_in? %>
 		<% if @item.tearsheet_url %>
-			<div class="col-md-2 col-sm-2 col-xs-6">
+			<div class="col-md-3 col-sm-3 col-xs-6">
 					<%= link_to 'Tearsheet', @item.tearsheet_url, class: 'tearsheet', :target => "_blank", title: 'Download Tearsheet' %>
 			</div>
 		<% else %>
-			<div class="col-md-2 col-sm-2 col-xs-6 display">
+			<div class="col-md-3 col-sm-3 col-xs-6 display">
 				<span class="line-through" title="Tearsheet unavailable">Tearsheet</span>
 			</div>
 		<% end %>
 	<% else %>
-		<div class="col-md-2 col-sm-2 col-xs-6">
+		<div class="col-md-3 col-sm-3 col-xs-6">
 			<%= link_to "Tearsheet", remote_login_path, 
 																				:remote => true, class: 'add-login-button', title: "Download Tearsheet (Login required)" %>
 		</div>
 	<% end %>
 
 	<!-- REQUEST INFORMATION -->
-	<div class="col-md-2 col-sm-2 col-xs-6">
+	<div class="col-md-3 col-sm-3 col-xs-6">
 	<% if user_signed_in? %>
 		<%= link_to "Request Info", remote_info_request_path(:item => @item.filemaker_id), 
 																:remote => true, title: 'Requestion additional information for this item' %>

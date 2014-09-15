@@ -15,12 +15,35 @@ class ItemDecorator < Draper::Decorator
   	
 		# "Signed in. User has Collections. Item Available"
   	if user_signed_in? && current_user.collections.count > 0 && !model.sold
+
   		css_class = 'btn btn-default' if action_name == 'category'
-  		menu_drop = 'bottom-up' if action_name == 'category'
-  		content_tag :div, id: model.filemaker_id, class: 'dropdown' do
-  			concat link_to 'Add to Collection', '#', :data => {:toggle => 'dropdown'}, class: css_class, title: 'Add to collection'
-  			concat render partial:'items/dropdown_menu', locals: {item: model, menu: menu_drop}
-  		end
+  		# bottom_up = 'bottom-up' if action_name == 'category'
+  		# menu_drop = 'dropdown_menu ' + bottom_up
+			arr = current_user.collections.active
+			# arr = ['a','b','c']
+
+
+			content_tag(:div, 
+			  arr.collect do |c|
+			    content_tag :span, link_to(c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => item.filemaker_id }), 
+			          method: :post, remote: true, class: 'collection-link')
+			  end.join.html_safe, 
+				:class => 'collection-links')
+
+			# content_tag(:div, id: model.filemaker_id, class: 'dropdown1') do
+			# 	concat link_to 'Add to Collection', '#', :data => {:toggle => 'dropdown'}, class: css_class, title: 'Add to collection'
+			# 	content_tag(:ul, 
+			# 	  arr.collect do |c|
+			# 	    content_tag :li, link_to(c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => item.filemaker_id }), 
+			# 	          method: :post, remote: true)
+			# 	  end.join.html_safe, 
+			# 		:class => 'dropdown-menu ' + bottom_up)
+			# end
+
+  		# content_tag :div, id: model.filemaker_id, class: 'dropdown' do
+  		# 	concat link_to 'Add to Collection', '#', :data => {:toggle => 'dropdown'}, class: css_class, title: 'Add to collection'
+  		# 	concat render partial:'items/dropdown_menu', locals: {item: model, menu: menu_drop}
+  		# end
   	
 		# "Signed in. No Collections. Item Available"
   	elsif user_signed_in? && current_user.collections.count == 0 && !model.sold
@@ -34,7 +57,7 @@ class ItemDecorator < Draper::Decorator
 
 		# "Not signed in. Item Available"
   	elsif !current_user && !model.sold
-  		link_to 'Create Collection', remote_login_path, :remote => true, class: 'btn btn-default', title: "Add to collection (Login required)"
+  		link_to 'Create Collection', remote_login_path, :remote => true, title: "Add to collection (Login required)"
 		
 		# "Not signed in. Item Sold."
   	elsif !current_user && model.sold
@@ -55,7 +78,9 @@ class ItemDecorator < Draper::Decorator
 				image_tag image.preview_url, title: 'Click for high resolution image'
 			end
 		else
-			image_tag image.preview_url, title: 'Login for high resolution image'
+			link_to remote_login_path, :remote => true, title: "View high resolution image (Login required)" do
+				image_tag image.preview_url
+			end
 		end
 	end
 
