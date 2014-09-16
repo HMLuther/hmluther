@@ -14,7 +14,8 @@ class ItemsController < ApplicationController
 
   #GET /category/:category
   def category
-    @items = Item.category_list.tagged_with(params[:category]).decorate
+    @items = Item.category_list.tagged_with(params[:category]).order(size: :asc).decorate
+    render 'category_one_row'
   end
 
   # GET /items/1

@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require sly.min
+//= require jquery.easing.1.3
 //= require jquery.tinysort.min
 //= require data-confirm-modal
 //= require turbolinks
