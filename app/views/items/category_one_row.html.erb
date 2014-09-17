@@ -10,7 +10,7 @@
     <ul class="category-items one-row">
 
     <% @items.each_with_index do |item, index| %>
-      <li class="item">
+      <li class="item" data-size="<%= item.size %>">
 
         <!-- ITEM IMAGE -->
         <div class="col-md-12 item-image">
@@ -24,7 +24,7 @@
         <div class="col-md-12 item-info">
           <h4><%= item.maker_display %></h4>
           <p class="item-description"><%= raw item.description_short %></p>
-          <p class="item-circa"><%= item.circa %></p>
+          <p class="item-circa"><%= item.circa %> | <%= item.size %></p>
         </div>
 
         <!-- ADD TO COLLECTION -->
@@ -52,4 +52,4 @@
 <!-- RECENTLY VIEWED ITEMS -->
 <%= render 'layouts/recent_items' %>
 
-<input id="position" type="hidden" value="">
+<!-- <input id="position" type="input" value=""> -->

@@ -2,7 +2,7 @@ jQuery(function($){
 	'use strict';
 
 	// -------------------------------------------------------------
-	//   Basic Navigation
+	//   Force Centered
 	// -------------------------------------------------------------
 	(function () {
 		var $frame  = $('#basic');
@@ -22,12 +22,12 @@ jQuery(function($){
 			startAt: 0,
 			scrollBar: $wrap.find('.scrollbar'),
 			scrollBy: 1,
-			swingSpeed: 1,
+			swingSpeed: 0,
 			pagesBar: $wrap.find('.pages'),
 			activatePageOn: 'click',
-			speed: 4000,
+			speed: 300,
 			elasticBounds: 1,
-			easing: 'easeOutExpo',
+			easing: 'easeOutSine',
 			dragHandle: 1,
 			dynamicHandle: 1,
 			clickBar: 1,

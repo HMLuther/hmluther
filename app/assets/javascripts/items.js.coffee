@@ -15,10 +15,10 @@ $(document).on "page:change", ->
 	categoryItemsContainer = $('.category-items-container')
 	rowCount = ""
 
-	if $('input#position').val() == ""
-		sortButtonLS.addClass('active')
-		sortButtonSL.removeClass('active')
-		categoryItemsLi.tsort('',{data:'size', order:'desc'})
+	# if $('input#position').val() == ""
+	# 	sortButtonLS.addClass('active')
+	# 	sortButtonSL.removeClass('active')
+	# 	categoryItemsLi.tsort('',{data:'size', order:'desc'})
 
 	sortButtonSL.on "click", () ->
 		sortButtonSL.addClass('active')
@@ -36,10 +36,10 @@ $(document).on "page:change", ->
 	display2Button.on "click", () ->
 		setCategory2Row()
 
-	setCategoryItemsContainerPosition = () ->
-		if inputPosition.val() > 0
-			categoryItemsContainer.scrollLeft(inputPosition.val())
-			console.log inputPosition.val()
+	# setCategoryItemsContainerPosition = () ->
+	# 	if inputPosition.val() > 0
+	# 		categoryItemsContainer.scrollLeft(inputPosition.val())
+	# 		console.log inputPosition.val()
 
 	setCategory1Row = () ->
 		categoryItems.hide()
@@ -70,13 +70,13 @@ $(document).on "page:change", ->
 		console.log 'setRowDisplay: rowCount' + rowCount
 
 	setRowDisplay()
-	setCategoryItemsContainerPosition()
+	# setCategoryItemsContainerPosition()
 
 
 	# ITEM
-	itemLinks.on "click", () ->
-		left_position = $('.category-items-container').scrollLeft()
-		$('input#position').val(left_position)
+	# itemLinks.on "click", () ->
+	# 	left_position = $('.category-items-container').scrollLeft()
+	# 	$('input#position').val(left_position)
 
 	designerLinks.on "click", () ->
 		left_position = $('.category-items-container').scrollLeft()

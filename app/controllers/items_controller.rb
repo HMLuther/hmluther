@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_api_user, only: [:create, :edit, :update, :destroy], if: :json_request?
   before_action :find_history, only: [:category, :show]
-  before_action :clear_session
 
   # GET /items
   # GET /items.json
@@ -16,6 +15,11 @@ class ItemsController < ApplicationController
   def category
     @items = Item.category_list.tagged_with(params[:category]).order(size: :asc).decorate
     render 'category_one_row'
+  end
+
+  def category_one_row
+    session[:display] = 1
+    render category
   end
 
   # GET /items/1
@@ -94,10 +98,6 @@ class ItemsController < ApplicationController
 
     def find_history
       @history_items = Item.where(slug: session[:history])
-    end
-
-    def clear_session
-      session[:item_id] = nil
     end
 
 end
