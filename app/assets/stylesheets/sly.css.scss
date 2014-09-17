@@ -165,17 +165,22 @@
 	z-index: 50;
 }
 
-.btn-primary {
-	background-color: #f47321;
+.btn-sly {
+	// background-color: #f47321;
+	background-color: rgb(244, 115, 33);
 	border: none;
-	border-radius: 0;
 	color: #FFF;
 	margin: 0;
+	opacity: 0.5;
 	padding: 20px 12px;
+	-webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
 }
-.btn-primary:hover {
-	background-color: #e5e5e5;
-	border: none;
-	border-radius: 0;
-	color: #999;
+.btn-sly:hover {
+	background-color: rgb(244, 115, 33);
+	opacity: 1;
+	// border: none;
+	color: #FFF;
 }
