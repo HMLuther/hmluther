@@ -14,12 +14,7 @@ class ItemsController < ApplicationController
   #GET /category/:category
   def category
     @items = Item.category_list.tagged_with(params[:category]).order(size: :asc).decorate
-    render 'category_one_row'
-  end
-
-  def category_one_row
-    session[:display] = 1
-    render category
+    # render 'category_scroll'
   end
 
   # GET /items/1

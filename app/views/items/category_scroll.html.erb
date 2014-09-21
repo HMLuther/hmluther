@@ -1,0 +1,10 @@
+<!-- SUBNAV -->
+<%= render 'category_subnav' %>
+
+<div class="scroll">
+<% @items.each_with_index do |item, index| %>
+  <div class="item" data-size="<%= item.size %>" id="<%= item.size %>">
+    <%= image_tag item.default_image_url %>
+  </div>
+<% end %>
+</div>

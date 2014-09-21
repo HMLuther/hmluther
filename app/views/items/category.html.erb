@@ -1,0 +1,43 @@
+<!-- SUBNAV -->
+<%= render 'category_subnav' %>
+
+<nav class="scroll-controls">
+  <div class="control prev"></div>
+  <div class="control next"></div>
+
+  <div class="category-items-container">
+    <ul class="category-items one-row">
+    <% @items.each_with_index do |item, index| %>
+      <li class="item" data-size="<%= item.size %>">
+
+        <!-- ITEM IMAGE -->
+        <div class="col-md-12 item-image">
+        <%= link_to item, class: 'item-link' do %>
+          <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' if item.sold %>
+          <%= image_tag item.default_image_url, class: 'webcomp' %>
+        <% end %>
+        </div>
+
+        <!-- ITEM INFO -->
+        <div class="col-md-12 item-info">
+          <h4><%= item.maker_display %></h4>
+          <p class="item-description"><%= raw item.description_short %></p>
+          <p class="item-circa"><%= item.circa %></p>
+        </div>
+
+        <!-- ADD TO COLLECTION -->
+        <div class="col-md-12 full-width">
+          <%= item.add_to_collection %>
+        </div>
+
+      </li>
+    <% end %>
+    </ul>
+
+  </div>
+</nav>
+
+<!-- RECENTLY VIEWED ITEMS -->
+<%= render 'layouts/recent_items' %>
+
+<input id="position" type="hidden" value="">

@@ -1,3 +1,35 @@
+// SCROLL CONTROLS
+.scroll-controls {
+	padding-top: 5px;
+	position: relative;
+	width: auto;
+	height: 100%;
+	.control {
+		background-position: center center;
+		background-repeat: no-repeat;
+		height: 95%;
+		opacity: 0.5;
+		width: 5%;
+		z-index: 200;
+		&:hover {
+			background-color: rgba(229, 229, 229, 1);
+		}
+	}
+	.next {
+		background-color: transparent;
+		background-image: image-url("arrow-large-right.png");
+		position: absolute;
+		right: -75px;
+	}
+	.prev {
+		background-color: transparent;
+		background-image: image-url("arrow-large-left.png");
+		position: absolute;
+		left: -75px;
+	}
+}
+
+
 h3 {
 	color: #f47321;
 }
@@ -12,10 +44,10 @@ h3 {
 	}
 }
 
-ul.category-items.one-row {
+.category-items.one-row {
 	list-style-type: none;
 	margin: 0;
-	padding: 5px 0 10px 0;
+	padding: 0 0 0 0;
   display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
   display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -25,7 +57,7 @@ ul.category-items.one-row {
   flex-direction: column;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
-  height: 550px;
+  height: 530px;
 	li.item {
 	  width: 660px;
 	  height: 520px;
@@ -45,7 +77,7 @@ ul.category-items.one-row {
 		}
 	}
 }
-ul.category-items.two-rows {
+.category-items.two-rows {
 	list-style-type: none;
 	padding: 0;
 	margin: 5px 0 0 0;
@@ -64,7 +96,6 @@ ul.category-items.two-rows {
   	margin-bottom: 0;
   }
   li.item:nth-child(even) {
-  	// background-color: red;
   	margin-bottom: 5px;
   }
 	li.item {
@@ -72,7 +103,6 @@ ul.category-items.two-rows {
 	  height: 250px;
 	  border: 1px solid #c8c8c8;
 	  margin: 0 40px 15px 0;
-	  // margin: 0 20px 10px 0;
 	  padding: 2px;
 		cursor: pointer;
 		.item-circa {
@@ -101,26 +131,11 @@ ul.category-items.two-rows {
 	}
 }
 
-// .item-link {
-// 	input[type=submit] {
-// 	border: none;
-// 	background-color: #e5e5e5;
-// 	font-size: 0.8em;
-// 	padding: 6px 25px 6px 25px;
-// 	text-transform: uppercase;
-// 	width: 100%;
-// 	}
-// 	input[type=submit]:hover {
-// 	background-color: #f47321;
-// 	color: #ffffff;
-// 	}
-// }
-
 
 // CATEGORY SUBNAV, ITEM SUBNAV
 .category-subnav, .collection-subnav, .item-subnav {;
 	// color: #f47321;
-	margin: 5px 0 5px 0;
+	margin: 5px 0 0 0;
 	font-size: 0.8em;
 	text-transform: uppercase;
 	position: relative;

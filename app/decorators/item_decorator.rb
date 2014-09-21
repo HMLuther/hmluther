@@ -57,7 +57,7 @@ class ItemDecorator < Draper::Decorator
 
 		# "Not signed in. Item Available"
   	elsif !current_user && !model.sold
-  		link_to 'Create Collection', remote_login_path, :remote => true, title: "Add to collection (Login required)"
+  		link_to 'Create Collection', remote_login_path, :remote => true, title: "Add to collection (Login required)", class: 'btn btn-default'
 		
 		# "Not signed in. Item Sold."
   	elsif !current_user && model.sold
