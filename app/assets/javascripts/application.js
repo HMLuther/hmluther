@@ -32,18 +32,19 @@ $(function() {
 
 	function scollNext(){
 		// console.log('hovering...');
-		$('.category-items-container').scrollTo( '+=' + movement, { axis: 'x', easing: 'easeInOutCirc' } );
+		$('.category-items-container').clearQueue().finish().scrollTo( '+=' + movement, { axis: 'x', easing: 'easeInOutCirc' } );
 	}
 
 	function scollPrev(){
 		// console.log('hovering...');
-		$('.category-items-container').scrollTo( '-=' + movement, { axis: 'x', easing: 'easeInOutCirc' } );
+		$('.category-items-container').clearQueue().finish().scrollTo( '-=' + movement, { axis: 'x', easing: 'easeInOutCirc' } );
 	}
 
 	$('.next').hover(function() {
 		int = setInterval(scollNext, int_duration);
 	}, function() {
 		clearInterval(int);
+		$('.category-items-container').clearQueue().finish();
 		console.log('finished');
 	});
 
@@ -51,6 +52,7 @@ $(function() {
 		int = setInterval(scollPrev, int_duration);
 	}, function() {
 		clearInterval(int);
+		$('.category-items-container').clearQueue().finish();
 		console.log('finished');
 	});
 

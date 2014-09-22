@@ -1,5 +1,7 @@
 class Item < ActiveRecord::Base
 
+	is_impressionable
+
 	acts_as_taggable_on :category, :maker
 
 	before_validation :generate_slug

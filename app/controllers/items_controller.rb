@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item_images = @item.images.show_list.order('image_type')
+    impressionist(@item, "item detail",:unique => [:session_hash]) if user_signed_in?
   end
 
   # GET /items/new
