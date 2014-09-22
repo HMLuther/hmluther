@@ -14,7 +14,7 @@
         <%= image_tag ci.item.decorate.default_image_url, class: 'item-image' %>
       <% end %>
       <h4><%= raw ci.item.maker_list.map { |t| link_to t.titlecase, designer_path(t) }.join(', ') %></h4>
-      <p><%= ci.item.description_short %></p>
+      <p><%= raw ci.item.description_short %></p>
       <p class="item-circa"><%= ci.item.circa %></p>
       </li>
     <% end %>

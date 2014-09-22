@@ -32,11 +32,12 @@
 								<h4><%= current_user.name %></h4>
 								<div class= "hidden">
 									<%= f.input :name, input_html: {value: current_user.name } %>
+									<%= f.input :email, input_html: {value: current_user.email } %>
 								</div>
 				    	<% else %>
 					    	<%= f.input :name, :required => true, :placeholder => 'NAME*', :label => false, :autofocus => true %>
+						    <%= f.input :email, :required => true, :placeholder => 'EMAIL*', :label => false %>
 					    <% end %>
-					    <%= f.input :email, :required => true, :placeholder => 'EMAIL*', :label => false %>
 					    <%= f.input :message, :as => :text, :required => true, :input_html => { :rows => 4 }, :placeholder => 'MESSAGE', :label => false %>
 					    <div class= "hidden">
 					      <%= f.input :item, :input_html => { :value => @item.filemaker_id } %>

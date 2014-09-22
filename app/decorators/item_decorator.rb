@@ -2,48 +2,11 @@ class ItemDecorator < Draper::Decorator
 	include Draper::LazyHelpers
   delegate_all
 
-  # Define presentation-specific methods here. Helpers are accessed through
-  # `helpers` (aka `h`). You can override attributes, for example:
-  #
-  #   def created_at
-  #     helpers.content_tag :span, class: 'time' do
-  #       object.created_at.strftime("%a %m/%d/%y")
-  #     end
-  #   end
-
   def add_to_collection
   	
 		# "Signed in. User has Collections. Item Available"
   	if user_signed_in? && current_user.collections.count > 0 && !model.sold
-
-  		css_class = 'btn btn-default' if action_name == 'category'
-  		# bottom_up = 'bottom-up' if action_name == 'category'
-  		# menu_drop = 'dropdown_menu ' + bottom_up
-			arr = current_user.collections.active
-			# arr = ['a','b','c']
-
-
-			content_tag(:div, 
-			  arr.collect do |c|
-			    content_tag :span, link_to(c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => item.filemaker_id }), 
-			          method: :post, remote: true, class: 'collection-link')
-			  end.join.html_safe, 
-				:class => 'collection-links')
-
-			# content_tag(:div, id: model.filemaker_id, class: 'dropdown1') do
-			# 	concat link_to 'Add to Collection', '#', :data => {:toggle => 'dropdown'}, class: css_class, title: 'Add to collection'
-			# 	content_tag(:ul, 
-			# 	  arr.collect do |c|
-			# 	    content_tag :li, link_to(c.name, collection_collection_items_path(c.id, :collection_item => { :collection_id => c.id, :item_id => item.filemaker_id }), 
-			# 	          method: :post, remote: true)
-			# 	  end.join.html_safe, 
-			# 		:class => 'dropdown-menu ' + bottom_up)
-			# end
-
-  		# content_tag :div, id: model.filemaker_id, class: 'dropdown' do
-  		# 	concat link_to 'Add to Collection', '#', :data => {:toggle => 'dropdown'}, class: css_class, title: 'Add to collection'
-  		# 	concat render partial:'items/dropdown_menu', locals: {item: model, menu: menu_drop}
-  		# end
+  		link_to 'Add to Collection', remote_collection_addition_path(:item => model.filemaker_id), :remote => true, title: "Add to collection ", class: 'btn btn-default'
   	
 		# "Signed in. No Collections. Item Available"
   	elsif user_signed_in? && current_user.collections.count == 0 && !model.sold
@@ -138,8 +101,5 @@ class ItemDecorator < Draper::Decorator
 			model.images.where("image_type = 'TS'").first.url
 		end
 	end
-
-
-
 
 end

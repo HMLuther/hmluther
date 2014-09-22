@@ -1,0 +1,6 @@
+if($('#collection_modal').length > 0) {
+ $("#collection_modal").remove();
+}
+
+$("body").prepend("<%= escape_javascript(render "remote_collection_addition", :formats => [:html]) %>");
+$("#collection_modal").modal();

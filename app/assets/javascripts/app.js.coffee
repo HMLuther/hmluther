@@ -22,8 +22,10 @@ $(document).on "page:change", ->
 	})
 
 	# DROPDOWN-MENU
+	# ('.dropdown-toggle').dropdown('hide')
+
 	$('.dropdown-menu').on "click", (event) ->
-		$('.dropdown-menu').dropdown('toggle')
+		$('.dropdown-menu').dropdown('hide')
 
 	# MAIN MENU
 	body = $( 'body' )

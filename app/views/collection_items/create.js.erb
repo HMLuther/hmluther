@@ -1,5 +1,7 @@
 console.log('Added to collection')
 
+$('.modal').modal('toggle')
+
 if($('#flash').length > 0) {
  $('#flash').remove();
  $('.flash-ajax').prepend("<%= escape_javascript raw(flash_normal) %>");

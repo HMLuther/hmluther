@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui-1.10.3.custom.min
+//= require bootstrap
 //= require jquery.scrollTo.min
 //= require jquery.tinysort.min
 //= require jquery.kinetic.min
@@ -20,36 +21,38 @@
 //= require jquery.smoothdivscroll-1.3
 //= require data-confirm-modal
 //= require turbolinks
-//= require bootstrap
 //= require_tree .
 
 $(function() {
 	console.log("loaded!");
 
 	var int = null;
-	var speed = 10;
-	$('.next').hover(function() {
-		int = setInterval(scollNext, 10);
-	}, function() {
-		clearInterval(int);
-		console.log('finished');
-	});
+	var int_duration = 10;
+	var movement = 5;
 
 	function scollNext(){
 		// console.log('hovering...');
-		$('.category-items-container').scrollTo( '+=' + speed, { axis: 'x', easing: 'easeInOutCirc' } );
+		$('.category-items-container').scrollTo( '+=' + movement, { axis: 'x', easing: 'easeInOutCirc' } );
 	}
 
-	$('.prev').hover(function() {
-		int = setInterval(scollPrev, 10);
+	function scollPrev(){
+		// console.log('hovering...');
+		$('.category-items-container').scrollTo( '-=' + movement, { axis: 'x', easing: 'easeInOutCirc' } );
+	}
+
+	$('.next').hover(function() {
+		int = setInterval(scollNext, int_duration);
 	}, function() {
 		clearInterval(int);
 		console.log('finished');
 	});
 
-	function scollPrev(){
-		// console.log('hovering...');
-		$('.category-items-container').scrollTo( '-=' + speed, { axis: 'x', easing: 'easeInOutCirc' } );
-	}
+	$('.prev').hover(function() {
+		int = setInterval(scollPrev, int_duration);
+	}, function() {
+		clearInterval(int);
+		console.log('finished');
+	});
+
 
 });

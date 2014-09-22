@@ -3,7 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.info_modal, .login_modal, .share_item_modal, .share_collection_modal, .sign_up_modal {
+.collection_modal, 
+.info_modal, 
+.login_modal, 
+.share_item_modal, 
+.share_collection_modal, 
+.sign_up_modal {
 	color: #666666;
 	.row.form-content {
 		hr {
@@ -17,6 +22,7 @@
 	}
 	.btn-primary {
 		background-color: #c8c8c8;
+		width: 100%;
 	}
 	.btn-primary:hover {
 		background-color: #f47321;
@@ -80,6 +86,32 @@
 	textarea {
 		height: 107px;
 		border-radius: 0;
+	}
+}
+
+.collection_modal {
+	.modal-body {
+    .assigned {
+    	background-color: #c8c8c8;
+    	color: #000;
+      display: block;
+      margin-bottom: 5px;
+      padding: 5px 12px;
+      text-align: left;
+      text-decoration: line-through;
+      text-wrap:none;
+    }
+		.btn-primary {
+			text-align: left;
+			margin-bottom: 5px;
+		}
+		.collection-links {
+			max-height: 205px;
+			overflow-y: scroll;
+		}
+	}
+	.modal-footer {
+		padding: 25px;
 	}
 }
 

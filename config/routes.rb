@@ -1,5 +1,6 @@
 Hmluther::Application.routes.draw do
 
+  get 'remote_collection_addition', to: 'remote_content#remote_collection_addition'
   get 'remote_info_request', to: 'remote_content#remote_info_request'
   get 'remote_share_item', to: 'remote_content#remote_share_item'
   get 'remote_share_collection', to: 'remote_content#remote_share_collection'
