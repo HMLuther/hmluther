@@ -1,3 +1,7 @@
+.art_sculpture:after {
+	content: ', Sculpture';
+}
+
 .cbp-hrmenu {
 	/*background-color: blue;*/
 	/*width: 100%;*/
