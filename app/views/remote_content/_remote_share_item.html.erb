@@ -19,7 +19,7 @@
 					</div>
 					<div class="col-md-9">
 						<h4>Share item #<%= @item.filemaker_id %></h4>
-						<p><%= @item.description_short %><br/>
+						<p><%= raw @item.description_short %><br/>
 						Circa: <%= @item.circa %></p>
 					</div>
 				</div>

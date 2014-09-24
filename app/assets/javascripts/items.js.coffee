@@ -35,9 +35,9 @@ $(document).on "page:change", ->
 	rowCount = ""
 
 	if $('input#position').val() == ""
-		sortButtonSL.addClass('active')
-		sortButtonLS.removeClass('active')
-		categoryItemsLi.tsort('',{data:'size', order:'asc'})
+		sortButtonLS.addClass('active')
+		sortButtonSL.removeClass('active')
+		categoryItemsLi.tsort('',{data:'size', order:'desc'})
 
 	sortButtonSL.on "click", () ->
 		sortButtonSL.addClass('active')

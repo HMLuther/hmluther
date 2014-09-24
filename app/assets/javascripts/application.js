@@ -28,7 +28,7 @@ $(function() {
 
 	var int = null;
 	var int_duration = 10;
-	var movement = 10;
+	var movement = 5;
 
 	function scollNext(){
 		// console.log('hovering...');

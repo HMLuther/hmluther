@@ -12,6 +12,7 @@ class CollectionsController < ApplicationController
   # GET /collections/1.json
   def show
     authorize @collection
+    @collection_items = @collection.collection_items.order("active DESC, updated_at DESC")
     respond_to do |format|
       format.html
       format.pdf do

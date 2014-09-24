@@ -12,9 +12,10 @@
 	<h3><%= @collection.collection_items.count %> Items</h3>
 	<hr>
 	<div id="collection-items-section" class="row">
-		<%= div_for(@collection.collection_items.order("active DESC"), class: "col-sm-3 col-md-3 col-xs-12 item-panel") do |ci| %>
+		<%= div_for(@collection_items, class: "col-sm-3 col-md-3 col-xs-12 item-panel") do |ci| %>
 			<%= div_for(ci.item, class: "thumbnail #{ci.active ? 'active' : 'inactive'}") do %>
 				<%= link_to ci.item do %>
+					<%= image_tag 'hml_sold_icon.svg', class: 'collection-stamp-sold' if ci.item.sold %>
 					<%= image_tag ci.item.thumb_image_url %>
 				<% end %>
 				<div class="row caption">
