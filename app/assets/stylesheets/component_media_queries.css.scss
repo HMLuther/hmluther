@@ -1,7 +1,22 @@
+@media screen and (max-width: 1024px){
+
+	.cbp-hrmenu > ul > li.cbp-hropen a,
+	.cbp-hrmenu > ul > li.cbp-hropen > a:hover {
+		font-size: 100%;
+		padding: 1em 2em;
+	}
+
+	.cbp-hrmenu .cbp-hrsub-inner > div a {
+		line-height: 2.5em;
+	}
+	
+}
+
 @media screen and (max-width: 991px){
 	.art_sculpture:after {
 		content: '';
 	}
+
 }
 
 @media screen and (max-width: 768px){
@@ -24,4 +39,30 @@
 	.art_sculpture:after {
 		content: ', Sculpture';
 	}
+
+	.cbp-hrmenu > ul > li.cbp-hropen a,
+	.cbp-hrmenu > ul > li.cbp-hropen > a:hover {
+		font-size: 14px;
+		padding: 0.7em 1em;
+	}
+
+	.cbp-hrmenu > ul > li.cbp-hropen .cbp-hrsub-inner a {
+		display: block;
+		font-size: 15px;
+		margin-bottom: 3px;
+		padding: 5px 20px;
+	}
+
+	.cbp-hrmenu > ul > li.cbp-hropen .cbp-hrsub-inner a:hover {
+		background-color: #666;
+	}
+
+	.cbp-hrmenu .cbp-hrsub-inner > div {
+		width: 100%;
+	}
+
+	.cbp-hropen .cbp-hrsub {
+		padding-bottom: 0;
+	}
+
 }
