@@ -148,18 +148,6 @@ a.btn-default:hover {
   }
 }
 
-// FOOTER
-footer{
-  // color: #646464;
-  font-size: 0.7em;
-  margin-top: 10px;
-  .container {
-    // border-top: 1px solid #969696;
-    padding-bottom: 15px;
-  }
-}
-
-
 // TOP NAVBAR
 .navbar {
   border: none;
@@ -214,9 +202,8 @@ footer{
 }
 
 .navbar-default {
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
 }
-
 
 // SCROLLBAR BUTTONS
 // .category-items-container::-webkit-scrollbar-button:increment:end {
@@ -234,6 +221,10 @@ footer{
 // CATEGORY SCROLLBAR
 .category-items-container::-webkit-scrollbar {
   height: 12px;
+  opacity: 0.5;
+}
+.category-items-container::-webkit-scrollbar:hover {
+  opacity: 1;
 }
 
 /* Track */
@@ -264,6 +255,10 @@ footer{
 // ITEM SCROLLBAR
 .item-images-container::-webkit-scrollbar {
   height: 12px;
+  opacity: 0.5;
+}
+.item-images-container::-webkit-scrollbar:hover {
+  opacity: 1;
 }
 
 /* Track */
@@ -297,6 +292,11 @@ footer{
 // RECENT ITEMS SCROLLBAR
 .item-thumb-container::-webkit-scrollbar {
     height: 12px;
+    opacity: 0.5;
+}
+
+.item-thumb-container::-webkit-scrollbar:hover {
+    opacity: 1;
 }
 
 /* Track */
@@ -334,7 +334,7 @@ footer{
     border: none;
   }
   .item-thumb-container {
-    padding: 0;
+    padding: 0 0 5px 0;
     margin: 0;
     position: relative;
     overflow-x: scroll;

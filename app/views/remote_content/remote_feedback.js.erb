@@ -1,0 +1,7 @@
+if($('#feedback_modal').length > 0) {
+ $("#feedback_modal").modal();
+}
+else {
+ $("body").prepend("<%= escape_javascript(render "remote_feedback", :formats => [:html]) %>");
+ $("#feedback_modal").modal();
+}

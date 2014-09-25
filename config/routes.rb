@@ -1,6 +1,7 @@
 Hmluther::Application.routes.draw do
 
   get 'remote_collection_addition', to: 'remote_content#remote_collection_addition'
+  get 'remote_feedback', to: 'remote_content#remote_feedback'
   get 'remote_info_request', to: 'remote_content#remote_info_request'
   get 'remote_share_item', to: 'remote_content#remote_share_item'
   get 'remote_share_collection', to: 'remote_content#remote_share_collection'
@@ -13,6 +14,7 @@ Hmluther::Application.routes.draw do
 
   resources "contacts", only: [:new, :create]
   resources "info_requests", only: [:new, :create]
+  resources "feedbacks", only: [:new, :create]
   resources "shares", only: [:new, :create]
   resources :designers
   resources :images

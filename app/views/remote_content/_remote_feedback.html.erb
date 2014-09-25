@@ -1,0 +1,48 @@
+<div id="feedback_modal" class="info_modal modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- HEADER -->
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<%= image_tag 'hml_icon.svg', class: 'logo-icon', alt: 'HM Luther' %>
+				<h4 class="modal-title">Website Feedback</h4>
+			</div>
+
+			<!-- BODY -->
+			<div class="modal-body">
+
+				<div class="row form-content">
+					<div class="col-md-12">
+						<h4>How can we improve HMLuther.com for you?</h4>
+						<hr>
+					  <%= simple_form_for @feedback, :remote => true, :format => :js, :html => { :class => 'form-horizontal', :id => "info_request_form" } do |f| %>
+					  	<% if user_signed_in? %>
+								<!-- <h5><%= current_user.name %></h5> -->
+								<div class= "hidden">
+									<%= f.input :name, input_html: {value: current_user.name } %>
+									<%= f.input :email, input_html: {value: current_user.email } %>
+								</div>
+				    	<% else %>
+					    	<%= f.input :name, :required => false, :placeholder => 'NAME', :label => false, :autofocus => true %>
+						    <%= f.input :email, :required => false, :placeholder => 'EMAIL', :label => false %>
+					    <% end %>
+					    <%= f.input :message, :as => :text, :required => true, :input_html => { :rows => 4 }, :placeholder => 'MESSAGE', :label => false %>
+					    <div class= "hidden">
+					      <%= f.input :type, :input_html => { :value => "feedback" } %>
+					      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+					    </div>
+					      <%= f.button :submit, 'Send message', :class=> "btn btn-primary", data: { disable_with: "Please wait..." } %>
+					  <% end %>
+					</div>
+			  </div>
+
+			</div>
+
+			<!-- FOOTER -->
+			<div class="modal-footer">
+			</div>
+
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,3 +1,102 @@
+@media screen and (min-width: 1501px){
+
+	.category-items.one-row {
+		list-style-type: none;
+		margin: 0;
+		padding: 0 0 0 0;
+	  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	  display: -ms-flexbox;      /* TWEENER - IE 10 */
+	  display: -webkit-flex;     /* NEW - Chrome */
+	  display: flex;
+	  -webkit-flex-direction: column;
+	  flex-direction: column;
+	  flex-wrap: wrap;
+	  -webkit-flex-wrap: wrap;
+	  height: 635px;
+	  background-color: orange;
+		li.item {
+		  width: 875px;
+		  height: 625px;
+		  border: 1px solid #c8c8c8;
+		  margin: 0 40px 0 0;
+		  padding: 5px;
+			.item-info {
+				min-height: 90px;
+			}
+			.item-image, .item-info, .item-link {
+				padding: 0;
+			}
+			p {
+				line-height: 20px;
+				font-weight: 200;
+				margin: 7px 0 5px 7px;
+			}
+		}
+	}
+
+	.category-items.two-rows {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	  display: -ms-flexbox;      /* TWEENER - IE 10 */
+	  display: -webkit-flex;     /* NEW - Chrome */
+	  display: flex;
+	  -webkit-flex-direction: column;
+	  flex-direction: column;
+	  flex-wrap: wrap;
+	  -webkit-flex-wrap: wrap;
+	  height: 635px;
+	  h4 {
+	  	font-size: 12px;
+	  	margin-bottom: 0;
+	  }
+	  li.item:nth-child(even) {
+	  	margin-bottom: 5px;
+	  }
+		li.item {
+		  width: 366px;
+		  height: 305px;
+		  border: 1px solid #c8c8c8;
+		  margin: 0 40px 15px 0;
+		  padding: 2px;
+			cursor: pointer;
+			.item-circa {
+				display: none;
+			}
+			.item-info {
+				font-size: 0.8em;
+				height: 66px;
+				.item-description {
+					white-space: nowrap;
+				  overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+			.item-image, .item-info, .item-link {
+				padding: 0;
+			}
+			.item-image .webcomp {
+				// width: 296px;
+			}
+			p {
+				line-height: 20px;
+				font-weight: 200;
+				margin: 0px 0 5px 7px;
+			}
+		}
+	}
+
+	.scroll-controls {
+		.control {
+			height: 95%;
+		}
+	}
+
+}
+
 @media screen and (max-width: 991px){
 
 	// CATEGORY SUBNAV
@@ -45,6 +144,7 @@
 	// CATEGORY-ITEMS ITEM
 	ul.category-items.one-row li.item, ul.category-items.two-rows li.item  {
 		height: auto;
+		margin-bottom: 10px;
 		width: 100%;
 	}
 

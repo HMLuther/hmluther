@@ -6,6 +6,10 @@ class RemoteContentController < ApplicationController
 		@collections = current_user.collections.active
 	end
 
+	def remote_feedback
+		@feedback = Feedback.new
+	end
+
 	def remote_info_request
 		@info_request = InfoRequest.new
 	end

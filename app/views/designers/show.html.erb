@@ -1,34 +1,40 @@
 <h1><%= @designer.name_full %> <small class="text-muted"><%= @designer.item_count %> items</small></h1>
 
-<!-- ITEMS -->
-<div class="category-items-container">
-  <ul class="category-items one-row">
+<nav class="scroll-controls">
+  <div class="control prev hidden-xs hidden-sm hidden-md"></div>
+  <div class="control next hidden-xs hidden-sm hidden-md"></div>
 
-    <% @designer.listed_items.each do |item| %>
-    <li class="item" data-size="<%= item.size %>">
-      <div class="col-md-12 item-image">
-      <%= link_to item, class: 'item-link' do %>
-        <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' if item.sold %>
-        <%= image_tag item.default_image_url %>
+  <!-- ITEMS -->
+  <div class="category-items-container">
+    <ul class="category-items one-row">
+
+      <% @designer.listed_items.each do |item| %>
+      <li class="item" data-size="<%= item.size %>">
+        <div class="col-md-12 item-image">
+        <%= link_to item, class: 'item-link' do %>
+          <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' if item.sold %>
+          <%= image_tag item.default_image_url %>
+        <% end %>
+        </div>
+
+        <div class="col-md-12 item-info">
+          <h4><%= item.maker_display %></h4>
+          <p class="item-description"><%= raw item.description_short %></p>
+          <p class="item-circa"><%= item.circa %></p>
+        </div>
+
+        <!-- ADD TO COLLECTION -->
+        <div class="col-md-12 full-width">
+          <%= item.add_to_collection %>
+        </div>
+
+      </li>
       <% end %>
-      </div>
 
-      <div class="col-md-12 item-info">
-        <h4><%= item.maker_display %></h4>
-        <p class="item-description"><%= raw item.description_short %></p>
-        <p class="item-circa"><%= item.circa %></p>
-      </div>
+    </ul>
+  </div>
 
-      <!-- ADD TO COLLECTION -->
-      <div class="col-md-12 full-width">
-        <%= item.add_to_collection %>
-      </div>
-
-    </li>
-    <% end %>
-
-  </ul>
-</div>
+</nav>
 <input id="position" type="hidden" value="">
 
 <!-- DETAIL -->

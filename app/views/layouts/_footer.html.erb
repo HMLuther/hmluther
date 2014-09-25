@@ -4,7 +4,12 @@
 	  <p>All content © HM Luther <%= Date.today.year %>. All rights reserved.</p>
 	</div>
 	<div class="col-md-4">
-	  <p class="pull-right"><%= link_to "Terms of Service", page_path('terms-of-service') %></p>
+	  <p class="pull-right">
+	  	<%= link_to "How's our website?", remote_feedback_path, 
+																:remote => true, title: 'Please let us know how this site works for you' %> | 
+			<%= link_to "New Features", page_path('new-features') %> | 
+			<%= link_to "Terms of Service", page_path('terms-of-service') %>
+	  </p>
 	</div>
 </div>
 

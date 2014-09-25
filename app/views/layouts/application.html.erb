@@ -10,17 +10,28 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
+
+    <!-- WRAP -->
+    <div class="wrap">
+
+      <!-- NAVIGATION -->
       <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main" class="container" id="main">
-       <%= render 'layouts/menu' %>
-       <%= render 'layouts/messages' %>
-       <div class="flash-ajax"></div>
-       <%= yield %>
-    </main>
-    <footer>
-    	<%= render 'layouts/footer' %>
-    </footer>
+
+      <!-- MAIN CONTENT -->
+      <div class="container main-content">
+         <%= render 'layouts/menu' %>
+         <%= render 'layouts/messages' %>
+         <div class="flash-ajax"></div>
+         <%= yield %>
+      </div>
+
+      <div class="push"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <%= render 'layouts/footer' %>
+    </div>
+
   </body>
 </html>
