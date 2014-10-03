@@ -1,0 +1,54 @@
+<div id="info_modal" class="info_modal modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- HEADER -->
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<%= image_tag 'hml_icon.svg', class: 'logo-icon', alt: 'HM Luther' %>
+				<h4 class="modal-title">Request Collection Information</h4>
+			</div>
+
+			<!-- BODY -->
+			<div class="modal-body">
+
+				<div class="row">
+					<div class="col-md-12">
+						<h4>Request information about collection <%= @collection.name %></h4>
+					</div>
+				</div>
+
+				<div class="row form-content">
+					<div class="col-md-12">
+						<hr>
+					  <%= simple_form_for @collection_info_request, :remote => true, :format => :js, :html => { :class => 'form-horizontal', :id => "collection_info_request_form" } do |f| %>
+								<h4><%= current_user.name %></h4>
+								<div class= "hidden">
+									<%= f.input :name, input_html: {value: current_user.name } %>
+									<%= f.input :email, input_html: {value: current_user.email } %>
+								</div>
+					    <%= f.input :message, :as => :text, :required => true, :input_html => { :rows => 4 }, :placeholder => 'MESSAGE', :label => false %>
+					    <div class= "hidden">
+					    <% @collection.collection_items.active.each do |ci| %>
+					      <%= f.input :item, :input_html => { :value => @ci.item.filemaker_id } %>
+					      <%= f.input :path, :input_html => { :value => item_url(@ci.item.filemaker_id) } %>
+					      <%= f.input :thumb, :input_html => { :value => @ci.item.thumb_image_url } %>
+					    <% end %>
+					      <%= f.input :type, :input_html => { :value => "info" } %>
+					      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+					    </div>
+					      <%= f.button :submit, 'Send message', :class=> "btn btn-primary", data: { disable_with: "Please wait..." } %>
+					  <% end %>
+					</div>
+			  </div>
+
+			</div>
+
+			<!-- FOOTER -->
+			<div class="modal-footer">
+				<!-- <p>Not registered yet? <%= link_to "Sign up", new_user_registration_path, :class => 'close-login' %></p> -->
+			</div>
+
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

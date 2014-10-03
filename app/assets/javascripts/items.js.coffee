@@ -4,10 +4,10 @@ $(document).on "page:change", ->
 	setRecentlyViewed = () ->
 		console.log 'set recently viewed'
 		if $.inArray("items", window.location.pathname.split("/")) == 1 || $.inArray("category", window.location.pathname.split("/")) == 1
-			console.log "YEP!"
+			# console.log "YEP!"
 			$.ajax url: "/set_recently_viewed"
 		else
-			console.log "NOPE!"
+			# console.log "NOPE!"
 
 	setRecentlyViewed()
 
@@ -81,18 +81,20 @@ $(document).on "page:change", ->
 		console.log 'setRowDisplay: rowCount' + rowCount
 
 	welcomeModal = () ->
-		if $.cookie('hml_category') && $.inArray("category", window.location.pathname.split("/")) == 1
-			console.log 'hml_category cookie exists'
-			$.removeCookie('hml_category');
-		else
-			console.log 'no cookie'
-			$('.welcome_modal').modal()
-			$.cookie('hml_category', '1');
+		if $.inArray("category", window.location.pathname.split("/")) == 1
+			console.log 'CATEGORY'
+			if $.cookie('hml_category')
+				console.log 'YES COOKIE: ' + $.cookie("hml_category")
+				$.removeCookie("hml_category", {path: "/", domain: "localhost"})
+			else
+				console.log 'NO COOKIE: ' + $.cookie("hml_category")
+				$.cookie("hml_category", "1", {path: "/", domain: "localhost"})
+				$('.welcome_modal').modal()
 
 	setRowDisplay()
 	setCategoryItemsContainerPosition()
 	welcomeModal()
-
+	
 
 	# ITEM
 	itemLinks.on "click", () ->

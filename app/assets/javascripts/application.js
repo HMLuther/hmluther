@@ -46,7 +46,7 @@ $(function() {
 	}, function() {
 		clearInterval(int);
 		$('.category-items-container').clearQueue().finish();
-		console.log('finished');
+		// console.log('finished');
 	});
 
 	$('.prev').hover(function() {
@@ -54,7 +54,7 @@ $(function() {
 	}, function() {
 		clearInterval(int);
 		$('.category-items-container').clearQueue().finish();
-		console.log('finished');
+		// console.log('finished');
 	});
 
 

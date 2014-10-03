@@ -1,0 +1,4 @@
+console.log('Collection info request sent!');
+$('.modal').modal('hide');
+$('.cbp-hrmenu').prepend("<%= escape_javascript raw(flash_normal) %>").show();
+$('#flash').delay(2500).fadeOut();

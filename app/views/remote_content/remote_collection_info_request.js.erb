@@ -1,0 +1,7 @@
+if($('#info_modal').length > 0) {
+ $("#info_modal").modal();
+}
+else {
+ $("body").prepend("<%= escape_javascript(render "remote_collection_info_request", :formats => [:html]) %>");
+ $("#info_modal").modal();
+}
