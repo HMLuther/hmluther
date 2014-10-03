@@ -85,10 +85,10 @@ $(document).on "page:change", ->
 			console.log 'CATEGORY'
 			if $.cookie('hml_category')
 				console.log 'YES COOKIE: ' + $.cookie("hml_category")
-				$.removeCookie("hml_category", {path: "/", domain: "localhost"})
+				$.removeCookie("hml_category", {path: "/", domain: "hml-dev.herokuapp.com"})
 			else
 				console.log 'NO COOKIE: ' + $.cookie("hml_category")
-				$.cookie("hml_category", "1", {path: "/", domain: "localhost"})
+				$.cookie("hml_category", "1", {path: "/", domain: "hml-dev.herokuapp.com"})
 				$('.welcome_modal').modal()
 
 	setRowDisplay()
