@@ -1,9 +1,11 @@
 class ItemsController < ApplicationController
 
-  before_action :authenticate_admin, :except => [:category, :show], unless: :json_request?
+  before_action :authenticate_admin, :except => [:category, :show, :set_recently_viewed], unless: :json_request?
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_api_user, only: [:create, :edit, :update, :destroy], if: :json_request?
-  before_action :find_history, only: [:category, :show]
+
+  before_action :store_history, only: [:show]
+  before_action :find_history, only: [:category, :show, :set_recently_viewed]
 
   # GET /items
   # GET /items.json
@@ -73,11 +75,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def set_recently_viewed
+    respond_to do |format|
+        format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find_by_slug!(params[:id]).decorate
-      store_history
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

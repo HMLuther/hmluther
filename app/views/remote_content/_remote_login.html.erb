@@ -13,6 +13,20 @@
 			<div class="modal-body">
 			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :remote => false, :format => :js, :html => {:class => "form-horizontal", :id => "sign_in_user"}) do |f| %>
 
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">Log in to enjoy great new feature on hmluther.com</h3>
+				  </div>
+				  <div class="panel-body">
+						<ul>
+							<li>Download tearsheets</li>
+							<li>Download high-resolution photographs</li>
+							<li>Easily request more information</li>
+							<li>Save your favorite items in Collections</li>
+						</ul>
+				  </div>
+				</div>
+
 				<%= f.input :email, :required => true, :placeholder => 'EMAIL', :label => false, :autofocus => true %>
 				<%= f.input :password, :required => true, :placeholder => 'PASSWORD', :label => false %>
 				<%= f.check_box :remember_me, :checked => true %> <%= f.label :remember_me %>

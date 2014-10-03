@@ -1,0 +1,38 @@
+<div id="welcome_modal" class="welcome_modal modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<!-- HEADER -->
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<%= image_tag 'hml_icon.svg', class: 'logo-icon', alt: 'HM Luther' %>
+				<h4 class="modal-title">Welcome</h4>
+			</div>
+
+			<!-- BODY -->
+			<div class="modal-body">
+
+				<div class="panel panel-default">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">You are currently viewing <%= params[:category].titlecase %></h3>
+				  </div>
+				  <div class="panel-body">
+				  	<h4>We’ve added some helpful features to make your browsing easier.</h4>
+				  	<hr>
+						<ul>
+							<li>Click <span class="orange">DISPLAY OPTIONS</span> to view <%= params[:category].titlecase %> either in 1 Row of large images or in 2 Rows of smaller images.</li>
+							<li>Click <span class="orange">SORT OPTIONS</span> to order items by scale. See the largest <%= params[:category].titlecase %> first by clicking Largest to Smallest or vice versa.</li>
+						</ul>
+				  </div>
+				</div>
+
+			</div>
+
+			<!-- FOOTER -->
+			<div class="modal-footer">
+				<p>Not registered yet? <%= link_to "Sign up", remote_sign_up_path, :remote => true, :class => 'close-login', :data => {dismiss: "modal"} %></p>
+			</div>
+
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

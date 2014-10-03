@@ -17,7 +17,7 @@
 		<p><strong>Item: </strong>#<%= @resource.mail_form_attributes["item"] %></p>
 		<p><%= link_to 'View item here', @resource.mail_form_attributes["path"] %></p>
 		<p><strong>DESCRIPTION:</strong><br/>
-		<%= @resource.mail_form_attributes["description"] %></p>
+		<%= raw @resource.mail_form_attributes["description"] %></p>
 
 		<p><strong>MESSAGE:</strong><br/>
 		<%= @resource.mail_form_attributes["message"] %></p>

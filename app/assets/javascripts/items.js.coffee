@@ -1,23 +1,15 @@
 $(document).on "page:change", ->
 
-	# int = null
-	# speed = 10
-	# scrollNext = () ->
-	# 	alert 'next'
-	# 	$('.category-items-container').scrollTo( '-=' + speed, { axis: 'x', easing: 'easeInOutCirc' } )
-	# scrollPrev = () ->
-	# 	$('.category-items-container').scrollTo( '-=' + speed, { axis: 'x', easing: 'easeInOutCirc' } )
+	# SET RECENTLY VIEWED ITEMS
+	setRecentlyViewed = () ->
+		console.log 'set recently viewed'
+		if $.inArray("items", window.location.pathname.split("/")) == 1 || $.inArray("category", window.location.pathname.split("/")) == 1
+			console.log "YEP!"
+			$.ajax url: "/set_recently_viewed"
+		else
+			console.log "NOPE!"
 
-	# $('.next').hover ->
-	# 	int = setInterval(scollNext(), 10)
-	# , ->
-	# 	clearInterval(int)
-
-	# $('.prev').hover ->
-	# 	int = setInterval(scollPrev(), 10)
-	# , ->
-	# 	clearInterval(int);
-
+	setRecentlyViewed()
 
 	# CATEGORY
 	listSort = $('.category-items').data('sort')
@@ -88,8 +80,18 @@ $(document).on "page:change", ->
 			rowCount = 1
 		console.log 'setRowDisplay: rowCount' + rowCount
 
+	welcomeModal = () ->
+		if $.cookie('hml_category') && $.inArray("category", window.location.pathname.split("/")) == 1
+			console.log 'hml_category cookie exists'
+			$.removeCookie('hml_category');
+		else
+			console.log 'no cookie'
+			$('.welcome_modal').modal()
+			$.cookie('hml_category', '1');
+
 	setRowDisplay()
 	setCategoryItemsContainerPosition()
+	welcomeModal()
 
 
 	# ITEM
