@@ -15,6 +15,7 @@ Hmluther::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions"}
 
   resources "contacts", only: [:new, :create]
+  resources "collection_info_requests", only: [:new, :create]
   resources "info_requests", only: [:new, :create]
   resources "feedbacks", only: [:new, :create]
   resources "shares", only: [:new, :create]

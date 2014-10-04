@@ -1,4 +1,4 @@
-<div id="info_modal" class="info_modal modal fade">
+<div id="collection_info_modal" class="collection_info_modal modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
 
@@ -6,7 +6,7 @@
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<%= image_tag 'hml_icon.svg', class: 'logo-icon', alt: 'HM Luther' %>
-				<h4 class="modal-title">Request Collection Information</h4>
+				<h4 class="modal-title">Request Information</h4>
 			</div>
 
 			<!-- BODY -->
@@ -14,7 +14,7 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<h4>Request information about collection <%= @collection.name %></h4>
+						<h4>Request information about the collection: <%= @collection.name %></h4>
 					</div>
 				</div>
 
@@ -22,22 +22,15 @@
 					<div class="col-md-12">
 						<hr>
 					  <%= simple_form_for @collection_info_request, :remote => true, :format => :js, :html => { :class => 'form-horizontal', :id => "collection_info_request_form" } do |f| %>
-								<h4><%= current_user.name %></h4>
-								<div class= "hidden">
-									<%= f.input :name, input_html: {value: current_user.name } %>
-									<%= f.input :email, input_html: {value: current_user.email } %>
-								</div>
+							<%= f.input :name, as: :hidden, input_html: {value: current_user.name } %>
+							<%= f.input :email, as: :hidden, input_html: {value: current_user.email } %>
+							<%= f.input :collection_name, as: :hidden, input_html: {value: @collection.name } %>
+							<%= f.input :collection_url, as: :hidden, input_html: {value: collection_url(@collection) + '/slideshow'} %>
+							<%= f.input :item_ids, as: :hidden, :input_html => { :value => @collection.collection_items.active.map { |ci| ci.item.filemaker_id }} %>
 					    <%= f.input :message, :as => :text, :required => true, :input_html => { :rows => 4 }, :placeholder => 'MESSAGE', :label => false %>
-					    <div class= "hidden">
-					    <% @collection.collection_items.active.each do |ci| %>
-					      <%= f.input :item, :input_html => { :value => @ci.item.filemaker_id } %>
-					      <%= f.input :path, :input_html => { :value => item_url(@ci.item.filemaker_id) } %>
-					      <%= f.input :thumb, :input_html => { :value => @ci.item.thumb_image_url } %>
-					    <% end %>
-					      <%= f.input :type, :input_html => { :value => "info" } %>
-					      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-					    </div>
-					      <%= f.button :submit, 'Send message', :class=> "btn btn-primary", data: { disable_with: "Please wait..." } %>
+
+				      <%= f.input :nickname, as: :hidden, :hint => 'Leave this field blank!' %>
+				      <%= f.button :submit, 'Send message', :class=> "btn btn-primary", data: { disable_with: "Please wait..." } %>
 					  <% end %>
 					</div>
 			  </div>

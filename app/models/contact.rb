@@ -11,7 +11,7 @@ class Contact < MailForm::Base
   def headers
     {
       :subject => "HML Contact Form",
-      :to => "info@hmluther.com",
+      :to => ENV["HML_EMAIL"],
       :from => %("#{name}" <#{email}>)
     }
   end

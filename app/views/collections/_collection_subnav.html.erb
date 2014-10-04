@@ -19,7 +19,7 @@
 
 	<!-- REQUEST INFORMATION -->
 	<div class="col-md-3 col-sm-3 col-xs-6">
-		<%= link_to 'Request Info', remote_collection_info_request_path(@collection), 
+		<%= link_to 'Request Info', remote_collection_info_request_path(:collection => @collection.id), 
 																:remote => true, title: 'Requestion additional information for the active items in this collection' %>
 	</div>
 

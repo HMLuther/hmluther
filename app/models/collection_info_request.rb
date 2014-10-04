@@ -2,20 +2,18 @@ class CollectionInfoRequest < MailForm::Base
   attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 
-  attribute :collection
-  attribute :item
+  attribute :collection_name
+  attribute :collection_url
+  attribute :item_ids
   attribute :message
   attribute :nickname,  :captcha  => true
-  attribute :path
-  attribute :thumb
-  attribute :type
 
   # Declare the e-mail headers. It accepts anything the mail method
   # in ActionMailer accepts.
   def headers
     {
       :subject => "Collection Information Request",
-      :to => "info@hmluther.com",
+      :to => ENV["HML_EMAIL"],
       :from => %("#{name}" <#{email}>)
     }
   end

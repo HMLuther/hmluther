@@ -1,6 +1,7 @@
 class RemoteContentController < ApplicationController
 
 	before_action :set_item, only: [:remote_collection_addition, :remote_info_request, :remote_share_item]
+	before_action :set_collection, only: [:remote_collection_info_request, :remote_share_collection]
 
 	def remote_collection_addition
 		@collections = current_user.collections.active
@@ -19,7 +20,6 @@ class RemoteContentController < ApplicationController
 	end
 
 	def remote_share_collection
-		@collection = Collection.find(params[:collection])
 		@share = Share.new
 	end
 
@@ -29,6 +29,10 @@ class RemoteContentController < ApplicationController
 
 
 	private
+
+		def set_collection
+			@collection = Collection.find(params[:collection])
+		end
 
 		def set_item
 			@item = Item.find_by_slug!(params[:item])

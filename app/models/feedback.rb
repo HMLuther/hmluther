@@ -14,7 +14,7 @@ class Feedback < MailForm::Base
   def headers
     {
       :subject => "Website Feedback",
-      :to => "info@hmluther.com",
+      :to => ENV["HML_EMAIL"],
       :from => %("#{name}" <#{email}>)
     }
   end

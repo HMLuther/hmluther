@@ -14,7 +14,7 @@ class InfoRequest < MailForm::Base
   def headers
     {
       :subject => "Information Request",
-      :to => "info@hmluther.com",
+      :to => ENV["HML_EMAIL"],
       :from => %("#{name}" <#{email}>)
     }
   end
