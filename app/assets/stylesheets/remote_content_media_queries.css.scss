@@ -12,21 +12,24 @@
 @media screen and (max-width: 767px){
 	.sign_up_modal {
 		.logo-icon {
-			height: auto;
-			width: 50%;
+			// height: auto;
+			// width: 50%;
 		}
 		.modal-title {
-			float: none;
+			// float: none;
 		}
 	}
 }
 
 @media screen and (max-width: 479px){
-	.sign_up_modal {
-		.logo-icon {
-			// height: auto;
-			width: 80%;
-		}
+	h4 {
+		font-size: 1.1em;
+	}
+	.logo-icon {
+		// height: auto;
+		width: 50%;
+	}
+	.collection_info_modal, .sign_up_modal, .welcome_modal {
 		.modal-body {
 			p {
 				margin: 0;
