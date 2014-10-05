@@ -19,9 +19,9 @@
 					<%= image_tag ci.item.thumb_image_url %>
 				<% end %>
 				<div class="row caption">
-					<%= link_to "Deactivate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: false} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-6 inactive-button btn btn-primary' %>
-					<%= link_to "Activate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: true} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-6 active-button btn btn-primary' %>
-					<%= link_to 'Delete', collection_collection_item_path(@collection, ci), :remote => true, method: :delete, data: { confirm: 'Are you sure?' }, class: 'col-md-6 delete-button btn btn-danger' %>
+					<%= link_to "Deactivate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: false} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-6 col-xs-6 inactive-button btn btn-primary' %>
+					<%= link_to "Activate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: true} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-6 col-xs-6 active-button btn btn-primary' %>
+					<%= link_to 'Delete', collection_collection_item_path(@collection, ci), :remote => true, method: :delete, data: { confirm: 'Are you sure?' }, class: 'col-md-6 col-xs-6 delete-button btn btn-danger' %>
 				</div>
 			<% end %>
 		<% end %>

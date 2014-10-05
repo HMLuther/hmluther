@@ -204,6 +204,10 @@
 
 @media screen and (max-width: 479px){
 
+	.category-subnav, .collection-subnav, .item-subnav {
+		font-size: 0.8em;
+	}
+
 	// SOLD
 	.category-stamp-sold {
 		height: 30px;
