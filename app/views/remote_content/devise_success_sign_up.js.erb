@@ -1,12 +1,12 @@
 console.log 'devise success'
-$('.modal').modal('hide')
+$('.modal').modal('hide');
 
 if($('#flash').length > 0) {
  $('#flash').remove();
  $('.navbar').prepend("<%= escape_javascript raw(flash_normal) %>");
 }
 else {
- $('.modal').modal('hide')
+ $('.modal').modal('hide');
  $('navbar').prepend("<%= escape_javascript raw(flash_normal) %>");
 }
 
