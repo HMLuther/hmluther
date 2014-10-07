@@ -6,7 +6,7 @@ class Item < ActiveRecord::Base
 
 	before_validation :generate_slug
 
-	has_many :images, primary_key: "filemaker_id"
+	has_many :images, primary_key: "filemaker_id", dependent: :destroy
 	has_many :collection_items, primary_key: "filemaker_id"
 	has_many :collections, :through => :collection_items, primary_key: "filemaker_id"
 
