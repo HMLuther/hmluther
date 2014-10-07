@@ -8,7 +8,10 @@ class User < ActiveRecord::Base
 
   has_many :collections
 
+  validates_presence_of :country, :message => "can't be blank"
+  validates_presence_of :email, :message => "can't be blank"
   validates_presence_of :name, :message => "can't be blank"
+  validates_presence_of :zip, :message => "can't be blank"
 
   def set_default_role
     self.role ||= :user
