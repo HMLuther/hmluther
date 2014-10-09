@@ -52,7 +52,8 @@
 }
 
 .carousel-indicators {
-    top: 101%;
+    top: 100%;
+    margin-top: 10px;
 }
 
 .carousel-indicators li{
@@ -62,6 +63,10 @@
 
 .carousel-indicators .active{
   background-color: #f47321;
+}
+
+.carousel-inner {
+  margin-bottom: 50px;
 }
 
 // BUTTON DEFAULT

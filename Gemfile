@@ -26,6 +26,7 @@ gem 'prawn-templates'
 gem 'draper'
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 gem 'impressionist'
+gem 'country_select'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

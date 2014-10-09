@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
   #GET /category/:category
   def category
     @items = Item.category_list.tagged_with(params[:category]).order(size: :asc).decorate
+    # impressionist(@items, "category", :unique => [:session_hash])
     # render 'category_scroll'
   end
 
@@ -23,7 +24,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item_images = @item.images.show_list.order('image_type')
-    # impressionist(@item, "item detail",:unique => [:session_hash]) if user_signed_in?
+    impressionist(@item, "item detail")
   end
 
   # GET /items/new
