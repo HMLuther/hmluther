@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email, :message => "can't be blank"
   validates_presence_of :first_name, :message => "can't be blank"
   validates_presence_of :last_name, :message => "can't be blank"
+  validates_presence_of :password, :message => "can't be blank"
   validates_presence_of :zip, :message => "can't be blank"
 
   def set_default_role
