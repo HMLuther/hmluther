@@ -21,8 +21,8 @@
   <%= f.input :address, :required => false %>
   <%= f.input :city, :required => false %>
   <%= f.input :state, :required => false %>
-  <%= f.input :zip, :required => false %>
-  <%= f.input :country, :required => false, :as => :string %>
+  <%= f.input :zip, :required => true %>
+  <%= f.input :country, priority_countries: [ "US", "UK" ], :required => true %>
   <%= f.input :phone, :required => false %>
 
 	<section>
