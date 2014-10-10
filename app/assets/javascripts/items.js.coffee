@@ -89,11 +89,19 @@ $(document).on "page:change", ->
 			else
 				console.log 'NO WELCOME COOKIE: ' + $.cookie("hml_category")
 				$.cookie("hml_category", "1", {path: "/", domain: "hml-prod.herokuapp.com"})
+				$.cookie("hml_category", "1", {path: "/", domain: "hml-dev.herokuapp.com"})
+				$.cookie("hml_category", "1", {path: "/", domain: "localhost"})
 				$('.welcome_modal').modal()
+		else
+			console.log 'NOT CATEGORY'
+
+	$('#welcome_modal').on "hidden.bs.modal", () ->
+		$('#welcome_modal').remove('.welcome_modal')
+		alert "modal hidden"
 
 	setRowDisplay()
 	setCategoryItemsContainerPosition()
-	welcomeModal()
+	# welcomeModal()
 	
 
 	# ITEM
