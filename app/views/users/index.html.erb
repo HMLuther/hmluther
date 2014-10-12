@@ -4,7 +4,7 @@
 
   <table class="table">
     <tbody>
-      <% @users.order('name ASC').each do |user| %>
+      <% @users.each do |user| %>
         <tr class="<%= 'bg-warning' if user.admin? %>">
           <%= render user %>
         </tr>

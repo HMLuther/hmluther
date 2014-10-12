@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   after_action :verify_authorized, except: [:show], unless: :json_request?
 
   def index
-    @users = User.all
+    @users = User.all.order('last_name ASC')
     authorize @users
   end
 
