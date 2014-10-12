@@ -97,7 +97,7 @@ $(document).on "page:change", ->
 
 	$('#welcome_modal').on "hidden.bs.modal", () ->
 		$('#welcome_modal').remove('.welcome_modal')
-		alert "modal hidden"
+		# alert "modal hidden"
 
 	setRowDisplay()
 	setCategoryItemsContainerPosition()
