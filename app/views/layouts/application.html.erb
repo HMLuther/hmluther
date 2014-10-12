@@ -33,5 +33,9 @@
       <%= render 'layouts/footer' %>
     </div>
 
+    <% if cookies[:hml_category].blank? %>
+      <%= render 'layouts/welcome_modal' %>
+    <% end %>
+
   </body>
 </html>

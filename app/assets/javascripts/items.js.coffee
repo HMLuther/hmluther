@@ -101,7 +101,7 @@ $(document).on "page:change", ->
 
 	setRowDisplay()
 	setCategoryItemsContainerPosition()
-	# welcomeModal()
+	welcomeModal()
 	
 
 	# ITEM
