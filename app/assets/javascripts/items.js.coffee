@@ -88,6 +88,7 @@ $(document).on "page:change", ->
 				# $.removeCookie("hml_category", {path: "/", domain: "hml-prod.herokuapp.com"})
 			else
 				console.log 'NO WELCOME COOKIE: ' + $.cookie("hml_category")
+				$.cookie("hml_category", "1", {path: "/", domain: "hmluther.com"})
 				$.cookie("hml_category", "1", {path: "/", domain: "hml-prod.herokuapp.com"})
 				$.cookie("hml_category", "1", {path: "/", domain: "hml-dev.herokuapp.com"})
 				$.cookie("hml_category", "1", {path: "/", domain: "localhost"})
