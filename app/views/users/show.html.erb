@@ -42,6 +42,7 @@
   </div>
 </div>
 
+
 <!-- SITE USAGE -->
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -50,13 +51,13 @@
   <div class="panel-body">
 		<dl class="dl-horizontal">
 		  <dt>Created</dt>
-		  <dd><%= @user.created_at if @user.created_at %></dd>
+		  <dd><%= @user.created_at.strftime("%B, %d %Y at %I:%M%p") if @user.created_at %></dd>
 		  <dt>Updated</dt>
-		  <dd><%= @user.updated_at if @user.updated_at %></dd>
+		  <dd><%= @user.updated_at.strftime("%B, %d %Y at %I:%M%p") if @user.updated_at %></dd>
 		  <dt>Sign In Count</dt>
 		  <dd><%= @user.sign_in_count if @user.sign_in_count %></dd>
 		  <dt>Last Sign In</dt>
-		  <dd><%= @user.last_sign_in_at if @user.last_sign_in_at %></dd>
+		  <dd><%= @user.last_sign_in_at.strftime("%B, %d %Y at %I:%M%p") if @user.last_sign_in_at %></dd>
 		</dl>
   </div>
 </div>
