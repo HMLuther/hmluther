@@ -1,3 +1,62 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<h3>User: <%= @user.name if @user.name %></h3>
+<hr>
+
+<!-- GENERAL -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">General</h3>
+  </div>
+  <div class="panel-body">
+		<dl class="dl-horizontal">
+		  <dt>Name</dt>
+		  <dd><%= @user.name if @user.name %></dd>
+		  <dt>Email</dt>
+		  <dd><%= @user.email if @user.email %></dd>
+		  <dt>Phone</dt>
+		  <dd><%= @user.phone if @user.phone %></dd>
+		  <dt>Reference</dt>
+		  <dd><%= @user.reference.join(', ') if @user.reference %></dd>
+		</dl>
+  </div>
+</div>
+
+
+<!-- ADDRESS -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Address</h3>
+  </div>
+  <div class="panel-body">
+		<dl class="dl-horizontal">
+		  <dt>Address</dt>
+		  <dd><%= @user.address if @user.address %></dd>
+		  <dt>City</dt>
+		  <dd><%= @user.city if @user.city %></dd>
+		  <dt>State</dt>
+		  <dd><%= @user.state if @user.state %></dd>
+		  <dt>Zip Code</dt>
+		  <dd><%= @user.zip if @user.zip %></dd>
+		  <dt>Country</dt>
+		  <dd><%= @user.country if @user.country %></dd>
+		</dl>
+  </div>
+</div>
+
+<!-- SITE USAGE -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Usage</h3>
+  </div>
+  <div class="panel-body">
+		<dl class="dl-horizontal">
+		  <dt>Created</dt>
+		  <dd><%= @user.created_at if @user.created_at %></dd>
+		  <dt>Updated</dt>
+		  <dd><%= @user.updated_at if @user.updated_at %></dd>
+		  <dt>Sign In Count</dt>
+		  <dd><%= @user.sign_in_count if @user.sign_in_count %></dd>
+		  <dt>Last Sign In</dt>
+		  <dd><%= @user.last_sign_in_at if @user.last_sign_in_at %></dd>
+		</dl>
+  </div>
+</div>
