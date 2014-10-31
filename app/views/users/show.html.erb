@@ -1,63 +1,107 @@
 <h3>User: <%= @user.name if @user.name %></h3>
 <hr>
 
-<!-- GENERAL -->
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">General</h3>
-  </div>
-  <div class="panel-body">
-		<dl class="dl-horizontal">
-		  <dt>Name</dt>
-		  <dd><%= @user.name if @user.name %></dd>
-		  <dt>Email</dt>
-		  <dd><%= @user.email if @user.email %></dd>
-		  <dt>Phone</dt>
-		  <dd><%= @user.phone if @user.phone %></dd>
-		  <dt>Reference</dt>
-		  <dd><%= @user.reference.join(', ') if @user.reference %></dd>
-		</dl>
-  </div>
+<div class="row">
+	<div class="col-md-6">
+
+		<!-- GENERAL -->
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">General</h3>
+		  </div>
+		  <div class="panel-body">
+				<dl class="dl-horizontal">
+				  <dt>Name</dt>
+				  <dd><%= @user.name if @user.name %></dd>
+				  <dt>Email</dt>
+				  <dd><%= @user.email if @user.email %></dd>
+				  <dt>Phone</dt>
+				  <dd><%= @user.phone if @user.phone %></dd>
+				  <dt>Reference</dt>
+				  <dd><%= @user.reference.join(', ') if @user.reference %></dd>
+				</dl>
+		  </div>
+		</div>
+
+		<!-- ADDRESS -->
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Address</h3>
+		  </div>
+		  <div class="panel-body">
+				<dl class="dl-horizontal">
+				  <dt>Address</dt>
+				  <dd><%= @user.address if @user.address %></dd>
+				  <dt>City</dt>
+				  <dd><%= @user.city if @user.city %></dd>
+				  <dt>State</dt>
+				  <dd><%= @user.state if @user.state %></dd>
+				  <dt>Zip Code</dt>
+				  <dd><%= @user.zip if @user.zip %></dd>
+				  <dt>Country</dt>
+				  <dd><%= @user.country if @user.country %></dd>
+				</dl>
+		  </div>
+		</div>
+
+		<!-- SITE USAGE -->
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Usage</h3>
+		  </div>
+		  <div class="panel-body">
+				<dl class="dl-horizontal">
+				  <dt>Created</dt>
+				  <dd><%= @user.created_at.strftime("%B, %d %Y at %I:%M%p") if @user.created_at %></dd>
+				  <dt>Updated</dt>
+				  <dd><%= @user.updated_at.strftime("%B, %d %Y at %I:%M%p") if @user.updated_at %></dd>
+				  <dt>Sign In Count</dt>
+				  <dd><%= @user.sign_in_count if @user.sign_in_count %></dd>
+				  <dt>Last Sign In</dt>
+				  <dd><%= @user.last_sign_in_at.strftime("%B, %d %Y at %I:%M%p") if @user.last_sign_in_at %></dd>
+				</dl>
+		  </div>
+		</div>
+
+	</div>
+	<div class="col-md-6">
+
+		<!-- COLLECTIONS -->
+		<% if @user.collections.size > 0 %>
+
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Collections (<%= @user.collections.size %>)</h3>
+		  </div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Created</th>
+						<th>Updated</th>
+					</tr>
+				</thead>
+				<tbody>
+				<% @user.collections.each do |collection| %>
+				  <tr data-link="<%= collection_path(collection) %>">
+				    <td><%= collection.name %></td>
+				    <td><%= collection.created_at.strftime("%B, %d %Y at %I:%M%p") %></td>
+				    <td><%= collection.updated_at.strftime("%B, %d %Y at %I:%M%p") %></td>
+				  </tr>
+				<% end %>
+				</tbody>
+			</table>
+		</div>
+		<% else %>
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">No Collections</h3>
+		  </div>
+		</div>
+		<% end %>
+
+	</div>
+
 </div>
 
 
-<!-- ADDRESS -->
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Address</h3>
-  </div>
-  <div class="panel-body">
-		<dl class="dl-horizontal">
-		  <dt>Address</dt>
-		  <dd><%= @user.address if @user.address %></dd>
-		  <dt>City</dt>
-		  <dd><%= @user.city if @user.city %></dd>
-		  <dt>State</dt>
-		  <dd><%= @user.state if @user.state %></dd>
-		  <dt>Zip Code</dt>
-		  <dd><%= @user.zip if @user.zip %></dd>
-		  <dt>Country</dt>
-		  <dd><%= @user.country if @user.country %></dd>
-		</dl>
-  </div>
-</div>
-
-
-<!-- SITE USAGE -->
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Usage</h3>
-  </div>
-  <div class="panel-body">
-		<dl class="dl-horizontal">
-		  <dt>Created</dt>
-		  <dd><%= @user.created_at.strftime("%B, %d %Y at %I:%M%p") if @user.created_at %></dd>
-		  <dt>Updated</dt>
-		  <dd><%= @user.updated_at.strftime("%B, %d %Y at %I:%M%p") if @user.updated_at %></dd>
-		  <dt>Sign In Count</dt>
-		  <dd><%= @user.sign_in_count if @user.sign_in_count %></dd>
-		  <dt>Last Sign In</dt>
-		  <dd><%= @user.last_sign_in_at.strftime("%B, %d %Y at %I:%M%p") if @user.last_sign_in_at %></dd>
-		</dl>
-  </div>
-</div>

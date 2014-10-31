@@ -11,6 +11,7 @@ class CollectionPolicy
 
   def show?
   	@user.id == @collection.user_id
+    @user.admin?
   end
 
   def edit?
