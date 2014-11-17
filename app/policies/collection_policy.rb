@@ -10,8 +10,7 @@ class CollectionPolicy
   end
 
   def show?
-  	@user.id == @collection.user_id
-    @user.admin?
+  	@user.id == @collection.user_id or @user.admin?
   end
 
   def new?
