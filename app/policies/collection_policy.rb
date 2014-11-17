@@ -14,6 +14,9 @@ class CollectionPolicy
     @user.admin?
   end
 
+  def new?
+  end
+
   def edit?
     @user.id == @collection.user_id
   end
