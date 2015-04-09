@@ -9,6 +9,7 @@ class Image < ActiveRecord::Base
 
 	scope :active, -> { where(active: true) }
 	scope :show_list, -> { where(active: true).where(thumb: false).where(webcomp: false).where("image_type != 'TS'") }
+	# scope :show_list, -> { where(detail: true) }
 
 	def generate_slug
 		self.slug ||= filemaker_id.parameterize
@@ -16,6 +17,14 @@ class Image < ActiveRecord::Base
 
 	def to_param
 		slug
+	end
+
+	def url
+		if image_type = "Tearsheet"
+			"http://res.cloudinary.com/dznwujowq/image/upload/#{filemaker_id}.pdf"
+		else
+			"http://res.cloudinary.com/dznwujowq/image/upload/#{filemaker_id}.jpg"
+		end
 	end
 
 end

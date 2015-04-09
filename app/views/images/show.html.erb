@@ -1,17 +1,30 @@
-<h1><%= link_to raw @image.item.description_short, @image.item %></h1>
-<p>
-  <strong>Active:</strong> 
-  <%= @image.item_id %>
-</p>
-
-<p>
-  <strong>Active:</strong> 
-  <%= @image.active %>
-</p>
+<h1><%= link_to @image.item.description_short, @image.item %></h1>
 
 <p>
   <strong>Filemaker ID:</strong> 
   <%= @image.filemaker_id %>
+</p>
+
+<p>
+  <strong>Item ID:</strong> 
+  <%= @image.item_id %>
+</p>
+
+<p>
+  <strong>Image Type:</strong> 
+  <%= @image.image_type %>
+</p>
+
+<p>
+  <strong>Position:</strong> 
+  <%= @image.position %>
+</p>
+
+<hr>
+
+<p>
+  <strong>Active:</strong> 
+  <%= @image.active %>
 </p>
 
 <p>
@@ -30,11 +43,6 @@
 </p>
 
 <p>
-  <strong>Image type:</strong> 
-  <%= @image.image_type %>
-</p>
-
-<p>
   <strong>Url:</strong> 
   <%= @image.url %>
 </p>
@@ -46,7 +54,8 @@
 
 <hr>
 
-<%= image_tag @image.url %>
+<!-- SAMPLE CLOUDINARY IMAGE -->
+<%= cl_image_tag("nimoy-lead.jpg", :alt => "Sample Image") %>
 
 <%= link_to 'Edit', edit_image_path(@image), class: 'btn btn-default' %>
 <%= link_to 'Back', images_path, class: 'btn btn-default' %>

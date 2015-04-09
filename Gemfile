@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.1'
+gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -11,7 +11,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'figaro', :github=>"laserlemon/figaro"
+gem 'figaro'
 gem 'mail_form'
 gem 'pg'
 gem 'puma'
@@ -27,6 +27,7 @@ gem 'draper'
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 gem 'impressionist'
 gem 'country_select'
+gem 'cloudinary'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -52,4 +53,4 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-ruby '2.1.0'
+ruby '2.2.1'

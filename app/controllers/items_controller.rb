@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item_images = @item.images.show_list.order('image_type')
+    # @item_images = @item.images.show_list.order('position')
     impressionist(@item, "item detail")
   end
 
