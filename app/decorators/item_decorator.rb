@@ -27,22 +27,32 @@ class ItemDecorator < Draper::Decorator
   	end
   end
 
-	def default_image_url
-		if model.images.where(active: true).where(webcomp: true).first.present?
-			model.images.where(active: true).where(webcomp: true).last.url
+	# def default_image_url
+	# 	if model.images.where(active: true).where(webcomp: true).first.present?
+	# 		model.images.where(active: true).where(webcomp: true).last.url
+	# 	else
+	# 		"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgODY5IDUwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgODY5IDUwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cmVjdCBmaWxsPSIjRjFGMkYyIiB3aWR0aD0iODY5IiBoZWlnaHQ9IjUwMCIvPg0KPHRleHQgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAyMjEuMjY4MyAyNjAuMzQ0NykiIGZpbGw9IiM2RDZFNzEiIGZvbnQtZmFtaWx5PSInT3BlblNhbnMtU2VtaWJvbGQnIiBmb250LXNpemU9IjM2Ij53ZWJjb21wIGltYWdlIG1pc3Npbmc8L3RleHQ+DQo8L3N2Zz4NCg=="
+	# 	end
+	# end
+
+	def comp_tag
+		if model.images.where(image_type: "Comp Web").first.present?
+			cl_image_tag(model.images.where(image_type: "Comp Web").first.filemaker_id + ".jpg", :alt => "#{model.filemaker_id} Image", class: "webcomp")
 		else
-			"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgODY5IDUwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgODY5IDUwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cmVjdCBmaWxsPSIjRjFGMkYyIiB3aWR0aD0iODY5IiBoZWlnaHQ9IjUwMCIvPg0KPHRleHQgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAyMjEuMjY4MyAyNjAuMzQ0NykiIGZpbGw9IiM2RDZFNzEiIGZvbnQtZmFtaWx5PSInT3BlblNhbnMtU2VtaWJvbGQnIiBmb250LXNpemU9IjM2Ij53ZWJjb21wIGltYWdlIG1pc3Npbmc8L3RleHQ+DQo8L3N2Zz4NCg=="
+			image_tag "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgODY5IDUwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgODY5IDUwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cmVjdCBmaWxsPSIjRjFGMkYyIiB3aWR0aD0iODY5IiBoZWlnaHQ9IjUwMCIvPg0KPHRleHQgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAyMjEuMjY4MyAyNjAuMzQ0NykiIGZpbGw9IiM2RDZFNzEiIGZvbnQtZmFtaWx5PSInT3BlblNhbnMtU2VtaWJvbGQnIiBmb250LXNpemU9IjM2Ij53ZWJjb21wIGltYWdlIG1pc3Npbmc8L3RleHQ+DQo8L3N2Zz4NCg=="
 		end
 	end
 
 	def image_display(image)
 		if user_signed_in?
 			link_to image.url, :target => "_blank" do
-				image_tag image.preview_url, title: 'Click for high resolution image'
+				# image_tag image.preview_url, title: 'Click for high resolution image'
+				cl_image_tag image.filemaker_id + ".jpg", :height => 600, :crop => :fill, title: 'Click for high resolution image'
 			end
 		else
 			link_to remote_login_path, :remote => true, title: "View high resolution image (Login required)" do
-				image_tag image.preview_url
+				# image_tag image.preview_url
+				cl_image_tag image.filemaker_id + ".jpg", :height => 600, :crop => :fill
 			end
 		end
 	end
@@ -97,8 +107,8 @@ class ItemDecorator < Draper::Decorator
 	end
 
 	def tearsheet_url
-		if model.images.where("image_type = 'TS'").first.present?
-			model.images.where("image_type = 'TS'").first.url
+		if model.images.where("image_type = 'Tearsheet'").first.present?
+			model.images.where("image_type = 'Tearsheet'").first.url
 		end
 	end
 

@@ -1,61 +1,55 @@
-<h1><%= link_to @image.item.description_short, @image.item %></h1>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><%= link_to raw(@image.item.description_short), @image.item %></div>
 
-<p>
-  <strong>Filemaker ID:</strong> 
-  <%= @image.filemaker_id %>
-</p>
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Filemaker ID:</strong> <%= @image.filemaker_id %></li>
+    <li class="list-group-item"><strong>Item ID:</strong> <%= @image.item_id %></li>
+    <li class="list-group-item"><strong>Image Type:</strong> <%= @image.image_type %></li>
+    <li class="list-group-item"><strong>Position:</strong> <%= @image.position %></li>
+  </ul>
+</div>
 
-<p>
-  <strong>Item ID:</strong> 
-  <%= @image.item_id %>
-</p>
 
-<p>
-  <strong>Image Type:</strong> 
-  <%= @image.image_type %>
-</p>
+<!-- OLD PARAMETERS -->
+<div class="hidden">
+  <h3>Old Parameters</h3>
+  <hr>
+  <p>
+    <strong>Active:</strong> <%= @image.active %>
+  </p>
+  <p>
+    <strong>Banner:</strong> <%= @image.banner %>
+  </p>
+  <p>
+    <strong>Webcomp:</strong> <%= @image.webcomp %>
+  </p>
+  <p>
+    <strong>Thumb:</strong> <%= @image.thumb %>
+  </p>
+  <p>
+    <strong>Url:</strong> <%= @image.url %>
+  </p>
+  <p>
+    <strong>Preview Url:</strong> <%= @image.preview_url %>
+  </p>
+</div>
 
-<p>
-  <strong>Position:</strong> 
-  <%= @image.position %>
-</p>
-
-<hr>
-
-<p>
-  <strong>Active:</strong> 
-  <%= @image.active %>
-</p>
-
-<p>
-  <strong>Banner:</strong> 
-  <%= @image.banner %>
-</p>
-
-<p>
-  <strong>Webcomp:</strong> 
-  <%= @image.webcomp %>
-</p>
-
-<p>
-  <strong>Thumb:</strong> 
-  <%= @image.thumb %>
-</p>
-
-<p>
-  <strong>Url:</strong> 
-  <%= @image.url %>
-</p>
-
-<p>
-  <strong>Preview Url:</strong> 
-  <%= @image.preview_url %>
-</p>
-
-<hr>
 
 <!-- SAMPLE CLOUDINARY IMAGE -->
-<%= cl_image_tag("nimoy-lead.jpg", :alt => "Sample Image") %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Image</h3>
+  </div>
+  <div class="panel-body">
+    <% if @image.image_type == "Tearsheet" %>
+      <%= cl_image_tag("#{@image.filemaker_id}.png", :alt => "ID PDF", :width => 600, :crop => :fill) %>
+    <% else %>
+      <%= cl_image_tag("#{@image.filemaker_id}.jpg", :alt => "ID Image") %>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_image_path(@image), class: 'btn btn-default' %>
-<%= link_to 'Back', images_path, class: 'btn btn-default' %>
+<%= link_to 'Edit', edit_image_path(@image), class: 'btn btn-warning' %>
+<%= link_to 'Back', images_path, class: 'btn btn-warning' %>
