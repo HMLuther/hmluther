@@ -47,12 +47,13 @@ class ItemDecorator < Draper::Decorator
 		if user_signed_in?
 			link_to image.url, :target => "_blank" do
 				# image_tag image.preview_url, title: 'Click for high resolution image'
-				cl_image_tag image.filemaker_id + ".jpg", :height => 600, :crop => :fill, title: 'Click for high resolution image'
+				# cl_image_tag image.filemaker_id + ".jpg", :height => 600, :crop => :fill, title: 'Click for high resolution image'
+				cl_image_tag image.filemaker_id + ".jpg", :width => :auto, :crop => :limit, :html_width => 731, :dpr => :auto, :responsive_placeholder => "blank", title: 'Click for high resolution image', class: "img-responsive cld-responsive"
 			end
 		else
 			link_to remote_login_path, :remote => true, title: "View high resolution image (Login required)" do
 				# image_tag image.preview_url
-				cl_image_tag image.filemaker_id + ".jpg", :height => 600, :crop => :fill
+				cl_image_tag image.filemaker_id + ".jpg", :width => :auto, :crop => :limit, :html_width => 731, :dpr => :auto, :responsive_placeholder => "blank", class: "img-responsive cld-responsive"
 			end
 		end
 	end

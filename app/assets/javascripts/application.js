@@ -15,6 +15,7 @@
 //= require jquery-ui-1.10.3.custom.min
 //= require bootstrap
 //= require jquery.cookie
+//= require jquery.cloudinary
 //= require jquery.scrollTo.min
 //= require jquery.tinysort.min
 //= require jquery.kinetic.min
@@ -30,6 +31,8 @@ $(function() {
 	var int = null;
 	var int_duration = 10;
 	var movement = 5;
+
+	$.cloudinary.responsive();
 
 	function scollNext(){
 		// console.log('hovering...');
