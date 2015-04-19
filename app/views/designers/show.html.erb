@@ -13,7 +13,7 @@
         <div class="col-md-12 item-image">
         <%= link_to item, class: 'item-link' do %>
           <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' if item.sold %>
-          <%= image_tag item.default_image_url %>
+          <%= item.comp_image_tag %>
         <% end %>
         </div>
 

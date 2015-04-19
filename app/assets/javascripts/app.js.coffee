@@ -7,7 +7,10 @@
 
 $(document).on "page:change", ->
 	
-	console.log "app.coffee - page change"
+	# console.log "app.coffee - page change"
+
+	$.cloudinary.responsive()
+	$('img.img-responsive').cloudinary_update()
 
 	# $('#collection-items-section .inactive .inactive-button').hide()
 	# $('#collection-items-section .active .active-button').hide()

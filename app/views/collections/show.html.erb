@@ -16,7 +16,7 @@
 			<%= div_for(ci.item, class: "thumbnail #{ci.active ? 'active' : 'inactive'}") do %>
 				<%= link_to ci.item do %>
 					<%= image_tag 'hml_sold_icon.svg', class: 'collection-stamp-sold' if ci.item.sold %>
-					<%= image_tag ci.item.thumb_image_url %>
+					<%= ItemDecorator.decorate(ci.item).thumb_image_tag %>
 				<% end %>
 				<div class="row caption">
 					<%= link_to "Deactivate", collection_collection_item_path(@collection, ci), data: { params: { collection_item: { active: false} }.to_param }, :method => 'PATCH', remote: true, class: 'col-md-6 col-xs-6 inactive-button btn btn-primary' %>

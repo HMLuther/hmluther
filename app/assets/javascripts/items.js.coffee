@@ -2,7 +2,7 @@ $(document).on "page:change", ->
 
 	# SET RECENTLY VIEWED ITEMS
 	setRecentlyViewed = () ->
-		console.log 'set recently viewed'
+		# console.log 'set recently viewed'
 		if $.inArray("items", window.location.pathname.split("/")) == 1 || $.inArray("category", window.location.pathname.split("/")) == 1
 			# console.log "YEP!"
 			$.ajax url: "/set_recently_viewed"

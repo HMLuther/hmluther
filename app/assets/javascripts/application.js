@@ -26,13 +26,13 @@
 //= require_tree .
 
 $(function() {
-	console.log("loaded!");
+	// console.log("loaded!");
 
 	var int = null;
 	var int_duration = 10;
 	var movement = 5;
 
-	$.cloudinary.responsive();
+	// $.cloudinary.responsive();
 
 	function scollNext(){
 		// console.log('hovering...');
