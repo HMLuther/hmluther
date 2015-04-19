@@ -13,14 +13,18 @@
 				<!-- <div class="col-md-2 col-sm-2 col-xs-4"> -->
 				<div>
 					<%= link_to item do %>
-						<%= cl_image_tag item.thumb.filemaker_id + ".jpg", 
-							:width => 170, 
-							:crop => :limit, 
-							:dpr => 2.0, 
-							:responsive_placeholder => "#{asset_path 'detail_loading.svg'}",
-							:title => "Item #{item.filemaker_id}",
-							:alt => "Item #{item.filemaker_id}",
-							:class => "img-responsive cld-responsive" %>
+						<% if item.thumb.present? %>
+							<%= cl_image_tag item.thumb.filemaker_id + ".jpg", 
+								:width => 170, 
+								:crop => :limit, 
+								:dpr => 2.0, 
+								:responsive_placeholder => "#{asset_path 'detail_loading.svg'}",
+								:title => "Item #{item.filemaker_id}",
+								:alt => "Item #{item.filemaker_id}",
+								:class => "img-responsive cld-responsive" %>
+							<% else %>
+								<%= image_tag "detail_missing.svg" %>
+							<% end %>
 					<% end %>
 				</div>
 			<% end %>

@@ -1,19 +1,19 @@
----
-development:
-  cloud_name: dznwujowq
-  api_key: '581164182272263'
-  api_secret: jkr73RXGSvrPK3pPnVCQZsF4d8M
-  enhance_image_tag: true
-  static_image_support: false
-production:
-  cloud_name: dznwujowq
-  api_key: '581164182272263'
-  api_secret: jkr73RXGSvrPK3pPnVCQZsF4d8M
-  enhance_image_tag: true
-  static_image_support: true
-test:
-  cloud_name: dznwujowq
-  api_key: '581164182272263'
-  api_secret: jkr73RXGSvrPK3pPnVCQZsF4d8M
-  enhance_image_tag: true
-  static_image_support: false
+# ---
+# development:
+#   cloud_name: dznwujowq
+#   api_key: '581164182272263'
+#   api_secret: jkr73RXGSvrPK3pPnVCQZsF4d8M
+#   enhance_image_tag: true
+#   static_image_support: false
+# production:
+#   cloud_name: dznwujowq
+#   api_key: '581164182272263'
+#   api_secret: jkr73RXGSvrPK3pPnVCQZsF4d8M
+#   enhance_image_tag: true
+#   static_image_support: true
+# test:
+#   cloud_name: dznwujowq
+#   api_key: '581164182272263'
+#   api_secret: jkr73RXGSvrPK3pPnVCQZsF4d8M
+#   enhance_image_tag: true
+#   static_image_support: false
