@@ -21,7 +21,7 @@ $(document).on "page:change", ->
 
 	# CAROUSEL
 	$('.carousel').carousel({
-	  interval: 2000
+	  interval: 4000
 	})
 
 	# DROPDOWN-MENU
