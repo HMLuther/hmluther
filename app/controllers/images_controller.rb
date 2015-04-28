@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    @images = Image.select(:slug, :filemaker_id, :image_type, :position, :item_id).order(item_id: :asc)
   end
 
   # GET /images/1

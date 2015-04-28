@@ -8,34 +8,10 @@
     <li class="list-group-item"><strong>Item ID:</strong> <%= @image.item_id %></li>
     <li class="list-group-item"><strong>Image Type:</strong> <%= @image.image_type %></li>
     <li class="list-group-item"><strong>Position:</strong> <%= @image.position %></li>
+    <li class="list-group-item"><strong>Created:</strong> <%= @image.created_at %></li>
+    <li class="list-group-item"><strong>Updated:</strong> <%= @image.updated_at %></li>
   </ul>
 </div>
-
-
-<!-- OLD PARAMETERS -->
-<div class="hidden">
-  <h3>Old Parameters</h3>
-  <hr>
-  <p>
-    <strong>Active:</strong> <%= @image.active %>
-  </p>
-  <p>
-    <strong>Banner:</strong> <%= @image.banner %>
-  </p>
-  <p>
-    <strong>Webcomp:</strong> <%= @image.webcomp %>
-  </p>
-  <p>
-    <strong>Thumb:</strong> <%= @image.thumb %>
-  </p>
-  <p>
-    <strong>Url:</strong> <%= @image.url %>
-  </p>
-  <p>
-    <strong>Preview Url:</strong> <%= @image.preview_url %>
-  </p>
-</div>
-
 
 <!-- SAMPLE CLOUDINARY IMAGE -->
 <div class="panel panel-default">
