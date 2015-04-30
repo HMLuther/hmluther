@@ -15,6 +15,7 @@
 					<%= link_to item do %>
 						<% if item.thumb.present? %>
 							<%= cl_image_tag item.thumb.filemaker_id + ".jpg", 
+								:color_space => :srgb, 
 								:width => 170, 
 								:crop => :limit, 
 								:dpr => 2.0, 
