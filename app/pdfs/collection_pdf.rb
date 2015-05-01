@@ -57,7 +57,7 @@ class CollectionPdf < Prawn::Document
   end
 
   def pdf_merge
-    pdf_file_paths = @collection.collection_items.active.map { |ci| ci.item.images.where(:image_type => 'Tearsheet').first.url }
+    pdf_file_paths = @collection.collection_items.active.map { |ci| ci.item.tearsheet.url }
     pdf_file_paths.each do |pdf_file|
       start_new_page(:template => open(pdf_file))
     end
@@ -67,7 +67,7 @@ class CollectionPdf < Prawn::Document
   	@count = ( @collection.collection_items.active.count - 1 )
   	@collection.collection_items.active.each_with_index do |c, index|
  	    self.header
-  		image open(c.item.images.where(image_type: "Comp Web").first.url), :width => 540, :position => :center
+  		image open(c.item.comp.url), :width => 540, :position => :center
   		y_position = cursor - 15
   		bounding_box([0, y_position], :width => 540) do
 	  		text text c.item.maker_list.map { |t| t.titlecase }.join(', '), :color => "f47321", :size => 16
