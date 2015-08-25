@@ -20,7 +20,7 @@
   </div>
   <div class="panel-body">
     <% if @image.image_type == "Tearsheet" %>
-      <%= cl_image_tag("#{@image.filemaker_id}.png", :alt => "ID PDF", :width => 600, :crop => :fill) %>
+      <%= cl_image_tag("#{@image.filemaker_id}.pdf", :alt => "ID PDF") %>
     <% else %>
       <%= cl_image_tag("#{@image.filemaker_id}.jpg", :alt => "ID Image") %>
     <% end %>
