@@ -1,0 +1,30 @@
+<!-- CAROUSEL -->
+<div id="carousel-home" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% @featured.each_with_index do |item, index| %>
+      <li data-target="#carousel-home" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>"></li>
+    <% end %>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% @featured.each_with_index do |item, index| %>
+      <div class="<%= index == 0 ? 'item active' : 'item' %>">
+        <%= link_to item do %>
+          <%= item.featured_image_tag %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-home" data-slide="prev">
+    <!-- <span class="glyphicon glyphicon-chevron-left"></span> -->
+  </a>
+  <a class="right carousel-control" href="#carousel-home" data-slide="next">
+    <!-- <span class="glyphicon glyphicon-chevron-right"></span> -->
+  </a>
+</div>
+
