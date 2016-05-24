@@ -23,9 +23,13 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    # @item_images = @item.images.show_list.order('image_type')
-    @item_images = @item.images.detail_images.order('position')
-    impressionist(@item, "item detail")
+    if @item.sold and !@item.listed_category and !@item.listed_designer
+      redirect_to category_path(@item.category_list.last)
+     else
+      # @item_images = @item.images.show_list.order('image_type')
+      @item_images = @item.images.detail_images.order('position')
+      impressionist(@item, "item detail")
+    end
   end
 
   # GET /items/new
