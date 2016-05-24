@@ -16,7 +16,8 @@ class ItemsController < ApplicationController
   #GET /category/:category
   def category
   unless params[:sold_item].blank?
-    @sold_item = Item.find_by_slug!(params[:sold_item]).decorate
+    # @sold_item = Item.find_by_slug!(params[:sold_item]).decorate
+    @sold_item = "Sold item"
   end
     @items = Item.category_list.tagged_with(params[:category]).order(size: :asc).decorate
     # impressionist(@items, "category", :unique => [:session_hash])

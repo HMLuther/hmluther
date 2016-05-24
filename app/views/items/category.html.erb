@@ -1,9 +1,7 @@
 <!--SOLD ITEM-->
-<% if @sold_item %>
-  <h1>Sold Item</h1>
-  <p><%= @sold_item.description_short %></p>
-<% end %>
- <h1>From params: <%= @sold_item.description_short %></h1>
+<hr>
+ <h1>From params: <%= @sold_item %></h1>
+<hr>
 
 <!-- SUBNAV -->
 <%= render 'category_subnav' %>
