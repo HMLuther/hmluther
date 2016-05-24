@@ -1,11 +1,12 @@
-<!-- SUBNAV -->
-<%= render 'category_subnav' %>
-
 <!--SOLD ITEM-->
 <% if @sold_item %>
-<h1>Sold Item</h1>
+  <h1>Sold Item</h1>
   <p><%= @sold_item.description_short %></p>
 <% end %>
+ <h1>From params: <%= @sold_item.description_short %></h1>
+
+<!-- SUBNAV -->
+<%= render 'category_subnav' %>
 
 <nav class="scroll-controls">
   <div class="control prev hidden-xs hidden-sm hidden-md"></div>
