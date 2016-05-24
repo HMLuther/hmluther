@@ -15,8 +15,8 @@ class ItemsController < ApplicationController
 
   #GET /category/:category
   def category
-  if params[:item]
-    @item = Item.find_by_slug!(params[:item]).decorate
+  if params[:solditem]
+    @item = Item.find_by_slug!(params[:solditem]).decorate
   end
     @items = Item.category_list.tagged_with(params[:category]).order(size: :asc).decorate
     # impressionist(@items, "category", :unique => [:session_hash])
