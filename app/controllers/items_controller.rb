@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     if @item.sold and !@item.listed_category and !@item.listed_designer
-      redirect_to category_path(@item.category_list.last, item: @item.id)
+      redirect_to category_path(@item.category_list.last, item: @item.filemaker_id)
      else
       # @item_images = @item.images.show_list.order('image_type')
       @item_images = @item.images.detail_images.order('position')
