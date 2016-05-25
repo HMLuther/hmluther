@@ -39,14 +39,16 @@
 <!--Alert-->
 <div class="alert alert-warning alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <div class="col-md-12">
+  <div class="row">
         <div class="pull-left col-md-4">
         <%= @sold_item.comp_image_tag %>
     </div>
     <div class="col-md-8">
-        <a href="#" class="alert-link"><%= @sold_item.maker_display %></a>
+        <h4><a href="#" class="alert-link"><%= @sold_item.maker_display %></a></h4>
         <p><%= raw @sold_item.description_short %></p>
         <p><%= @sold_item.circa %></p>
+        <hr>
+        <i>This item has sold. Please view similar items in this category.</i>
     </div>
   </div>
 </div>
