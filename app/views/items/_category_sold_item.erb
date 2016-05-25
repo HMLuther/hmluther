@@ -1,7 +1,37 @@
-<div class="jumbotron">
-    <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
-    <%= @sold_item.comp_image_tag %>
-    <h4><%= @sold_item.maker_display %></h4>
-    <p><%= @sold_item.description_short %></p>
-    <p><%= @sold_item.circa %></p>
+<div class="row">
+    
+    <div class="col-md-4">
+        <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
+        <%= @sold_item.comp_image_tag %>
+    </div>
+    
+    <div class="col-md-8">
+        <button class="pull-right">
+            X
+        </button>
+        <h4><%= @sold_item.maker_display %></h4>
+        <p><%= raw @sold_item.description_short %></p>
+        <p><%= @sold_item.circa %></p>
+    </div>
+
+</div>
+
+<!--Media-->
+<div class="row">
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+            <img class="media-object" src="..." alt="...">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">Media heading</h4>
+            ...
+        </div>
+    </div>
+</div>
+
+<!--Alert-->
+<div class="alert alert-info" role="alert">
+  <a href="#" class="alert-link">...</a>
 </div>
