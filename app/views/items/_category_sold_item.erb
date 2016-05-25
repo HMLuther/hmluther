@@ -20,10 +20,7 @@
 <div class="row">
     <div class="media">
         <div class="media-left">
-            <a href="#">
-            <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold'  class: "media-object" %>
-            <!--<img class="media-object" src="..." alt="...">-->
-            </a>
+            <%= @sold_item.comp_image_tag %>
         </div>
         <div class="media-body">
             <h4 class="media-heading"><%= @sold_item.maker_display %></h4>
