@@ -1,2 +1,7 @@
-<h4><%= @sold_item.maker_display %></h4>
-<p>here are the details....</p>
+<div class="jumbotron">
+    <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
+    <%= @sold_item.comp_image_tag %>
+    <h4><%= @sold_item.maker_display %></h4>
+    <p><%= @sold_item.description_short %></p>
+    <p><%= @sold_item.circa %></p>
+</div>

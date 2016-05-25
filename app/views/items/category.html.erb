@@ -1,13 +1,5 @@
 <!--SOLD ITEM-->
-<% if @sold_item %>
-<h1>Sold item</h1>
-<% end %>
-<hr>
-<h4><%= @sold_item.maker_display %></h4>
- <p><%= @sold_item.description_short %></p>
- <p> <p><%= @sold_item.circa %></p></p>
-<hr>
-<%= render 'category_sold_item' %>
+<%= render 'category_sold_item' if @sold_item %>
 
 <!-- SUBNAV -->
 <%= render 'category_subnav' %>
