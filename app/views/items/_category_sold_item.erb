@@ -1,49 +1,11 @@
-<!--<div class="row">
-    
-    <div class="col-md-4">
-        <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold' %>
-        <%= @sold_item.comp_image_tag %>
-    </div>
-    
-    <div class="col-md-8">
-        <button class="pull-right">
-            X
-        </button>
-        <h4><%= @sold_item.maker_display %></h4>
-        <p><%= raw @sold_item.description_short %></p>
-        <p><%= @sold_item.circa %></p>
-    </div>
-
-</div>-->
-
-<hr>
-
-<!--Media-->
-<!--<div class="row">
-    <div class="media">
-        <div class="media-left">
-            <a href="#">
-                <%= @sold_item.comp_image_tag %>
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading"><%= @sold_item.maker_display %></h4>
-            <p><%= raw @sold_item.description_short %></p>
-            <p><%= @sold_item.circa %></p>
-        </div>
-    </div>
-</div>
-
-<hr>-->
-
 <!--Alert-->
 <div class="alert alert-warning alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <div class="row">
-        <div class="pull-left col-md-4">
+        <div class="pull-left hidden-xs col-sm-6 col-md-4">
         <%= @sold_item.comp_image_tag %>
     </div>
-    <div class="col-md-8">
+    <div class="col-xs-12 col-sm-6 col-md-8">
         <h4><a href="#" class="alert-link"><%= @sold_item.maker_display %></a></h4>
         <p><%= raw @sold_item.description_short %></p>
         <p><%= @sold_item.circa %></p>
