@@ -16,11 +16,15 @@
 
 </div>
 
+<hr>
+
 <!--Media-->
 <div class="row">
     <div class="media">
         <div class="media-left">
-            <%= @sold_item.comp_image_tag %>
+            <a href="#">
+                <%= @sold_item.comp_image_tag %>
+            </a>
         </div>
         <div class="media-body">
             <h4 class="media-heading"><%= @sold_item.maker_display %></h4>
@@ -30,10 +34,12 @@
     </div>
 </div>
 
+<hr>
+
 <!--Alert-->
 <div class="alert alert-warning alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <a href="#" class="alert-link">.<%= @sold_item.maker_display %></a>
+  <a href="#" class="alert-link"><%= @sold_item.maker_display %></a>
   <p><strong>Warning!</strong> Better check yourself, you're not looking too good.</p>
    <p><%= raw @sold_item.description_short %></p>
    <p><%= @sold_item.circa %></p>
