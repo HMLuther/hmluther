@@ -21,17 +21,23 @@
     <div class="media">
         <div class="media-left">
             <a href="#">
-            <img class="media-object" src="..." alt="...">
+            <%= image_tag 'hml_sold_icon.svg', class: 'category-stamp-sold'  class: "media-object" %>
+            <!--<img class="media-object" src="..." alt="...">-->
             </a>
         </div>
         <div class="media-body">
-            <h4 class="media-heading">Media heading</h4>
-            ...
+            <h4 class="media-heading"><%= @sold_item.maker_display %></h4>
+            <p><%= raw @sold_item.description_short %></p>
+            <p><%= @sold_item.circa %></p>
         </div>
     </div>
 </div>
 
 <!--Alert-->
-<div class="alert alert-info" role="alert">
-  <a href="#" class="alert-link">...</a>
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <a href="#" class="alert-link">.<%= @sold_item.maker_display %></a>
+  <p><strong>Warning!</strong> Better check yourself, you're not looking too good.</p>
+   <p><%= raw @sold_item.description_short %></p>
+   <p><%= @sold_item.circa %></p>
 </div>
