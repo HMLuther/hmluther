@@ -15,8 +15,8 @@ class ItemsController < ApplicationController
 
   #GET /category/:category
   def category
-  unless params[:sold_item].blank?
-    @sold_item = Item.find_by_slug!(params[:sold_item]).decorate
+  unless params[:archive_item].blank?
+    @archive_item = Item.find_by_slug!(params[:sold_item]).decorate
   end
     @items = Item.category_list.tagged_with(params[:category]).order(size: :asc).decorate
     # impressionist(@items, "category", :unique => [:session_hash])
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     if !@item.active and !@item.listed_category and !@item.listed_designer
-      redirect_to category_path(@item.category_list.last, sold_item: @item.filemaker_id)
+      redirect_to category_path(@item.category_list.last, archive_item: @item.filemaker_id)
      else
       # @item_images = @item.images.show_list.order('image_type')
       @item_images = @item.images.detail_images.order('position')
