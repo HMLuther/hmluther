@@ -3,12 +3,12 @@
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <div class="row">
         <div class="pull-left hidden-xs col-sm-6 col-md-4">
-        <%= @sold_item.comp_image_tag %>
+        <%= @archive_item.comp_image_tag %>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-8">
-        <h4><a href="#" class="alert-link"><%= @sold_item.maker_display %></a></h4>
-        <p><%= raw @sold_item.description_short %></p>
-        <p><%= @sold_item.circa %></p>
+        <h4><a href="#" class="alert-link"><%= @archive_item.maker_display %></a></h4>
+        <p><%= raw @archive_item.description_short %></p>
+        <p><%= @archive_item.circa %></p>
         <hr>
         <i>This item has sold. Please view similar items in this category.</i>
         <br>
