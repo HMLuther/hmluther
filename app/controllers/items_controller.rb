@@ -102,10 +102,12 @@ class ItemsController < ApplicationController
     end
 
     def store_history
-      @recent_item = @item.filemaker_id
-      session[:history] ||= []
-      session[:history].delete_at(0) if session[:history].size >= 50
-      session[:history] << @recent_item unless session[:history].include?(@recent_item)
+      if @item.active
+        @recent_item = @item.filemaker_id
+        session[:history] ||= []
+        session[:history].delete_at(0) if session[:history].size >= 50
+        session[:history] << @recent_item unless session[:history].include?(@recent_item)
+      end
     end
 
     def find_history
