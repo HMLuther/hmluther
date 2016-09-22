@@ -15,9 +15,9 @@ class ItemsController < ApplicationController
 
   #GET /category/:category
   def category
-  unless params[:archive_item].blank?
-    @archive_item = Item.find_by_slug!(params[:archive_item]).decorate
-  end
+    unless params[:archive_item].blank?
+      @archive_item = Item.find_by_slug!(params[:archive_item]).decorate
+    end
     @items = Item.category_list.tagged_with(params[:category]).order(size: :asc).decorate
     # impressionist(@items, "category", :unique => [:session_hash])
     # render 'category_scroll'
