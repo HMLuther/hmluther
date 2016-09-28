@@ -12,7 +12,7 @@ class Contact < MailForm::Base
     {
       :subject => "HML Contact Form",
       :to => ENV["HML_EMAIL"],
-      :from => %("#{name}" <#{email}>)
+      :from => ENV["MANDRILL_USERNAME"]
     }
   end
 end

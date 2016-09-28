@@ -24,7 +24,7 @@ class Share < MailForm::Base
     {
       :subject => @subject,
       :to => "#{recipient}",
-      :from => %("#{name}" <#{email}>)
+      :from => ENV["MANDRILL_USERNAME"]
     }
   end
 

@@ -15,7 +15,7 @@ class Feedback < MailForm::Base
     {
       :subject => "Website Feedback",
       :to => ENV["HML_EMAIL"],
-      :from => %("#{name}" <#{email}>)
+      :from => ENV["MANDRILL_USERNAME"]
     }
   end
 end
