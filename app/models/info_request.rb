@@ -15,7 +15,8 @@ class InfoRequest < MailForm::Base
     {
       :subject => "Information Request",
       :to => ENV["HML_EMAIL"],
-      :from => %("#{name}" <#{email}>)
+      # :from => %("#{name}" <#{email}>)
+      :from => ENV["MANDRILL_USERNAME"]
     }
   end
 end
