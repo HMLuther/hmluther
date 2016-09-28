@@ -4,6 +4,8 @@
   <%= render 'share_item' %>
 <% elsif @resource.mail_form_attributes["type"] == "share_collection" %>
   <%= render 'share_collection' %>
+<% elsif @resource.mail_form_attributes["type"] == "feedback" %>
+  <%= render 'feedback' %>
 <% else %>
 
   <% @resource.mail_form_attributes.each do |attribute, value|

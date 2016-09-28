@@ -10,9 +10,8 @@
 
     <h1><%= message.subject %></h1>
 
-		<h2><%= @resource.mail_form_attributes["collection_name"] %></h2>
-		<!-- <p><%= @resource.mail_form_attributes["description"] %></p> -->
-		<p><strong>View Collection: </strong><%= @resource.mail_form_attributes["path"] %></p>
+		<p><strong>NAME: </strong><%= @resource.mail_form_attributes["name"] %></p>
+		<p><strong>EMAIL: </strong><%= @resource.mail_form_attributes["email"] %></p>
 
 		<p><strong>Message: </strong><br/>
 		<%= @resource.mail_form_attributes["message"] %></p>
