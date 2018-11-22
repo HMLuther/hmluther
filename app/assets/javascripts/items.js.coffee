@@ -29,7 +29,8 @@ $(document).on "page:change", ->
 	if $('input#position').val() == ""
 		sortButtonLS.addClass('active')
 		sortButtonSL.removeClass('active')
-		categoryItemsLi.tsort('',{data:'size', order:'desc'})
+		# categoryItemsLi.tsort('',{data:'size', order:'desc'})
+		categoryItemsLi.tsort(order:'rand')
 
 	sortButtonSL.on "click", () ->
 		sortButtonSL.addClass('active')
