@@ -18,8 +18,8 @@ class ItemsController < ApplicationController
     unless params[:archive_item].blank?
       @archive_item = Item.find_by_slug!(params[:archive_item]).decorate
     end
-    @items = Item.category_list.tagged_with(params[:category]).order(size: :asc).decorate
-    @items = @items.shuffle
+    items = Item.category_list.tagged_with(params[:category]).decorate
+    @items = items.shuffle
     # impressionist(@items, "category", :unique => [:session_hash])
     # render 'category_scroll'
   end
