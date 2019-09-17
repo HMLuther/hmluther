@@ -1,56 +1,72 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '4.2.1'
-gem 'sass-rails', '~> 4.0.3'
+ruby '2.4.6'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.2.3'
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
+# Use Puma as the app server
+gem 'puma', '~> 3.11'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
-gem 'bootstrap-sass'
-gem 'devise'
-gem 'figaro'
-gem 'mail_form'
-gem 'pg'
-gem 'puma'
-gem 'pundit'
-gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
-gem 'acts-as-taggable-on'
-gem 'rails_12factor', group: :production
-gem 'therubyracer'
-gem 'prawn'
-gem 'prawn-svg'
-gem 'prawn-templates'
-gem 'draper'
-gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
-gem 'impressionist'
-gem 'country_select'
-gem 'cloudinary'
-group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
-  gem 'guard-bundler'
-  gem 'guard-rails'
-  gem 'guard-rspec'
-  gem 'hub', :require=>nil
-  gem 'quiet_assets'
-  gem 'rails_layout'
-  gem 'rb-fchange', :require=>false
-  gem 'rb-fsevent', :require=>false
-  gem 'rb-inotify', :require=>false
-end
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'mini_racer', platforms: :ruby
+
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.2'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.5'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use ActiveStorage variant
+# gem 'mini_magick', '~> 4.8'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
+
+gem 'acts-as-taggable-on', '~> 6.0'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'cloudinary', '~> 1.11', '>= 1.11.1'
+gem 'country_select', '~> 4.0'
+gem 'data-confirm-modal', '~> 1.6', '>= 1.6.2'
+gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'draper', '~> 3.1'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'impressionist', '~> 1.6', '>= 1.6.1'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'mail_form', '~> 1.8'
+gem 'pundit', '~> 2.1'
+gem 'rails_layout', '~> 1.0', '>= 1.0.42'
+gem 'money-rails', '~>1.12'
+gem 'simple_form', '~> 4.1'
+
 group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'rspec-rails', '>= 3.0.0.beta2'
-end
-group :test do
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'faker'
-  gem 'launchy'
-  gem 'selenium-webdriver'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rb-readline'
 end
 
-ruby '2.2.1'
+group :development do
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

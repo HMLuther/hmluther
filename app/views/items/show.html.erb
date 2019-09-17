@@ -92,6 +92,10 @@
 
   <!-- DESCRIPTION -->
   <div class="col-md-6 info-panel">
+    <% if @item.price_cents > 0 %>
+      <h5>Price: <%= humanized_money_with_symbol @item.price %></h5>
+      <hr>
+    <% end %>
     <p><%= raw @item.description rescue "" %></p>
     <p><%= raw @item.reference rescue "" %></p>
     <p><%= Designer.find_by_slug(@item.maker_list.first).bio rescue "" %></p>
@@ -100,6 +104,11 @@
   </div>
 </div>
 
+<%#= session[:history] %>
+<!--<hr>-->
+<%# @history_items.sort.each do |item| %>
+  <%#= item.filemaker_id %>
+<%# end %>
 <!-- RECENTLY VIEWED ITEMS -->
 <div class="recents"></div>
 

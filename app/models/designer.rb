@@ -1,4 +1,4 @@
-class Designer < ActiveRecord::Base
+class Designer < ApplicationRecord
 
 	acts_as_taggable_on :affiliate
 

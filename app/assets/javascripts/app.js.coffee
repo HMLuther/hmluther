@@ -5,7 +5,7 @@
 # $(document).on 'page:restore', ->
 #   $('body').fadeIn 'slow'
 
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
 	
 	# console.log "app.coffee - page change"
 

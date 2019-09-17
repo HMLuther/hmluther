@@ -1,4 +1,4 @@
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
 	
   # $('.collection-subnav #active-toggle.active .inactive-button').hide()
   # $('.collection-subnav #active-toggle.active .active-button').show()

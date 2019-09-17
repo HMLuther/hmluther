@@ -1,4 +1,4 @@
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
 
 	# SET RECENTLY VIEWED ITEMS
 	setRecentlyViewed = () ->

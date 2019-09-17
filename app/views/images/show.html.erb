@@ -20,9 +20,9 @@
   </div>
   <div class="panel-body">
     <% if @image.image_type == "Tearsheet" %>
-      <%= cl_image_tag("#{@image.filemaker_id}.pdf", :alt => "ID PDF") %>
+      <%= cl_image_tag("#{@image.filemaker_id}.pdf", :alt => "ID PDF", cloud_name: ENV['CLOUDINARY']) %>
     <% else %>
-      <%= cl_image_tag("#{@image.filemaker_id}.jpg", :alt => "ID Image") %>
+      <%= cl_image_tag("#{@image.filemaker_id}.jpg", :alt => "ID Image", cloud_name: ENV['CLOUDINARY']) %>
     <% end %>
   </div>
 </div>

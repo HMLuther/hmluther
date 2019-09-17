@@ -1,4 +1,4 @@
-Hmluther::Application.routes.draw do
+Rails.application.routes.draw do
 
   get 'remote_collection_addition', to: 'remote_content#remote_collection_addition'
   get 'remote_collection_info_request', to: 'remote_content#remote_collection_info_request'
@@ -25,7 +25,7 @@ Hmluther::Application.routes.draw do
   resources :items
   resources :pages
   resources :users
-  
+
   resources :collections do
     get 'slideshow', on: :member
     resources :collection_items

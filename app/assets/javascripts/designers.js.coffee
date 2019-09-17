@@ -1,4 +1,4 @@
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
 
 	groupAlpha = $('.group-alpha')
 	groupCountry = $('.group-country')
