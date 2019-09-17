@@ -90,10 +90,10 @@
 
   </div>
 
-  <!-- DESCRIPTION -->
+  <!-- PRICE & DESCRIPTION -->
   <div class="col-md-6 info-panel">
     <% if @item.price_cents > 0 %>
-      <h5>Price: <%= humanized_money_with_symbol @item.price %></h5>
+      <h4 class="pricing">Price: <%= humanized_money_with_symbol @item.price %></h4>
       <hr>
     <% end %>
     <p><%= raw @item.description rescue "" %></p>
