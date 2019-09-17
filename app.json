@@ -1,0 +1,11 @@
+{
+  "name": "HM Luther",
+  "description": "HM Luther website",
+  "image": "heroku/ruby",
+  "repository": "https://github.com/HMLuther/hmluther",
+  "keywords": ["ruby", "rails" ],
+  "addons": [
+    "heroku-postgresql",
+    "cloudinary:starter"
+  ]
+}
