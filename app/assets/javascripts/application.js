@@ -25,7 +25,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
+$( document ).on('turbolinks:load', function() {
 	// console.log("loaded!");
 
 	var int = null;
