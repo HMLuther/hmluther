@@ -2,6 +2,7 @@ class Item < ApplicationRecord
 
   is_impressionable
   acts_as_taggable_on :category, :maker
+  monetize :list_price_cents
   monetize :price_cents
 
   before_validation :generate_slug

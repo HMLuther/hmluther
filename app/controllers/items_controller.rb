@@ -106,9 +106,10 @@ class ItemsController < ApplicationController
                                  :listed_designer, :location, :reference,
                                  :height_cm, :width_cm, :depth_cm, :diameter_cm,
                                  :height_in, :width_in, :depth_in, :diameter_in,
-                                 :size, :price_cents, :price_currency,
-                                 :category_list, :maker_list, :designer_connector_1,
-                                 :designer_connector_2)
+                                 :size, :list_price_cents, :list_price_currency,
+                                 :price_cents, :price_currency,
+                                 :category_list, :maker_list,
+                                 :designer_connector_1, :designer_connector_2)
   end
 
   def store_history

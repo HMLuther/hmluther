@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_16_191240) do
+ActiveRecord::Schema.define(version: 2019_09_18_164305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,8 @@ ActiveRecord::Schema.define(version: 2019_09_16_191240) do
     t.string "designer_connector_2"
     t.integer "price_cents", default: 0, null: false
     t.string "price_currency", default: "USD", null: false
+    t.integer "list_price_cents", default: 0, null: false
+    t.string "list_price_currency", default: "USD", null: false
     t.index ["filemaker_id"], name: "index_items_on_filemaker_id"
   end
 
