@@ -92,7 +92,7 @@
 
   <!-- PRICE & DESCRIPTION -->
   <div class="col-md-6 info-panel">
-    <% if @item.price_cents > 0 %>
+    <% if @item.price_cents > 0 && @item.list_price_cents > 0 %>
       <h5 class="text-muted"><s>List Price: <%= humanized_money_with_symbol @item.list_price %></s></h5>
       <h4 class="pricing">
         Sale Price: <%= humanized_money_with_symbol @item.price %>
