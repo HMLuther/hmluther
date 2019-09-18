@@ -3,6 +3,7 @@
   "description": "HM Luther website",
   "image": "heroku/ruby",
   "repository": "https://github.com/HMLuther/hmluther",
+  "stack": "heroku-18",
   "keywords": ["ruby", "rails" ],
   "addons": [
     "heroku-postgresql",
