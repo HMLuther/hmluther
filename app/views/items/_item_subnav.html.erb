@@ -13,13 +13,12 @@
 			</div>
 		<% else %>
 			<div class="col-md-3 col-sm-3 col-xs-6 display">
-				<span class="line-through" title="Tearsheet unavailable">Tearsheet</span>
+				<span class="line-through" title='Tearsheet unavailable'>Tearsheet</span>
 			</div>
 		<% end %>
 	<% else %>
 		<div class="col-md-3 col-sm-3 col-xs-6">
-			<%= link_to "Tearsheet", remote_login_path, 
-																				:remote => true, class: 'add-login-button', title: "Download Tearsheet (Login required)" %>
+			<%= link_to 'Tearsheet', remote_login_path, :remote => true, class: 'add-login-button', title: "Download Tearsheet (Login required)" %>
 		</div>
 	<% end %>
 
