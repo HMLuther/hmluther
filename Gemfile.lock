@@ -180,7 +180,8 @@ GEM
       pdf-reader (~> 2.0)
       prawn (~> 2.2)
     public_suffix (4.0.1)
-    puma (3.12.1)
+    puma (4.3.11)
+      nio4r (~> 2.0)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.7)
@@ -311,7 +312,7 @@ DEPENDENCIES
   prawn (~> 2.1)
   prawn-svg (~> 0.29.1)
   prawn-templates (~> 0.1.1)
-  puma (~> 3.11)
+  puma (~> 4.3)
   pundit (~> 2.1)
   rack-timeout
   rails (~> 5.2.3)
